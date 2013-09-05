@@ -6,4 +6,7 @@ html
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body class=[controller.controller_name, controller.action_name]
+    header
+      .row
+        = link_to image_tag("marca-mr.png"), root_path
     = yield
