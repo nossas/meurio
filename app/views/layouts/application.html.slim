@@ -1,0 +1,9 @@
+doctype
+html
+  head
+    title Meurio
+    = stylesheet_link_tag    "screen", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body class=[controller.controller_name, controller.action_name]
+    = yield
