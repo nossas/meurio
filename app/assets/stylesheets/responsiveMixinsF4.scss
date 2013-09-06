@@ -1,0 +1,70 @@
+/*
+_______
+
+These simple SCSS/SASS mixins for Foundation 4 are made by me to deal with media-queries and have a clean code at the same time! ;)
+
+****IMPORTANT****
+
+Due to Foundation 4 uses mobile-first methodology, every $phone-"X" variable in these mixins defines the value for every screen size.
+$desktop-"X" values overrides $phone-"X" values when the width of the window is 768px and above.
+
+So, to simplify this, we can think that way: ($phone-"X" < 768px => $desktop-"X")
+
+________
+*/
+
+/*
+
+** MIXIN 1: RGRID - Responsive Grid **
+
+This mixin provides an easy way to use the Foundation 4 grid classes and media-queries.
+$phone-grid: number of grid columns.
+$desktop-grid: number of grid columns that overrides $phone-grid for window width 768px and above.
+Only one parameter could be declared to define a value for every window width.
+
+i.e.:
+@include rgrid(3,6); => 3 columns for phone, 6 columns for desktop.
+@inculde rgrid(6); => 6 columns.
+
+*/
+
+@mixin rgrid($phone-grid:"",$desktop-grid:""){
+ 	@extend .small-#{$phone-grid};
+	@extend .large-#{$desktop-grid};
+	@extend .columns;
+}
+
+
+/* 
+
+** MIXIN 2: RFONT - Responsive Font Size **
+
+Define a font-size for both desktop and phone.
+If only one parameter is declared, the phone font-size will be automatically defined 30% smaller than the desktop font-size)
+
+i.e.:
+@include rfont(24,12); => "font-size:24px" for desktop screens & "font-size:12px" for mobile.
+@include rfont(20); => "font-size:20px" for desktop screens & "font-size:14px" for mobile.
+
+*/
+
+@mixin rfont($desktop-font:"", $phone-font:$desktop-font*0.7){
+	font-size: #{$phone-font}px;
+	@media #{$small}{font-size: #{$desktop-font}px;}
+}
+
+
+/*
+
+** MIXIN 3: RPROP - Responsive CSS Property **
+
+Define any CSS property and their values for both desktop and phone.
+
+i.e.:
+@include rprop(margin-top,10px,20px); => "margin-top: 10px;" for mobile screens & "margin-top: 20px;" for desktop.
+
+*/
+@mixin rprop($prop,$phone-value, $desktop-value){
+	#{$prop}: $phone-value;
+	@media #{$small}{#{$prop}: $desktop-value;}
+}

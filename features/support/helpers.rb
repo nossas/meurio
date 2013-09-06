@@ -4,6 +4,7 @@ def to_url string
 end
 
 def to_element string
-  return ".vision" if string == "the Meu Rio's vision"
+  return ".vision"      if string == "the Meu Rio's vision"
+  return ".principles"  if string == "the Meu Rio's principles"
   raise "I don't know element '#{string}'"
 end

@@ -2,10 +2,18 @@ body.mobilizations.index
   h2
     font-size: 1.75em
     font-weight: normal
+  .vision, .principles
+    padding: 1em 0
+    text-align: center
   .vision
     background: image-url("bg-01.jpg") no-repeat top center $green
-    text-align: center
-    color: white
-    padding: 1em 0
-    h2
+    p, h2
       color: white
+  .principles
+    .principle
+      +rgrid(12, 4)
+      text-align: left
+      font-size: .8em
+      margin-top: 1em
+      h3
+        font-size: 1.1em
