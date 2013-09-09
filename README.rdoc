@@ -1,5 +1,6 @@
 {<img src="https://travis-ci.org/meurio/meurio.png?branch=master" alt="Build Status" />}[https://travis-ci.org/meurio/meurio]
 {<img src="https://codeclimate.com/github/meurio/meurio.png" />}[https://codeclimate.com/github/meurio/meurio]
+{<img src="https://coveralls.io/repos/meurio/meurio/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/meurio/meurio?branch=master]
 
 == README
 
