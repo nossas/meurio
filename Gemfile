@@ -46,6 +46,8 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'simplecov', :require => false
+  gem 'machinist', '>= 2.0.0.beta2'
+  gem 'faker'
 end
 
 group :development, :test do

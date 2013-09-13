@@ -11,6 +11,7 @@ SimpleCov.start
 # files.
 
 require 'cucumber/rails'
+require "#{Rails.root}/spec/support/blueprints.rb"
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
