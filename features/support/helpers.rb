@@ -13,3 +13,9 @@ end
 def to_text string
   return @campaign.name if string == "the PdP campaign on the mobilization history"
 end
+
+def mobilization_field field
+  return Mobilization.first.title       if field == "title"
+  return Mobilization.first.description if field == "description"
+  return Mobilization.first.hashtag     if field == "hashtag"
+end

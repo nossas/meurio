@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20130916223455) do
     t.datetime "updated_at"
     t.string   "title"
     t.text     "description"
+    t.string   "background_image"
+    t.string   "hashtag"
   end
 
 end

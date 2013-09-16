@@ -1,5 +1,10 @@
 Given(/^there are (\d+) mobilizations?$/) do |arg1|
-  arg1.to_i.times { Mobilization.make! }
+  arg1.to_i.times { @mobilization = Mobilization.make! }
+end
+
+Given(/^the mobilization has a background image$/) do
+  @mobilization.background_image = 'cover.png'
+  @mobilization.save!
 end
 
 When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
@@ -10,8 +15,12 @@ Then(/^I should see "(.*?)"$/) do |arg1|
   page.should have_css(to_element(arg1), text: to_text(arg1))
 end
 
-Then(/^I should see the mobilization's title$/) do
-  page.should have_content(Mobilization.first.title)
+Then(/^I should see the mobilization's background image$/) do
+  page.find('.cover')['style'].should include Mobilization.first.background_image
+end
+
+Then(/^I should see the mobilization's "(.*?)"$/) do |field|
+  page.should have_content(mobilization_field(field))
 end
 
 Given(/^there is a mobilization$/) do

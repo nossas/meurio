@@ -1,13 +1,22 @@
 .mobilization
-  .row
-    .header
-      .large-12.columns= link_to image_tag("marca-mr.png"), root_path
-  .row
-    .content
+  .cover *{style: show_mobilization_bg}
+    .row
+      .header
+        .large-12.columns= link_to image_tag("marca-mr.png"), root_path
+    .row
+      .content
+        .large-12.columns
+          h1= @mobilization.title
+          p= @mobilization.description
+  .social-media
+    .row
       .large-12.columns
         h1= @mobilization.title
         p= @mobilization.description
-
+        span 
+          | Compartilhe nas Redes Sociais, sempre usando a hashtag #
+          strong= @mobilization.hashtag
+  
 .row
   .history
     .large-8.columns
