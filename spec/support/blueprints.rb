@@ -1,9 +1,8 @@
 require 'machinist/active_record'
 
 # Add your blueprints here.
-#
-# e.g.
-#   Post.blueprint do
-#     title { "Post #{sn}" }
-#     body  { "Lorem ipsum..." }
-#   end
+
+Mobilization.blueprint do
+  title { Faker::Lorem.sentence }
+  description  { Faker::Lorem.paragraph }
+end
