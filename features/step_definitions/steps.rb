@@ -1,5 +1,5 @@
-Given(/^there are (\d+) mobilization$/) do |arg1|
-  Mobilization.make!
+Given(/^there are (\d+) mobilizations?$/) do |arg1|
+  arg1.to_i.times { Mobilization.make! }
 end
 
 When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
