@@ -19,6 +19,7 @@ body.mobilizations.index
         font-size: 1.1em
 
 body.mobilizations.show
+  background: #f4f5f7
   header
     display: none
   .cover
@@ -42,9 +43,26 @@ body.mobilizations.show
         font-family: "Proxima Nova" 
         font-size: 0.9em
         line-height: 1.2em
+  h2
+    font-size: 1.5em
+    border-bottom: 3px solid #eee
   .social-media
     font-family: "Proxima Nova" 
     background-color: $light-grey
     color: white
     padding: 0.7em
     text-align: center
+  .history
+    .item
+      background: white
+      padding: 1em
+      margin-bottom: 1em
+      overflow: hidden
+      +border-radius(3px)
+      .name
+        font-weight: 800
+        color: $green
+        margin-bottom: 1em
+      .description
+        font-size: .9em
+        margin-bottom: 1em
