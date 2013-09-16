@@ -1,6 +1,5 @@
 def to_url string
   return root_path                             if string == "the homepage"
-  return mobilization_path(Mobilization.first) if string == "the mobilization's page"
   return mobilization_path(@mobilization)      if string == "this mobilization page"
 end
 

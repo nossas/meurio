@@ -1,7 +1,3 @@
-Given(/^there are (\d+) mobilizations?$/) do |arg1|
-  arg1.to_i.times { @mobilization = Mobilization.make! }
-end
-
 Given(/^the mobilization has a background image$/) do
   @mobilization.background_image = 'cover.png'
   @mobilization.save!
