@@ -6,4 +6,5 @@ Mobilization.blueprint do
   title            { Faker::Lorem.sentence }
   description      { Faker::Lorem.paragraph }
   background_image { Faker::Internet.url }
+  hashtag          { Faker::Lorem.word }
 end

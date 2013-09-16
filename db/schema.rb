@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916200015) do
+ActiveRecord::Schema.define(version: 20130916212809) do
 
   create_table "mobilizations", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20130916200015) do
     t.string   "title"
     t.text     "description"
     t.string   "background_image"
+    t.string   "hashtag"
   end
 
 end

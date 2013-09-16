@@ -15,10 +15,10 @@ Then(/^I should see "(.*?)"$/) do |arg1|
   page.should have_css(to_element(arg1))
 end
 
-Then(/^I should see the mobilization's title$/) do
-  page.should have_content(Mobilization.first.title)
-end
-
 Then(/^I should see the mobilization's background image$/) do
   page.find('.cover')['style'].should include Mobilization.first.background_image
+end
+
+Then(/^I should see the mobilization's "(.*?)"$/) do |field|
+  page.should have_content(mobilization_field(field))
 end
