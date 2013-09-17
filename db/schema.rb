@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916223455) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20130917183310) do
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
@@ -24,6 +21,17 @@ ActiveRecord::Schema.define(version: 20130916223455) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ideas", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.text     "description"
+    t.integer  "mobilization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ideas", ["mobilization_id"], name: "index_ideas_on_mobilization_id", using: :btree
 
   create_table "mobilizations", force: true do |t|
     t.datetime "created_at"
