@@ -26,3 +26,7 @@ end
 Given(/^this mobilization have a PdP campaign$/) do
   @campaign = Campaign.make!(mobilization: @mobilization)
 end
+
+Given(/^this mobilization have an Imagine idea$/) do
+  @idea = Idea.make!(mobilization: @mobilization)
+end

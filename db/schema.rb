@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20130917221251) do
     t.string   "uid"
   end
 
+  create_table "ideas", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.text     "description"
+    t.integer  "mobilization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ideas", ["mobilization_id"], name: "index_ideas_on_mobilization_id", using: :btree
+
   create_table "mobilizations", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
