@@ -12,7 +12,7 @@ Then(/^I should see "(.*?)"$/) do |arg1|
 end
 
 Then(/^I should see the mobilization's background image$/) do
-  page.find('.cover')['style'].should include Mobilization.first.background_image
+  page.find('.cover')['style'].should include @mobilization.background_image
 end
 
 Then(/^I should see the mobilization's "(.*?)"$/) do |field|

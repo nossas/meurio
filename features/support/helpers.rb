@@ -14,7 +14,7 @@ def to_text string
 end
 
 def mobilization_field field
-  return Mobilization.first.title       if field == "title"
-  return Mobilization.first.description if field == "description"
-  return Mobilization.first.hashtag     if field == "hashtag"
+  return @mobilization.title       if field == "title"
+  return @mobilization.description if field == "description"
+  return @mobilization.hashtag     if field == "hashtag"
 end
