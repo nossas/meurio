@@ -10,8 +10,9 @@ Mobilization.blueprint do
 end
 
 Campaign.blueprint do
-  name          { Faker::Lorem.sentence }
-  description   { Faker::Lorem.paragraph }
-  link          { Faker::Internet.url }
+  name              { Faker::Lorem.sentence }
+  description_html  { Faker::Lorem.paragraph }
+  link              { Faker::Internet.url }
+  uid               { sn }
   mobilization
 end
