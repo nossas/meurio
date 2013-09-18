@@ -17,7 +17,7 @@ Campaign.blueprint do
   mobilization
 end
 
-Idea.blueprint do
+Problem.blueprint do
   name          { Faker::Lorem.sentence }
   description   { Faker::Lorem.paragraph }
   link          { Faker::Internet.url }

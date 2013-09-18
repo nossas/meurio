@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130917221251) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20130918132419) do
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
@@ -30,12 +27,12 @@ ActiveRecord::Schema.define(version: 20130917221251) do
     t.string   "name"
     t.string   "link"
     t.text     "description"
-    t.integer  "mobilization_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "problem_id"
   end
 
-  add_index "ideas", ["mobilization_id"], name: "index_ideas_on_mobilization_id", using: :btree
+  add_index "ideas", ["problem_id"], name: "index_ideas_on_problem_id", using: :btree
 
   create_table "mobilizations", force: true do |t|
     t.datetime "created_at"
@@ -45,5 +42,16 @@ ActiveRecord::Schema.define(version: 20130917221251) do
     t.string   "background_image"
     t.string   "hashtag"
   end
+
+  create_table "problems", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.text     "description"
+    t.integer  "mobilization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "problems", ["mobilization_id"], name: "index_problems_on_mobilization_id", using: :btree
 
 end

@@ -4,15 +4,15 @@ def to_url string
 end
 
 def to_element string
-  return ".vision"                if string == "the Meu Rio's vision"
-  return ".principles"            if string == "the Meu Rio's principles"
-  return ".history .item.campaign"         if string == "the PdP campaign on the mobilization history"
-  return ".history .item.idea"         if string == "the Imagine idea on the mobilization history"
+  return ".vision"                  if string == "the Meu Rio's vision"
+  return ".principles"              if string == "the Meu Rio's principles"
+  return ".history .item.campaign"  if string == "the PdP campaign on the mobilization history"
+  return ".history .item.problem"   if string == "the Imagine problem on the mobilization history"
 end
 
 def to_text string
   return @campaign.name if string == "the PdP campaign on the mobilization history"
-  return @idea.name     if string == "the Imagine idea on the mobilization history"
+  return @problem.name     if string == "the Imagine problem on the mobilization history"
 end
 
 def mobilization_field field
