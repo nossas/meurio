@@ -24,11 +24,3 @@ Problem.blueprint do
   uid           { sn }
   mobilization
 end
-
-Idea.blueprint do
-  name          { Faker::Lorem.sentence }
-  description   { Faker::Lorem.paragraph }
-  link          { Faker::Internet.url }
-  uid           { sn }
-  problem
-end
