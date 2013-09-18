@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918132419) do
+ActiveRecord::Schema.define(version: 20130918145137) do
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20130918132419) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "problem_id"
+    t.string   "uid"
   end
 
   add_index "ideas", ["problem_id"], name: "index_ideas_on_problem_id", using: :btree
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 20130918132419) do
     t.integer  "mobilization_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uid"
   end
 
   add_index "problems", ["mobilization_id"], name: "index_problems_on_mobilization_id", using: :btree
