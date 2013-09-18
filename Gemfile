@@ -65,3 +65,4 @@ gem 'compass-rails', github: "Compass/compass-rails", branch: "rails4-hack"
 gem 'zurb-foundation'
 gem 'coveralls', require: false
 gem 'httparty'
+gem 'schema_plus'

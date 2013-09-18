@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918132419) do
+ActiveRecord::Schema.define(version: 20130918140544) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
@@ -23,6 +26,17 @@ ActiveRecord::Schema.define(version: 20130918132419) do
     t.string   "uid"
   end
 
+  create_table "problems", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.text     "description"
+    t.integer  "mobilization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["mobilization_id"], :name => "index_problems_on_mobilization_id", :order => {"mobilization_id" => :asc}
+  end
+
+  create_view "facts", "SELECT c.id, c.created_at, c.name, c.description_html, c.link, c.mobilization_id, 'campaigns'::text AS relname FROM campaigns c UNION ALL SELECT p.id, p.created_at, p.name, p.description AS description_html, p.link, p.mobilization_id, 'problems'::text AS relname FROM problems p", :force => true
   create_table "ideas", force: true do |t|
     t.string   "name"
     t.string   "link"
@@ -30,9 +44,8 @@ ActiveRecord::Schema.define(version: 20130918132419) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "problem_id"
+    t.index ["problem_id"], :name => "index_ideas_on_problem_id", :order => {"problem_id" => :asc}
   end
-
-  add_index "ideas", ["problem_id"], name: "index_ideas_on_problem_id", using: :btree
 
   create_table "mobilizations", force: true do |t|
     t.datetime "created_at"
@@ -42,16 +55,5 @@ ActiveRecord::Schema.define(version: 20130918132419) do
     t.string   "background_image"
     t.string   "hashtag"
   end
-
-  create_table "problems", force: true do |t|
-    t.string   "name"
-    t.string   "link"
-    t.text     "description"
-    t.integer  "mobilization_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "problems", ["mobilization_id"], name: "index_problems_on_mobilization_id", using: :btree
 
 end

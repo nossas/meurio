@@ -6,8 +6,8 @@ end
 def to_element string
   return ".vision"                  if string == "the Meu Rio's vision"
   return ".principles"              if string == "the Meu Rio's principles"
-  return ".history .item.campaign"  if string == "the PdP campaign on the mobilization history"
-  return ".history .item.problem"   if string == "the Imagine problem on the mobilization history"
+  return ".history .item.campaigns" if string == "the PdP campaign on the mobilization history"
+  return ".history .item.problems"  if string == "the Imagine problem on the mobilization history"
 end
 
 def to_text string
