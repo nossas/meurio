@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918140544) do
+ActiveRecord::Schema.define(version: 20130918145137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20130918140544) do
     t.integer  "mobilization_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uid"
     t.index ["mobilization_id"], :name => "index_problems_on_mobilization_id", :order => {"mobilization_id" => :asc}
   end
 
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20130918140544) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "problem_id"
+    t.string   "uid"
     t.index ["problem_id"], :name => "index_ideas_on_problem_id", :order => {"problem_id" => :asc}
   end
 

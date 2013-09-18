@@ -20,7 +20,7 @@ Then(/^I should see the mobilization's "(.*?)"$/) do |field|
 end
 
 Given(/^there is a mobilization$/) do
-  @mobilization = Mobilization.make!
+  @mobilization = Mobilization.make!  
 end
 
 Given(/^this mobilization have a PdP campaign$/) do

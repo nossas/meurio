@@ -1,4 +1,5 @@
 class Idea < ActiveRecord::Base
-  validates :name, :link, :description, :mobilization_id, presence: true
-  belongs_to :mobilization
+  validates :name, :link, :description, :problem_id, presence: true
+  validates :uid, uniqueness: true
+  belongs_to :problem
 end

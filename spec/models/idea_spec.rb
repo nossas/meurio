@@ -4,6 +4,7 @@ describe Idea do
   it { should validate_presence_of :name }
   it { should validate_presence_of :link }
   it { should validate_presence_of :description }
-  it { should validate_presence_of :mobilization_id }
-  it { should belong_to :mobilization }
+  it { should validate_presence_of :problem_id }
+  it { should validate_uniqueness_of :uid }
+  it { should belong_to :problem }
 end
