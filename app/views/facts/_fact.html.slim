@@ -1,4 +1,4 @@
 .item class=fact.relname
   .name= fact.name
-  .description = truncate(sanitize(fact.description_html), length: 140)
+  .description = sanitize(truncate(fact.description_html, length: 200))
   = link_to t("fact.#{fact.relname}"), fact.link, class: :btn
