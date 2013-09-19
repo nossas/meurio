@@ -1,5 +1,5 @@
 class AddProblemIdToIdea < ActiveRecord::Migration
   def change
-    add_reference :ideas, :problem, index: true
+    add_column :ideas, :problem_id, :integer, index: true
   end
 end
