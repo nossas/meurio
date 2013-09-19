@@ -10,11 +10,6 @@ Given(/^this mobilization have an Imagine problem$/) do
   @problem = Problem.make!(mobilization: @mobilization)
 end
 
-Given(/^the mobilization has a background image$/) do
-  @mobilization.background_image = 'cover.png'
-  @mobilization.save!
-end
-
 Given(/^this campaign have many pokes$/) do
   rand(10..100).times { Poke.make! campaign: @campaign }
 end
