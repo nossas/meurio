@@ -16,7 +16,14 @@
           strong= @mobilization.hashtag
   
 .row
-  .history
-    .large-8.small-12.columns
-      h2 História da Mobilização
-      = render @facts
+  .large-8.small-12.columns.history
+    h2 História da Mobilização
+    = render @facts
+  .large-4.small-12.columns.data
+    h2 Dados
+    - if @mobilization.pokes.any?
+      .pokes_counter
+        span.counter= @mobilization.pokes.count
+        |  
+        span.counter_label= t("pokers", count: @mobilization.pokes.count)
+        span.where no Panela de Pressão

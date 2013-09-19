@@ -32,3 +32,7 @@ Idea.blueprint do
   uid           { sn }
   problem
 end
+
+Poke.blueprint do
+  uid { sn }
+end

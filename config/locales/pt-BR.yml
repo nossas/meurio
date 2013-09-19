@@ -212,3 +212,7 @@ pt-BR:
   fact:
     campaigns: "Pressionar"
     problems: "Envie sua ideia"
+  pokers:
+    zero: "pressionaram"
+    one: "pressionou"
+    other: "pressionaram"

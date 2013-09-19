@@ -18,6 +18,16 @@ namespace :sync do
         end
       end
     end
+
+    task :pokes => :environment do
+      Campaign.all.each do |campaign|
+        pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json").body)
+        pokes.each do |poke|
+          puts poke["id"]
+          Poke.create(uid: poke["id"], campaign: campaign)
+        end
+      end
+    end
   end
 
   namespace :imagine do

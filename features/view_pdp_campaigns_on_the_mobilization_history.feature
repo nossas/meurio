@@ -1,10 +1,10 @@
-Feature: view PdP campaigns on the mobilization history
-  In order to chose a PdP campaign to support
+Feature: view campaigns on the mobilization history
+  In order to chose a campaign to support
   As a visitor
-  I want to view PdP campaigns on the mobilization history
+  I want to view campaigns on the mobilization history
 
-  Scenario: when there is at least one PdP campaign to the mobilization
+  Scenario: when there is at least one campaign to the mobilization
     Given there is a mobilization
-    And this mobilization have a PdP campaign
+    And this mobilization have a campaign
     When I go to "this mobilization page"
-    Then I should see "the PdP campaign on the mobilization history"
+    Then I should see "the campaign on the mobilization history"
