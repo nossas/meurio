@@ -22,7 +22,7 @@
   .large-4.small-12.columns.data
     h2 Dados
     - if @mobilization.pokes.any?
-      .pokes_counter
+      .pokes_counter.icon-message
         span.counter= @mobilization.pokes.count
         |  
         span.counter_label= t("pokers", count: @mobilization.pokes.count)
