@@ -66,4 +66,3 @@ gem 'zurb-foundation'
 gem 'coveralls', require: false
 gem 'httparty'
 gem 'schema_plus'
-gem 'meurio_ui', github: "meurio/meurio_ui"

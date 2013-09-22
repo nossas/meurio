@@ -6,12 +6,6 @@ GIT
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
 
-GIT
-  remote: git://github.com/meurio/meurio_ui.git
-  revision: b712a0950c99fd9f1840f0a7b5e6ea19ddc5a145
-  specs:
-    meurio_ui (1.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -219,7 +213,6 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   machinist (>= 2.0.0.beta2)
-  meurio_ui!
   pg
   rails (= 4.0.0)
   rails_12factor
