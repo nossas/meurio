@@ -6,7 +6,7 @@ Given(/^this mobilization have a campaign$/) do
   @campaign = Campaign.make!(mobilization: @mobilization)
 end
 
-Given(/^this mobilization have an Imagine problem$/) do
+Given(/^this mobilization have a problem$/) do
   @problem = Problem.make!(mobilization: @mobilization)
 end
 
