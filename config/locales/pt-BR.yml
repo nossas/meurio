@@ -216,3 +216,6 @@ pt-BR:
     zero: "pressionaram"
     one: "pressionou"
     other: "pressionaram"
+  ideas:
+    one: "ideia enviada"
+    other: "ideias enviadas"
