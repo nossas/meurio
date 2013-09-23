@@ -59,10 +59,11 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem "slim-rails"
+gem 'slim-rails'
 gem 'inherited_resources'
-gem 'compass-rails', github: "Compass/compass-rails", branch: "rails4-hack"
+gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
 gem 'zurb-foundation'
 gem 'coveralls', require: false
 gem 'httparty'
 gem 'schema_plus'
+gem 'twitter'
