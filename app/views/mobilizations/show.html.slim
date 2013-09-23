@@ -27,3 +27,9 @@
         |  
         span.counter_label= t("pokers", count: @mobilization.pokes.count)
         span.where no Panela de Pressão
+    - if @mobilization.ideas.any?
+      .ideas_counter.icon-message
+        span.counter= @mobilization.ideas.count
+        |  
+        span.counter_label= t("ideas", count: @mobilization.ideas.count)
+        span.where no Imagine

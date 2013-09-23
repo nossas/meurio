@@ -25,6 +25,13 @@ Problem.blueprint do
   mobilization
 end
 
+Idea.blueprint do
+  name          { Faker::Lorem.sentence }
+  description   { Faker::Lorem.paragraph }
+  link          { Faker::Internet.url }
+  uid           { sn }
+end
+
 Poke.blueprint do
   uid { sn }
 end

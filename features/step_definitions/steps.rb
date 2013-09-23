@@ -14,6 +14,10 @@ Given(/^this campaign have many pokes$/) do
   rand(10..100).times { Poke.make! campaign: @campaign }
 end
 
+Given(/^this problem have many ideas$/) do
+  rand(10..100).times { Idea.make! problem: @problem }
+end
+
 When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
   visit to_url(arg1)
 end
