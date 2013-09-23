@@ -35,3 +35,10 @@ end
 Poke.blueprint do
   uid { sn }
 end
+
+Tweet.blueprint do
+  username     { Faker::Internet.user_name }
+  text         { Faker::Lorem.paragraph }
+  hashtag      { Faker::Lorem.word }
+  published_at { Time.now }
+end

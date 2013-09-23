@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923125359) do
+ActiveRecord::Schema.define(version: 20130923210235) do
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
@@ -75,6 +75,15 @@ ActiveRecord::Schema.define(version: 20130923125359) do
     t.string   "uid"
     t.index ["campaign_id"], :name => "fk__pokes_campaign_id", :order => {"campaign_id" => :asc}
     t.foreign_key ["campaign_id"], "campaigns", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_pokes_campaign_id"
+  end
+
+  create_table "tweets", force: true do |t|
+    t.text     "text"
+    t.string   "hashtag"
+    t.string   "username"
+    t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

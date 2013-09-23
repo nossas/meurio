@@ -18,6 +18,10 @@ Given(/^this problem have many ideas$/) do
   rand(10..100).times { Idea.make! problem: @problem }
 end
 
+Given(/^this mobilization have a tweet$/) do
+  @tweet = Tweet.make! hashtag: @mobilization.hashtag
+end
+
 When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
   visit to_url(arg1)
 end

@@ -35,3 +35,7 @@
           |  
           span.counter_label= t("ideas", count: @mobilization.ideas.count)
           span.where no Imagine
+.row
+  .large-4.small-12.columns.comments
+    h2 Comentários
+    = render @tweets
