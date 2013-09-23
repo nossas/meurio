@@ -33,17 +33,30 @@ namespace :sync do
   namespace :imagine do
     task :problems => :environment do
       problems = JSON.parse(HTTParty.get("#{ENV["IMAGINE_HOST"]}/problems.json").body)
-      problems.each do |problem|
-        puts "##{problem['hashtag']} - #{problem['title']}"
-        mobilization = Mobilization.find_by_hashtag(problem["hashtag"])
+      problems.each do |problem_hash|
+        puts "##{problem_hash['hashtag']} - #{problem_hash['title']}"
+        mobilization = Mobilization.find_by(hashtag: problem_hash["hashtag"])
         if mobilization.present?
           Problem.create(
-            name:             problem["title"],
-            link:             "#{ENV["IMAGINE_HOST"]}/problems/#{problem["id"]}",
-            description:      problem["description"],
-            uid:              problem["id"],
+            name:             problem_hash["title"],
+            link:             "#{ENV['IMAGINE_HOST']}/problems/#{problem_hash['id']}",
+            description:      problem_hash["description"],
+            uid:              problem_hash["id"],
             mobilization:     mobilization
           )
+
+          problem = Problem.find_by(uid: problem_hash['id'].to_s)
+          
+          problem_hash['ideas'].each do |idea|
+            puts idea['id']
+            Idea.create(
+              name:             idea["title"],
+              link:             "#{ENV["IMAGINE_HOST"]}/problems/#{problem_hash['id']}/ideas/#{idea['id']}",
+              description:      idea["description"],
+              uid:              idea["id"],
+              problem:          problem
+            )
+          end if problem
         end
       end
     end
