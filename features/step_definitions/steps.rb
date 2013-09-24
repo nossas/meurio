@@ -22,6 +22,10 @@ Given(/^this mobilization have an image$/) do
   @image = Image.make! hashtag: @mobilization.hashtag
 end
 
+Given(/^this mobilization have many tweets$/) do
+  rand(10..50).times { Tweet.make! hashtag: @mobilization.hashtag }
+end
+
 Given(/^this mobilization have a tweet$/) do
   @tweet = Tweet.make! hashtag: @mobilization.hashtag
 end
@@ -36,6 +40,10 @@ end
 
 When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
   visit to_url(arg1)
+end
+
+Then(/^I should see only (\d+) "(.*?)"$/) do |count, arg1|
+  page.should have_css(to_element(arg1), text: to_text(arg1), count: count.to_i)
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|

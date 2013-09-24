@@ -27,4 +27,8 @@ Feature: view tweets on the mobilization comments
     When I go to "this mobilization page"
     Then I should see "the twitter username's link"
 
-  
+  Scenario: when there are many tweets about the mobilization
+    Given there is a mobilization
+    And this mobilization have many tweets
+    When I go to "this mobilization page"
+    Then I should see only 5 "tweets on the mobilization comments"

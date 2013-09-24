@@ -9,6 +9,7 @@ def to_element string
   return ".history .item.campaigns"                     if string == "the campaign on the mobilization history"
   return ".history .item.problems"                      if string == "the problem on the mobilization history"
   return ".comments .item.tweet"                        if string == "the tweet on the mobilization comments"
+  return ".comments .item.tweet"                        if string == "tweets on the mobilization comments"
   return ".comments .item.tweet a.hashtag"              if string == "the tweet's hashtag link"
   return ".comments .item.tweet a.link"                 if string == "the tweet's link"
   return ".comments .item.tweet .username a"            if string == "the twitter username's link"
