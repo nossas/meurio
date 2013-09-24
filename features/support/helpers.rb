@@ -9,6 +9,9 @@ def to_element string
   return ".history .item.campaigns"                     if string == "the campaign on the mobilization history"
   return ".history .item.problems"                      if string == "the problem on the mobilization history"
   return ".comments .item.tweet"                        if string == "the tweet on the mobilization comments"
+  return ".comments .item.tweet a.hashtag"              if string == "the tweet's hashtag link"
+  return ".comments .item.tweet a.link"                 if string == "the tweet's link"
+  return ".comments .item.tweet .username a"            if string == "the twitter username's link"
   return ".pokes_counter .counter"                      if string == "the pokes counter"
   return ".ideas_counter .counter"                      if string == "the ideas counter"
   return ".images .empty"                               if string == "this mobilization have no image yet"
@@ -19,6 +22,8 @@ def to_text string
   return @campaign.name            if string == "the campaign on the mobilization history"
   return @problem.name             if string == "the problem on the mobilization history"
   return @tweet.text               if string == "the tweet on the mobilization comments"
+  return @tweet.hashtag            if string == "the tweet's hashtag link"
+  return @tweet.username           if string == "the twitter username's link"
   return @mobilization.pokes.count if string == "the pokes counter"
   return @mobilization.ideas.count if string == "the ideas counter"
 end

@@ -18,12 +18,20 @@ Given(/^this problem have many ideas$/) do
   rand(10..100).times { Idea.make! problem: @problem }
 end
 
+Given(/^this mobilization have an image$/) do
+  @image = Image.make! hashtag: @mobilization.hashtag
+end
+
 Given(/^this mobilization have a tweet$/) do
   @tweet = Tweet.make! hashtag: @mobilization.hashtag
 end
 
-Given(/^this mobilization have an image$/) do
-  @image = Image.make! hashtag: @mobilization.hashtag
+Given(/^this mobilization have a tweet with a hashtag$/) do
+  @tweet = Tweet.make! hashtag: @mobilization.hashtag, text: "##{@mobilization.hashtag}"
+end
+
+Given(/^this mobilization have a tweet with a link$/) do
+  @tweet = Tweet.make! hashtag: @mobilization.hashtag, text: Faker::Internet.url
 end
 
 When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|

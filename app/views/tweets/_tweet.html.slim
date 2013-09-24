@@ -1,5 +1,5 @@
 .item.tweet
   .header
-    span.username= "@#{tweet.username}"
+    span.username= link_twitter_user tweet.username
     span.where no Twitter
-  span.text = raw tweet.text
+  span.text= twitify_text tweet.text
