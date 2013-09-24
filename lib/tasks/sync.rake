@@ -62,6 +62,22 @@ namespace :sync do
     end
   end
 
+  namespace :twitter do
+    task :tweets => :environment do
+      Mobilization.all.each do |mobilization|
+        Twitter.search(mobilization.hashtag, result_type: 'recent').results.map do |tweet|
+          Tweet.create(
+            hashtag:      mobilization.hashtag,
+            username:     tweet.from_user,
+            text:         tweet.text,
+            uid:          tweet.id,
+            published_at: tweet.created_at
+          )
+        end
+      end
+    end
+  end
+
   namespace :facebook do
     task :images => :environment do
       images = Koala::Facebook::API.new.get_connections("241897672509479", "photos", type: "uploaded", fields: "name,source").select{|image| image["name"].present?}

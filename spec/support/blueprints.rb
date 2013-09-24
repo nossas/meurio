@@ -41,6 +41,7 @@ Tweet.blueprint do
   text         { Faker::Lorem.paragraph }
   hashtag      { Faker::Lorem.word }
   published_at { Time.now }
+  uid          { sn.to_s }
 end
 
 Image.blueprint do
