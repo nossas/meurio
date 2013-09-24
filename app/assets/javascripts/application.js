@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require foundation
+//= require jquery.facebox
 //= require_tree .
+
+$(function() { $('a[rel*=facebox]').facebox() })
