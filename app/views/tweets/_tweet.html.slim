@@ -1,3 +1,5 @@
 .item.tweet
-  .username= tweet.username
-  .text = tweet.text
+  .header
+    span.username= "@#{tweet.username}"
+    span.where no Twitter
+  span.text = raw tweet.text
