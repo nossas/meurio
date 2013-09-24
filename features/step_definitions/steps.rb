@@ -22,6 +22,10 @@ Given(/^this mobilization have a tweet$/) do
   @tweet = Tweet.make! hashtag: @mobilization.hashtag
 end
 
+Given(/^this mobilization have an image$/) do
+  @image = Image.make! hashtag: @mobilization.hashtag
+end
+
 When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
   visit to_url(arg1)
 end

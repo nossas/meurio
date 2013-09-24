@@ -39,3 +39,9 @@
   .large-4.small-12.columns.comments
     h2 Comentários
     = render @tweets
+  .large-8.small-12.columns.images
+    h2 Imagens
+    - if @mobilization.images.empty?
+      .empty Esta mobilização ainda não possui imagens :(
+    - else
+      = render @mobilization.images

@@ -42,3 +42,7 @@ Tweet.blueprint do
   hashtag      { Faker::Lorem.word }
   published_at { Time.now }
 end
+
+Image.blueprint do
+  url { "http://lorempixel.com/1024/768/abstract/#{sn.to_i}" }
+end
