@@ -61,4 +61,16 @@ namespace :sync do
       end
     end
   end
+
+  namespace :facebook do
+    task :images => :environment do
+      images = Koala::Facebook::API.new.get_connections("241897672509479", "photos", type: "uploaded", fields: "name,source").select{|image| image["name"].present?}
+      images.each do |image|
+        mobilization = Mobilization.where("hashtag IN (?)", image["name"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
+        if mobilization.present?
+          Image.create url: image["source"], hashtag: mobilization.hashtag
+        end
+      end
+    end
+  end
 end

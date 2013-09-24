@@ -67,3 +67,4 @@ gem 'coveralls', require: false
 gem 'httparty'
 gem 'schema_plus'
 gem 'twitter'
+gem 'koala'
