@@ -213,9 +213,9 @@ pt-BR:
     campaigns: "Pressionar"
     problems: "Envie sua ideia"
   pokers:
-    zero: "pressionaram"
-    one: "pressionou"
-    other: "pressionaram"
+    zero: "pressões"
+    one: "pressão"
+    other: "pressões"
   ideas:
     one: "ideia enviada"
     other: "ideias enviadas"
