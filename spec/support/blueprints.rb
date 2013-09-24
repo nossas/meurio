@@ -44,5 +44,6 @@ Tweet.blueprint do
 end
 
 Image.blueprint do
-  url { "http://lorempixel.com/1024/768/abstract/#{sn.to_i}" }
+  remote_file_url { "http://lorempixel.com/1024/768/abstract/#{sn.to_i}" }
+  uid             { sn.to_s }
 end

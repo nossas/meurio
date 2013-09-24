@@ -68,7 +68,7 @@ namespace :sync do
       images.each do |image|
         mobilization = Mobilization.where("hashtag IN (?)", image["name"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
         if mobilization.present?
-          Image.create url: image["source"], hashtag: mobilization.hashtag
+          Image.create remote_file_url: image["source"], hashtag: mobilization.hashtag, uid: image["id"]
         end
       end
     end

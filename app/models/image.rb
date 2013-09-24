@@ -1,4 +1,6 @@
 class Image < ActiveRecord::Base
-  validates :url, :hashtag, presence: true
-  validates :url, uniqueness: true
+  validates :file, :hashtag, :uid, presence: true
+  validates :uid, uniqueness: true
+
+  mount_uploader :file, ImageUploader
 end

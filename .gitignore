@@ -19,3 +19,4 @@ config/database.yml
 .DS_Store
 coverage
 config/initializers/01_envvars.rb
+public/uploads
