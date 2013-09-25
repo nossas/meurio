@@ -8,17 +8,17 @@ def to_element string
   return ".principles"                                  if string == "the Meu Rio's principles"
   return ".history .item.campaigns"                     if string == "the campaign on the mobilization history"
   return ".history .item.problems"                      if string == "the problem on the mobilization history"
-  return ".comments .item.tweet"                        if string == "the tweet on the mobilization comments"
-  return ".comments .item.tweet"                        if string == "tweets on the mobilization comments"
-  return ".comments .item.tweet a.hashtag"              if string == "the tweet's hashtag link"
-  return ".comments .item.tweet a.link"                 if string == "the tweet's link"
-  return ".comments .item.tweet .username a"            if string == "the twitter username's link"
+  return ".comments .item.tweets"                       if string == "the tweet on the mobilization comments"
+  return ".comments .item.tweets"                       if string == "tweets on the mobilization comments"
+  return ".comments .item.tweets a"                     if string == "the tweet's hashtag link"
+  return ".comments .item.tweets a"                     if string == "the tweet's link"
+  return ".comments .item.tweets .username a"           if string == "the twitter username's link"
   return ".pokes_counter .counter"                      if string == "the pokes counter"
   return ".ideas_counter .counter"                      if string == "the ideas counter"
   return ".images .empty"                               if string == "this mobilization have no image yet"
   return ".images img[src='#{@image.file.square.url}']" if string == "this mobilization image"
   return ".comments .empty"                             if string == "this mobilization have no comment yet"
-  return ".facebook_post .text"                         if string == "this mobilization Facebook post"
+  return ".facebook_posts .text"                        if string == "this mobilization Facebook post"
 end
 
 def to_text string
