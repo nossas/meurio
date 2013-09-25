@@ -1,5 +1,12 @@
-.item.tweet
-  .header
-    span.username= link_twitter_user comment.username
-    span.where no Twitter
-  span.text= twitify_text comment.text
+- if comment.tweet?
+  .item.tweet
+    .header
+      span.username= link_twitter_user comment.username
+      span.where no Twitter
+    span.text= twitify_text comment.text
+- else
+  .item.facebook_post
+    .header
+      span.username= comment.username
+      span.where no Facebook
+    span.text= comment.text.truncate(140)

@@ -38,6 +38,10 @@ Given(/^this mobilization have a tweet with a link$/) do
   @tweet = Tweet.make! hashtag: @mobilization.hashtag, text: Faker::Internet.url
 end
 
+Given(/^this mobilization have a Facebook post$/) do
+  @facebook_post = FacebookPost.make! hashtag: @mobilization.hashtag
+end
+
 When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
   visit to_url(arg1)
 end
