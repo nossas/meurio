@@ -3,7 +3,7 @@
     .header
       span.username= link_twitter_user comment.username
       span.where no Twitter
-    span.text= twitify_text comment.text
+    span.text= raw comment.text_html
 - else
   .item.facebook_post
     .header

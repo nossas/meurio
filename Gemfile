@@ -72,4 +72,4 @@ gem 'facebox-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-gem "auto_html"
+gem 'auto_html', github: 'josiasds/auto_html'
