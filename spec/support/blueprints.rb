@@ -48,3 +48,11 @@ Image.blueprint do
   remote_file_url { "http://lorempixel.com/1024/768/abstract/#{sn.to_i}" }
   uid             { sn.to_s }
 end
+
+FacebookPost.blueprint do
+  # Attributes here
+end
+
+Comment.blueprint do
+  # Attributes here
+end

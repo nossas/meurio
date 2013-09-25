@@ -17,6 +17,7 @@ def to_element string
   return ".ideas_counter .counter"                      if string == "the ideas counter"
   return ".images .empty"                               if string == "this mobilization have no image yet"
   return ".images img[src='#{@image.file.square.url}']" if string == "this mobilization image"
+  return ".comments .empty"                             if string == "this mobilization have no comment yet"
 end
 
 def to_text string
