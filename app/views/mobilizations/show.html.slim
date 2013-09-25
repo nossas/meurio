@@ -34,13 +34,13 @@
         span.counter_label= t("ideas", count: @mobilization.ideas.count)
         span.where no Imagine
 .row
-  .large-4.small-12.columns.comments
+  .large-5.small-12.columns.comments
     h2 Comentários
     - if @comments.empty?
       .empty Esta mobilização ainda não possui comentários :\
     - else      
       = render @comments
-  .large-8.small-12.columns.images
+  .large-7.small-12.columns.images
     h2 Imagens
     - if @mobilization.images.empty?
       .empty Esta mobilização ainda não possui imagens :(

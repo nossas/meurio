@@ -2,11 +2,21 @@
   .item.tweet
     .header
       span.username= link_twitter_user comment.username
+      |  
       span.where no Twitter
+      |  
+      span.when
+      | há 
+      = time_ago_in_words(comment.published_at)
     span.text= raw comment.text_html
 - else
   .item.facebook_post
     .header
       span.username= comment.username
+      |  
       span.where no Facebook
-    span.text= raw comment.text_html
+      |  
+      span.when
+        | há 
+        = time_ago_in_words(comment.published_at)
+    span.text= raw truncate_html(comment.text_html, length: 140)

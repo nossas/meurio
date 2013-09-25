@@ -3,7 +3,7 @@ class Tweet < ActiveRecord::Base
   validates :uid, uniqueness: true
 
   auto_html_for :text do
-    link target: :blank, rel: :nofollow
+    link target: :blank, rel: :nofollow, class: 'link'
     twitter_hashtag
   end
 end

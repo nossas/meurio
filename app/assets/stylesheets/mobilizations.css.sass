@@ -95,17 +95,18 @@ body.mobilizations.show
       font-size: .9em
       line-height: 1.2em
       .header
-        span
-          margin-right: .3em
-          font-weight: 800
-      .username
-        a
+        span.username
           color: $green
-          font-size: 1.1em
-      .where
+          a
+            color: $green
+        span.username, span.where
+          font-weight: 800
+        span.when
+          font-size: .9em
+      span.where, span.when
         color: $light-grey
       .text
-        .link
+        a
           color: $orange
         .hashtag
           color: $light-grey
