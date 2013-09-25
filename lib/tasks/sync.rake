@@ -92,13 +92,14 @@ namespace :sync do
     task :posts => :environment do
       graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
       Mobilization.all.each do |mobilization|
-        posts = graph.search(mobilization.hashtag)
+        posts = graph.search(mobilization.hashtag, type: "post", fields: "from,message,created_time,id")
         posts.each do |post|
           FacebookPost.create(
             hashtag:      mobilization.hashtag,
             username:     post["from"]["name"],
             text:         post["message"],
             published_at: post["created_time"],
+            user_uid:     post["from"]["id"],
             uid:          post["id"]
           )
         end

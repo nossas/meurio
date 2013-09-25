@@ -1,22 +1,10 @@
-- if comment.tweet?
-  .item.tweet
-    .header
-      span.username= link_twitter_user comment.username
-      |  
-      span.where no Twitter
-      |  
-      span.when
+.item class=comment.relname
+  .header
+    span.username= link_to comment.username, user_link(comment)
+    |  
+    span.where= t comment.relname
+    |  
+    span.when
       | há 
       = time_ago_in_words(comment.published_at)
-    span.text= twitify_text comment.text
-- else
-  .item.facebook_post
-    .header
-      span.username= comment.username
-      |  
-      span.where no Facebook
-      |  
-      span.when
-        | há 
-        = time_ago_in_words(comment.published_at)
-    span.text= raw truncate_html(comment.text_html, length: 140)
+  span.text= raw truncate_html(comment.text_html, length: 140)
