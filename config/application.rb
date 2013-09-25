@@ -24,5 +24,6 @@ module Meurio
     config.generators do |g|
       g.fixture_replacement :machinist
     end
+    config.assets.initialize_on_precompile = false
   end
 end
