@@ -50,7 +50,11 @@ Image.blueprint do
 end
 
 FacebookPost.blueprint do
-  # Attributes here
+  username      { Faker::Internet.user_name }
+  text          { Faker::Lorem.paragraph }
+  hashtag       { Faker::Lorem.word }
+  published_at  { Time.now }
+  uid           { sn.to_s }
 end
 
 Comment.blueprint do
