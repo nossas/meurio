@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130925123231) do
+ActiveRecord::Schema.define(version: 20130925144257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20130925123231) do
     t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   create_table "tweets", force: true do |t|
@@ -44,9 +45,10 @@ ActiveRecord::Schema.define(version: 20130925123231) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "uid"
+    t.text     "text_html"
   end
 
-  create_view "comments", "SELECT t.id, t.created_at, t.text, t.hashtag, t.username, t.published_at, 'tweets'::text AS relname FROM tweets t UNION ALL SELECT fp.id, fp.created_at, fp.text, fp.hashtag, fp.username, fp.published_at, 'facebook_posts'::text AS relname FROM facebook_posts fp", :force => true
+  create_view "comments", "SELECT t.id, t.created_at, t.text, t.hashtag, t.username, t.published_at, t.text_html, 'tweets'::text AS relname FROM tweets t UNION ALL SELECT fp.id, fp.created_at, fp.text, fp.hashtag, fp.username, fp.published_at, fp.text_html, 'facebook_posts'::text AS relname FROM facebook_posts fp", :force => true
   create_table "problems", force: true do |t|
     t.string   "name"
     t.string   "link"

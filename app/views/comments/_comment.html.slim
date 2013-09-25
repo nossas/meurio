@@ -9,4 +9,4 @@
     .header
       span.username= comment.username
       span.where no Facebook
-    span.text= comment.text.truncate(140)
+    span.text= raw comment.text_html
