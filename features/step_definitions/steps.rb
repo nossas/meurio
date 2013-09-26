@@ -46,6 +46,14 @@ Given(/^this mobilization have a Facebook post$/) do
   @facebook_post = FacebookPost.make! hashtag: @mobilization.hashtag
 end
 
+When(/^I fill "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
+  fill_in arg1, with: arg2
+end
+
+When /^I press "([^"]*)"$/ do |arg1|
+  click_button arg1
+end
+
 Then(/^I should see only (\d+) "(.*?)"$/) do |count, arg1|
   page.should have_css(to_element(arg1), text: to_text(arg1), count: count.to_i)
 end
@@ -64,4 +72,12 @@ end
 
 Then(/^I should see the mobilization's "(.*?)"$/) do |field|
   page.should have_content(mobilization_field(field))
+end
+
+Then(/^I should be in "(.*?)"$/) do |arg1|
+  page.current_path.should be_== to_url(arg1)
+end
+
+Then(/^a mobilization should exists$/) do
+  @mobilization = Mobilization.first  
 end
