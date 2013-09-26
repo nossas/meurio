@@ -51,7 +51,6 @@ Then(/^I should see only (\d+) "(.*?)"$/) do |count, arg1|
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|
-  puts find(".mobilization form").text
   page.should have_css(to_element(arg1), text: to_text(arg1))
 end
 
