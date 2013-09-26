@@ -48,7 +48,8 @@ group :test do
   gem 'simplecov', :require => false
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'faker'
-  gem "shoulda-matchers"
+  gem 'shoulda-matchers'
+  gem 'launchy'
 end
 
 group :development, :test do

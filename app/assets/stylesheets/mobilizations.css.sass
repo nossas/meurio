@@ -1,4 +1,9 @@
 body.mobilizations.index
+  header
+    padding: 1em 0
+    img
+      width: 60px
+      height: 60px
   h2
     font-size: 1.75em
     font-weight: normal
@@ -19,7 +24,7 @@ body.mobilizations.index
         font-size: 1.1em
 
 body.mobilizations.show
-  background: #f4f5f7
+  background: $background-grey
   header
     display: none
   .cover
@@ -145,3 +150,10 @@ body.mobilizations.show
         border-color: $orange
   #facebox .popup .image
     width: auto
+
+body.mobilizations.new
+  background-color: $background-grey
+  h2
+    color: $green
+    font-size: 1.5em
+    padding-top: 1em

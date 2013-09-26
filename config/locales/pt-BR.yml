@@ -220,7 +220,7 @@ pt-BR:
     one: "ideia enviada"
     other: "ideias enviadas"
   shares:
-    one: "compartilhou"
-    other: "compartilharam"
+    one: "compartilhamento"
+    other: "compartilhamentos"
   facebook_posts: "no Facebook"
   tweets: "no Twitter"

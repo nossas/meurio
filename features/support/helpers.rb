@@ -1,6 +1,7 @@
 def to_url string
   return root_path                        if string == "the homepage"
   return mobilization_path(@mobilization) if string == "this mobilization page"
+  return new_mobilization_path            if string == "new mobilization page"
 end
 
 def to_element string
@@ -20,6 +21,7 @@ def to_element string
   return ".images img[src='#{@image.file.square.url}']" if string == "this mobilization image"
   return ".comments .empty"                             if string == "this mobilization have no comment yet"
   return ".facebook_posts .text"                        if string == "this mobilization Facebook post"
+  return ".mobilization form"                           if string == "the mobilization form"
 end
 
 def to_text string
