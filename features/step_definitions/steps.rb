@@ -1,3 +1,7 @@
+Given(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
+  visit to_url(arg1)
+end
+
 Given(/^there is a mobilization$/) do
   @mobilization = Mobilization.make!  
 end
@@ -42,15 +46,12 @@ Given(/^this mobilization have a Facebook post$/) do
   @facebook_post = FacebookPost.make! hashtag: @mobilization.hashtag
 end
 
-When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
-  visit to_url(arg1)
-end
-
 Then(/^I should see only (\d+) "(.*?)"$/) do |count, arg1|
   page.should have_css(to_element(arg1), text: to_text(arg1), count: count.to_i)
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|
+  puts find(".mobilization form").text
   page.should have_css(to_element(arg1), text: to_text(arg1))
 end
 
