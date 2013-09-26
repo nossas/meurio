@@ -4,4 +4,8 @@ class MobilizationsController < InheritedResources::Base
     @comments = resource.comments.order("published_at DESC").limit(5)
     show!
   end
+
+  def permitted_params
+    params.permit(:mobilization => [:title, :hashtag, :description])
+  end
 end

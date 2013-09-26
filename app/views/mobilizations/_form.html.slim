@@ -1,2 +1,12 @@
 = form_for @mobilization do |f|
-  = f.submit 'Criar Mobilização'
+  p
+    = f.label :title
+    = f.text_field :title
+  p
+    = f.label :hashtag
+    = f.text_field :hashtag
+  p
+    = f.label :description
+    = f.text_area :description
+  p
+    = f.submit 'Criar Mobilização'
