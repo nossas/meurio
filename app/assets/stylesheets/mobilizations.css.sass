@@ -76,9 +76,9 @@ body.mobilizations.show
   .data
     .row
       margin-bottom: 1.5em
-    .pokes_counter, .ideas_counter
+    .pokes_counter, .ideas_counter, .shares_counter
       clear: both
-      margin-bottom: 1em
+      margin-bottom: 1.5em
       .counter
         font-size: 1.25em
       .counter_label, .counter
@@ -93,6 +93,11 @@ body.mobilizations.show
         margin-right: .25em
         padding-top: .1em
         color: $lightest_grey
+        width: 40px
+    .shares_counter
+      &:before
+        top: -5px
+        position: relative
   .comments
     .tweets, .facebook_posts
       border-bottom: .15em solid #eee
@@ -121,7 +126,17 @@ body.mobilizations.show
         span.username
           &:before
             content: "@"
-
+    .tip
+      text-transform: uppercase
+      font-size: .8em
+      font-weight: bold
+      padding: .5em
+      color: gray
+      border: 3px solid $lightest_grey
+      line-height: 1.5em
+      strong
+        color: #333
+        font-weight: bolder
   .images
     img
       width: 99px

@@ -14,7 +14,7 @@
         span 
           | Compartilhe nas Redes Sociais, sempre usando a hashtag #
           strong= @mobilization.hashtag
-  
+
 .row
   .large-8.small-12.columns.history
     h2 História da Mobilização
@@ -33,9 +33,18 @@
         |  
         span.counter_label= t("ideas", count: @mobilization.ideas.count)
         span.where no Imagine
+    - if @mobilization.comments.any?
+      .shares_counter.icon-share
+        span.counter= @mobilization.comments.count
+        |  
+        span.counter_label= t("shares", count: @mobilization.comments.count)
+        span.where nas redes sociais
+
 .row
   .large-5.small-12.columns.comments
     h2 Comentários
+    .tip
+      | Utilize a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para compartilhar seus comentários sobre esta mobilização nas redes sociais.
     - if @comments.empty?
       .empty Esta mobilização ainda não possui comentários :\
     - else      

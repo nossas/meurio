@@ -46,6 +46,10 @@ Given(/^this mobilization have a Facebook post$/) do
   @facebook_post = FacebookPost.make! hashtag: @mobilization.hashtag
 end
 
+Given(/^this mobilization have some shares$/) do
+  rand(1..10).times { FacebookPost.make! hashtag: @mobilization.hashtag }
+end
+
 When(/^I fill "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in arg1, with: arg2
 end
