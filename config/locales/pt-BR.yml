@@ -219,5 +219,8 @@ pt-BR:
   ideas:
     one: "ideia enviada"
     other: "ideias enviadas"
+  shares:
+    one: "compartilhou"
+    other: "compartilharam"
   facebook_posts: "no Facebook"
   tweets: "no Twitter"

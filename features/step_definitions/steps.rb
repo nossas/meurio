@@ -42,6 +42,10 @@ Given(/^this mobilization have a Facebook post$/) do
   @facebook_post = FacebookPost.make! hashtag: @mobilization.hashtag
 end
 
+Given(/^this mobilization have some shares$/) do
+  rand(1..10).times { FacebookPost.make! hashtag: @mobilization.hashtag }
+end
+
 When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
   visit to_url(arg1)
 end
