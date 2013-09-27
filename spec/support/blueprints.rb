@@ -3,10 +3,10 @@ require 'machinist/active_record'
 # Add your blueprints here.
 
 Mobilization.blueprint do
-  title            { Faker::Lorem.sentence }
-  description      { Faker::Lorem.paragraph }
-  background_image { "http://lorempixel.com/1920/500/abstract/#{sn.to_i}" }
-  hashtag          { Faker::Lorem.word }
+  title       { Faker::Lorem.sentence }
+  description { Faker::Lorem.paragraph }
+  image       { File.open("#{Rails.root}/features/support/image.jpeg") }
+  hashtag     { Faker::Lorem.word }
 end
 
 Campaign.blueprint do
@@ -45,8 +45,8 @@ Tweet.blueprint do
 end
 
 Image.blueprint do
-  remote_file_url { "http://lorempixel.com/1024/768/abstract/#{sn.to_i}" }
-  uid             { sn.to_s }
+  file  { File.open("#{Rails.root}/features/support/image.jpeg") }
+  uid   { sn.to_s }
 end
 
 FacebookPost.blueprint do
