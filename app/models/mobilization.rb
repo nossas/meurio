@@ -6,4 +6,6 @@ class Mobilization < ActiveRecord::Base
   has_many :images, primary_key: :hashtag, foreign_key: :hashtag
   has_many :facts
   has_many :comments, primary_key: :hashtag, foreign_key: :hashtag
+
+  mount_uploader :background_image, ImageUploader
 end

@@ -13,6 +13,10 @@
     .large-12.columns
       = f.label :description
       = f.text_area :description
+  .row
+    .large-12.columns
+      = f.label :background_image
+      = f.file_field :background_image
   .row.action
     .large-6.columns.submit
       = f.submit 'Criar Mobilização', class: 'btn'

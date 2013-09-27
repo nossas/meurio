@@ -6,6 +6,6 @@ class MobilizationsController < InheritedResources::Base
   end
 
   def permitted_params
-    params.permit(:mobilization => [:title, :hashtag, :description])
+    params.permit(:mobilization => [:title, :hashtag, :description, :background_image])
   end
 end
