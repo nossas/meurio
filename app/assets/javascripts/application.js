@@ -19,4 +19,24 @@
 $.facebox.settings.closeImage = 'http://i.imgur.com/k9awT9O.png'
 $.facebox.settings.loadingImage = 'http://i.imgur.com/bFbQqWu.gif'
 
-$(function() { $('a[rel*=facebox]').facebox() })
+$(function(){
+  $('a[rel*=facebox]').facebox();
+  
+  $(".twitter-share-button").click(function(event){
+    window.open(
+      $(event.target).attr("href"), 
+      'twitter-share-dialog', 
+      'width=550,height=450'
+    ); 
+    return false;
+  });
+
+  $(".facebox-share-button").click(function(event){
+    window.open(
+      $(event.target).attr("href"), 
+      'facebox-share-dialog', 
+      'width=626,height=436'
+    ); 
+    return false;
+  });
+})
