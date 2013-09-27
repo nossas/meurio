@@ -1,5 +1,6 @@
 = content_for(:title) { @mobilization.title }
 = content_for(:image) { @mobilization.image.square.url }
+= content_for(:description) { @mobilization.description }
 
 .mobilization
   .cover *{style: show_mobilization_bg}
