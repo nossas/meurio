@@ -209,6 +209,10 @@ pt-BR:
   activerecord:
     errors:
       <<: *errors
+    attributes:
+      mobilization:
+        title: "Nome da Mobilização"
+        description: "Descrição"
   fact:
     campaigns: "Pressionar"
     problems: "Envie sua ideia"

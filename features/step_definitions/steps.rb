@@ -1,3 +1,7 @@
+Given(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
+  visit to_url(arg1)
+end
+
 Given(/^there is a mobilization$/) do
   @mobilization = Mobilization.make!  
 end
@@ -46,8 +50,12 @@ Given(/^this mobilization have some shares$/) do
   rand(1..10).times { FacebookPost.make! hashtag: @mobilization.hashtag }
 end
 
-When(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
-  visit to_url(arg1)
+When(/^I fill "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
+  fill_in arg1, with: arg2
+end
+
+When /^I press "([^"]*)"$/ do |arg1|
+  click_button arg1
 end
 
 Then(/^I should see only (\d+) "(.*?)"$/) do |count, arg1|
@@ -68,4 +76,12 @@ end
 
 Then(/^I should see the mobilization's "(.*?)"$/) do |field|
   page.should have_content(mobilization_field(field))
+end
+
+Then(/^I should be in "(.*?)"$/) do |arg1|
+  page.current_path.should be_== to_url(arg1)
+end
+
+Then(/^a mobilization should exists$/) do
+  @mobilization = Mobilization.first  
 end
