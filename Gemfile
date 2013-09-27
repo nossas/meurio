@@ -45,11 +45,12 @@ end
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
-  gem 'simplecov', :require => false
-  gem 'machinist', '>= 2.0.0.beta2'
   gem 'faker'
-  gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'machinist', '>= 2.0.0.beta2'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
+  gem 'simplecov', :require => false
 end
 
 group :development, :test do
@@ -75,3 +76,4 @@ gem 'mini_magick'
 gem 'fog'
 gem 'auto_html', github: 'josiasds/auto_html'
 gem 'truncate_html'
+gem 'client_side_validations', github: 'bcardarella/client_side_validations', branch: "4-0-beta"

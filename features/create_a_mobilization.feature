@@ -8,6 +8,7 @@ Feature: Create a mobilization
     When I go to "new mobilization page"
     Then I should see "the mobilization form"
 
+  @javascript
   Scenario: when I fill the form correctly
     Given I'm in "new mobilization page"
     And I fill "Nome da Mobilização" with "De Guarda no Bondinho"
@@ -15,5 +16,14 @@ Feature: Create a mobilization
     And I fill "Descrição" with "O Governo do Estado do Rio de Janeiro está sucateando o patrimônio histórico nacional."
     And I attach an image to "Imagem de fundo"
     When I press "Criar Mobilização"
-    Then a mobilization should exists
-    And I should be in "this mobilization page"
+    And I should be in "the first mobilization page"
+
+  @javascript
+  Scenario: when I don't fill the form correctly
+    Given I'm in "new mobilization page"
+    When I press "Criar Mobilização"
+    Then I should be in "new mobilization page"
+    And I should see "mobilization title field error"
+    And I should see "mobilization hashtag field error"
+    And I should see "mobilization description field error"
+    And I should see "mobilization image field error"
