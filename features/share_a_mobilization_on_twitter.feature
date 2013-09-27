@@ -3,7 +3,7 @@ Feature: share a mobilization on Twitter
   As a visitor
   I want to share a mobilization on Twitter
 
-  Scenario: when I'm in the mobilization's page
+  Scenario:
     Given there is a mobilization
     When I go to "this mobilization page"
     Then I should see "the Twitter share button of this mobilization"

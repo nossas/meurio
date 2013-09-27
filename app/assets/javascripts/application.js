@@ -30,4 +30,13 @@ $(function(){
     ); 
     return false;
   });
+
+  $(".facebox-share-button").click(function(event){
+    window.open(
+      $(event.target).attr("href"), 
+      'facebox-share-dialog', 
+      'width=626,height=436'
+    ); 
+    return false;
+  });
 })

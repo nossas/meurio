@@ -18,6 +18,7 @@
     .row
       .large-12.columns
         = link_to "Tweetar", "https://twitter.com/share?url=#{request.url}&text=#{@mobilization.title}&hashtags=#{@mobilization.hashtag}", class: "twitter-share-button"
+        = link_to "Compartilhar", "https://www.facebook.com/sharer/sharer.php?u=#{request.url}", class: "facebox-share-button"
 
 .row
   .large-8.small-12.columns.history

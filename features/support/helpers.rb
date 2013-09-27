@@ -23,6 +23,7 @@ def to_element string
   return ".facebook_posts .text"                        if string == "this mobilization Facebook post"
   return ".mobilization form"                           if string == "the mobilization form"
   return ".mobilization .share .twitter-share-button"   if string == "the Twitter share button of this mobilization"
+  return ".mobilization .share .facebox-share-button"   if string == "the Facebook share button of this mobilization"
 end
 
 def to_text string
