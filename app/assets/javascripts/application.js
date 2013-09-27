@@ -31,7 +31,7 @@ $(function(){
     return false;
   });
 
-  $(".facebox-share-button").click(function(event){
+  $(".facebook-share-button").click(function(event){
     window.open(
       $(event.target).attr("href"), 
       'facebox-share-dialog', 
