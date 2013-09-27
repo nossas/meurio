@@ -25,7 +25,7 @@ def to_element string
   return ".facebook_posts .text"                                    if string == "this mobilization Facebook post"
   return ".mobilization form"                                       if string == "the mobilization form"
   return ".mobilization .share .twitter-share-button"               if string == "the Twitter share button of this mobilization"
-  return ".mobilization .share .facebox-share-button"               if string == "the Facebook share button of this mobilization"
+  return ".mobilization .share .facebook-share-button"              if string == "the Facebook share button of this mobilization"
   return ".field_with_errors label[for='mobilization_title']"       if string == "mobilization title field error"
   return ".field_with_errors label[for='mobilization_description']" if string == "mobilization description field error"
   return ".field_with_errors label[for='mobilization_hashtag']"     if string == "mobilization hashtag field error"
