@@ -50,6 +50,10 @@ Given(/^this mobilization have some shares$/) do
   rand(1..10).times { FacebookPost.make! hashtag: @mobilization.hashtag }
 end
 
+When(/^I attach an image to "([^"]*)"$/) do |arg1|
+  attach_file arg1, File.dirname(__FILE__) + "/../support/mobilization.jpg"
+end
+
 When(/^I fill "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in arg1, with: arg2
 end

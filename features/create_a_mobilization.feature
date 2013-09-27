@@ -13,6 +13,7 @@ Feature: Create a mobilization
     And I fill "Nome da Mobilização" with "De Guarda no Bondinho"
     And I fill "Hashtag" with "DeGuardaNoBondinho"
     And I fill "Descrição" with "O Governo do Estado do Rio de Janeiro está sucateando o patrimônio histórico nacional."
+    And I attach an image to "Imagem de fundo"
     When I press "Criar Mobilização"
     Then a mobilization should exists
     And I should be in "this mobilization page"
