@@ -213,7 +213,7 @@ pt-BR:
       mobilization:
         title: "Nome da Mobilização"
         description: "Descrição"
-        background_image: "Imagem de fundo"
+        image: "Imagem de fundo"
   fact:
     campaigns: "Pressionar"
     problems: "Envie sua ideia"

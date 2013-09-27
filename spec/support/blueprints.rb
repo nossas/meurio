@@ -5,7 +5,7 @@ require 'machinist/active_record'
 Mobilization.blueprint do
   title            { Faker::Lorem.sentence }
   description      { Faker::Lorem.paragraph }
-  background_image { "http://lorempixel.com/1920/500/abstract/#{sn.to_i}" }
+  image            { "http://lorempixel.com/1920/500/abstract/#{sn.to_i}.png" }
   hashtag          { Faker::Lorem.word }
 end
 
