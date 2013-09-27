@@ -1,12 +1,21 @@
 = form_for @mobilization do |f|
-  p
-    = f.label :title
-    = f.text_field :title
-  p
-    = f.label :hashtag
-    = f.text_field :hashtag
-  p
-    = f.label :description
-    = f.text_area :description
-  p
-    = f.submit 'Criar Mobilização'
+  .row
+    .large-12.columns
+      = f.label :title
+      = f.text_field :title
+  .row
+    .large-6.columns
+      = f.label :hashtag
+      = f.text_field :hashtag
+    .large-6.columns.hint
+      span A hashtag escolhida deve ser utilizada em todas as plataformas e comunicações
+  .row
+    .large-12.columns
+      = f.label :description
+      = f.text_area :description
+  .row.action
+    .large-6.columns.submit
+      = f.submit 'Criar Mobilização', class: 'btn'
+    .large-6.columns.cancel
+      span ou 
+      = link_to 'Cancelar', root_path

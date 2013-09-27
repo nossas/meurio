@@ -157,3 +157,28 @@ body.mobilizations.new
     color: $green
     font-size: 1.5em
     padding-top: 1em
+  form
+    label
+      font-weight: bold
+      margin-bottom: .7em
+    input[type="text"], textarea
+      +border-radius(5px)
+      border: 2px $form-border solid
+      font-size: 1.1em
+      resize: none
+    textarea
+      height: 15em
+    .hint
+      font-size: .8em
+      padding: 2em 0
+    .action
+      .btn
+        text-transform: none
+        font-size: 1em
+        padding: .7em
+        width: 100%
+      .cancel
+        padding: 1em 0
+        a
+          color: red
+          font-weight: bold
