@@ -63,6 +63,20 @@ body.mobilizations.show
     background: white
     margin-bottom: 2em
     padding: 1em 0
+    .twitter-share-button
+      color: $tw_blue
+      &:before
+        top: 3px
+    .facebook-share-button
+      color: $fb_blue
+      margin-right: 2em
+      &:before
+        top: 2px
+    .twitter-share-button, .facebook-share-button
+      font-weight: 800
+      &:before
+        position: relative
+        margin-right: .25em
   .history
     .item
       background: white

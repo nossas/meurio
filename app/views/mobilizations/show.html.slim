@@ -21,8 +21,8 @@
   .share
     .row
       .large-12.columns
-        = link_to "Tweetar", "https://twitter.com/share?url=#{request.url}&text=#{@mobilization.title}&hashtags=#{@mobilization.hashtag}", class: "twitter-share-button"
-        = link_to "Compartilhar", "https://www.facebook.com/sharer/sharer.php?u=#{request.url}", class: "facebox-share-button"
+        = link_to "Compartilhar", "https://www.facebook.com/sharer/sharer.php?u=#{request.url}", class: ["facebook-share-button", "icon-facebook"]
+        = link_to "Twittar", "https://twitter.com/share?url=#{request.url}&text=#{@mobilization.title}&hashtags=#{@mobilization.hashtag}", class: ["twitter-share-button", "icon-twitter"]
 
 .row
   .large-8.small-12.columns.history
