@@ -1,11 +1,14 @@
 doctype
 html
   head
-    title Meurio
+    title= "#{content_for?(:title) ? yield(:title) : "Meu Rio"}"
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
     == "<!--[if lt IE 7 ]>#{javascript_include_tag "lte-ie7"}<![endif]-->"
+    meta name="fb:app_id" content="#{ENV["FB_APP_ID"]}"
+    meta name="og:title"  content="#{content_for?(:title) ? yield(:title) : "Meu Rio"}"
+    meta name="og:image"  content="#{content_for?(:image) ? yield(:image) : "http://i.imgur.com/zbXo6hm.png"}"
   body class=[controller.controller_name, controller.action_name]
     #fb-root
     javascript:

@@ -1,3 +1,6 @@
+= content_for(:title) { @mobilization.title }
+= content_for(:image) { @mobilization.image.square.url }
+
 .mobilization
   .cover *{style: show_mobilization_bg}
     .row
