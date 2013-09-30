@@ -3,7 +3,7 @@
     .large-12.columns
       = f.label :title
       = f.text_field :title
-  .row
+  .row.hashtag
     .large-6.columns
       = f.label :hashtag
       = f.text_field :hashtag
@@ -17,6 +17,8 @@
     .large-12.columns
       = f.label :image
       = f.file_field :image
+      .hint
+        span A imagem ideal deve ter no mínimo 1900px de largura
   .row.action
     .large-6.columns.submit
       = f.submit 'Criar Mobilização', class: 'btn'
