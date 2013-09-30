@@ -8,4 +8,6 @@ class Mobilization < ActiveRecord::Base
   has_many :comments, primary_key: :hashtag, foreign_key: :hashtag
 
   mount_uploader :image, MobilizationUploader
+
+  validates_presence_of :title, :hashtag, :description, :image
 end

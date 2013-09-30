@@ -87,5 +87,6 @@ Then(/^I should be in "(.*?)"$/) do |arg1|
 end
 
 Then(/^a mobilization should exists$/) do
-  @mobilization = Mobilization.first  
+  puts Mobilization.reload.all.inspect
+  @mobilization = Mobilization.last
 end
