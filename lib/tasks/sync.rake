@@ -116,11 +116,11 @@ namespace :sync do
     task :likes_and_shares => :environment do
       graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
       FacebookPost.where("created_at >= ?", Time.now - 1.day).all.each do |fp|
-        post = graph.get_object(fp.uid, fields: "shares,likes")
         begin
+          post = graph.get_object(fp.uid, fields: "shares,likes")
           fp.update_attributes share_count: post["shares"]["count"], like_count: post["likes"]["count"]
         rescue
-          puts "Could not update FacebookPost ##{fp.id}"
+          Rails.logger.info "Could not update FacebookPost ##{fp.id}"
         end
       end
     end
