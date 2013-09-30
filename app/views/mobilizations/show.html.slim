@@ -44,7 +44,7 @@
         span.where no Imagine
     - if @mobilization.comments.any?
       .shares_counter.icon-share
-        span.counter= @mobilization.comments.count
+        span.counter= @mobilization.share_count
         |  
         span.counter_label= t("shares", count: @mobilization.comments.count)
         span.where nas redes sociais

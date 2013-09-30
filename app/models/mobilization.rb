@@ -10,4 +10,8 @@ class Mobilization < ActiveRecord::Base
   mount_uploader :image, MobilizationUploader
 
   validates_presence_of :title, :hashtag, :description, :image
+
+  def share_count
+    self.comments.sum(:share_count) + self.comments.sum(:like_count)
+  end
 end
