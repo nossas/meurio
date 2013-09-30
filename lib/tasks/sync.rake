@@ -78,7 +78,7 @@ namespace :sync do
     end
 
     task :favorites_and_retweets => :environment do
-      Tweet.all.each do |tweet|
+      Tweet.where("created_at >= ?", Time.now - 1.day).all.each do |tweet|
         status = Twitter.status(tweet.uid)
         tweet.update_attributes favorite_count: status.favourites_count, retweet_count: status.retweet_count
       end
@@ -115,9 +115,13 @@ namespace :sync do
 
     task :likes_and_shares => :environment do
       graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
-      FacebookPost.all.each do |fp|
-        post = graph.get_object("164188247072662_226513044173515", fields: "shares,likes")
-        fp.update_attributes share_count: post["shares"]["count"], like_count: post["likes"]["count"]
+      FacebookPost.where("created_at >= ?", Time.now - 1.day).all.each do |fp|
+        post = graph.get_object(fp.uid, fields: "shares,likes")
+        begin
+          fp.update_attributes share_count: post["shares"]["count"], like_count: post["likes"]["count"]
+        rescue
+          puts "Could not update FacebookPost ##{fp.id}"
+        end
       end
     end
   end
