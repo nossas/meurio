@@ -9,5 +9,5 @@ class Mobilization < ActiveRecord::Base
 
   mount_uploader :image, MobilizationUploader
 
-  validates_presence_of :title, :hashtag, :description, :image
+  validates_presence_of :title, :short_title, :hashtag, :description, :image
 end

@@ -212,6 +212,7 @@ pt-BR:
     attributes:
       mobilization:
         title: "Nome da Mobilização"
+        short_title: "Título curto"
         description: "Descrição"
         image: "Imagem de fundo"
   fact:

@@ -11,7 +11,8 @@ Feature: Create a mobilization
   @javascript
   Scenario: when I fill the form correctly
     Given I'm in "new mobilization page"
-    And I fill "Nome da Mobilização" with "De Guarda no Bondinho"
+    And I fill "Nome da Mobilização" with "Estamos De Guarda no Bondinho de Santa Teresa!"
+    And I fill "Título curto" with "De Guarda no Bondinho"
     And I fill "Hashtag" with "DeGuardaNoBondinho"
     And I fill "Descrição" with "O Governo do Estado do Rio de Janeiro está sucateando o patrimônio histórico nacional."
     And I attach an image to "Imagem de fundo"
@@ -24,6 +25,7 @@ Feature: Create a mobilization
     When I press "Criar Mobilização"
     Then I should be in "new mobilization page"
     And I should see "mobilization title field error"
+    And I should see "mobilization short title field error"
     And I should see "mobilization hashtag field error"
     And I should see "mobilization description field error"
     And I should see "mobilization image field error"

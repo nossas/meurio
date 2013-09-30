@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130927141455) do
+ActiveRecord::Schema.define(version: 20130930161636) do
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20130927141455) do
     t.text     "description"
     t.string   "image"
     t.string   "hashtag"
+    t.string   "short_title"
   end
 
   create_table "problems", force: true do |t|
