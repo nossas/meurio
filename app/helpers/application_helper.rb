@@ -1,5 +1,5 @@
 module ApplicationHelper
   def show_mobilization_bg
-    "background: transparent url(#{@mobilization.image}) center top;" if @mobilization.image.present?
+    "background: #666 url(#{@mobilization.image}) center top no-repeat;" if @mobilization.image.present?
   end
 end
