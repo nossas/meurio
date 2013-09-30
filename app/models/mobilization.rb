@@ -11,4 +11,8 @@ class Mobilization < ActiveRecord::Base
 
   validates_presence_of :title, :short_title, :hashtag, :description
   validates_presence_of :image, on: :create
+
+  def share_count
+    self.comments.sum(:share_count) + self.comments.sum(:like_count)
+  end
 end

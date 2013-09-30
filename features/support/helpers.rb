@@ -43,7 +43,7 @@ def to_text string
   return @mobilization.pokes.count    if string == "the pokes counter"
   return @mobilization.ideas.count    if string == "the ideas counter"
   return @facebook_post.text          if string == "this mobilization Facebook post"
-  return @mobilization.comments.count if string == "the shares counter"
+  return @mobilization.share_count    if string == "the shares counter"
 end
 
 def mobilization_field field

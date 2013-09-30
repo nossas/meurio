@@ -47,7 +47,7 @@ Given(/^this mobilization have a Facebook post$/) do
 end
 
 Given(/^this mobilization have some shares$/) do
-  rand(1..10).times { FacebookPost.make! hashtag: @mobilization.hashtag }
+  FacebookPost.make! hashtag: @mobilization.hashtag, share_count: 10, like_count: 20
 end
 
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
