@@ -209,6 +209,10 @@ pt-BR:
   activerecord:
     errors:
       <<: *errors
+    models:
+      mobilization:
+        one: Mobilização
+        other: Mobilizações
     attributes:
       mobilization:
         title: "Nome da Mobilização"
