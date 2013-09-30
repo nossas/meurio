@@ -76,6 +76,13 @@ namespace :sync do
         end
       end
     end
+
+    task :favorites_and_retweets => :environment do
+      Tweet.all.each do |tweet|
+        status = Twitter.status(tweet.uid)
+        tweet.update_attributes favorite_count: status.favourites_count, retweet_count: status.retweet_count
+      end
+    end
   end
 
   namespace :facebook do
@@ -103,6 +110,14 @@ namespace :sync do
             uid:          post["id"]
           )
         end
+      end
+    end
+
+    task :likes_and_shares => :environment do
+      graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
+      FacebookPost.all.each do |fp|
+        post = graph.get_object("164188247072662_226513044173515", fields: "shares,likes")
+        fp.update_attributes share_count: post["shares"]["count"], like_count: post["likes"]["count"]
       end
     end
   end

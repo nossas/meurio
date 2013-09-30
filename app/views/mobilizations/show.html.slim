@@ -32,19 +32,19 @@
     h2 Dados
     - if @mobilization.pokes.any?
       .pokes_counter.icon-message
-        span.counter= @mobilization.pokes.count
+        span.counter= number_with_delimiter @mobilization.pokes.count
         |  
         span.counter_label= t("pokers", count: @mobilization.pokes.count)
         span.where no Panela de Pressão
     - if @mobilization.ideas.any?
       .ideas_counter.icon-chat-24
-        span.counter= @mobilization.ideas.count
+        span.counter= number_with_delimiter @mobilization.ideas.count
         |  
         span.counter_label= t("ideas", count: @mobilization.ideas.count)
         span.where no Imagine
     - if @mobilization.comments.any?
       .shares_counter.icon-share
-        span.counter= @mobilization.share_count
+        span.counter= number_with_delimiter @mobilization.share_count
         |  
         span.counter_label= t("shares", count: @mobilization.comments.count)
         span.where nas redes sociais
