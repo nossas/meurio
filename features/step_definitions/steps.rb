@@ -50,6 +50,14 @@ Given(/^this mobilization have some shares$/) do
   FacebookPost.make! hashtag: @mobilization.hashtag, share_count: 10, like_count: 20
 end
 
+Given(/^this mobilization have an event$/) do
+  @event = Event.make! hashtag: @mobilization.hashtag
+end
+
+Given(/^this event have some attendees$/) do
+  @event.update_attributes attending_count: 100
+end
+
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
   attach_file arg1, File.dirname(__FILE__) + "/../support/mobilization.jpg"
 end

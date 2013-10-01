@@ -19,6 +19,7 @@ def to_element string
   return ".pokes_counter .counter"                                  if string == "the pokes counter"
   return ".ideas_counter .counter"                                  if string == "the ideas counter"
   return ".shares_counter .counter"                                 if string == "the shares counter"
+  return ".attending_count .counter"                                if string == "the attendees counter"
   return ".images .empty"                                           if string == "this mobilization have no image yet"
   return ".images img[src='#{@image.file.square.url}']"             if string == "this mobilization image"
   return ".comments .empty"                                         if string == "this mobilization have no comment yet"
@@ -34,15 +35,16 @@ def to_element string
 end
 
 def to_text string
-  return @campaign.name               if string == "the campaign on the mobilization history"
-  return @problem.name                if string == "the problem on the mobilization history"
-  return @tweet.text                  if string == "the tweet on the mobilization comments"
-  return @tweet.hashtag               if string == "the tweet's hashtag link"
-  return @tweet.username              if string == "the twitter username's link"
-  return @mobilization.pokes.count    if string == "the pokes counter"
-  return @mobilization.ideas.count    if string == "the ideas counter"
-  return @facebook_post.text          if string == "this mobilization Facebook post"
-  return @mobilization.share_count    if string == "the shares counter"
+  return @campaign.name                 if string == "the campaign on the mobilization history"
+  return @problem.name                  if string == "the problem on the mobilization history"
+  return @tweet.text                    if string == "the tweet on the mobilization comments"
+  return @tweet.hashtag                 if string == "the tweet's hashtag link"
+  return @tweet.username                if string == "the twitter username's link"
+  return @mobilization.pokes.count      if string == "the pokes counter"
+  return @mobilization.ideas.count      if string == "the ideas counter"
+  return @facebook_post.text            if string == "this mobilization Facebook post"
+  return @mobilization.share_count      if string == "the shares counter"
+  return @mobilization.attending_count  if string == "the attendees counter"
 end
 
 def mobilization_field field

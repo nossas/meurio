@@ -6,6 +6,7 @@ class Mobilization < ActiveRecord::Base
   has_many :images, primary_key: :hashtag, foreign_key: :hashtag
   has_many :facts
   has_many :comments, primary_key: :hashtag, foreign_key: :hashtag
+  has_many :events, primary_key: :hashtag, foreign_key: :hashtag
 
   mount_uploader :image, MobilizationUploader
 
@@ -13,5 +14,9 @@ class Mobilization < ActiveRecord::Base
 
   def share_count
     self.comments.sum(:share_count) + self.comments.sum(:like_count)
+  end
+
+  def attending_count
+    self.events.sum(:attending_count)
   end
 end

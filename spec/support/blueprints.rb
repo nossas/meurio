@@ -61,3 +61,7 @@ end
 Comment.blueprint do
   # Attributes here
 end
+
+Event.blueprint do
+  # Attributes here
+end

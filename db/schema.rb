@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130930161636) do
+ActiveRecord::Schema.define(version: 20131001122904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 20130930161636) do
   end
 
   create_view "comments", "SELECT t.id, t.created_at, t.text, t.hashtag, t.username, t.published_at, t.text_html, t.user_uid, t.retweet_count AS share_count, t.favorite_count AS like_count, 'tweets'::text AS relname FROM tweets t UNION ALL SELECT fp.id, fp.created_at, fp.text, fp.hashtag, fp.username, fp.published_at, fp.text_html, fp.user_uid, fp.share_count, fp.like_count, 'facebook_posts'::text AS relname FROM facebook_posts fp", :force => true
+  create_table "events", force: true do |t|
+    t.string   "hashtag"
+    t.integer  "attending_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "problems", force: true do |t|
     t.string   "name"
     t.string   "link"

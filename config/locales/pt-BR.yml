@@ -228,5 +228,8 @@ pt-BR:
   shares:
     one: "compartilhamento"
     other: "compartilhamentos"
+  attending:
+    one: "compareceu"
+    other: "compareceram"
   facebook_posts: "no Facebook"
   tweets: "no Twitter"

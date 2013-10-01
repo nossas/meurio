@@ -48,6 +48,12 @@
         |  
         span.counter_label= t("shares", count: @mobilization.comments.count)
         span.where nas redes sociais
+    - if @mobilization.attending_count > 0
+      .attending_count.icon-location
+        span.counter= number_with_delimiter @mobilization.attending_count
+        |  
+        span.counter_label= t("attending", count: @mobilization.attending_count)
+        span.where aos eventos
 
 .row
   .large-5.small-12.columns.comments
