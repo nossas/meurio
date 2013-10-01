@@ -3,10 +3,15 @@
 = content_for(:description) { @mobilization.description }
 
 .mobilization
+  - if true # user.admin?
+    .manage
+      .row
+        .large-12.columns= link_to 'Editar', edit_mobilization_path(@mobilization), class: 'icon-new-24'
   .cover *{style: show_mobilization_bg}
-    .row
-      .header
-        .large-12.columns= link_to image_tag("marca-mr.png"), root_path
+    - if false # not user.admin?
+      .row
+        .header
+          .large-12.columns= link_to image_tag("marca-mr.png"), root_path
     .row
       .content
         .large-12.columns

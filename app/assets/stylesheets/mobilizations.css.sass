@@ -25,8 +25,21 @@ body.mobilizations.index
 
 body.mobilizations.show
   background: $background-grey
-  header
-    display: none
+  .manage
+    background: white
+    padding: .7em 0 .9em 0
+    a
+      &.icon-new-24
+        color: $light-grey
+        font-size: .9em
+        font-weight: bold
+        &:before
+          color: $orange
+          font-size: 1.3em
+          top: 4px
+          position: relative
+          margin-right: .25em
+
   .cover
     background: image-url("mob-default.jpg") center top
     padding-bottom: 2em
