@@ -1,10 +1,10 @@
 class Mobilization < ActiveRecord::Base
-  has_many :campaigns
-  has_many :problems
+  has_many :campaigns, primary_key: :hashtag, foreign_key: :hashtag
+  has_many :problems, primary_key: :hashtag, foreign_key: :hashtag
   has_many :pokes, through: :campaigns
   has_many :ideas, through: :problems
   has_many :images, primary_key: :hashtag, foreign_key: :hashtag
-  has_many :facts
+  has_many :facts, primary_key: :hashtag, foreign_key: :hashtag
   has_many :comments, primary_key: :hashtag, foreign_key: :hashtag
   has_many :events, primary_key: :hashtag, foreign_key: :hashtag
 

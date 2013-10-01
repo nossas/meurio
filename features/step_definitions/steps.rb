@@ -7,11 +7,11 @@ Given(/^there is a mobilization$/) do
 end
 
 Given(/^this mobilization have a campaign$/) do
-  @campaign = Campaign.make!(mobilization: @mobilization)
+  @campaign = Campaign.make!(hashtag: @mobilization.hashtag)
 end
 
 Given(/^this mobilization have a problem$/) do
-  @problem = Problem.make!(mobilization: @mobilization)
+  @problem = Problem.make!(hashtag: @mobilization.hashtag)
 end
 
 Given(/^this campaign have many pokes$/) do

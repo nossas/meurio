@@ -15,7 +15,7 @@ Campaign.blueprint do
   description_html  { Faker::Lorem.paragraph }
   link              { Faker::Internet.url }
   uid               { sn }
-  mobilization
+  hashtag           { Mobilization.make!.hashtag }
 end
 
 Problem.blueprint do
@@ -23,7 +23,7 @@ Problem.blueprint do
   description   { Faker::Lorem.paragraph }
   link          { Faker::Internet.url }
   uid           { sn }
-  mobilization
+  hashtag       { Mobilization.make!.hashtag }
 end
 
 Idea.blueprint do
@@ -63,5 +63,8 @@ Comment.blueprint do
 end
 
 Event.blueprint do
-  uid { sn.to_s }
+  uid         { sn.to_s }
+  description { Faker::Lorem.paragraph(1) }
+  name        { Faker::Lorem.sentence }
+  link        { Faker::Internet.url }
 end
