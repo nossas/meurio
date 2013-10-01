@@ -113,6 +113,14 @@ namespace :sync do
       end
     end
 
+    task :attendees => :environment do
+      graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
+      Event.all.each do |event|
+        attending_count = graph.fql_query("SELECT attending_count FROM event WHERE eid = #{event.uid}").first["attending_count"]
+        event.update_attributes attending_count: attending_count
+      end
+    end
+
     task :likes_and_shares => :environment do
       graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
       FacebookPost.where("created_at >= ?", Time.now - 1.day).all.each do |fp|

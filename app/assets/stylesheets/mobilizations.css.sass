@@ -94,7 +94,7 @@ body.mobilizations.show
   .data
     .row
       margin-bottom: 1.5em
-    .pokes_counter, .ideas_counter, .shares_counter
+    .pokes_counter, .ideas_counter, .shares_counter, .attending_count
       clear: both
       margin-bottom: 1.5em
       .counter
@@ -112,9 +112,15 @@ body.mobilizations.show
         padding-top: .1em
         color: $lightest_grey
         width: 40px
+        text-align: center
     .shares_counter
       &:before
         top: -5px
+        position: relative
+    .attending_count
+      &:before
+        top: -5px
+        left: 5px
         position: relative
   .comments
     .tweets, .facebook_posts
