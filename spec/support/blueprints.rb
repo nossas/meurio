@@ -63,5 +63,5 @@ Comment.blueprint do
 end
 
 Event.blueprint do
-  # Attributes here
+  uid { sn.to_s }
 end
