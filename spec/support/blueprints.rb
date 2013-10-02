@@ -4,7 +4,7 @@ require 'machinist/active_record'
 
 Mobilization.blueprint do
   title       { Faker::Lorem.sentence }
-  short_title       { Faker::Lorem.sentence }
+  short_title { Faker::Lorem.sentence }
   description { Faker::Lorem.paragraph }
   image       { File.open("#{Rails.root}/features/support/image.jpeg") }
   hashtag     { Faker::Lorem.word }

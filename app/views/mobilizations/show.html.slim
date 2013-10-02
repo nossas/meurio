@@ -17,12 +17,13 @@
         .content
           h1= @mobilization.title
           p= @mobilization.description
-      .large-5.columns
-        #action-of-the-day
-          #action-event
-            .title
-              span= @mobilization.facts.first.name
-            p= strip_tags(@mobilization.facts.first.description_html).truncate(200)
+      - if @action_of_the_day
+        .large-5.columns
+          #action-of-the-day
+            #action-event
+              .title
+                span= @action_of_the_day.name
+              p= strip_tags(@action_of_the_day.description_html).truncate(200)
 
   .social-media
     .row
