@@ -97,8 +97,3 @@ end
 Then(/^I should be in "(.*?)"$/) do |arg1|
   page.current_path.should be_== to_url(arg1)
 end
-
-Then(/^a mobilization should exists$/) do
-  puts Mobilization.reload.all.inspect
-  @mobilization = Mobilization.last
-end

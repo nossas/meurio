@@ -12,6 +12,7 @@ def to_element string
   return ".principles"                                              if string == "the Meu Rio's principles"
   return ".history .item.campaigns"                                 if string == "the campaign on the mobilization history"
   return ".history .item.problems"                                  if string == "the problem on the mobilization history"
+  return ".history .item.events"                                    if string == "the event on the mobilization history"
   return ".comments .item.tweets"                                   if string == "the tweet on the mobilization comments"
   return ".comments .item.tweets"                                   if string == "tweets on the mobilization comments"
   return ".comments .item.tweets a"                                 if string == "the tweet's hashtag link"
@@ -38,6 +39,7 @@ end
 def to_text string
   return @campaign.name                 if string == "the campaign on the mobilization history"
   return @problem.name                  if string == "the problem on the mobilization history"
+  return @event.name                    if string == "the event on the mobilization history"
   return @tweet.text                    if string == "the tweet on the mobilization comments"
   return @tweet.hashtag                 if string == "the tweet's hashtag link"
   return @tweet.username                if string == "the twitter username's link"
