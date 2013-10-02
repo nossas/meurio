@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 1.1.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -78,3 +78,4 @@ gem 'auto_html', github: 'josiasds/auto_html'
 gem 'truncate_html'
 gem 'newrelic_rpm'
 gem 'client_side_validations', github: 'bcardarella/client_side_validations', branch: "4-0-beta"
+gem 'client_side_validations-turbolinks', '~> 1.1.1'
