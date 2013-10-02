@@ -141,8 +141,9 @@ namespace :sync do
           if post["likes"].present? then fp.like_count = post["likes"]["count"] end
           fp.save!
         rescue Exception => e
-          Rails.logger.info "Could not update FacebookPost ##{fp.id}"
-          Rails.logger.info e.message
+          message = "Could not update FacebookPost ##{fp.id} | #{e.message}"
+          Rails.logger.warn message
+          puts message
         end
       end
     end
