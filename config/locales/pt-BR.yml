@@ -228,13 +228,13 @@ pt-BR:
     one: "pressão"
     other: "pressões"
   ideas:
-    one: "ideia enviada"
-    other: "ideias enviadas"
+    one: "ideia"
+    other: "ideias"
   shares:
     one: "compartilhamento"
     other: "compartilhamentos"
   attending:
-    one: "compareceu"
-    other: "compareceram"
+    one: "participação"
+    other: "participações"
   facebook_posts: "no Facebook"
   tweets: "no Twitter"
