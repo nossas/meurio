@@ -11,16 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131001164533) do
+ActiveRecord::Schema.define(version: 20131001195216) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
     t.string   "link"
     t.text     "description_html"
-    t.integer  "mobilization_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "uid"
+    t.string   "hashtag"
   end
 
   create_table "facebook_posts", force: true do |t|
@@ -58,42 +61,22 @@ ActiveRecord::Schema.define(version: 20131001164533) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "uid"
-  end
-
-  create_table "mobilizations", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "title"
+    t.string   "name"
     t.text     "description"
-    t.string   "image"
-    t.string   "hashtag"
-    t.string   "short_title"
+    t.string   "link"
   end
 
   create_table "problems", force: true do |t|
     t.string   "name"
     t.string   "link"
     t.text     "description"
-    t.integer  "mobilization_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "uid"
-    t.index ["mobilization_id"], :name => "fk__problems_mobilization_id", :order => {"mobilization_id" => :asc}
-    t.index ["mobilization_id"], :name => "index_problems_on_mobilization_id", :order => {"mobilization_id" => :asc}
-    t.foreign_key ["mobilization_id"], "mobilizations", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_problems_mobilization_id"
+    t.string   "hashtag"
   end
 
-  create_view "facts", "SELECT c.id, c.created_at, c.name, c.description_html, c.link, c.mobilization_id, 'campaigns'::text AS relname FROM campaigns c UNION ALL SELECT p.id, p.created_at, p.name, p.description AS description_html, p.link, p.mobilization_id, 'problems'::text AS relname FROM problems p", :force => true
-  create_table "guardians", force: true do |t|
-    t.string   "uid"
-    t.integer  "problem_id"
-    t.integer  "integer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["problem_id"], :name => "fk__guardians_problem_id", :order => {"problem_id" => :asc}
-    t.foreign_key ["problem_id"], "problems", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_guardians_problem_id"
-  end
-
+  create_view "facts", "(SELECT c.id, c.created_at, c.name, c.description_html, c.link, c.hashtag, 'campaigns'::text AS relname FROM campaigns c UNION ALL SELECT p.id, p.created_at, p.name, p.description AS description_html, p.link, p.hashtag, 'problems'::text AS relname FROM problems p) UNION ALL SELECT e.id, e.created_at, e.name, e.description AS description_html, e.link, e.hashtag, 'events'::text AS relname FROM events e", :force => true
   create_table "ideas", force: true do |t|
     t.string   "name"
     t.string   "link"
@@ -112,6 +95,16 @@ ActiveRecord::Schema.define(version: 20131001164533) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "uid"
+  end
+
+  create_table "mobilizations", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "description"
+    t.string   "image"
+    t.string   "hashtag"
+    t.string   "short_title"
   end
 
   create_table "pokes", force: true do |t|

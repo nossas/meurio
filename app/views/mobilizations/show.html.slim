@@ -28,7 +28,7 @@
     .row
       .large-12.columns
         span 
-          | Compartilhe nas Redes Sociais, sempre usando a hashtag #
+          | Compartilhe essa mobilização nas redes sociais usando a hashtag #
           strong= @mobilization.hashtag
   .share
     .row
@@ -65,13 +65,13 @@
         span.counter= number_with_delimiter @mobilization.attending_count
         |  
         span.counter_label= t("attending", count: @mobilization.attending_count)
-        span.where aos eventos
+        span.where em eventos
 
 .row
   .large-5.small-12.columns.comments
     h2 Comentários
     .tip
-      | Utilize a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para compartilhar seus comentários sobre esta mobilização nas redes sociais.
+      | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre essa mobilização nas redes sociais.
     - if @comments.empty?
       .empty Esta mobilização ainda não possui comentários :\
     - else      

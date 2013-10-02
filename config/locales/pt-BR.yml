@@ -220,20 +220,21 @@ pt-BR:
         description: "Descrição"
         image: "Imagem de fundo"
   fact:
-    campaigns: "Pressionar"
-    problems: "Envie sua ideia"
+    campaigns: "Pressione agora"
+    problems: "Dê uma ideia"
+    events: "Participe do evento"
   pokers:
     zero: "pressões"
     one: "pressão"
     other: "pressões"
   ideas:
-    one: "ideia enviada"
-    other: "ideias enviadas"
+    one: "ideia"
+    other: "ideias"
   shares:
     one: "compartilhamento"
     other: "compartilhamentos"
   attending:
-    one: "compareceu"
-    other: "compareceram"
+    one: "participação"
+    other: "participações"
   facebook_posts: "no Facebook"
   tweets: "no Twitter"

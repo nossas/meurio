@@ -5,7 +5,6 @@ namespace :sync do
     task :campaigns => :environment do
       campaigns = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns.json").body)
       campaigns.each do |campaign|
-        puts campaign["name"]
         mobilization = Mobilization.find_by_hashtag(campaign["hashtag"])
         if mobilization.present?
           Campaign.create(
@@ -13,7 +12,7 @@ namespace :sync do
             link:             "#{ENV["PDP_HOST"]}/campaigns/#{campaign["id"]}",
             description_html: campaign["description_html"],
             uid:              campaign["id"],
-            mobilization:     mobilization
+            hashtag:          mobilization.hashtag
           )
         end
       end
@@ -23,7 +22,6 @@ namespace :sync do
       Campaign.all.each do |campaign|
         pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json").body)
         pokes.each do |poke|
-          puts poke["id"]
           Poke.create(uid: poke["id"], campaign: campaign)
         end
       end
@@ -34,7 +32,6 @@ namespace :sync do
     task :problems => :environment do
       problems = JSON.parse(HTTParty.get("#{ENV["IMAGINE_HOST"]}/problems.json").body)
       problems.each do |problem_hash|
-        puts "##{problem_hash['hashtag']} - #{problem_hash['title']}"
         mobilization = Mobilization.find_by(hashtag: problem_hash["hashtag"])
         if mobilization.present?
           Problem.create(
@@ -42,13 +39,12 @@ namespace :sync do
             link:             "#{ENV['IMAGINE_HOST']}/problems/#{problem_hash['id']}",
             description:      problem_hash["description"],
             uid:              problem_hash["id"],
-            mobilization:     mobilization
+            hashtag:          mobilization.hashtag
           )
 
           problem = Problem.find_by(uid: problem_hash['id'].to_s)
           
           problem_hash['ideas'].each do |idea|
-            puts idea['id']
             Idea.create(
               name:             idea["title"],
               link:             "#{ENV["IMAGINE_HOST"]}/problems/#{problem_hash['id']}/ideas/#{idea['id']}",
@@ -99,22 +95,27 @@ namespace :sync do
     task :posts => :environment do
       graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
       Mobilization.all.each do |mobilization|
-        posts = graph.search(mobilization.hashtag, type: "post", fields: "from,message,created_time,id")
-        posts.each do |post|
-          FacebookPost.create(
-            hashtag:      mobilization.hashtag,
-            username:     post["from"]["name"],
-            text:         post["message"],
-            published_at: post["created_time"],
-            user_uid:     post["from"]["id"],
-            uid:          post["id"]
-          )
+        begin
+          posts = graph.search(mobilization.hashtag, type: "post", fields: "from,message,created_time,id")
+          posts.each do |post|
+            FacebookPost.create(
+              hashtag:      mobilization.hashtag,
+              username:     post["from"]["name"],
+              text:         post["message"],
+              published_at: post["created_time"],
+              user_uid:     post["from"]["id"],
+              uid:          post["id"]
+            )
+          end
+        rescue Exception => e
+          Rails.logger.info "Could not update Mobilization ##{mobilization.id}"
+          Rails.logger.info e.message
         end
       end
     end
 
     task :events => :environment do
-      events = Koala::Facebook::API.new.get_connections("241897672509479", "events", fields: "id,description").select{|event| event["description"].present?}
+      events = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "events", fields: "id,description").select{|event| event["description"].present?}
       events.each do |event|
         mobilization = Mobilization.where("hashtag IN (?)", event["description"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
         if mobilization.present?
@@ -136,9 +137,13 @@ namespace :sync do
       FacebookPost.where("created_at >= ?", Time.now - 1.day).all.each do |fp|
         begin
           post = graph.get_object(fp.uid, fields: "shares,likes")
-          fp.update_attributes share_count: post["shares"]["count"], like_count: post["likes"]["count"]
-        rescue
-          Rails.logger.info "Could not update FacebookPost ##{fp.id}"
+          if post["shares"].present? then fp.share_count = post["shares"]["count"] end
+          if post["likes"].present? then fp.like_count = post["likes"]["count"] end
+          fp.save!
+        rescue Exception => e
+          message = "Could not update FacebookPost ##{fp.id} | #{e.message}"
+          Rails.logger.warn message
+          puts message
         end
       end
     end
