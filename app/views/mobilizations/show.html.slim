@@ -40,13 +40,13 @@
         span.counter= number_with_delimiter @mobilization.pokes.count
         |  
         span.counter_label= t("pokers", count: @mobilization.pokes.count)
-        span.where no #{link_to "Panela de Pressão", "http://paneladepressao.org.br/"}
+        span.where no Panela de Pressão
     - if @mobilization.ideas.any?
       .ideas_counter.icon-chat-24
         span.counter= number_with_delimiter @mobilization.ideas.count
         |  
         span.counter_label= t("ideas", count: @mobilization.ideas.count)
-        span.where no #{link_to "Imagine", "http://imagine.meurio.org.br/"}
+        span.where no Imagine
     - if @mobilization.comments.any?
       .shares_counter.icon-share
         span.counter= number_with_delimiter @mobilization.share_count
