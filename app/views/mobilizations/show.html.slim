@@ -13,10 +13,17 @@
         .header
           .large-12.columns= link_to image_tag("marca-mr.png"), root_path
     .row
-      .content
-        .large-12.columns
+      .large-7.columns
+        .content
           h1= @mobilization.title
           p= @mobilization.description
+      .large-5.columns
+        #action-of-the-day
+          #action-event
+            .title
+              span= @mobilization.facts.first.name
+            p= strip_tags(@mobilization.facts.first.description_html).truncate(200)
+
   .social-media
     .row
       .large-12.columns

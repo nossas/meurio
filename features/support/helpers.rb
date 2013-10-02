@@ -33,6 +33,7 @@ def to_element string
   return ".field_with_errors label[for='mobilization_description']" if string == "mobilization description field error"
   return ".field_with_errors label[for='mobilization_hashtag']"     if string == "mobilization hashtag field error"
   return ".field_with_errors label[for='mobilization_image']"       if string == "mobilization image field error"
+  return "#action-of-the-day"                                       if string == "the action of the day"
 end
 
 def to_text string
@@ -46,6 +47,7 @@ def to_text string
   return @facebook_post.text            if string == "this mobilization Facebook post"
   return @mobilization.share_count      if string == "the shares counter"
   return @mobilization.attending_count  if string == "the attendees counter"
+  return @mobilization.facts.first.name if string == "the action of the day"
 end
 
 def mobilization_field field

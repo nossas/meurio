@@ -43,7 +43,6 @@ body.mobilizations.show
   .cover
     background: image-url("mob-default.jpg") center top
     padding-bottom: 2em
-    +text-shadow(black 0 0 10px)
     .header
       padding: 1em 0 4em 0.5em
       img
@@ -51,17 +50,37 @@ body.mobilizations.show
         height: 40px
     .content      
       h1, p
-        font-weight: normal
+        +text-shadow(black 0 0 10px)
         color: white
       h1
+        font-weight: normal
         font-family: "Populaire" 
         font-size: 3.8em
         line-height: 1em
         text-transform: uppercase
       p
+        font-weight: bold
         font-family: "Proxima Nova" 
         font-size: 0.9em
         line-height: 1.2em
+    #action-of-the-day
+      margin-top: 1em
+      background: white
+      width: 100%
+      +border-radius(5px)
+      overflow: hidden
+      .title
+        color: white
+        font-weight: bolder
+        font-size: 1.2em
+      #action-event
+        padding: 1.2em
+        .title
+          color: $green
+        p
+          margin-top: 1em
+          font-size: 0.9em
+          line-height: 1.2em
   h2
     font-size: 1.5em
     border-bottom: 3px solid #eee
