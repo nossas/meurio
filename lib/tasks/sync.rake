@@ -82,12 +82,23 @@ namespace :sync do
   end
 
   namespace :facebook do
-    task :images => :environment do
-      images = Koala::Facebook::API.new.get_connections("241897672509479", "photos", type: "uploaded", fields: "name,source").select{|image| image["name"].present?}
+    task :images_and_clippings => :environment do
+      images = Koala::Facebook::API.new.get_connections("241897672509479", "photos", type: "uploaded", fields: "name,source,created_time,link").select{|image| image["name"].present?}
       images.each do |image|
         mobilization = Mobilization.where("hashtag IN (?)", image["name"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
         if mobilization.present?
-          Image.create remote_file_url: image["source"], hashtag: mobilization.hashtag, uid: image["id"]
+          if image["name"].match(/#namidia/)
+            Clipping.create(
+              remote_image_url: image["source"], 
+              hashtag:          mobilization.hashtag, 
+              uid:              image["id"],
+              published_at:     Time.parse(image["created_time"]),
+              link:             image["link"],
+              body:             image["name"]
+            )
+          else
+            Image.create remote_file_url: image["source"], hashtag: mobilization.hashtag, uid: image["id"]
+          end
         end
       end
     end
