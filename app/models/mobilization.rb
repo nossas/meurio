@@ -23,6 +23,6 @@ class Mobilization < ActiveRecord::Base
   end
 
   def action_of_the_day
-    self.facts.first
+    self.facts.order("created_at DESC").first
   end
 end
