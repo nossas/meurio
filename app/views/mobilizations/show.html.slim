@@ -25,13 +25,13 @@
                 span.title Ação do Dia
               .large-7.small-7.columns.last
                 .large-6.small-6.columns.number
-                  span 372
+                  span= @mobilization.action_of_the_day.counter
                 .large-6.small-6.columns.text
-                  span pessoas confirmadas
+                  span= t(@mobilization.action_of_the_day.caption, count: @mobilization.action_of_the_day.counter)
             #action-event
               span.title= @mobilization.action_of_the_day.name
               p= strip_tags(@mobilization.action_of_the_day.description_html).truncate(200)
-              = link_to 'Compareça', '#', class: 'btn'
+              = link_to 'Compareça', @mobilization.action_of_the_day.link, class: 'btn', target: :blank
 
   .social-media
     .row
