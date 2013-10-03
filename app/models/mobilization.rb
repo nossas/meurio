@@ -7,6 +7,7 @@ class Mobilization < ActiveRecord::Base
   has_many :facts, primary_key: :hashtag, foreign_key: :hashtag
   has_many :comments, primary_key: :hashtag, foreign_key: :hashtag
   has_many :events, primary_key: :hashtag, foreign_key: :hashtag
+  has_many :clippings, primary_key: :hashtag, foreign_key: :hashtag
 
   mount_uploader :image, MobilizationUploader
 

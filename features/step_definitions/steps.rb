@@ -58,6 +58,10 @@ Given(/^this event have some attendees$/) do
   @event.update_attributes attending_count: 100
 end
 
+Given(/^this mobilization have a clipping$/) do
+  @clipping = Clipping.make! hashtag: @mobilization.hashtag
+end
+
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
   attach_file arg1, File.dirname(__FILE__) + "/../support/mobilization.jpg"
 end

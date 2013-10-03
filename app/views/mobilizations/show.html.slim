@@ -69,7 +69,7 @@
         span.where em eventos
 
 .row
-  .large-5.small-12.columns.comments
+  .large-4.small-12.columns.comments
     h2 Comentários
     .tip
       | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre essa mobilização nas redes sociais.
@@ -77,9 +77,13 @@
       .empty Esta mobilização ainda não possui comentários :\
     - else      
       = render @comments
-  .large-7.small-12.columns.images
+  .large-4.small-12.columns.images
     h2 Imagens
     - if @mobilization.images.empty?
       .empty Esta mobilização ainda não possui imagens :(
     - else
       = render @mobilization.images
+  .large-4.small-12.columns.clippings
+    h2 Imprensa
+    .empty Esta mobilização ainda não possui clippings
+    = render @mobilization.clippings

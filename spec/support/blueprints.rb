@@ -68,3 +68,7 @@ Event.blueprint do
   name        { Faker::Lorem.sentence }
   link        { Faker::Internet.url }
 end
+
+Clipping.blueprint do
+  # Attributes here
+end
