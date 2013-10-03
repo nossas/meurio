@@ -68,3 +68,12 @@ Event.blueprint do
   name        { Faker::Lorem.sentence }
   link        { Faker::Internet.url }
 end
+
+Clipping.blueprint do
+  uid           { sn.to_s }
+  body          { Faker::Lorem.paragraph(1) }
+  published_at  { Time.now }
+  link          { Faker::Internet.url }
+  image         { File.open("#{Rails.root}/features/support/image.jpeg") }
+  hashtag       { Faker::Lorem.word }
+end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131001195216) do
+ActiveRecord::Schema.define(version: 20131003121511) do
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20131001195216) do
     t.datetime "updated_at"
     t.string   "uid"
     t.string   "hashtag"
+  end
+
+  create_table "clippings", force: true do |t|
+    t.datetime "published_at"
+    t.text     "body"
+    t.string   "link"
+    t.string   "image"
+    t.string   "hashtag"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "facebook_posts", force: true do |t|

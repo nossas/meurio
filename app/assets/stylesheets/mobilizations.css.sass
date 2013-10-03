@@ -42,6 +42,7 @@ body.mobilizations.show
 
   .cover
     background: image-url("mob-default.jpg") center top
+    overflow: hidden
     padding-bottom: 2em
     .header
       padding: 1em 0 4em 0.5em
@@ -181,10 +182,10 @@ body.mobilizations.show
   .comments
     .tweets, .facebook_posts
       border-bottom: .15em solid #eee
-      padding: 1em .2em
-      font-size: .9em
-      line-height: 1.2em
+      padding: 1em 0
+      font-size: .8em
       .header
+        margin-bottom: .25em
         span.username
           color: $green
           a
@@ -220,8 +221,7 @@ body.mobilizations.show
         font-weight: bolder
   .images
     img
-      width: 20%
-      margin-bottom: 1em
+      width: 33%
       vertical-align: top
       border: 4px solid transparent
       +border-radius(5px)
