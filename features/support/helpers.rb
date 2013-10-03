@@ -35,6 +35,7 @@ def to_element string
   return ".field_with_errors label[for='mobilization_hashtag']"     if string == "mobilization hashtag field error"
   return ".field_with_errors label[for='mobilization_image']"       if string == "mobilization image field error"
   return "#action-of-the-day"                                       if string == "the action of the day"
+  return "#action-of-the-day #action-header .last"                  if string == "the action of the day attending counter"
   return ".clippings .empty"                                        if string == "this mobilization have no clipping yet"
   return ".clippings .body"                                         if string == "this mobilization clipping"
 end
@@ -52,6 +53,7 @@ def to_text string
   return @mobilization.share_count                  if string == "the shares counter"
   return @mobilization.attending_count              if string == "the attendees counter"
   return @mobilization.action_of_the_day.try(:name) if string == "the action of the day"
+  return @mobilization.action_of_the_day.counter    if string == "the action of the day attending counter"
   return @clipping.body                             if string == "this mobilization clipping"
 end
 
