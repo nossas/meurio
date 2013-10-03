@@ -85,5 +85,7 @@
       = render @mobilization.images
   .large-4.small-12.columns.clippings
     h2 Imprensa
-    .empty Esta mobilização ainda não possui clippings
-    = render @mobilization.clippings
+    - if @mobilization.clippings.empty?
+      .empty Esta mobilização ainda não possui clippings
+    - else
+      = render @mobilization.clippings

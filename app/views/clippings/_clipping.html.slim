@@ -1,2 +1,8 @@
-.clipping
-  .body= clipping.body
+.item.clipping
+  .header
+    span.published_at= l clipping.published_at, format: :short
+  = image_tag clipping.image.square.url
+  span.body
+    = truncate clipping.body, length: 140
+    |  
+    = link_to "continue lendo", clipping.link

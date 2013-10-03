@@ -155,18 +155,19 @@ body.mobilizations.show
         top: -5px
         left: 5px
         position: relative
-  .comments
-    .tweets, .facebook_posts
+  .comments, .clippings
+    .tweets, .facebook_posts, .clipping
       border-bottom: .15em solid #eee
-      padding: 1em 0
       font-size: .8em
+      padding: 1em 0
+      overflow: hidden
       .header
         margin-bottom: .25em
-        span.username
+        span.username, span.published_at
           color: $green
           a
             color: $green
-        span.username, span.where
+        span.username, span.where, span.published_at
           font-weight: 800
         span.when
           font-size: .9em
@@ -183,6 +184,15 @@ body.mobilizations.show
         span.username
           &:before
             content: "@"
+    .clipping
+      img
+        float: left
+        width: 20%
+        margin-right: 3%
+      span.body
+        display: block
+        float: left
+        width: 77%
     .tip
       text-transform: uppercase
       font-size: .8em
