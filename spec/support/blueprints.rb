@@ -70,5 +70,10 @@ Event.blueprint do
 end
 
 Clipping.blueprint do
-  # Attributes here
+  uid           { sn.to_s }
+  body          { Faker::Lorem.paragraph(1) }
+  published_at  { Time.now }
+  link          { Faker::Internet.url }
+  image         { File.open("#{Rails.root}/features/support/image.jpeg") }
+  hashtag       { Faker::Lorem.word }
 end
