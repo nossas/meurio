@@ -3,8 +3,19 @@ Feature: View action of the day
   As an user
   I want to view the action of the day
 
-  Scenario:
+  Scenario: when there is no action of the day
+    Given there is a mobilization
+    When I'm in "this mobilization page"
+    Then I should not see "the action of the day"
+
+  Scenario: when there is a campaign
     Given there is a mobilization
     And this mobilization have a campaign
+    When I'm in "this mobilization page"
+    Then I should see "the action of the day"
+
+  Scenario: when there is a problem
+    Given there is a mobilization
+    And this mobilization have a problem
     When I'm in "this mobilization page"
     Then I should see "the action of the day"
