@@ -39,7 +39,7 @@ end
 
 Tweet.blueprint do
   username     { Faker::Internet.user_name }
-  text         { Faker::Lorem.paragraph(1) }
+  text         { Faker::Lorem.sentence(10) }
   hashtag      { Faker::Lorem.word }
   published_at { Time.now }
   uid          { sn.to_s }
@@ -52,7 +52,7 @@ end
 
 FacebookPost.blueprint do
   username      { Faker::Internet.user_name }
-  text          { Faker::Lorem.paragraph(1) }
+  text          { Faker::Lorem.sentence(10) }
   hashtag       { Faker::Lorem.word }
   published_at  { Time.now }
   uid           { sn.to_s }
@@ -64,7 +64,7 @@ end
 
 Event.blueprint do
   uid         { sn.to_s }
-  description { Faker::Lorem.paragraph(1) }
+  description { Faker::Lorem.sentence(10) }
   name        { Faker::Lorem.sentence }
   link        { Faker::Internet.url }
 end
