@@ -17,13 +17,21 @@
         .content
           h1= @mobilization.title
           p= @mobilization.description
-      - if @action_of_the_day
+      - if @mobilization.action_of_the_day
         .large-5.columns
           #action-of-the-day
+            #action-header
+              .large-5.small-5.columns.first
+                span.title Ação do Dia
+              .large-7.small-7.columns.last
+                .large-6.small-6.columns.number
+                  span 372
+                .large-6.small-6.columns.text
+                  span pessoas confirmadas
             #action-event
-              .title
-                span= @action_of_the_day.name
-              p= strip_tags(@action_of_the_day.description_html).truncate(200)
+              span.title= @mobilization.action_of_the_day.name
+              p= strip_tags(@mobilization.action_of_the_day.description_html).truncate(200)
+              = link_to 'Compareça', '#', class: 'btn'
 
   .social-media
     .row
