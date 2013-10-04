@@ -18,8 +18,16 @@ Given(/^this campaign have many pokes$/) do
   rand(10..100).times { Poke.make! campaign: @campaign }
 end
 
+Given(/^this campaign have (\d+) pokes$/) do |count|
+  count.to_i.times { Poke.make! campaign: @campaign }
+end
+
 Given(/^this problem have many ideas$/) do
   rand(10..100).times { Idea.make! problem: @problem }
+end
+
+Given(/^this problem have (\d+) ideas$/) do |count|
+  count.to_i.times { Idea.make! problem: @problem }
 end
 
 Given(/^this mobilization have an image$/) do
@@ -58,6 +66,10 @@ Given(/^this event have some attendees$/) do
   @event.update_attributes attending_count: 100
 end
 
+Given(/^this event have (\d+) attendees$/) do |count|
+  @event.update_attributes attending_count: count.to_i
+end
+
 Given(/^this mobilization have a clipping$/) do
   @clipping = Clipping.make! hashtag: @mobilization.hashtag
 end
@@ -88,6 +100,10 @@ end
 
 Then(/^I should not see "(.*?)"$/) do |arg1|
   page.should_not have_css(to_element(arg1), text: to_text(arg1))
+end
+
+Then(/^"(.*?)" should contain "(.*?)"$/) do |arg1, arg2|
+  find(to_element(arg1)).should have_content(arg2)
 end
 
 Then(/^I should see the mobilization's background image$/) do

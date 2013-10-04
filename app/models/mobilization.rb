@@ -21,4 +21,8 @@ class Mobilization < ActiveRecord::Base
   def attending_count
     self.events.sum(:attending_count)
   end
+
+  def action_of_the_day
+    self.facts.order("created_at DESC").first
+  end
 end

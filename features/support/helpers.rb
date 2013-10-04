@@ -10,6 +10,7 @@ end
 def to_element string
   return ".vision"                                                  if string == "the Meu Rio's vision"
   return ".principles"                                              if string == "the Meu Rio's principles"
+  return ".funding"                                                 if string == "the Meu Rio's funding"
   return ".history .item.campaigns"                                 if string == "the campaign on the mobilization history"
   return ".history .item.problems"                                  if string == "the problem on the mobilization history"
   return ".history .item.events"                                    if string == "the event on the mobilization history"
@@ -35,24 +36,26 @@ def to_element string
   return ".field_with_errors label[for='mobilization_hashtag']"     if string == "mobilization hashtag field error"
   return ".field_with_errors label[for='mobilization_image']"       if string == "mobilization image field error"
   return "#action-of-the-day"                                       if string == "the action of the day"
+  return "#action-of-the-day #action-header .last"                  if string == "the action of the day attending counter"
   return ".clippings .empty"                                        if string == "this mobilization have no clipping yet"
   return ".clippings .body"                                         if string == "this mobilization clipping"
 end
 
 def to_text string
-  return @campaign.name                 if string == "the campaign on the mobilization history"
-  return @problem.name                  if string == "the problem on the mobilization history"
-  return @event.name                    if string == "the event on the mobilization history"
-  return @tweet.text                    if string == "the tweet on the mobilization comments"
-  return @tweet.hashtag                 if string == "the tweet's hashtag link"
-  return @tweet.username                if string == "the twitter username's link"
-  return @mobilization.pokes.count      if string == "the pokes counter"
-  return @mobilization.ideas.count      if string == "the ideas counter"
-  return @facebook_post.text            if string == "this mobilization Facebook post"
-  return @mobilization.share_count      if string == "the shares counter"
-  return @mobilization.attending_count  if string == "the attendees counter"
-  return @mobilization.facts.first.name if string == "the action of the day"
-  return @clipping.body                 if string == "this mobilization clipping"
+  return @campaign.name                             if string == "the campaign on the mobilization history"
+  return @problem.name                              if string == "the problem on the mobilization history"
+  return @event.name                                if string == "the event on the mobilization history"
+  return @tweet.text                                if string == "the tweet on the mobilization comments"
+  return @tweet.hashtag                             if string == "the tweet's hashtag link"
+  return @tweet.username                            if string == "the twitter username's link"
+  return @mobilization.pokes.count                  if string == "the pokes counter"
+  return @mobilization.ideas.count                  if string == "the ideas counter"
+  return @facebook_post.text                        if string == "this mobilization Facebook post"
+  return @mobilization.share_count                  if string == "the shares counter"
+  return @mobilization.attending_count              if string == "the attendees counter"
+  return @mobilization.action_of_the_day.try(:name) if string == "the action of the day"
+  return @mobilization.action_of_the_day.counter    if string == "the action of the day attending counter"
+  return @clipping.body                             if string == "this mobilization clipping"
 end
 
 def mobilization_field field
