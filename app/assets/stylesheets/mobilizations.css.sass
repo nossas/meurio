@@ -23,19 +23,26 @@ body.mobilizations.index
       h3
         font-size: 1.1em
   .funding
-    .description
-      padding: 1em 0
-      text-align: left
-      font-size: .8em
-    .donation
-      border-left: 1px solid $lightest-grey
-      padding: 3em 1em
-      font-size: .9em
-      .btn
-        width: 100%
-        padding: .6em
-        text-transform: none
-        font-weight: bolder
+    font-size: .9em
+    .crowdfunding, .infographic
+      background: #F8F8F8
+      +border-radius(5px)
+      margin-bottom: 2em
+      .description
+        padding: 1em
+        .text
+          padding-top: 1em
+          border-right: 1px solid $lightest-grey
+          text-align: left
+          height: 100%
+      .donation
+        padding: 6em 1em
+        .btn
+          width: 100%
+          padding: .4em
+          text-transform: none
+          font-weight: bolder
+          font-size: 1.2em
     
 
 body.mobilizations.show
