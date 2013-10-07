@@ -156,6 +156,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meurio_ui (1.1.1)
     mime-types (1.25)
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
@@ -302,6 +303,7 @@ DEPENDENCIES
   koala
   launchy
   machinist (>= 2.0.0.beta2)
+  meurio_ui
   mini_magick
   newrelic_rpm
   pg
