@@ -36,7 +36,23 @@ body.mobilizations.index
         padding: .6em
         text-transform: none
         font-weight: bolder
-    
+  .net
+    background: image-url("bg-financiadores.jpg") $green
+    padding: 2em 0
+    text-align: center
+    h2, p
+      color: white
+    .team
+      +grid-row
+      margin-top: 1em
+      .member
+        color: white
+        height: 200px
+        font-size: .9em
+        img
+          margin-bottom: .5em
+          width: 130px
+          +border-radius(100%)
 
 body.mobilizations.show
   background: $background-grey

@@ -39,6 +39,7 @@ def to_element string
   return "#action-of-the-day #action-header .last"                  if string == "the action of the day attending counter"
   return ".clippings .empty"                                        if string == "this mobilization have no clipping yet"
   return ".clippings .body"                                         if string == "this mobilization clipping"
+  return ".team"                                                    if string == "the team"
 end
 
 def to_text string
