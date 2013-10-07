@@ -8,20 +8,22 @@ body.mobilizations.index
     font-size: 1.75em
     font-weight: normal
   .vision, .principles, .funding
-    padding: 1em 0
+    padding: 2em 0
     text-align: center
-  .vision
-    background: image-url("bg-01.jpg") no-repeat top center $green
-    p, h2
-      color: white
+    font-size: .9em
   .principles
+    background: image-url("bg-03.jpg") no-repeat top center $green
+    p, h2, h3
+      color: white
     .principle
       +rgrid(12, 4)
       text-align: left
-      font-size: .8em
       margin-top: 1em
       h3
         font-size: 1.1em
+      p
+        font-size: .9em
+        line-height: 1.2em
   .funding
     .description
       padding: 1em 0
@@ -53,6 +55,25 @@ body.mobilizations.index
           margin-bottom: .5em
           width: 130px
           +border-radius(100%)
+    .crowdfunding, .infographic
+      background: #F8F8F8
+      +border-radius(5px)
+      margin-bottom: 2em
+      .description
+        padding: 1em
+        .text
+          padding-top: 1em
+          border-right: 1px solid $lightest-grey
+          text-align: left
+          height: 100%
+      .donation
+        padding: 6em 1em
+        .btn
+          width: 100%
+          padding: .4em
+          text-transform: none
+          font-weight: bolder
+          font-size: 1.2em
 
 body.mobilizations.show
   background: $background-grey
