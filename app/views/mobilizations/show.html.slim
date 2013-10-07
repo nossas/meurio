@@ -1,4 +1,4 @@
-= content_for(:title) { @mobilization.title }
+= content_for(:title) { @mobilization.short_title }
 = content_for(:image) { @mobilization.image.square.url }
 = content_for(:description) { @mobilization.description }
 
@@ -15,7 +15,7 @@
     .row
       .large-7.columns
         .content
-          h1= @mobilization.title
+          h1= @mobilization.short_title
           p= @mobilization.description
       - if @mobilization.action_of_the_day
         .large-5.columns
@@ -43,7 +43,7 @@
     .row
       .large-12.columns
         = link_to "Compartilhar", "https://www.facebook.com/sharer/sharer.php?u=#{request.url}", class: ["facebook-share-button", "icon-facebook"]
-        = link_to "Twittar", "https://twitter.com/share?url=#{request.url}&text=#{@mobilization.title}&hashtags=#{@mobilization.hashtag}", class: ["twitter-share-button", "icon-twitter"]
+        = link_to "Twittar", "https://twitter.com/share?url=#{request.url}&text=#{@mobilization.short_title}&hashtags=#{@mobilization.hashtag}", class: ["twitter-share-button", "icon-twitter"]
 
 .row
   .large-8.small-12.columns.history
