@@ -1,6 +1,7 @@
 Meurio::Application.routes.draw do
   root 'mobilizations#index'
 
+  devise_for :users
   resources :mobilizations
 
   # The priority is based upon order of creation: first created -> highest priority.

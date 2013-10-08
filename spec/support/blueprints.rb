@@ -77,3 +77,8 @@ Clipping.blueprint do
   image         { File.open("#{Rails.root}/features/support/image.jpeg") }
   hashtag       { Faker::Lorem.word }
 end
+
+User.blueprint do
+  email    { Faker::Internet.email }
+  password { Faker::Internet.password }
+end
