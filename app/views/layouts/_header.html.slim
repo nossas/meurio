@@ -1,0 +1,17 @@
+header
+  .row
+    .large-6.small-12.columns
+      = link_to image_tag("marca-mr.png"), root_path
+    .large-6.small-12.columns.login
+      - if user_signed_in?
+        h6= current_user.email
+        h6= link_to 'Logout', destroy_user_session_path, method: :delete
+
+      - else
+        = form_tag user_session_path do
+          = label_tag 'user[email]', 'Email'
+          = text_field_tag 'user[email]'
+          = label_tag 'user[password]', 'Senha'
+          = password_field_tag 'user[password]'
+          button.btn Entrar na Rede
+        = link_to "Esquecer sua senha?", new_password_path('user')
