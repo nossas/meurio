@@ -117,3 +117,7 @@ end
 Then(/^I should be in "(.*?)"$/) do |arg1|
   page.current_path.should be_== to_url(arg1)
 end
+
+Then(/^I should be logged in$/) do
+  page.should have_css(".login", text: @user.email)
+end
