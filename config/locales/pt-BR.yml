@@ -219,6 +219,9 @@ pt-BR:
         short_title: "Título curto"
         description: "Descrição"
         image: "Imagem de fundo"
+      user:
+        email: Email
+        password: Senha
   fact:
     campaigns: "Pressione agora"
     problems: "Dê uma ideia"
