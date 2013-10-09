@@ -1,6 +1,6 @@
 class MobilizationsController < InheritedResources::Base
   respond_to :html, :js
-
+  
   def show
     @facts = resource.facts.order("created_at DESC")
     @comments = resource.comments.order("published_at DESC").limit(5)
