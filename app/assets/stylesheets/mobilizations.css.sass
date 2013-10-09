@@ -7,12 +7,18 @@ body.mobilizations.index
   h2
     font-size: 1.75em
     font-weight: normal
+  .vision
+    .infographic
+      height: 300px
+      background: gray
+    ul
+      text-align: left
   .vision, .principles, .funding
     padding: 2em 0
     text-align: center
     font-size: .9em
   .principles
-    background: image-url("bg-03.jpg") no-repeat top center $green
+    background: image-url("bg-03.jpg") top center $green
     p, h2, h3
       color: white
     .principle
@@ -24,13 +30,16 @@ body.mobilizations.index
       p
         font-size: .9em
         line-height: 1.2em
+      .image
+        height: 100px
+        background: rgba(255,255,255,.25)
+        margin-bottom: .5em
   .funding
     .description
       padding: 1em 0
       text-align: left
       font-size: .8em
     .donation
-      border-left: 1px solid $lightest-grey
       padding: 3em 1em
       font-size: .9em
       .btn
@@ -38,6 +47,28 @@ body.mobilizations.index
         padding: .6em
         text-transform: none
         font-weight: bolder
+    .infographic
+      height: 300px
+    .crowdfunding, .infographic
+      background: #F8F8F8
+      +border-radius(5px)
+      margin-bottom: 2em
+      .description
+        padding: 1em
+        .text
+          padding-top: 1em
+          border-right: 1px solid $lightest-grey
+          text-align: left
+          height: 100%
+      .donation
+        padding: 5em 1em
+        .btn
+          width: 100%
+          padding: .4em
+          text-transform: none
+          font-weight: bolder
+          font-size: 1.4em
+
   .net
     background: image-url("bg-financiadores.jpg") $green
     padding: 2em 0
@@ -81,25 +112,6 @@ body.mobilizations.index
         width: 100%
         overflow: hidden
         height: 610px
-    .crowdfunding, .infographic
-      background: #F8F8F8
-      +border-radius(5px)
-      margin-bottom: 2em
-      .description
-        padding: 1em
-        .text
-          padding-top: 1em
-          border-right: 1px solid $lightest-grey
-          text-align: left
-          height: 100%
-      .donation
-        padding: 6em 1em
-        .btn
-          width: 100%
-          padding: .4em
-          text-transform: none
-          font-weight: bolder
-          font-size: 1.2em
 
 body.mobilizations.show
   background: $background-grey
