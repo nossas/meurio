@@ -11,6 +11,7 @@ Feature: login
     And I fill "Senha" with "mypassword"
     And I press "Entrar na Rede"
     Then I should be logged in
+    And I should see "a success message"
     And I should not see "the login form"
 
   @javascript
@@ -21,6 +22,7 @@ Feature: login
     And I fill "Senha" with "mypassword"
     And I press "Entrar na Rede"
     Then I should not be logged in
+    And I should see "an alert message"
     And I should see "the login form"
 
   @javascript

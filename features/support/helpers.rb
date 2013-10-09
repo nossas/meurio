@@ -45,6 +45,8 @@ def to_element string
   return ".login form"                                              if string == "the login form"
   return ".field_with_errors label[for='user_email']"               if string == "user email field error"
   return ".field_with_errors label[for='user_password']"            if string == "user password field error"
+  return ".flash .notice"                                           if string == "a success message"
+  return ".flash .alert"                                            if string == "an alert message"
 end
 
 def to_text string
