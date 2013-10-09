@@ -24,6 +24,7 @@ html
       }(document, 'script', 'facebook-jssdk'));
 
     = render 'layouts/header'
+    .flash= alert || notice
     = yield
     footer
       .row

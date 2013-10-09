@@ -121,3 +121,7 @@ end
 Then(/^I should be logged in$/) do
   page.should have_css(".login", text: @user.email)
 end
+
+Then(/^I should not be logged in$/) do
+  @user.should be_nil
+end

@@ -40,6 +40,9 @@ def to_element string
   return ".clippings .empty"                                        if string == "this mobilization have no clipping yet"
   return ".clippings .body"                                         if string == "this mobilization clipping"
   return ".team"                                                    if string == "the team"
+  return ".login form"                                              if string == "the login form"
+  return ".field_with_errors label[for='user_email']"               if string == "user email field error"
+  return ".field_with_errors label[for='user_password']"            if string == "user password field error"
 end
 
 def to_text string
