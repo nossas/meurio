@@ -3,6 +3,8 @@ Feature: view the team
   As a visitor
   I want to view the team
 
+  @javascript
   Scenario: 
-    When I go to "the homepage"
+    Given I go to "the homepage"
+    When I click "the team button"
     Then I should see "the team"

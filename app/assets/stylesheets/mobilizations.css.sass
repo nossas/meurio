@@ -44,7 +44,27 @@ body.mobilizations.index
     text-align: center
     h2, p
       color: white
-    .team
+    .buttons
+      margin-top: 3em
+      margin-bottom: 2em
+      a
+        margin-bottom: 1em
+        background: rgba(255, 255, 255, .1)
+        color: white
+        text-align: center
+        padding: .5em 2em
+        margin-right: 1em
+        display: inline-block
+        font-weight: bold
+        +border-radius(5px)
+        &:hover, &.selected
+          background: $orange
+        small
+          display: block
+          font-size: .9em
+          font-weight: normal
+
+    #team
       +grid-row
       margin-top: 1em
       .member
@@ -55,6 +75,12 @@ body.mobilizations.index
           margin-bottom: .5em
           width: 130px
           +border-radius(100%)
+    #funders
+      +grid-row
+      iframe
+        width: 100%
+        overflow: hidden
+        height: 610px
     .crowdfunding, .infographic
       background: #F8F8F8
       +border-radius(5px)
