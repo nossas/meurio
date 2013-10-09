@@ -24,7 +24,10 @@ html
       }(document, 'script', 'facebook-jssdk'));
 
     = render 'layouts/header'
-    .flash= alert || notice
+    - if flash[:alert] || flash[:notice]
+      .flash
+        .alert= alert
+        .notice= notice
     = yield
     footer
       .row
