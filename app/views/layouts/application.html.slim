@@ -22,9 +22,8 @@ html
         js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123808244477389";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-    header
-      .row
-        .large-12.columns= link_to image_tag("marca-mr.png"), root_path
+
+    = render 'layouts/header'
     = yield
     footer
       .row

@@ -1,5 +1,7 @@
 Meurio::Application.routes.draw do
   root 'mobilizations#index'
+
+  devise_for :users
   resources :mobilizations
 
   get 'team' => 'pages#team'
