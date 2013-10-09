@@ -8,7 +8,7 @@ Feature: Edit a mobilization
 
   Scenario:
     Given I'm in "this mobilization page"
-    When I click "Editar"
+    When I click "the edit mobilization button"
     Then I should see "the mobilization form"
 
   @javascript

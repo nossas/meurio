@@ -6,7 +6,7 @@
   - if true # user.admin?
     .manage
       .row
-        .large-12.columns= link_to 'Editar', edit_mobilization_path(@mobilization), class: 'icon-new-24'
+        .large-12.columns= link_to 'Editar', edit_mobilization_path(@mobilization), class: 'icon-new-24', id: :edit_mobilization_button
   .cover *{style: show_mobilization_bg}
     - if false # not user.admin?
       .row

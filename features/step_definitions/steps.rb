@@ -87,7 +87,7 @@ When /^I press "([^"]*)"$/ do |arg1|
 end
 
 When /^I click "([^"]*)"$/ do |arg1|
-  click_link arg1
+  click_link to_element(arg1)
 end
 
 Then(/^I should see only (\d+) "(.*?)"$/) do |count, arg1|

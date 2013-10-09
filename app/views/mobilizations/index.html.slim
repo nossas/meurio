@@ -78,89 +78,12 @@
     .large-8.large-offset-2.small-12.columns
       h2 Quem trabalha em Rede
       p Somos milhares de cidadãos envolvidos nas mobilizações políticas da cidade. Compartilhamos dinheiro, muitas horas de trabalho, inúmeros talentos e entusiasmo de sobra por um Rio de Janeiro melhor.
-  .team
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/ruO8idb.jpg"
-      .name
-        | Alessandra
-        br
-        | Orofino
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/jUS7lru.jpg"
-      .name
-        | Miguel
-        br
-        | Lago
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/vgxoOwq.jpg"
-      .name
-        | João
-        br
-        | Pessanha
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/YBFkoQu.jpg"
-      .name
-        | Nícolas
-        br
-        | Iensen
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/LIvWTxi.jpg"
-      .name
-        | Leonardo
-        br
-        | Eloi
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/nIoRiSg.jpg"
-      .name 
-        | Rafael
-        br
-        | Rezende
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/U83fCBf.jpg"
-      .name
-        | Daniela
-        br
-        | Orofino
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/e5IMLPt.jpg"
-      .name 
-        | Dudu
-        br
-        | Torres
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/yS4qPk2.png"
-      .name 
-        | Igor 
-        br
-        | Campos
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/LA8IFTA.jpg"
-      .name 
-        | André 
-        br
-        | Kano
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/hITPriB.jpg"
-      .name 
-        | Fernanda 
-        br
-        | Whately
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/VzbsrkC.jpg"
-      .name 
-        | João Mauro 
-        br
-        | Senise
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/IfSdP3R.jpg"
-      .name 
-        | Leona
-        br
-        | Deckelbaum
-    .member.large-2.small-4.columns
-      = image_tag "http://i.imgur.com/mrqLEwi.jpg"
-      .name
-        | Josias 
-        br
-        | Schneider
-    .member.large-2.small-4.columns
+  .buttons.row
+    .large-12.columns
+      = link_to "#funders", id: :funders_button do
+        | Financiadores
+        small Quem financia as mobilizações
+      = link_to "#team", id: :team_button do
+        | Equipe
+        small Quem trabalha pelas mobilizações
+  #net_content
