@@ -12,10 +12,10 @@ header
         = form_for devise_resource, as: resource_name, url: session_path(resource_name), :validate => true do |f|
           .large-4.columns
             = f.label :email
-            = f.text_field :email, validate: { uniqueness: false }
+            = f.text_field :email, id: :login_email, validate: { uniqueness: false }
           .large-4.columns
             = f.label :password
-            = f.password_field :password
+            = f.password_field :password, id: :login_password
             = link_to 'Esqueceu sua senha?', '#'
           .large-4.columns
             = f.submit 'Entrar na Rede', class: 'btn'
