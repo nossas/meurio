@@ -1,21 +1,28 @@
 body.mobilizations.index
-  header
-    padding: 1em 0
-    img
-      width: 60px
-      height: 60px
   h2
     font-size: 1.75em
     font-weight: normal
+
+  .vision, .principles, .funding, .mobilizations, .net
+    padding: 2em 0
+    text-align: center
+    font-size: .9em
+    p
+      margin-bottom: 2em
+
+  .principles, .mobilizations, .net
+    p, h2, h3
+      color: white
+
   .vision
     .infographic
       height: 300px
       background: gray
     ul
       text-align: left
+
   .mobilizations
     background: image-url("bg-02.jpg") top center
-    padding: 2em 0
     .mobilization
       +rgrid(6, 4)
       img
@@ -25,15 +32,7 @@ body.mobilizations.index
         background: white
         padding: 1em
         font-weight: bolder
-  .vision, .principles, .funding, .mobilizations, .net
-    padding: 2em 0
-    text-align: center
-    font-size: .9em
-  .principles, .mobilizations, .net
-    p, h2, h3
-      color: white
-    p
-      margin-bottom: 2em
+
   .principles
     background: image-url("bg-03.jpg") top center
     .principle
@@ -49,6 +48,7 @@ body.mobilizations.index
         height: 100px
         background: rgba(255,255,255,.25)
         margin-bottom: .5em
+
   .funding
     .description
       padding: 1em 0
@@ -105,7 +105,6 @@ body.mobilizations.index
           display: block
           font-size: .9em
           font-weight: normal
-
     #team
       +grid-row
       margin-top: 1em
@@ -126,6 +125,10 @@ body.mobilizations.index
 
 body.mobilizations.show
   background: $background-grey
+  h2
+    font-size: 1.5em
+    border-bottom: 3px solid #eee
+
   .manage
     background: white
     padding: .7em 0 .9em 0
@@ -193,7 +196,6 @@ body.mobilizations.show
           .text
             padding: .5em 0 0 .5em
             font-size: .8em
-          
       #action-event
         padding: 1.2em
         .title
@@ -207,15 +209,14 @@ body.mobilizations.show
           padding: .6em
           width: 100%
           font-weight: bolder
-  h2
-    font-size: 1.5em
-    border-bottom: 3px solid #eee
+
   .social-media
     font-family: "Proxima Nova" 
     background-color: $light-grey
     color: white
     padding: 0.7em
     text-align: center
+
   .share
     text-align: center
     background: white
@@ -235,6 +236,7 @@ body.mobilizations.show
       &:before
         position: relative
         margin-right: .25em
+
   .history
     .item
       background: white
@@ -249,6 +251,7 @@ body.mobilizations.show
       .description
         font-size: .9em
         margin-bottom: 1em
+
   .data
     .row
       margin-bottom: 1.5em
@@ -280,6 +283,7 @@ body.mobilizations.show
         top: -5px
         left: 5px
         position: relative
+
   .comments, .clippings
     .tweets, .facebook_posts, .clipping
       border-bottom: .15em solid #eee
@@ -330,6 +334,7 @@ body.mobilizations.show
       strong
         color: #333
         font-weight: bolder
+
   .images
     img
       width: 33%
@@ -338,6 +343,7 @@ body.mobilizations.show
       +border-radius(5px)
       &:hover
         border-color: $orange
+
   #facebox .popup .image
     width: auto
 
