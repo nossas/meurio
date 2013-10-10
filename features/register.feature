@@ -21,14 +21,3 @@ Feature: register
     And I should see "signup last name field error"
     And I should see "signup email field error"
     And I should see "signup password field error"
-
-  @javascript
-  Scenario: signup failed due to already registered user
-    Given there is an user with email "test@meurio.org.br" and password "mypassword"
-    And I'm in "the homepage"
-    When I fill "signup_first_name" with "Test"
-    And I fill "signup_last_name" with "Meu Rio"
-    And I fill "signup_email" with "test@meurio.org.br"
-    And I fill "signup_password" with "mypassword"
-    And I press "Cadastre-se"
-    Then I should see "signup email field error"
