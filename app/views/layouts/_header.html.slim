@@ -9,7 +9,7 @@ header
           span  | 
           = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout'
       - else
-        = form_for devise_resource, as: resource_name, url: session_path(resource_name), :validate => true do |f|
+        = form_for devise_resource, as: resource_name, url: session_path(resource_name), validate: true do |f|
           .large-4.columns
             = f.label :email
             = f.text_field :email, id: :login_email, validate: { uniqueness: false }

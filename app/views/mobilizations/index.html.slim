@@ -3,7 +3,7 @@
     .large-4.push-8.columns
       h2 Ainda não faz parte da rede?
       h4 Preencha os campos abaixo e saiba o que você pode fazer hoje pelo Rio.
-      = form_for devise_resource, as: resource_name, url: registration_path(resource_name), :validate => true do |f|
+      = form_for devise_resource, as: resource_name, url: registration_path(resource_name), validate: true do |f|
         .large-6.columns
           = f.label :first_name
           = f.text_field :first_name, id: :signup_first_name
@@ -12,7 +12,7 @@
           = f.text_field :last_name, id: :signup_last_name
         .large-12.columns
           = f.label :email
-          = f.text_field :email, id: :signup_email
+          = f.text_field :email, id: :signup_email, validate: { uniqueness: false }
         .large-12.columns
           = f.label :password
           = f.password_field :password, id: :signup_password
