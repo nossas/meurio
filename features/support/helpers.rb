@@ -48,6 +48,7 @@ def to_element string
   return ".flash .notice"                                           if string == "a success message"
   return ".flash .alert"                                            if string == "an alert message"
   return ".mobilizations .mobilization"                             if string == "this mobilization in the mobilizations list"
+  return ".network"                                                 if string == "the network explanation"
 end
 
 def to_text string
