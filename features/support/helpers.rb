@@ -47,6 +47,7 @@ def to_element string
   return ".field_with_errors label[for='user_password']"            if string == "user password field error"
   return ".flash .notice"                                           if string == "a success message"
   return ".flash .alert"                                            if string == "an alert message"
+  return ".mobilizations .mobilization"                             if string == "this mobilization in the mobilizations list"
 end
 
 def to_text string
@@ -64,6 +65,7 @@ def to_text string
   return @mobilization.action_of_the_day.try(:name) if string == "the action of the day"
   return @mobilization.action_of_the_day.counter    if string == "the action of the day attending counter"
   return @clipping.body                             if string == "this mobilization clipping"
+  return @mobilization.title                        if string == "this mobilization in the mobilizations list"
 end
 
 def mobilization_field field

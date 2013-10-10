@@ -13,14 +13,29 @@ body.mobilizations.index
       background: gray
     ul
       text-align: left
-  .vision, .principles, .funding
+  .mobilizations
+    background: image-url("bg-02.jpg") top center
+    padding: 2em 0
+    .mobilization
+      +rgrid(6, 4)
+      img
+        +border-radius(5px 5px 0 0)
+      .title
+        +border-radius(0 0 5px 5px)
+        background: white
+        padding: 1em
+        font-weight: bolder
+  .vision, .principles, .funding, .mobilizations, .net
     padding: 2em 0
     text-align: center
     font-size: .9em
-  .principles
-    background: image-url("bg-03.jpg") top center $green
+  .principles, .mobilizations, .net
     p, h2, h3
       color: white
+    p
+      margin-bottom: 2em
+  .principles
+    background: image-url("bg-03.jpg") top center
     .principle
       +rgrid(12, 4)
       text-align: left
@@ -71,10 +86,6 @@ body.mobilizations.index
 
   .net
     background: image-url("bg-financiadores.jpg") $green
-    padding: 2em 0
-    text-align: center
-    h2, p
-      color: white
     .buttons
       margin-top: 3em
       margin-bottom: 2em
