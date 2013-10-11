@@ -12,7 +12,7 @@
           = f.text_field :last_name, id: :signup_last_name
         .large-12.columns
           = f.label :email
-          = f.text_field :email, id: :signup_email, validate: { uniqueness: false }
+          = f.text_field :email, id: :signup_email
         .large-12.columns
           = f.label :password
           = f.password_field :password, id: :signup_password
