@@ -24,14 +24,3 @@ Feature: login
     Then I should not be logged in
     And I should see "an alert message"
     And I should see "the login form"
-
-  @javascript
-  Scenario: login failed due to invalid data
-    Given there is no users
-    And I'm in "the homepage"
-    When I fill "login_email" with "test!"
-    And I fill "login_password" with "pass"
-    And I press "Entrar na Rede"
-    Then I should not be logged in
-    And I should see "login email field error"
-    And I should see "login password field error"
