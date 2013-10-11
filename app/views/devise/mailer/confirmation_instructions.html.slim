@@ -1,7 +1,7 @@
-p Bem vindo, 
-span= @email
+p
+  = "Bem vindo, #{@email}!"
 
 p Você pode confirmar seu cadastro no Meu Rio através deste link:
 
 p
-  = link_to 'Confirmar cadastro', confirmation_url(@resource, :confirmation_token => @token, :redirect_to => root_url)
+  = link_to 'Confirmar cadastro', confirmation_url(@resource, :confirmation_token => @token)
