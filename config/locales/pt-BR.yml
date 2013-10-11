@@ -220,6 +220,8 @@ pt-BR:
         description: "Descrição"
         image: "Imagem de fundo"
       user:
+        first_name: Nome
+        last_name: Sobrenome
         email: Email
         password: Senha
   fact:

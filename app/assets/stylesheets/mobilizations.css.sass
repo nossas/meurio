@@ -3,16 +3,40 @@ body.mobilizations.index
     font-size: 1.75em
     font-weight: normal
 
-  .vision, .principles, .funding, .mobilizations, .net, .network
+  .main, .vision, .principles, .funding, .mobilizations, .net, .network
     padding: 2em 0
     text-align: center
     font-size: .9em
     p
       margin-bottom: 2em
 
-  .principles, .mobilizations, .net
-    p, h2, h3
+  .main, .principles, .mobilizations, .net
+    p, h2, h3, h4
       color: white
+
+  .main
+    background: image-url("bg-01.jpg") top center
+    text-align: left
+    .signup
+      h2, h4
+        padding: 0 .5em
+      h2
+        font-size: 1.3em
+        font-weight: bolder
+        margin-bottom: 0
+      h4
+        font-size: 1em
+        font-weight: normal
+        margin-top: 0
+      p.hint
+        margin-top: 1em
+        font-size: .7em
+        font-weight: bold
+        line-height: 1em
+      form
+        input
+          height: 1.9em
+          margin-top: 1em
 
   .vision
     .infographic

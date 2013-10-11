@@ -61,9 +61,11 @@ form
   .notice
     color: $green
 
-.login
+.login, .signup
   form
     margin: 0
+    .columns
+      padding: 0 .5em
     label
       padding: .1em
       color: white
@@ -72,7 +74,7 @@ form
     input
       height: 1.8em
       margin: 0
-      +border-radius(5px)
+      +border-radius(3px)
     .btn
       text-transform: none
       margin-top: 1em
@@ -89,3 +91,7 @@ form
       color: white
       font-size: 1em
       font-weight: bolder
+
+.field_with_errors
+  label
+    color: $orange !important
