@@ -5,6 +5,7 @@ def to_url string
   return mobilization_path(1)                  if string == "the first mobilization page"
   return new_mobilization_path                 if string == "new mobilization page"
   return edit_mobilization_path(@mobilization) if string == "edit mobilization page"
+  return edit_user_path(@user)                 if string == "edit profile page"
 end
 
 def to_element string
@@ -55,6 +56,7 @@ def to_element string
   return ".network"                                                 if string == "the network explanation"
   return "users_button"                                             if string == "the users button"
   return "#users"                                                   if string == "the users"
+  return ".user form"                                               if string == "the edit user form"
 end
 
 def to_text string
