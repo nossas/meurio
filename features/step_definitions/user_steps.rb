@@ -5,3 +5,7 @@ end
 Given(/^there is no users$/) do
   User.delete_all
 end
+
+Given(/^there is an user$/) do
+  @user = User.make!
+end

@@ -5,7 +5,7 @@ Feature: view the users
 
   @javascript
   Scenario: when there is at least one user
-    Given I go to "the homepage"
+    Given there is an user
+    And I go to "the homepage"
     When I click "the users button"
-    Then show me the page
     Then I should see "the users"
