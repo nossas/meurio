@@ -24,6 +24,7 @@ $.facebox.settings.loadingImage = 'http://i.imgur.com/bFbQqWu.gif'
 function showNetDiv(div){
   $('#funders_button').removeClass("selected");
   $('#team_button').removeClass("selected");
+  $('#users_button').removeClass("selected");
   $('#' + div + '_button').addClass("selected")
   $('#net_content').load(div);
 }
@@ -31,9 +32,10 @@ function showNetDiv(div){
 $(function(){
   $('a[rel*=facebox]').facebox();
 
-  showNetDiv("funders")
-  $('#funders_button').click(function(){ showNetDiv('funders') })
-  $('#team_button').click(function(){ showNetDiv('team') });
+  showNetDiv("funders");
+  $('#funders_button').click(function(){ showNetDiv('funders'); });
+  $('#team_button').click(function(){ showNetDiv('team'); });
+  $('#users_button').click(function(){ showNetDiv('users'); });
   
   $(".twitter-share-button").click(function(event){
     window.open(

@@ -118,7 +118,8 @@ body.mobilizations.index
         background: rgba(255, 255, 255, .1)
         color: white
         text-align: center
-        padding: .5em 2em
+        padding: .5em 0
+        width: 275px
         margin-right: 1em
         display: inline-block
         font-weight: bold
@@ -129,9 +130,10 @@ body.mobilizations.index
           display: block
           font-size: .9em
           font-weight: normal
-    #team
+    #team, #users, #funders
       +grid-row
       margin-top: 1em
+    #team
       .member
         color: white
         height: 200px
@@ -141,11 +143,16 @@ body.mobilizations.index
           width: 130px
           +border-radius(100%)
     #funders
-      +grid-row
       iframe
         width: 100%
         overflow: hidden
         height: 610px
+    #users
+      img
+        width: 50px
+        height: 50px
+        margin: 5px
+        +border-radius(100%)
 
 body.mobilizations.show
   background: $background-grey

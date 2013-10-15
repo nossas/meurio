@@ -125,3 +125,7 @@ end
 Then(/^I should not be logged in$/) do
   @user.should be_nil
 end
+
+Then(/^show me the page$/) do
+  save_and_open_page
+end

@@ -3,6 +3,7 @@ Meurio::Application.routes.draw do
 
   devise_for :users, controllers: { confirmations: 'confirmations' }
   resources :mobilizations
+  resources :users, only: [:index]
 
   get 'team' => 'pages#team'
   get 'funders' => 'pages#funders'
