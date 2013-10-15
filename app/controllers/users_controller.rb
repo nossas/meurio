@@ -1,3 +1,4 @@
 class UsersController < InheritedResources::Base
-  layout false
+  before_filter(only: :edit) { @user = current_user }
+  layout false, only: :index
 end
