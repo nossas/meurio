@@ -4,14 +4,17 @@ section.user
       h2 Editar perfil
   .row.form
     .large-8.large-offset-2.columns
-      = form_for @user, :validate => true do |f|
+      = form_for @user, validate: true do |f|
         .row
-          .large-12.columns
-            = f.label :email
-            = f.text_field :email
+          .large-6.columns
+            = f.label :first_name
+            = f.text_field :first_name
+          .large-6.columns
+            = f.label :last_name
+            = f.text_field :last_name
         .row.action
           .large-6.columns.submit
-            = f.submit nil, class: 'btn'
+            = f.submit 'Atualizar perfil', class: 'btn'
           .large-6.columns.cancel
             span ou 
             = link_to 'Cancelar', root_path

@@ -5,7 +5,7 @@ header
     .large-7.columns.login
       - if user_signed_in?
         .large-12.push-6.columns.logged-user
-          span.name= link_to current_user.email, profile_path
+          span.name= link_to current_user.email, edit_profile_path
           span  | 
           = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout'
       - else
