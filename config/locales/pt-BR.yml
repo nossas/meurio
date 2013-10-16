@@ -243,3 +243,6 @@ pt-BR:
     other: "participações"
   facebook_posts: "no Facebook"
   tweets: "no Twitter"
+  activity:
+    pokes: "pressionou na mobilização"
+    campaigns: "criou uma campanha"
