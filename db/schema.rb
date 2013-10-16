@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131016145119) do
+ActiveRecord::Schema.define(version: 20131016204613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20131016145119) do
     t.string   "uid"
     t.string   "hashtag"
     t.integer  "user_id"
+    t.string   "user_email"
     t.index ["user_id"], :name => "fk__campaigns_user_id", :order => {"user_id" => :asc}
     t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_campaigns_user_id"
   end
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20131016145119) do
     t.integer  "campaign_id"
     t.string   "uid"
     t.integer  "user_id"
+    t.string   "user_email"
     t.index ["campaign_id"], :name => "fk__pokes_campaign_id", :order => {"campaign_id" => :asc}
     t.index ["user_id"], :name => "fk__pokes_user_id", :order => {"user_id" => :asc}
     t.foreign_key ["campaign_id"], "campaigns", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_pokes_campaign_id"

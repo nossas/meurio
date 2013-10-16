@@ -3,7 +3,7 @@ require "httparty"
 namespace :sync do
   namespace :pdp do
     task :campaigns => :environment do
-      campaigns = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns.json").body)
+      campaigns = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns.json", query: {token: ENV["PDP_API_TOKEN"]}).body)
       campaigns.each do |campaign|
         mobilization = Mobilization.find_by_hashtag(campaign["hashtag"])
         if mobilization.present?
@@ -12,7 +12,9 @@ namespace :sync do
             link:             "#{ENV["PDP_HOST"]}/campaigns/#{campaign["id"]}",
             description_html: campaign["description_html"],
             uid:              campaign["id"],
-            hashtag:          mobilization.hashtag
+            hashtag:          mobilization.hashtag,
+            user:             User.find_by_email(campaign["user_email"]),
+            user_email:       campaign["user_email"]
           )
         end
       end
@@ -22,7 +24,12 @@ namespace :sync do
       Campaign.all.each do |campaign|
         pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json", query: {token: ENV["PDP_API_TOKEN"]}).body)
         pokes.each do |poke|
-          Poke.create(uid: poke["id"], campaign: campaign, user: User.find_by_email(poke["user_email"]))
+          Poke.create(
+            uid:        poke["id"], 
+            campaign:   campaign, 
+            user:       User.find_by_email(poke["user_email"]), 
+            user_email: poke["user_email"]
+          )
         end
       end
     end
