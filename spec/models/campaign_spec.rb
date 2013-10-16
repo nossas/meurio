@@ -7,4 +7,5 @@ describe Campaign do
   it { should validate_presence_of :hashtag }
   it { should validate_uniqueness_of :uid }
   it { should belong_to :mobilization }
+  it { should belong_to :user }
 end

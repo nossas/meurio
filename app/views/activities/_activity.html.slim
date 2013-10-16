@@ -1,0 +1,6 @@
+.activity class=[activity.relname]
+  = image_tag activity.user.image.square
+  = link_to activity.user.name
+  = t "activity.#{activity.relname}"
+  = link_to "##{activity.hashtag}", activity.mobilization
+  .created_at= distance_of_time_in_words_to_now activity.created_at

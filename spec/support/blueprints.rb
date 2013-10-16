@@ -16,6 +16,7 @@ Campaign.blueprint do
   link              { Faker::Internet.url }
   uid               { sn }
   hashtag           { Mobilization.make!.hashtag }
+  user              { User.make! }
 end
 
 Problem.blueprint do
@@ -34,7 +35,9 @@ Idea.blueprint do
 end
 
 Poke.blueprint do
-  uid { sn }
+  uid       { sn }
+  campaign  { Campaign.make! }
+  user      { User.make! }
 end
 
 Tweet.blueprint do
@@ -84,4 +87,8 @@ User.blueprint do
   email        { Faker::Internet.email }
   password     { Faker::Internet.password }
   confirmed_at { Time.now }
+end
+
+Activity.blueprint do
+  # Attributes here
 end

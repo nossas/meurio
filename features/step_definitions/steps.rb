@@ -22,6 +22,10 @@ Given(/^this campaign have (\d+) pokes$/) do |count|
   count.to_i.times { Poke.make! campaign: @campaign }
 end
 
+Given(/^there is campaign$/) do
+  @campaign = Campaign.make!
+end
+
 Given(/^this problem have many ideas$/) do
   rand(10..100).times { Idea.make! problem: @problem }
 end
@@ -72,6 +76,10 @@ end
 
 Given(/^this mobilization have a clipping$/) do
   @clipping = Clipping.make! hashtag: @mobilization.hashtag
+end
+
+Given(/^there is a poke$/) do
+  @poke = Poke.make!
 end
 
 When(/^I attach an image to "([^"]*)"$/) do |arg1|

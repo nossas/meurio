@@ -57,6 +57,8 @@ def to_element string
   return "users_button"                                             if string == "the users button"
   return "#users"                                                   if string == "the users"
   return ".user form"                                               if string == "the edit user form"
+  return ".users_activities .campaigns"                             if string == "this campaign on the users activities"
+  return ".users_activities .pokes"                                 if string == "this poke on the users activities"
 end
 
 def to_text string
@@ -75,6 +77,8 @@ def to_text string
   return @mobilization.action_of_the_day.counter    if string == "the action of the day attending counter"
   return @clipping.body                             if string == "this mobilization clipping"
   return @mobilization.title                        if string == "this mobilization in the mobilizations list"
+  return @campaign.hashtag                          if string == "this campaign on the users activities"
+  return @poke.campaign.hashtag                     if string == "this poke on the users activities"
 end
 
 def mobilization_field field
