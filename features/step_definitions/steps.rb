@@ -98,6 +98,14 @@ When /^I click "([^"]*)"$/ do |arg1|
   click_link to_element(arg1)
 end
 
+When /^I choose "([^"]*)"$/ do |arg1|
+  choose to_element(arg1)
+end
+
+When /^I check "([^"]*)"$/ do |arg1|
+  check to_element(arg1)
+end
+
 Then(/^I should see only (\d+) "(.*?)"$/) do |count, arg1|
   page.should have_css(to_element(arg1), text: to_text(arg1), count: count.to_i)
 end

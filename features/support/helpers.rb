@@ -61,6 +61,7 @@ def to_element string
   return ".field_with_errors label[for='user_last_name']"           if string == "user last name field error"
   return ".users_activities .campaigns"                             if string == "this campaign on the users activities"
   return ".users_activities .pokes"                                 if string == "this poke on the users activities"
+  return string
 end
 
 def to_text string

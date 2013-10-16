@@ -9,6 +9,6 @@ class UsersController < InheritedResources::Base
   end
 
   def permitted_params
-    {:user => params.require(:user).permit(:first_name, :last_name)}
+    {:user => params.require(:user).permit(:first_name, :last_name, :bio, :birthdate, :profession, :phone, :secondary_email, :gender, :public)}
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131016145119) do
+ActiveRecord::Schema.define(version: 20131016204902) do
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20131016145119) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "image"
+    t.text     "bio"
+    t.date     "birthdate"
+    t.string   "profession"
+    t.string   "gender"
+    t.string   "phone"
+    t.string   "secondary_email"
+    t.boolean  "public"
     t.index ["email"], :name => "index_users_on_email", :unique => true, :order => {"email" => :asc}
     t.index ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true, :order => {"reset_password_token" => :asc}
   end

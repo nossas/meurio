@@ -12,6 +12,37 @@ section.user
           .large-6.columns
             = f.label :last_name
             = f.text_field :last_name
+        .row
+          .large-12.columns
+            = f.label :bio
+            = f.text_area :bio
+        .row
+          .large-6.columns
+            = f.label :birthdate
+            = f.date_field :birthdate
+          .large-6.columns
+            = f.label :profession
+            = f.text_field :profession
+        .row
+          .large-6.columns
+            = f.label :phone
+            = f.phone_field :phone
+          .large-6.columns
+            = f.label :secondary_email
+            = f.text_field :secondary_email
+        .row
+          .large-6.columns
+            .large-3.columns
+              = f.label :gender
+            .large-4.columns
+              = f.label :gender, 'Masculino'
+              = f.radio_button :gender, 'male', checked: true
+            .large-4.columns
+              = f.label :gender, 'Feminino'
+              = f.radio_button :gender, 'female'
+          .large-6.columns
+            = f.label :public
+            = f.check_box :public
         .row.action
           .large-6.columns.submit
             = f.submit 'Atualizar perfil', class: 'btn'
