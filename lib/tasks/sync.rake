@@ -20,9 +20,9 @@ namespace :sync do
 
     task :pokes => :environment do
       Campaign.all.each do |campaign|
-        pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json").body)
+        pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json", query: {token: ENV["PDP_API_TOKEN"]}).body)
         pokes.each do |poke|
-          Poke.create(uid: poke["id"], campaign: campaign)
+          Poke.create(uid: poke["id"], campaign: campaign, user: User.find_by_email(poke["user_email"]))
         end
       end
     end
