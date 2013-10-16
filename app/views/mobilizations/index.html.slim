@@ -32,7 +32,7 @@
       p A equipe também facilita a comunicação entre os membros da Rede Meu Rio para que eles se auxiliem, dedicando voluntariamente seu tempo e seus talentos para aumentar o impacto de suas mobilizações.
     .large-6.columns.users_activities
       h2 Atividade recente dos membros
-      = render Activity.order("created_at DESC").limit(5)
+      = render Activity.where("user_id IS NOT NULL").order("created_at DESC").limit(5)
 
 .mobilizations
   .row
