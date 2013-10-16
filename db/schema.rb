@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20131016204902) do
     t.string   "uid"
     t.string   "hashtag"
     t.integer  "user_id"
+    t.string   "user_email"
     t.index ["user_id"], :name => "fk__campaigns_user_id", :order => {"user_id" => :asc}
     t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_campaigns_user_id"
   end
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 20131016204902) do
     t.integer  "campaign_id"
     t.string   "uid"
     t.integer  "user_id"
+    t.string   "user_email"
     t.index ["campaign_id"], :name => "fk__pokes_campaign_id", :order => {"campaign_id" => :asc}
     t.index ["user_id"], :name => "fk__pokes_user_id", :order => {"user_id" => :asc}
     t.foreign_key ["campaign_id"], "campaigns", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_pokes_campaign_id"
@@ -132,15 +134,6 @@ ActiveRecord::Schema.define(version: 20131016204902) do
   end
 
   create_view "facts", "(SELECT c.id, c.created_at, c.name, c.description_html, c.link, c.hashtag, 'campaigns'::text AS relname FROM campaigns c UNION ALL SELECT p.id, p.created_at, p.name, p.description AS description_html, p.link, p.hashtag, 'problems'::text AS relname FROM problems p) UNION ALL SELECT e.id, e.created_at, e.name, e.description AS description_html, e.link, e.hashtag, 'events'::text AS relname FROM events e", :force => true
-  create_table "guardians", force: true do |t|
-    t.string   "uid"
-    t.integer  "problem_id"
-    t.integer  "integer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["problem_id"], :name => "fk__guardians_problem_id", :order => {"problem_id" => :asc}
-    t.foreign_key ["problem_id"], "problems", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_guardians_problem_id"
-  end
 
   create_table "ideas", force: true do |t|
     t.string   "name"
