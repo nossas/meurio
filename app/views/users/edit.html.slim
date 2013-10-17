@@ -37,7 +37,7 @@ section.user
             .row
               .large-6.columns
                 = f.label :phone
-                = f.phone_field :phone
+                = f.phone_field :phone, class: 'phone_with_ddd'
               .large-6.columns
                 = f.label :secondary_email
                 = f.text_field :secondary_email

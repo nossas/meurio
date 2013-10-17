@@ -19,7 +19,7 @@ Feature: Edit profile
     And I fill "Profissão" with "Desenvolvedor de software"
     And I fill "CEP onde mora" with "99999-999"
     And I fill "CEP onde trabalha" with "88888-888"
-    And I fill "Celular" with "(51) 9999-9999"
+    And I fill "Celular" with "(51) 99999999"
     And I fill "Email secundário" with "secondary@meurio.org.br"
     And I check "Outros podem ver meu perfil?"
     And I press "Atualizar perfil"
@@ -37,15 +37,5 @@ Feature: Edit profile
     And I should see "user last name field error"
 
   # - Avatar
-  # - Fale um pouco mais sobre você
   # - CEP onde mora
-  # - Número
-  # - Complemento
-  # - Profissão
-  # - Nascimento
-  # - Gênero
-  # - Celular
   # - CEP onde trabalha
-  # - Temas de interesse
-  # - Email secundário
-  # - Deixar o perfil publico

@@ -255,3 +255,7 @@ pt-BR:
   activity:
     pokes: "pressionou na mobilização"
     campaigns: "criou uma campanha"
+
+  faker:
+    phone_number:
+      formats: ["(##) ########", "(##) #########"]
