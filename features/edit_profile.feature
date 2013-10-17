@@ -21,7 +21,7 @@ Feature: Edit profile
     And I fill "CEP onde trabalha" with "88888-888"
     And I fill "Celular" with "(51) 99999999"
     And I fill "Email secundário" with "secondary@meurio.org.br"
-    And I press "Atualizar perfil"
+    And I press "Salvar Perfil"
     Then I should see "a success message"
 
   @javascript
@@ -31,7 +31,7 @@ Feature: Edit profile
     When I fill "Nome" with ""
     And I fill "Sobrenome" with ""
     And I fill "Um pouco mais sobre você" with "Lorem ipsum sit dolor amet"
-    And I press "Atualizar perfil"
+    And I press "Salvar Perfil"
     Then I should see "user first name field error"
     And I should see "user last name field error"
 
