@@ -5,4 +5,29 @@ body.users.edit
       color: $green
       font-size: 1em
       padding-top: 1em
-    
+    form
+      .file-btn
+        margin-top: 1em
+        position: relative
+        cursor: pointer
+        font-size: .8em
+        font-weight: bolder
+        .wrapper
+          position: absolute
+          cursor: pointer
+          z-index: 2
+          opacity: 0
+          top: 0
+        span.btn
+          background-color: $form-grey-button
+          position: relative
+          cursor: pointer
+          color: white
+          z-index: 1
+          top: 0
+          +box-shadow(darken($form-grey-button, 20%) 0 2px 0)
+          &:hover
+            background: darken($form-grey-button, 10%)
+            color: white
+          &:active
+            +box-shadow(darken($form-grey-button, 20%) 0 2px 0)
