@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.datepicker
 //= require jquery.turbolinks
-//= require turbolinks
-//= require foundation
 //= require jquery.facebox
 //= require jquery.mask.min
+//= require turbolinks
+//= require foundation
 //= require rails.validations
 //= require rails.validations.turbolinks
 
@@ -34,6 +35,17 @@ function showNetDiv(div){
 function maskElements() {
   $('.phone_with_ddd').mask('(00) 000000000');
   $('.postcode').mask('00000-000');
+  $('.date').mask('00/00/0000');
+  $('.date').datepicker({
+    dateFormat: 'dd/mm/yy',
+    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+    dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+    nextText: 'Próximo',
+    prevText: 'Anterior'
+  });
 }
 
 $(function(){
