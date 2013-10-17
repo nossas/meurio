@@ -1,14 +1,21 @@
 section.user
   .row
-    .large-3.columns
-      h2 Avatar
-    .large-9.columns
-      .row.title
-        .large-12.columns
-          h2 Editar perfil
+    .large-12.columns
       .row.form
-        .large-12.columns
-          = form_for @user, validate: true do |f|
+        = form_for @user, validate: true do |f|
+          .large-3.columns
+            .row.avatar
+              .large-12.columns
+                h2 Avatar
+                = image_tag @user.image, class: 'image-preview'
+                .file-btn
+                  .wrapper
+                    input type="file" id="user_image" name="user[image]" class='image-upload'
+                  span.btn Adicionar foto
+          .large-9.columns
+            .row.title
+              .large-12.columns
+                h2 Perfil
             .row
               .large-6.small-12.columns
                 = f.label :first_name
@@ -60,7 +67,7 @@ section.user
                   = f.label :public, 'Não'
             .row.action
               .large-6.columns.submit
-                = f.submit 'Atualizar perfil', class: 'btn'
+                = f.submit 'Salvar Perfil', class: 'btn'
               .large-6.columns.cancel
                 span ou 
                 = link_to 'Cancelar', root_path
