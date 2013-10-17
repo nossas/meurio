@@ -10,7 +10,7 @@ section.user
                 = image_tag @user.image, class: 'image-preview'
                 .file-btn
                   .wrapper
-                    input type="file" id="user_image" name="user[image]" class='image-upload'
+                    = f.file_field :image, class: 'image-upload'
                   span.btn Adicionar foto
           .large-9.columns
             .row.title
