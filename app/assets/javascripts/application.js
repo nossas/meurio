@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require foundation
 //= require jquery.facebox
+//= require jquery.mask.min
 //= require rails.validations
 //= require rails.validations.turbolinks
 
@@ -30,6 +32,8 @@ function showNetDiv(div){
 }
 
 $(function(){
+  $('.phone_with_ddd').mask('(00) 000000000');
+  
   $('a[rel*=facebox]').facebox();
 
   showNetDiv("funders");
