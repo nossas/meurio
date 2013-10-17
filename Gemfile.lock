@@ -155,6 +155,8 @@ GEM
     jquery-turbolinks (2.0.1)
       railties (>= 3.1.0)
       turbolinks
+    jquery-ui-rails (4.0.5)
+      railties (>= 3.1.0)
     json (1.8.0)
     koala (1.6.0)
       addressable (~> 2.2)
@@ -315,6 +317,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
+  jquery-ui-rails
   koala
   launchy
   machinist (>= 2.0.0.beta2)
