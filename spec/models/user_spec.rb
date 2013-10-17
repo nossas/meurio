@@ -10,4 +10,8 @@ describe User do
   it { should allow_value("(21) 99999999").for(:phone) }
   it { should allow_value("(21) 999999999").for(:phone) }
   it { should_not allow_value("(21) 9999999").for(:phone) }
+  it { should allow_value("99999-999").for(:home_postcode) }
+  it { should_not allow_value("99999999").for(:home_postcode) }
+  it { should allow_value("99999-999").for(:work_postcode) }
+  it { should_not allow_value("99999999").for(:work_postcode) }
 end

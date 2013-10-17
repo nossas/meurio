@@ -31,9 +31,13 @@ function showNetDiv(div){
   $('#net_content').load(div);
 }
 
-$(function(){
+function maskElements() {
   $('.phone_with_ddd').mask('(00) 000000000');
-  
+  $('.postcode').mask('00000-000');
+}
+
+$(function(){
+  maskElements();
   $('a[rel*=facebox]').facebox();
 
   showNetDiv("funders");
