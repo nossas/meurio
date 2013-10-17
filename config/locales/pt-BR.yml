@@ -227,6 +227,8 @@ pt-BR:
         bio: Um pouco mais sobre você
         birthdate: Data de nascimento
         profession: Profissão
+        home_postcode: CEP onde mora
+        work_postcode: CEP onde trabalha
         phone: Celular
         secondary_email: Email secundário
         gender: Gênero

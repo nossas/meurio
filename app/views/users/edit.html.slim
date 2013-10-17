@@ -25,6 +25,13 @@ section.user
             = f.text_field :profession
         .row
           .large-6.columns
+            = f.label :home_postcode
+            = f.text_field :home_postcode
+          .large-6.columns
+            = f.label :work_postcode
+            = f.text_field :work_postcode
+        .row
+          .large-6.columns
             = f.label :phone
             = f.phone_field :phone
           .large-6.columns
