@@ -21,7 +21,6 @@ Feature: Edit profile
     And I fill "CEP onde trabalha" with "88888-888"
     And I fill "Celular" with "(51) 99999999"
     And I fill "Email secundário" with "secondary@meurio.org.br"
-    And I check "Outros podem ver meu perfil?"
     And I press "Atualizar perfil"
     Then I should see "a success message"
 

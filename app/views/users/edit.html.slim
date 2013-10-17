@@ -10,50 +10,54 @@ section.user
         .large-12.columns
           = form_for @user, validate: true do |f|
             .row
-              .large-6.columns
+              .large-6.small-12.columns
                 = f.label :first_name
                 = f.text_field :first_name
-              .large-6.columns
+              .large-6.small-12.columns
                 = f.label :last_name
                 = f.text_field :last_name
             .row
-              .large-12.columns
+              .large-12.small-12.columns
                 = f.label :bio
                 = f.text_area :bio
             .row
-              .large-6.columns
+              .large-6.small-12.columns
                 = f.label :birthdate
-                = f.date_field :birthdate
-              .large-6.columns
+                = f.text_field :birthdate, value: @user.birthdate.to_s, class: 'date'
+              .large-6.small-12.columns
                 = f.label :profession
                 = f.text_field :profession
             .row
-              .large-6.columns
+              .large-6.small-12.columns
                 = f.label :home_postcode
                 = f.text_field :home_postcode, class: 'postcode'
-              .large-6.columns
+              .large-6.small-12.columns
                 = f.label :work_postcode
                 = f.text_field :work_postcode, class: 'postcode'
             .row
-              .large-6.columns
+              .large-6.small-12.columns
                 = f.label :phone
                 = f.phone_field :phone, class: 'phone_with_ddd'
-              .large-6.columns
+              .large-6.small-12.columns
                 = f.label :secondary_email
                 = f.text_field :secondary_email
             .row
               .large-6.columns
-                .large-3.columns
-                  = f.label :gender
-                .large-4.columns
-                  = f.label :gender, 'Masculino'
+                = f.label :gender
+                .large-5.small-6.columns.radio
                   = f.radio_button :gender, 'male', checked: true
-                .large-4.columns
-                  = f.label :gender, 'Feminino'
+                  = f.label :gender, 'Masculino'
+                .large-7.small-6.columns.radio
                   = f.radio_button :gender, 'female'
+                  = f.label :gender, 'Feminino'
               .large-6.columns
                 = f.label :public
-                = f.check_box :public
+                .large-5.small-6.columns.radio
+                  = f.radio_button :public, true, checked: true
+                  = f.label :public, 'Sim'
+                .large-7.small-6.columns.radio
+                  = f.radio_button :public, false
+                  = f.label :public, 'Não'
             .row.action
               .large-6.columns.submit
                 = f.submit 'Atualizar perfil', class: 'btn'
