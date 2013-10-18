@@ -82,6 +82,14 @@ Given(/^there is a poke$/) do
   @poke = Poke.make!
 end
 
+Given(/^there is a problem$/) do
+  @problem = Problem.make!
+end
+
+Given(/^there is an idea$/) do
+  @idea = Idea.make!
+end
+
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
   attach_file to_element(arg1), File.dirname(__FILE__) + "/../support/mobilization.jpg"
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131018202053) do
+ActiveRecord::Schema.define(version: 20131018212957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,36 @@ ActiveRecord::Schema.define(version: 20131018202053) do
     t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_campaigns_user_id"
   end
 
+  create_table "problems", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "uid"
+    t.string   "hashtag"
+    t.integer  "user_id"
+    t.string   "user_email"
+    t.index ["user_id"], :name => "fk__problems_user_id", :order => {"user_id" => :asc}
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_problems_user_id"
+  end
+
+  create_table "ideas", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "problem_id"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.string   "user_email"
+    t.index ["user_id"], :name => "fk__ideas_user_id", :order => {"user_id" => :asc}
+    t.index ["problem_id"], :name => "index_ideas_on_problem_id", :order => {"problem_id" => :asc}
+    t.foreign_key ["problem_id"], "problems", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_ideas_problem_id"
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_ideas_user_id"
+  end
+
   create_table "pokes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -88,7 +118,7 @@ ActiveRecord::Schema.define(version: 20131018202053) do
     t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_pokes_user_id"
   end
 
-  create_view "activities", "SELECT c.id, c.user_id, c.created_at, c.hashtag, 'campaigns'::text AS relname FROM campaigns c UNION ALL SELECT p.id, p.user_id, p.created_at, pc.hashtag, 'pokes'::text AS relname FROM (pokes p JOIN campaigns pc ON ((pc.id = p.campaign_id)))", :force => true
+  create_view "activities", "((SELECT campaigns.id, campaigns.user_id, campaigns.created_at, campaigns.hashtag, 'campaigns'::text AS relname FROM campaigns UNION ALL SELECT pokes.id, pokes.user_id, pokes.created_at, pokes_campaigns.hashtag, 'pokes'::text AS relname FROM (pokes JOIN campaigns pokes_campaigns ON ((pokes_campaigns.id = pokes.campaign_id)))) UNION ALL SELECT problems.id, problems.user_id, problems.created_at, problems.hashtag, 'problems'::text AS relname FROM problems) UNION ALL SELECT ideas.id, ideas.user_id, ideas.created_at, ideas_problems.hashtag, 'ideas'::text AS relname FROM (ideas JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id)))", :force => true
   create_table "clippings", force: true do |t|
     t.datetime "published_at"
     t.text     "body"
@@ -140,37 +170,7 @@ ActiveRecord::Schema.define(version: 20131018202053) do
     t.string   "link"
   end
 
-  create_table "problems", force: true do |t|
-    t.string   "name"
-    t.string   "link"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "uid"
-    t.string   "hashtag"
-    t.integer  "user_id"
-    t.string   "user_email"
-    t.index ["user_id"], :name => "fk__problems_user_id", :order => {"user_id" => :asc}
-    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_problems_user_id"
-  end
-
   create_view "facts", "(SELECT c.id, c.created_at, c.name, c.description_html, c.link, c.hashtag, 'campaigns'::text AS relname FROM campaigns c UNION ALL SELECT p.id, p.created_at, p.name, p.description AS description_html, p.link, p.hashtag, 'problems'::text AS relname FROM problems p) UNION ALL SELECT e.id, e.created_at, e.name, e.description AS description_html, e.link, e.hashtag, 'events'::text AS relname FROM events e", :force => true
-  create_table "ideas", force: true do |t|
-    t.string   "name"
-    t.string   "link"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "problem_id"
-    t.string   "uid"
-    t.integer  "user_id"
-    t.string   "user_email"
-    t.index ["user_id"], :name => "fk__ideas_user_id", :order => {"user_id" => :asc}
-    t.index ["problem_id"], :name => "index_ideas_on_problem_id", :order => {"problem_id" => :asc}
-    t.foreign_key ["problem_id"], "problems", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_ideas_problem_id"
-    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_ideas_user_id"
-  end
-
   create_table "images", force: true do |t|
     t.string   "file"
     t.string   "hashtag"

@@ -25,6 +25,7 @@ Problem.blueprint do
   link          { Faker::Internet.url }
   uid           { sn }
   hashtag       { Mobilization.make!.hashtag }
+  user          { User.make! }
 end
 
 Idea.blueprint do
@@ -32,6 +33,8 @@ Idea.blueprint do
   description   { Faker::Lorem.paragraph }
   link          { Faker::Internet.url }
   uid           { sn }
+  user          { User.make! }
+  problem       { Problem.make! }
 end
 
 Poke.blueprint do

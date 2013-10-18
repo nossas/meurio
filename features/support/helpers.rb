@@ -61,6 +61,8 @@ def to_element string
   return ".field_with_errors label[for='user_last_name']"           if string == "user last name field error"
   return ".users_activities .campaigns"                             if string == "this campaign on the users activities"
   return ".users_activities .pokes"                                 if string == "this poke on the users activities"
+  return ".users_activities .problems"                              if string == "this problem on the users activity"
+  return ".users_activities .ideas"                                 if string == "this idea on the users activity"
   return ".home-address"                                            if string == "home address"
   return ".work-address"                                            if string == "work address"
   return string
@@ -84,6 +86,8 @@ def to_text string
   return @mobilization.title                        if string == "this mobilization in the mobilizations list"
   return @campaign.hashtag                          if string == "this campaign on the users activities"
   return @poke.campaign.hashtag                     if string == "this poke on the users activities"
+  return @problem.hashtag                           if string == "this problem on the users activity"
+  return @idea.problem.hashtag                      if string == "this idea on the users activity"
 end
 
 def mobilization_field field
