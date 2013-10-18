@@ -1,8 +1,8 @@
 header class=('logged' if user_signed_in?)
   .row
-    .large-5.columns
+    .large-5.small-4.columns
       = link_to image_tag("marca-mr.png"), root_path
-    .large-7.columns.login
+    .large-7.small-8.columns.login
       - if user_signed_in?
         .large-12.push-6.columns.logged-user
           span.image= image_tag current_user.try(:image)

@@ -4,8 +4,14 @@ body.users.edit
     h2
       color: $green
       font-size: 1em
-      padding-top: 1em
+      margin-top: 1em
     form
+      .avatar
+        margin-top: 1em
+        img
+          +border-radius(100%)
+          width: 150px          
+          height: 150px
       .file-btn
         margin-top: 1em
         position: relative
@@ -32,3 +38,9 @@ body.users.edit
           &:active
             +box-shadow(darken($form-grey-button, 20%) 0 2px 0)
             
+body.users.show
+  .avatar
+    img
+      +border-radius(100%)
+      width: 150px          
+      height: 150px
