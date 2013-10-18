@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017133358) do
+ActiveRecord::Schema.define(version: 20131018143907) do
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(version: 20131017133358) do
     t.boolean  "public"
     t.string   "home_postcode"
     t.string   "work_postcode"
+    t.string   "home_address_street"
+    t.string   "home_address_number"
+    t.string   "home_address_extra"
+    t.string   "home_address_district"
+    t.string   "home_city"
+    t.string   "home_state"
+    t.string   "work_address_street"
+    t.string   "work_address_number"
+    t.string   "work_address_extra"
+    t.string   "work_address_district"
+    t.string   "work_city"
+    t.string   "work_state"
     t.index ["email"], :name => "index_users_on_email", :unique => true, :order => {"email" => :asc}
     t.index ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true, :order => {"reset_password_token" => :asc}
   end

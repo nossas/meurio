@@ -106,6 +106,10 @@ When /^I check "([^"]*)"$/ do |arg1|
   check to_element(arg1)
 end
 
+When(/^I select "(.*?)"$/) do |arg1|
+  select to_element(arg1)
+end
+
 Then(/^I should see only (\d+) "(.*?)"$/) do |count, arg1|
   page.should have_css(to_element(arg1), text: to_text(arg1), count: count.to_i)
 end
