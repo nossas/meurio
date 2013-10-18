@@ -135,7 +135,7 @@ Then(/^I should be in "(.*?)"$/) do |arg1|
 end
 
 Then(/^I should be logged in$/) do
-  page.should have_css(".login", text: @user.email)
+  page.should have_css(".login", text: @user.name)
 end
 
 Then(/^I should not be logged in$/) do
