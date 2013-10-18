@@ -78,6 +78,8 @@ form
       font-size: 0.7em
       font-weight: bold
     input
+      font-size: .8em
+      padding: 0 .5em
       height: 1.8em
       margin: 0
       +border-radius(3px)
@@ -120,13 +122,18 @@ form
         margin-left: .5em      
     input
       margin-bottom: .5em
-    input[type="text"], input[type="tel"], input[type="date"], textarea
+    input[type="text"], input[type="tel"], input[type="date"], textarea, select
       +border-radius(5px)
       border: 2px $form-border solid
       font-size: 1.1em
       resize: none
     textarea
       height: 10em
+    select
+      background-color: $form-border
+      color: white
+      height: 2.3125em
+      padding: .4em
     .hint
       font-size: .8em
     .action
