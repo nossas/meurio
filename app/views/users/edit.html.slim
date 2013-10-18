@@ -64,27 +64,27 @@ section.user
               .row
                 .large-4.small-12.columns
                   = f.label :home_postcode
-                  = f.text_field :home_postcode, class: 'postcode'
+                  = f.text_field :home_postcode, class: 'postcode postcode-request'
                 .large-8.small-12.columns
                   = f.label :home_address_street
                   = f.text_field :home_address_street
               .row
                 .large-3.small-6.columns
                   = f.label :home_address_number
-                  = f.text_field :home_address_number, class: 'postcode'
+                  = f.text_field :home_address_number
                 .large-3.small-6.columns
                   = f.label :home_address_extra
                   = f.text_field :home_address_extra
                 .large-6.small-12.columns
                   = f.label :home_address_district
-                  = f.text_field :home_address_district, class: 'postcode'
+                  = f.text_field :home_address_district
               .row
                 .large-6.small-8.columns
                   = f.label :home_city
                   = f.text_field :home_city
                 .large-2.pull-4.small-4.columns
                   = f.label :home_state
-                  = f.select :home_state, ['RS', 'RJ', 'SP']
+                  = f.select :home_state, states_for_select
             .work-address
               .row
                 .large-12.small-12.columns
@@ -92,27 +92,27 @@ section.user
               .row
                 .large-4.small-12.columns
                   = f.label :work_postcode
-                  = f.text_field :work_postcode, class: 'postcode'
+                  = f.text_field :work_postcode, class: 'postcode postcode-request'
                 .large-8.small-12.columns
                   = f.label :work_address_street
                   = f.text_field :work_address_street
               .row
                 .large-3.small-6.columns
                   = f.label :work_address_number
-                  = f.text_field :work_address_number, class: 'postcode'
+                  = f.text_field :work_address_number
                 .large-3.small-6.columns
                   = f.label :work_address_extra
                   = f.text_field :work_address_extra
                 .large-6.small-12.columns
                   = f.label :work_address_district
-                  = f.text_field :work_address_district, class: 'postcode'
+                  = f.text_field :work_address_district
               .row
                 .large-6.small-8.columns
                   = f.label :work_city
                   = f.text_field :work_city
                 .large-2.pull-4.small-4.columns
                   = f.label :work_state
-                  = f.select :work_state, ['RS', 'RJ', 'SP']
+                  = f.select :work_state, states_for_select
             .row.action
               .large-6.columns.submit
                 = f.submit 'Salvar Perfil', class: 'btn'
