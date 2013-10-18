@@ -16,6 +16,12 @@ header
   img
     width: 60px
     height: 60px
+  &.logged
+    padding: .5em 0
+    img
+      width: 36px
+      height: 36px
+
 
 footer
   background: #333
@@ -86,11 +92,15 @@ form
       color: $light-green
       font-size: 0.7em
   .logged-user
-    padding: 1em 0
+    font-size: .9em
+    .image
+      margin-right: 1em
+      img
+        +border-radius(100%)
     span, a
-      color: white
-      font-size: 1em
       font-weight: bolder
+      padding: .6em 0
+      color: white
 
 .field_with_errors
   label
