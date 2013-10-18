@@ -18,12 +18,12 @@ Feature: Edit profile
     And I fill "Data de nascimento" with "01/01/1980"
     And I fill "Profissão" with "Desenvolvedor de software"
     And I fill "CEP onde mora" with "99999-999"
-    And I fill "Endereço" with "Avenida Getúlio Vargas"
-    And I fill "Número" with "2200"
-    And I fill "Complemento" with "Ap 104"
-    And I fill "Bairro" with "22041-001"
-    And I fill "Cidade" with "Rio de Janeiro"
-    And I select "RJ"
+    And I fill "Endereço" within "home address" with "Avenida Getúlio Vargas"
+    And I fill "Número" within "home address" with "2200"
+    And I fill "Complemento" within "home address" with "Ap 104"
+    And I fill "Bairro" within "home address" with "22041-001"
+    And I fill "Cidade" within "home address" with "Rio de Janeiro"
+    And I select "RJ" within "home address"
     And I fill "CEP onde trabalha" with "88888-888"
     And I fill "Celular" with "(51) 99999999"
     And I fill "Email secundário" with "secondary@meurio.org.br"
@@ -40,7 +40,3 @@ Feature: Edit profile
     And I press "Salvar Perfil"
     Then I should see "user first name field error"
     And I should see "user last name field error"
-
-  # - Avatar
-  # - CEP onde mora
-  # - CEP onde trabalha
