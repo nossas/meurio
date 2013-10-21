@@ -26,9 +26,10 @@ html
     = render 'layouts/header'
     - if flash[:alert] || flash[:notice]
       .flash
-        .large-12.columns
-          .alert= alert
-          .notice= notice
+        .row
+          .large-12.columns
+            .alert= alert
+            .notice= notice
     = yield
     footer
       .row
