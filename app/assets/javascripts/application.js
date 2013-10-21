@@ -48,25 +48,6 @@ function maskElements() {
   });
 }
 
-function getPostcodeInfo(cepField) {
-  $.getJSON('//brazilapi.herokuapp.com/api?cep=' + cepField.val(), function(response) {
-    if(response[0].cep.result) {
-      populatePostcodeInfo(cepField[0].id, response[0].cep.data)
-    }
-  })
-}
-
-function populatePostcodeInfo(field, data) {
-  var context = "#" + field.substr(0, 9);
-
-  if(data.tp_logradouro !== undefined && data.logradouro !== undefined)
-    $(context + "_address_street").val(data.tp_logradouro + ' ' + data.logradouro);
-
-  $(context + "_address_district").val(data.bairro);
-  $(context + "_city").val(data.cidade);
-  $(context + "_state").val(data.uf.toUpperCase());
-}
-
 $(function(){
   // Initialization
   maskElements();
@@ -82,10 +63,6 @@ $(function(){
       reader.readAsDataURL(this.files[0]);
     }   
   });
-
-  $('.postcode-request').on('blur', function() {
-    getPostcodeInfo($(this));
-  })
 
   showNetDiv("funders");
   $('#funders_button').click(function(){ showNetDiv('funders'); });
