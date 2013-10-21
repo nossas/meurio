@@ -50,9 +50,11 @@ body.mobilizations.index
     text-align: left
     .activity
       clear: both
-      margin-bottom: 2em
       font-size: .9em
       line-height: 16px
+      margin-bottom: .5em
+      padding: 1em
+      background: #f9f9f9
       span.user
         font-weight: bold
         color: $green
@@ -74,6 +76,7 @@ body.mobilizations.index
     background: image-url("bg-02.jpg") top center
     .mobilization
       +rgrid(6, 4)
+      margin-bottom: 2em
       img
         +border-radius(5px 5px 0 0)
       .title
