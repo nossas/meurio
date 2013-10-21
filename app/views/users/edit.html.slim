@@ -89,38 +89,9 @@ section.user
                 .large-2.pull-4.small-4.columns
                   = f.label :home_state
                   = f.select :home_state, states_for_select
-            .work-address
-              .row
-                .large-12.small-12.columns
-                  h2 Onde você trabalha?
-              .row
-                .large-4.small-12.columns
-                  = f.label :work_postcode
-                  = f.text_field :work_postcode, class: 'postcode postcode-request'
-                .large-8.small-12.columns
-                  = f.label :work_address_street
-                  = f.text_field :work_address_street
-              .row
-                .large-3.small-6.columns
-                  = f.label :work_address_number
-                  = f.text_field :work_address_number
-                .large-3.small-6.columns
-                  = f.label :work_address_extra
-                  = f.text_field :work_address_extra
-                .large-6.small-12.columns
-                  = f.label :work_address_district
-                  = f.text_field :work_address_district
-              .row
-                .large-6.small-8.columns
-                  = f.label :work_city
-                  = f.text_field :work_city
-                .large-2.pull-4.small-4.columns
-                  = f.label :work_state
-                  = f.select :work_state, states_for_select
             .row.action
               .large-6.columns.submit
                 = f.submit 'Salvar Perfil', class: 'btn'
               .large-6.columns.cancel
                 span ou 
                 = link_to 'Cancelar', root_path
-          

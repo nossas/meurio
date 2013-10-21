@@ -24,7 +24,6 @@ Feature: Edit profile
     And I fill "Bairro" within "home address" with "22041-001"
     And I fill "Cidade" within "home address" with "Rio de Janeiro"
     And I select "RJ" within "home address"
-    And I fill "CEP onde trabalha" with "88888-888"
     And I fill "Celular" with "(51) 99999999"
     And I fill "Email secundário" with "secondary@meurio.org.br"
     And I press "Salvar Perfil"

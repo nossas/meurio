@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131018212957) do
+ActiveRecord::Schema.define(version: 20131021201204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,19 +44,12 @@ ActiveRecord::Schema.define(version: 20131018212957) do
     t.string   "secondary_email"
     t.boolean  "public"
     t.string   "home_postcode"
-    t.string   "work_postcode"
     t.string   "home_address_street"
     t.string   "home_address_number"
     t.string   "home_address_extra"
     t.string   "home_address_district"
     t.string   "home_city"
     t.string   "home_state"
-    t.string   "work_address_street"
-    t.string   "work_address_number"
-    t.string   "work_address_extra"
-    t.string   "work_address_district"
-    t.string   "work_city"
-    t.string   "work_state"
     t.index ["email"], :name => "index_users_on_email", :unique => true, :order => {"email" => :asc}
     t.index ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true, :order => {"reset_password_token" => :asc}
   end
