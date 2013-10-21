@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021201204) do
+ActiveRecord::Schema.define(version: 20131021203533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,8 +45,6 @@ ActiveRecord::Schema.define(version: 20131021201204) do
     t.boolean  "public"
     t.string   "home_postcode"
     t.string   "home_address_street"
-    t.string   "home_address_number"
-    t.string   "home_address_extra"
     t.string   "home_address_district"
     t.string   "home_city"
     t.string   "home_state"

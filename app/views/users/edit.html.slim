@@ -23,9 +23,12 @@ section.user
                 = f.label :last_name
                 = f.text_field :last_name
             .row
-              .large-6.offset-6.columns
+              .large-6.small-12.columns
                 = f.label :email
                 = f.text_field :email
+              .large-6.small-12.columns
+                = f.label :home_postcode
+                = f.text_field :home_postcode
             .row
               .large-12.small-12.columns
                 = f.label :bio
@@ -61,34 +64,6 @@ section.user
                 .large-7.small-6.columns.radio
                   = f.radio_button :public, false
                   = f.label :public, 'Não'
-            .home-address
-              .row
-                .large-12.small-12.columns
-                  h2 Onde você mora?
-              .row
-                .large-4.small-12.columns
-                  = f.label :home_postcode
-                  = f.text_field :home_postcode, class: 'postcode postcode-request'
-                .large-8.small-12.columns
-                  = f.label :home_address_street
-                  = f.text_field :home_address_street
-              .row
-                .large-3.small-6.columns
-                  = f.label :home_address_number
-                  = f.text_field :home_address_number
-                .large-3.small-6.columns
-                  = f.label :home_address_extra
-                  = f.text_field :home_address_extra
-                .large-6.small-12.columns
-                  = f.label :home_address_district
-                  = f.text_field :home_address_district
-              .row
-                .large-6.small-8.columns
-                  = f.label :home_city
-                  = f.text_field :home_city
-                .large-2.pull-4.small-4.columns
-                  = f.label :home_state
-                  = f.select :home_state, states_for_select
             .row.action
               .large-6.columns.submit
                 = f.submit 'Salvar Perfil', class: 'btn'
