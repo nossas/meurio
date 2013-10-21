@@ -37,7 +37,7 @@ namespace :sync do
 
   namespace :imagine do
     task :problems => :environment do
-      problems = JSON.parse(HTTParty.get("#{ENV["IMAGINE_HOST"]}/problems.json").body)
+      problems = JSON.parse(HTTParty.get("#{ENV["IMAGINE_HOST"]}/problems.json?token=#{ENV["IMAGINE_API_TOKEN"]}").body)
       problems.each do |problem_hash|
         mobilization = Mobilization.find_by(hashtag: problem_hash["hashtag"])
         if mobilization.present?
@@ -46,7 +46,9 @@ namespace :sync do
             link:             "#{ENV['IMAGINE_HOST']}/problems/#{problem_hash['id']}",
             description:      problem_hash["description"],
             uid:              problem_hash["id"],
-            hashtag:          mobilization.hashtag
+            hashtag:          mobilization.hashtag,
+            user:             User.find_by_email(problem_hash["user"]["email"]),
+            user_email:       problem_hash["user"]["email"]
           )
 
           problem = Problem.find_by(uid: problem_hash['id'].to_s)
@@ -57,7 +59,9 @@ namespace :sync do
               link:             "#{ENV["IMAGINE_HOST"]}/problems/#{problem_hash['id']}/ideas/#{idea['id']}",
               description:      idea["description"],
               uid:              idea["id"],
-              problem:          problem
+              problem:          problem,
+              user:             User.find_by_email(idea["user"]["email"]),
+              user_email:       idea["user"]["email"]
             )
           end if problem
         end

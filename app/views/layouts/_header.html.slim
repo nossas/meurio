@@ -1,13 +1,14 @@
-header
+header class=('logged' if user_signed_in?)
   .row
-    .large-5.columns
+    .large-5.small-4.columns
       = link_to image_tag("marca-mr.png"), root_path
-    .large-7.columns.login
+    .large-7.small-8.columns.login
       - if user_signed_in?
         .large-12.push-6.columns.logged-user
-          span.name= link_to current_user.email, edit_profile_path
+          span.image= image_tag current_user.try(:image)
+          span.name= link_to current_user.name, edit_profile_path
           span  | 
-          = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout'
+          = link_to 'Sair', destroy_user_session_path, method: :delete, class: 'logout'
       - else
         = form_for devise_resource, as: resource_name, url: session_path(resource_name) do |f|
           .large-4.columns

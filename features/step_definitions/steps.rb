@@ -82,12 +82,26 @@ Given(/^there is a poke$/) do
   @poke = Poke.make!
 end
 
+Given(/^there is a problem$/) do
+  @problem = Problem.make!
+end
+
+Given(/^there is an idea$/) do
+  @idea = Idea.make!
+end
+
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
-  attach_file arg1, File.dirname(__FILE__) + "/../support/mobilization.jpg"
+  attach_file to_element(arg1), File.dirname(__FILE__) + "/../support/mobilization.jpg"
 end
 
 When(/^I fill "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in arg1, with: arg2
+end
+
+When(/^I fill "(.*?)" within "(.*?)" with "(.*?)"$/) do |field, where, text|
+  within to_element(where) do
+    fill_in field, with: text
+  end
 end
 
 When /^I press "([^"]*)"$/ do |arg1|
@@ -96,6 +110,20 @@ end
 
 When /^I click "([^"]*)"$/ do |arg1|
   click_link to_element(arg1)
+end
+
+When /^I choose "([^"]*)"$/ do |arg1|
+  choose to_element(arg1)
+end
+
+When /^I check "([^"]*)"$/ do |arg1|
+  check to_element(arg1)
+end
+
+When(/^I select "(.*?)" within "(.*?)"$/) do |arg1, where|
+  within to_element(where) do
+    select to_element(arg1)
+  end
 end
 
 Then(/^I should see only (\d+) "(.*?)"$/) do |count, arg1|
@@ -127,7 +155,7 @@ Then(/^I should be in "(.*?)"$/) do |arg1|
 end
 
 Then(/^I should be logged in$/) do
-  page.should have_css(".login", text: @user.email)
+  page.should have_css(".login", text: @user.name)
 end
 
 Then(/^I should not be logged in$/) do

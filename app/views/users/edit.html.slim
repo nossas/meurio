@@ -1,21 +1,126 @@
 section.user
-  .row.title
-    .large-8.large-offset-2.columns
-      h2 Editar perfil
-  .row.form
-    .large-8.large-offset-2.columns
-      = form_for @user, validate: true do |f|
-        .row
-          .large-6.columns
-            = f.label :first_name
-            = f.text_field :first_name
-          .large-6.columns
-            = f.label :last_name
-            = f.text_field :last_name
-        .row.action
-          .large-6.columns.submit
-            = f.submit 'Atualizar perfil', class: 'btn'
-          .large-6.columns.cancel
-            span ou 
-            = link_to 'Cancelar', root_path
-      
+  .row
+    .large-12.columns
+      .row.form
+        = form_for @user, validate: true do |f|
+          .large-3.columns
+            .row.avatar
+              .large-12.columns
+                = image_tag @user.image, class: 'image-preview'
+                .file-btn
+                  .wrapper
+                    = f.file_field :image, class: 'image-upload'
+                  span.btn Adicionar foto
+          .large-9.columns
+            .row.title
+              .large-12.columns
+                h2 Perfil
+            .row
+              .large-6.small-12.columns
+                = f.label :first_name
+                = f.text_field :first_name
+              .large-6.small-12.columns
+                = f.label :last_name
+                = f.text_field :last_name
+            .row
+              .large-6.offset-6.columns
+                = f.label :email
+                = f.text_field :email
+            .row
+              .large-12.small-12.columns
+                = f.label :bio
+                = f.text_area :bio
+            .row
+              .large-6.small-12.columns
+                = f.label :birthdate
+                = f.text_field :birthdate, value: @user.birthdate.to_s, class: 'date'
+              .large-6.small-12.columns
+                = f.label :profession
+                = f.text_field :profession
+            .row
+              .large-6.small-12.columns
+                = f.label :phone
+                = f.phone_field :phone, class: 'phone_with_ddd'
+              .large-6.small-12.columns
+                = f.label :secondary_email
+                = f.text_field :secondary_email
+            .row
+              .large-6.columns
+                = f.label :gender
+                .large-5.small-6.columns.radio
+                  = f.radio_button :gender, 'male', checked: true
+                  = f.label :gender, 'Masculino'
+                .large-7.small-6.columns.radio
+                  = f.radio_button :gender, 'female'
+                  = f.label :gender, 'Feminino'
+              .large-6.columns
+                = f.label :public
+                .large-5.small-6.columns.radio
+                  = f.radio_button :public, true, checked: true
+                  = f.label :public, 'Sim'
+                .large-7.small-6.columns.radio
+                  = f.radio_button :public, false
+                  = f.label :public, 'Não'
+            .home-address
+              .row
+                .large-12.small-12.columns
+                  h2 Onde você mora?
+              .row
+                .large-4.small-12.columns
+                  = f.label :home_postcode
+                  = f.text_field :home_postcode, class: 'postcode postcode-request'
+                .large-8.small-12.columns
+                  = f.label :home_address_street
+                  = f.text_field :home_address_street
+              .row
+                .large-3.small-6.columns
+                  = f.label :home_address_number
+                  = f.text_field :home_address_number
+                .large-3.small-6.columns
+                  = f.label :home_address_extra
+                  = f.text_field :home_address_extra
+                .large-6.small-12.columns
+                  = f.label :home_address_district
+                  = f.text_field :home_address_district
+              .row
+                .large-6.small-8.columns
+                  = f.label :home_city
+                  = f.text_field :home_city
+                .large-2.pull-4.small-4.columns
+                  = f.label :home_state
+                  = f.select :home_state, states_for_select
+            .work-address
+              .row
+                .large-12.small-12.columns
+                  h2 Onde você trabalha?
+              .row
+                .large-4.small-12.columns
+                  = f.label :work_postcode
+                  = f.text_field :work_postcode, class: 'postcode postcode-request'
+                .large-8.small-12.columns
+                  = f.label :work_address_street
+                  = f.text_field :work_address_street
+              .row
+                .large-3.small-6.columns
+                  = f.label :work_address_number
+                  = f.text_field :work_address_number
+                .large-3.small-6.columns
+                  = f.label :work_address_extra
+                  = f.text_field :work_address_extra
+                .large-6.small-12.columns
+                  = f.label :work_address_district
+                  = f.text_field :work_address_district
+              .row
+                .large-6.small-8.columns
+                  = f.label :work_city
+                  = f.text_field :work_city
+                .large-2.pull-4.small-4.columns
+                  = f.label :work_state
+                  = f.select :work_state, states_for_select
+            .row.action
+              .large-6.columns.submit
+                = f.submit 'Salvar Perfil', class: 'btn'
+              .large-6.columns.cancel
+                span ou 
+                = link_to 'Cancelar', root_path
+          

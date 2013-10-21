@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.datepicker
+//= require jquery.turbolinks
+//= require jquery.facebox
+//= require jquery.mask.min
 //= require turbolinks
 //= require foundation
-//= require jquery.facebox
 //= require rails.validations
 //= require rails.validations.turbolinks
 
@@ -29,8 +32,60 @@ function showNetDiv(div){
   $('#net_content').load(div);
 }
 
+function maskElements() {
+  $('.phone_with_ddd').mask('(00) 000000000');
+  $('.postcode').mask('00000-000');
+  $('.date').mask('00/00/0000');
+  $('.date').datepicker({
+    dateFormat: 'dd/mm/yy',
+    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+    dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+    nextText: 'Próximo',
+    prevText: 'Anterior'
+  });
+}
+
+function getPostcodeInfo(cepField) {
+  $.getJSON('//brazilapi.herokuapp.com/api?cep=' + cepField.val(), function(response) {
+    if(response[0].cep.result) {
+      populatePostcodeInfo(cepField[0].id, response[0].cep.data)
+    }
+  })
+}
+
+function populatePostcodeInfo(field, data) {
+  var context = "#" + field.substr(0, 9);
+
+  if(data.tp_logradouro !== undefined && data.logradouro !== undefined)
+    $(context + "_address_street").val(data.tp_logradouro + ' ' + data.logradouro);
+
+  $(context + "_address_district").val(data.bairro);
+  $(context + "_city").val(data.cidade);
+  $(context + "_state").val(data.uf.toUpperCase());
+}
+
 $(function(){
+  // Initialization
+  maskElements();
   $('a[rel*=facebox]').facebox();
+
+  // Event handling
+  $('.image-upload').on('change', function() {
+    if (this.files && this.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('.image-preview').attr('src', e.target.result);
+      };
+      reader.readAsDataURL(this.files[0]);
+    }   
+  });
+
+  $('.postcode-request').on('blur', function() {
+    getPostcodeInfo($(this));
+  })
 
   showNetDiv("funders");
   $('#funders_button').click(function(){ showNetDiv('funders'); });
