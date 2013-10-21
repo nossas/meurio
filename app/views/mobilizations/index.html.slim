@@ -11,13 +11,13 @@
             h4 Preencha os campos abaixo e saiba o que você pode fazer hoje pelo Rio.
             = form_for devise_resource, as: resource_name, url: registration_path(resource_name), validate: true do |f|
               .large-6.columns
-                = f.text_field :first_name, id: :signup_first_name, placeholder: 'Nome'
+                = f.text_field :first_name, id: :signup_first_name, placeholder: 'Nome', autocomplete: :off
               .large-6.columns
-                = f.text_field :last_name, id: :signup_last_name, placeholder: 'Sobrenome'
+                = f.text_field :last_name, id: :signup_last_name, placeholder: 'Sobrenome', autocomplete: :off
               .large-12.columns
-                = f.text_field :email, id: :signup_email, placeholder: 'Email'
+                = f.text_field :email, id: :signup_email, placeholder: 'Email', autocomplete: :off
               .large-12.columns
-                = f.password_field :password, id: :signup_password, placeholder: 'Senha'
+                = f.password_field :password, id: :signup_password, placeholder: 'Senha', autocomplete: :off
               .large-6.offset-6.columns
                 = f.submit 'Cadastre-se', class: 'btn'
               .large-12.columns
