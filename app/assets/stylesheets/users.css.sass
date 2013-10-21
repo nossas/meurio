@@ -35,7 +35,11 @@ body.users.edit
             color: white
           &:active
             +box-shadow(darken($form-grey-button, 20%) 0 2px 0)
-            
+  label[for="user_public"]
+    display: inline-block
+    margin-left: .5em
+    line-height: 77px
+
 body.users.show
   .avatar
     img
