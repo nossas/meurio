@@ -30,10 +30,6 @@ section.user
                 = f.label :home_postcode
                 = f.text_field :home_postcode
             .row
-              .large-12.small-12.columns
-                = f.label :bio
-                = f.text_area :bio
-            .row
               .large-6.small-12.columns
                 = f.label :birthdate
                 = f.text_field :birthdate, value: @user.birthdate.to_s, class: 'date'
@@ -44,10 +40,6 @@ section.user
               .large-6.small-12.columns
                 = f.label :phone
                 = f.phone_field :phone, class: 'phone_with_ddd'
-              .large-6.small-12.columns
-                = f.label :secondary_email
-                = f.text_field :secondary_email
-            .row
               .large-6.columns
                 = f.label :gender
                 .large-5.small-6.columns.radio
@@ -56,6 +48,10 @@ section.user
                 .large-7.small-6.columns.radio
                   = f.radio_button :gender, 'female'
                   = f.label :gender, 'Feminino'
+            .row
+              .large-6.small-12.columns
+                = f.label :secondary_email
+                = f.text_field :secondary_email
               .large-6.columns
                 = f.label :public
                 .large-5.small-6.columns.radio
@@ -64,6 +60,10 @@ section.user
                 .large-7.small-6.columns.radio
                   = f.radio_button :public, false
                   = f.label :public, 'Não'
+            .row
+              .large-12.small-12.columns
+                = f.label :bio
+                = f.text_area :bio
             .row.action
               .large-6.columns.submit
                 = f.submit 'Salvar Perfil', class: 'btn'
