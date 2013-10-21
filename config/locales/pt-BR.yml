@@ -266,9 +266,9 @@ pt-BR:
   tweets: "no Twitter"
   activity:
     pokes: "pressionou na mobilização"
-    campaigns: "criou uma campanha"
-    problems: "criou um problema"
-    ideas: "criou uma ideia"
+    campaigns: "criou uma campanha na mobilização"
+    problems: "criou um problema na mobilização"
+    ideas: "criou uma ideia na mobilização"
 
   faker:
     phone_number:
