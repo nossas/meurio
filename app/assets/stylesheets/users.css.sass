@@ -35,10 +35,12 @@ body.users.edit
             color: white
           &:active
             +box-shadow(darken($form-grey-button, 20%) 0 2px 0)
-  label[for="user_public"]
+  label[for="user_public"], label[for="user_gender_male"], label[for="user_gender_female"]
     display: inline-block
     margin-left: .5em
     line-height: 77px
+  label[for="user_gender_male"]
+    margin-right: 2em
 
 body.users.show
   .avatar

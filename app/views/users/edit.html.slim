@@ -41,13 +41,10 @@ section.user
                 = f.label :phone
                 = f.phone_field :phone, class: 'phone_with_ddd'
               .large-6.columns
-                = f.label :gender
-                .large-5.small-6.columns.radio
-                  = f.radio_button :gender, 'male', checked: true
-                  = f.label :gender, 'Masculino'
-                .large-7.small-6.columns.radio
-                  = f.radio_button :gender, 'female'
-                  = f.label :gender, 'Feminino'
+                = f.radio_button :gender, 'male'
+                = f.label :gender, 'Masculino', value: 'male'
+                = f.radio_button :gender, 'female'
+                = f.label :gender, 'Feminino', value: 'female'
             .row
               .large-6.small-12.columns
                 = f.label :secondary_email
