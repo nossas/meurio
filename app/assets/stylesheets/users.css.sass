@@ -1,50 +1,17 @@
 body.users.edit
-  .user
-    background-color: $background-grey
-    h2
-      color: $green
-      font-size: 1em
-      margin-top: 1em
-    form
-      .avatar
-        margin-top: 1em
-        img
-          width: 150px          
-      .file-btn
-        margin-top: 1em
-        position: relative
-        cursor: pointer
-        font-size: .8em
-        font-weight: bolder
-        .wrapper
-          position: absolute
-          cursor: pointer
-          z-index: 2
-          opacity: 0
-          top: 0
-        span.btn
-          background-color: $form-grey-button
-          position: relative
-          cursor: pointer
-          color: white
-          z-index: 1
-          top: 0
-          +box-shadow(darken($form-grey-button, 20%) 0 2px 0)
-          &:hover
-            background: darken($form-grey-button, 10%)
-            color: white
-          &:active
-            +box-shadow(darken($form-grey-button, 20%) 0 2px 0)
+  .form
+    margin-top: 2em
   label[for="user_public"], label[for="user_gender_male"], label[for="user_gender_female"]
     display: inline-block
     margin-left: .5em
     line-height: 77px
   label[for="user_gender_male"]
     margin-right: 2em
-
-body.users.show
-  .avatar
-    img
-      +border-radius(100%)
-      width: 150px          
-      height: 150px
+  .form
+    .image
+      text-align: center
+      input[type='file']
+        position: absolute
+        top: -1000px
+      img
+        margin-bottom: 1em

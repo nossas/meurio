@@ -56,7 +56,7 @@ def to_element string
   return ".network"                                                 if string == "the network explanation"
   return "users_button"                                             if string == "the users button"
   return "#users"                                                   if string == "the users"
-  return ".user form"                                               if string == "the edit user form"
+  return "form.edit_user"                                           if string == "the edit user form"
   return ".field_with_errors label[for='user_first_name']"          if string == "user first name field error"
   return ".field_with_errors label[for='user_last_name']"           if string == "user last name field error"
   return ".users_activities .campaigns"                             if string == "this campaign on the users activities"

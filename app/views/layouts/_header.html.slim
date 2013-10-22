@@ -5,7 +5,7 @@ header class=('logged' if user_signed_in?)
       .login
         - if user_signed_in?
           .logged-user
-            span.image= image_tag current_user.try(:image)
+            span.image= image_tag current_user.try(:image), class: "user"
             span.name= link_to current_user.name, edit_profile_path
             span  | 
             = link_to 'Sair', destroy_user_session_path, method: :delete, class: 'logout'

@@ -7,8 +7,15 @@ body, h2, h3
   font-family: Proxima Nova
   color: #666
 
+h2
+  font-size: 1.75em
+  font-weight: normal
+
 p
   color: #999
+
+img.user
+  +border-radius(100%)
 
 header
   background: $green
@@ -21,7 +28,6 @@ header
     img
       width: 36px
       height: 36px
-
 
 footer
   background: #333
@@ -98,8 +104,6 @@ form
     font-size: .9em
     .image
       margin-right: 1em
-      img
-        +border-radius(100%)
     span, a
       font-weight: bolder
       padding: .6em 0
@@ -143,7 +147,6 @@ form
         text-transform: none
         font-size: 1em
         padding: .7em
-        width: 100%
       .cancel
         padding: 1em 0
         a
