@@ -25,17 +25,11 @@ class User < ActiveRecord::Base
   end
 
   def fetch_address
-    if home_postcode_changed? && @fetched.nil?
-      json = JSON.parse(open("http://brazilapi.herokuapp.com/api?cep=#{home_postcode}").read)
-      @fetched = true
-      if(json[0]["cep"]["result"])
-        address = json[0]["cep"]["data"]
-        update_attributes(
-          home_city: address["cidade"], 
-          home_address_street: "#{address["tp_logradouro"]} #{address["logradouro"]}",
-          home_address_district: address["bairro"],
-          home_state: address["uf"]
-        )
+    json = JSON.parse(open("http://brazilapi.herokuapp.com/api?cep=#{self.home_postcode}").read)
+    if(json[0]["cep"]["result"])
+      address = json[0]["cep"]["data"]
+      if(self.home_city != address["cidade"] || self.home_address_street != "#{address["tp_logradouro"]} #{address["logradouro"]}" || self.home_address_district != address["bairro"] || self.home_state != address["uf"])
+        self.update_attributes(home_city: address["cidade"], home_address_street: "#{address["tp_logradouro"]} #{address["logradouro"]}", home_address_district: address["bairro"], home_state: address["uf"])
       end
     end
   end
