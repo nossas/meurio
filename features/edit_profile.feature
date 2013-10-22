@@ -8,7 +8,7 @@ Feature: Edit profile
     When I go to "edit profile page"
     Then I should see "the edit user form"
 
-  @javascript
+  @javascript @webmock
   Scenario: successful editing
     Given there is an user logged in
     And I'm in "edit profile page"
