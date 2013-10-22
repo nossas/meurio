@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   
   mount_uploader :image, UserUploader
 
-  after_save :fetch_address
+  after_save { self.delay.fetch_address }
 
   def name
     "#{first_name} #{last_name}"
