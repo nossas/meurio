@@ -273,3 +273,5 @@ pt-BR:
   faker:
     phone_number:
       formats: ["(##) ########", "(##) #########"]
+  unauthorized:
+    default: "Você não tem autorização para acessar esta página."

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates :password, on: :update, allow_blank: true, length: { minimum: 6, maximum: 128 }
   validates :phone, format: { with: /\([\d]{2}\)\s[\d]{8,9}/ }, allow_blank: true
   validates :home_postcode, format: { with: /[\d]{5}-[\d]{3}/ }, allow_blank: true
+  validates :facebook_url, :twitter_url, format: { with: /(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/ }, allow_blank: true
   
   mount_uploader :image, UserUploader
 

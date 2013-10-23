@@ -1,4 +1,5 @@
 class Mobilization < ActiveRecord::Base
+  validates :user_id, presence: true
   has_many :campaigns, primary_key: :hashtag, foreign_key: :hashtag
   has_many :problems, primary_key: :hashtag, foreign_key: :hashtag
   has_many :pokes, through: :campaigns
@@ -8,6 +9,7 @@ class Mobilization < ActiveRecord::Base
   has_many :comments, primary_key: :hashtag, foreign_key: :hashtag
   has_many :events, primary_key: :hashtag, foreign_key: :hashtag
   has_many :clippings, primary_key: :hashtag, foreign_key: :hashtag
+  belongs_to :user
 
   mount_uploader :image, MobilizationUploader
 

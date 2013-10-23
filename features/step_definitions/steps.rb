@@ -1,3 +1,11 @@
+Given(/^I'm logged in$/) do
+  @user = User.make! password: "12345678"
+  visit root_path
+  fill_in "login_email", with: @user.email
+  fill_in "login_password", with: "12345678"
+  click_button "Entrar na Rede"
+end
+
 Given(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
   visit to_url(arg1)
 end
@@ -88,6 +96,14 @@ end
 
 Given(/^there is an idea$/) do
   @idea = Idea.make!
+end
+
+Given(/^there is an user with a private profile$/) do
+  @user = User.make! public: false
+end
+
+Given(/^there is a mobilization of mine$/) do
+  @mobilization = Mobilization.make! user: @user
 end
 
 When(/^I attach an image to "([^"]*)"$/) do |arg1|

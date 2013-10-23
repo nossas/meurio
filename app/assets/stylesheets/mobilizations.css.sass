@@ -1,4 +1,8 @@
 body.mobilizations.index
+  header
+    margin-bottom: 0
+  footer
+    margin-top: 0
   .vision, .principles, .funding, .mobilizations, .net, .network
     padding: 2em 0
     text-align: center
@@ -120,7 +124,7 @@ body.mobilizations.index
         padding: 1em
         .text
           padding-top: 1em
-          border-right: 1px solid $lightest-grey
+          border-right: 1px solid $lightest_gray
           text-align: left
           height: 100%
       .donation
@@ -179,7 +183,6 @@ body.mobilizations.index
         +border-radius(100%)
 
 body.mobilizations.show
-  background: $background-grey
   h2
     font-size: 1.5em
     border-bottom: 3px solid #eee
@@ -189,7 +192,7 @@ body.mobilizations.show
     padding: .7em 0 .9em 0
     a
       &.icon-new-24
-        color: $light-grey
+        color: $light_gray
         font-size: .9em
         font-weight: bold
         &:before
@@ -267,7 +270,7 @@ body.mobilizations.show
 
   .social-media
     font-family: "Proxima Nova" 
-    background-color: $light-grey
+    background-color: $light_gray
     color: white
     padding: 0.7em
     text-align: center
@@ -326,7 +329,7 @@ body.mobilizations.show
         float: left
         margin-right: .25em
         padding-top: .1em
-        color: $lightest_grey
+        color: $lightest_gray
         width: 40px
         text-align: center
     .shares_counter
@@ -356,12 +359,12 @@ body.mobilizations.show
         span.when
           font-size: .9em
       span.where, span.when
-        color: $light-grey
+        color: $light_gray
       .text
         a
           color: $orange
         .hashtag
-          color: $light-grey
+          color: $light_gray
           font-weight: 600
     .tweets
       .header
@@ -383,7 +386,7 @@ body.mobilizations.show
       font-weight: bold
       padding: .5em
       color: gray
-      border: 3px solid $lightest_grey
+      border: 3px solid $lightest_gray
       line-height: 1.5em
       margin-bottom: 1em
       strong
@@ -403,7 +406,6 @@ body.mobilizations.show
     width: auto
 
 body.mobilizations.new, body.mobilizations.edit
-  background-color: $background-grey
   h2
     color: $green
     font-size: 1.5em

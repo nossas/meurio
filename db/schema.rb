@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022030314) do
+ActiveRecord::Schema.define(version: 20131022203150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20131022030314) do
     t.string   "home_address_district"
     t.string   "home_city"
     t.string   "home_state"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
     t.index ["email"], :name => "index_users_on_email", :unique => true, :order => {"email" => :asc}
     t.index ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true, :order => {"reset_password_token" => :asc}
   end
@@ -193,6 +195,9 @@ ActiveRecord::Schema.define(version: 20131022030314) do
     t.string   "image"
     t.string   "hashtag"
     t.string   "short_title"
+    t.integer  "user_id"
+    t.index ["user_id"], :name => "fk__mobilizations_user_id", :order => {"user_id" => :asc}
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_mobilizations_user_id"
   end
 
 end

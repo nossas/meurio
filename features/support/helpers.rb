@@ -6,6 +6,7 @@ def to_url string
   return new_mobilization_path                 if string == "new mobilization page"
   return edit_mobilization_path(@mobilization) if string == "edit mobilization page"
   return edit_user_path(@user)                 if string == "edit profile page"
+  return user_path(@user)                      if string == "this user page"
 end
 
 def to_element string
@@ -65,6 +66,15 @@ def to_element string
   return ".users_activities .ideas"                                 if string == "this idea on the users activity"
   return ".home-address"                                            if string == "home address"
   return ".work-address"                                            if string == "work address"
+  return "img[src='#{@user.image.square.url}']"                     if string == "this user image"
+  return ".user_name"                                               if string == "this user name"
+  return ".user_profession"                                         if string == "this user profession"
+  return ".user_facebook_url[href='#{@user.facebook_url}']"         if string == "this user Facebook link"
+  return ".user_twitter_url[href='#{@user.twitter_url}']"           if string == "this user Twitter link"
+  return ".user_city"                                               if string == "this user city"
+  return ".user_state"                                              if string == "this user state"
+  return ".user_bio"                                                if string == "this user bio"
+  return ".alert"                                                   if string == "you are not authorized to access this page"
   return string
 end
 
@@ -88,6 +98,12 @@ def to_text string
   return @poke.campaign.hashtag                     if string == "this poke on the users activities"
   return @problem.hashtag                           if string == "this problem on the users activity"
   return @idea.problem.hashtag                      if string == "this idea on the users activity"
+  return @user.name                                 if string == "this user name"
+  return @user.profession                           if string == "this user profession"
+  return @user.home_city                            if string == "this user city"
+  return @user.home_state                           if string == "this user state"
+  return @user.bio                                  if string == "this user bio"
+  return I18n.t("unauthorized.default")             if string == "you are not authorized to access this page"
 end
 
 def mobilization_field field

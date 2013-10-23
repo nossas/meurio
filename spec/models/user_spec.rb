@@ -12,6 +12,10 @@ describe User do
   it { should_not allow_value("(21) 9999999").for(:phone) }
   it { should allow_value("99999-999").for(:home_postcode) }
   it { should_not allow_value("99999999").for(:home_postcode) }
+  it { should allow_value("http://teste.com").for(:facebook_url) }
+  it { should_not allow_value("teste").for(:facebook_url) }
+  it { should allow_value("http://teste.com").for(:twitter_url) }
+  it { should_not allow_value("teste").for(:twitter_url) }
 
   describe "#fetch_address" do
     context "when the postcode is valid" do

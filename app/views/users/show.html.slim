@@ -1,13 +1,17 @@
 .row
-  ul
-    li.avatar= image_tag @user.image
-    li= @user.name
-    li= @user.email
-    li= @user.bio
-    li= @user.birthdate
-    li= @user.profession
-    li= @user.home_postcode
-    li= @user.phone
-    li= @user.secondary_email
-    li= @user.gender
-    li= @user.public?
+  .large-12.columns
+    .row
+      .large-2.columns
+        = image_tag @user.image.square.url, class: :user
+      .large-10.columns
+        h2.user_name= @user.name
+        .user_profession= @user.profession
+        .user_details
+          = link_to("", @user.facebook_url, class: ["user_facebook_url", "icon-facebook"], target: :blank) if @user.facebook_url.present?
+          = link_to("", @user.twitter_url, class: ["user_twitter_url", "icon-twitter"], target: :blank) if @user.twitter_url.present?
+          span.user_city.icon-location-24= @user.home_city
+          | , 
+          span.user_state= @user.home_state
+        .user_bio
+          strong Quem sou eu:
+          = @user.bio

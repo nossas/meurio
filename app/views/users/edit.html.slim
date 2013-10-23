@@ -50,6 +50,13 @@
         .large-12.small-12.columns
           = f.label :bio
           = f.text_area :bio
+      .row
+        .large-6.small-12.columns
+          = f.label :facebook_url
+          = f.text_field :facebook_url
+        .large-6.small-12.columns
+          = f.label :twitter_url
+          = f.text_field :twitter_url
       .row.action
         .large-12.columns.submit
           = f.submit 'Salvar Perfil', class: 'btn'

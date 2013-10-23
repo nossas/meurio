@@ -4,7 +4,8 @@ Feature: Edit a mobilization
   I want to edit a mobilization
 
   Background:
-    Given there is a mobilization
+    Given I'm logged in
+    And there is a mobilization of mine
 
   Scenario:
     Given I'm in "this mobilization page"
