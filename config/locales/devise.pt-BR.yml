@@ -3,7 +3,7 @@
 pt-BR:
   devise:
     confirmations:
-      confirmed: 'Sua conta foi confirmada com sucesso. Você já pode efetuar login.'
+      confirmed: 'Sua conta foi confirmada com sucesso.'
       send_instructions: 'Dentro de minutos, você receberá um e-mail com instruções para a confirmação da sua conta.'
       send_paranoid_instructions: 'Se o seu endereço de e-mail estiver cadastrado, você receberá uma mensagem com instruções para confirmação da sua conta.'
     failure:
@@ -34,7 +34,7 @@ pt-BR:
       updated_not_active: 'Sua senha foi alterada com sucesso.'
     registrations:
       destroyed: 'Tchau! Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.'
-      signed_up: 'Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail.'
+      signed_up: 'Login efetuado com sucesso! Confirme a sua conta através do e-mail.'
       signed_up_but_inactive: 'Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta não foi ativada.'
       signed_up_but_locked: 'Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta está bloqueada.'
       signed_up_but_unconfirmed: 'Uma mensagem com um link de confirmação foi enviada para o seu endereço de e-mail. Por favor, abra o link para confirmar a sua conta.'
