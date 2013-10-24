@@ -234,17 +234,12 @@ pt-BR:
         home_address_district: Bairro
         home_city: Cidade
         home_state: Estado
-        work_postcode: CEP onde trabalha
-        work_address_street: Endereço
-        work_address_number: Número
-        work_address_extra: Complemento
-        work_address_district: Bairro
-        work_city: Cidade
-        work_state: Estado
         phone: Celular
         secondary_email: Email secundário
         gender: Gênero
         public: Outros podem ver meu perfil?
+        facebook_url: Facebook
+        twitter_url: Twitter
   fact:
     campaigns: "Pressione agora"
     problems: "Dê uma ideia"
