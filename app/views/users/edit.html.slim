@@ -71,6 +71,8 @@
           = f.label :phone
           = f.phone_field :phone, class: 'phone_with_ddd'
       .row
+        .large-6.columns
+          = link_to 'Alterar minha senha', edit_user_registration_path
       .row.action
         .large-12.columns.submit
           = f.submit 'Salvar Perfil', class: 'btn'
