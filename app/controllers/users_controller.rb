@@ -1,6 +1,7 @@
 class UsersController < InheritedResources::Base
   load_and_authorize_resource
   before_action(only: [:edit, :update]) { @user = current_user }
+  before_action(only: :show) { @activities = @user.activities.order("created_at DESC").limit(5) }
 
   layout false, only: :index
 
