@@ -4,6 +4,8 @@
       .large-2.columns= image_tag @user.image.square.url, class: :user
       .large-7.columns
         h2.user_name= @user.name
+        |  
+        = link_to "Editar perfil", edit_user_path(@user), class: :edit_user if can? :edit, @user
         .user_profession= @user.profession
         .user_details
           = link_to("", @user.facebook_url, class: ["user_facebook_url", "icon-facebook"], target: :blank) if @user.facebook_url.present?
