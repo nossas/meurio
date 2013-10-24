@@ -1,0 +1,6 @@
+h2 Calma, isso acontece bastante.
+h3 Preencha o campo com o seu email que a gente te diz como prosseguir.
+
+= form_for(resource, as: resource_name, url: password_path(resource_name), validate: true, html: { method: :post }) do |f|
+  = f.email_field :email, id: :password_recovery_email, validate: { uniqueness: false }
+  = f.submit "Enviar"
