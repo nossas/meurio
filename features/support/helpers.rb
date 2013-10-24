@@ -51,6 +51,7 @@ def to_element string
   return ".field_with_errors label[for='signup_last_name']"         if string == "signup last name field error"
   return ".field_with_errors label[for='signup_email']"             if string == "signup email field error"
   return ".field_with_errors label[for='signup_password']"          if string == "signup password field error"
+  return ".field_with_errors label[for='password_recovery_email']"  if string == "password recovery email field error"
   return ".flash .notice"                                           if string == "a success message"
   return ".flash .alert"                                            if string == "an alert message"
   return ".mobilizations .mobilization"                             if string == "this mobilization in the mobilizations list"

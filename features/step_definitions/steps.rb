@@ -181,3 +181,11 @@ end
 Then(/^show me the page$/) do
   save_and_open_page
 end
+
+Then(/^an email should be sent to "(.*?)"$/) do |arg1|
+  ActionMailer::Base.deliveries.select{|e| e.to.include?(arg1)}.should_not be_empty
+end
+
+Then(/^no email should be sent$/) do
+  ActionMailer::Base.deliveries.should be_empty
+end
