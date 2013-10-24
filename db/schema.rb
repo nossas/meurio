@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022203150) do
+ActiveRecord::Schema.define(version: 20131024110835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20131022203150) do
     t.string   "home_state"
     t.string   "facebook_url"
     t.string   "twitter_url"
+    t.string   "website"
     t.index ["email"], :name => "index_users_on_email", :unique => true, :order => {"email" => :asc}
     t.index ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true, :order => {"reset_password_token" => :asc}
   end

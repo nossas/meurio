@@ -8,7 +8,8 @@
     = form_for @user, validate: true do |f|
       .row.title
         .large-12.columns
-          h2 Perfil
+          h2 Dados Públicos
+          small Esses dados serão visualizados pelos membros em seu perfil.
       .row
         .large-6.small-12.columns
           = f.label :first_name
@@ -18,34 +19,11 @@
           = f.text_field :last_name
       .row
         .large-6.small-12.columns
-          = f.label :email
-          = f.text_field :email
-        .large-6.small-12.columns
-          = f.label :home_postcode
-          = f.text_field :home_postcode, class: :postcode
-      .row
-        .large-6.small-12.columns
-          = f.label :birthdate
-          = f.text_field :birthdate, value: @user.birthdate.to_s, class: 'date'
-        .large-6.small-12.columns
           = f.label :profession
           = f.text_field :profession
-      .row
         .large-6.small-12.columns
-          = f.label :phone
-          = f.phone_field :phone, class: 'phone_with_ddd'
-        .large-6.columns
-          = f.radio_button :gender, 'male'
-          = f.label :gender, 'Masculino', value: 'male'
-          = f.radio_button :gender, 'female'
-          = f.label :gender, 'Feminino', value: 'female'
-      .row
-        .large-6.small-12.columns
-          = f.label :secondary_email
-          = f.text_field :secondary_email
-        .large-6.columns
-          = f.check_box :public
-          = f.label :public
+          = f.label :website
+          = f.text_field :website
       .row
         .large-12.small-12.columns
           = f.label :bio
@@ -57,8 +35,44 @@
         .large-6.small-12.columns
           = f.label :twitter_url
           = f.text_field :twitter_url
+      .row
+        .large-6.columns
+          = f.check_box :public
+          = f.label :public
+
+      hr
+      .row.title
+        .large-12.columns
+          h2 Dados Privados
+          small Somente você e a equipe do Meu Rio terão acesso a esses dados.
+      .row
+        .large-6.small-12.columns
+          = f.label :email
+          = f.text_field :email
+        .large-6.small-12.columns
+          = f.label :secondary_email
+          = f.text_field :secondary_email
+      .row
+        .large-6.small-12.columns
+          = f.label :birthdate
+          = f.text_field :birthdate, value: @user.birthdate.to_s, class: 'date'
+        .large-6.columns
+          = f.radio_button :gender, 'male'
+          = f.label :gender, 'Masculino', value: 'male'
+          = f.radio_button :gender, 'female'
+          = f.label :gender, 'Feminino', value: 'female'
+          = f.radio_button :gender, 'other'
+          = f.label :gender, 'Outro', value: 'other'
+      .row
+        .large-6.small-12.columns
+          = f.label :home_postcode
+          = f.text_field :home_postcode, class: :postcode
+        .large-6.small-12.columns
+          = f.label :phone
+          = f.phone_field :phone, class: 'phone_with_ddd'
+      .row
       .row.action
         .large-12.columns.submit
           = f.submit 'Salvar Perfil', class: 'btn'
           span  ou 
-          = link_to 'Cancelar', edit_profile_path
+          = link_to 'Cancelar', edit_profile_path, class: :alert

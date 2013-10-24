@@ -12,6 +12,7 @@
           span.user_city.icon-location-24= @user.home_city
           | , 
           span.user_state= @user.home_state
+          = link_to(@user.website, @user.website, class: ["icon-link-24"], target: :blank) if @user.website.present?
         .user_bio
           strong Quem sou eu:
           = @user.bio

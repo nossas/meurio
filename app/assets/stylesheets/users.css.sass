@@ -1,12 +1,22 @@
 body.users.edit
+  .title
+    font-size: 1.25em
+    h2, small
+      color: $green
+    h2
+      margin-bottom: .25em
+      font-size: 1em
+      font-weight: bold
+      line-height: 0
   .form
     margin-top: 2em
-  label[for="user_public"], label[for="user_gender_male"], label[for="user_gender_female"]
+  label[for="user_public"], label[for="user_gender_male"], label[for="user_gender_female"], label[for="user_gender_other"]
     display: inline-block
     margin-left: .5em
+  label[for="user_gender_male"], label[for="user_gender_female"], label[for="user_gender_other"]
     line-height: 77px
-  label[for="user_gender_male"]
-    margin-right: 2em
+  label[for="user_gender_male"], label[for="user_gender_female"]
+    margin-right: 1.5em
   .form
     .image
       text-align: center
@@ -38,6 +48,11 @@ body.users.show
       font-size: 1.25em
       position: relative
       top: 3px
+    a.icon-link-24
+      margin-left: 1em
+      color: $light_gray
+      &:before
+        margin-right: .25em
   .user_bio
     margin-top: 2em
     strong
