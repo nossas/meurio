@@ -15,7 +15,7 @@
               .large-6.columns
                 = f.text_field :last_name, id: :signup_last_name, placeholder: 'Sobrenome', autocomplete: :off
               .large-12.columns
-                = f.text_field :email, id: :signup_email, placeholder: 'Email', autocomplete: :off
+                = f.email_field :email, id: :signup_email, placeholder: 'Email', autocomplete: :off
               .large-12.columns
                 = f.password_field :password, id: :signup_password, placeholder: 'Senha', autocomplete: :off
               .large-6.offset-6.columns
