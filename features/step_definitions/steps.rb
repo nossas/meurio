@@ -130,6 +130,10 @@ When(/^I fill "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in arg1, with: arg2
 end
 
+When(/^I fill "([^"]*)" with my "([^"]*)"$/) do |arg1, arg2|
+  fill_in arg1, with: user_field(arg2)
+end
+
 When(/^I fill "(.*?)" within "(.*?)" with "(.*?)"$/) do |field, where, text|
   within to_element(where) do
     fill_in field, with: text
@@ -196,4 +200,19 @@ end
 
 Then(/^show me the page$/) do
   save_and_open_page
+end
+
+Then(/^an email should be sent to "(.*?)"$/) do |arg1|
+  ActionMailer::Base.deliveries.select{|e| e.to.include?(arg1)}.should_not be_empty
+end
+
+Then(/^no email should be sent$/) do
+  ActionMailer::Base.deliveries.should be_empty
+end
+
+Then(/^I log in with password "(.*?)"$/) do |password|
+  visit root_path
+  fill_in "login_email", with: @user.email
+  fill_in "login_password", with: password
+  click_button "Entrar na Rede"
 end

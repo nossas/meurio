@@ -46,6 +46,10 @@ a
   &.alert
     color: red
 
+#facebox
+  .content
+    padding: 1em 2em
+
 .fb-like
   iframe
     span#u_0_2
@@ -137,7 +141,7 @@ a
         margin-left: .5em      
     input
       margin-bottom: .5em
-    input[type="text"], input[type="tel"], input[type="date"], textarea, select
+    input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"], textarea, select
       +border-radius(5px)
       border: 2px $form-border solid
       font-size: 1.1em
@@ -162,3 +166,22 @@ a
         a
           color: red
           font-weight: bold
+
+.password-recovery
+  h2, h4
+    color: $green
+  h2
+    font-size: 1.3em
+    font-weight: bolder
+    margin-bottom: 0
+  h4
+    font-size: 1em
+    font-weight: normal
+    margin-top: 0
+  form
+    margin: 1em 0 0 0
+    input[type="email"], input[type="password"]
+      padding: 0 .5em
+      font-size: 1em
+    .btn
+      width: 100%

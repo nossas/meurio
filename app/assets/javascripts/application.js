@@ -49,6 +49,10 @@ function maskElements() {
   });
 }
 
+$(document).bind('reveal.facebox', function() {
+  $('form.new_user').enableClientSideValidations();
+});
+
 $(function(){
   // Initialization
   maskElements();
