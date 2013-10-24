@@ -106,6 +106,22 @@ Given(/^there is a mobilization of mine$/) do
   @mobilization = Mobilization.make! user: @user
 end
 
+Given(/^there is a poke made by this user$/) do
+  @poke = Poke.make! user: @user
+end
+
+Given(/^there is a campaign created by this user$/) do
+  @campaign = Campaign.make! user: @user
+end
+
+Given(/^there is an idea created by this user$/) do
+  @idea = Idea.make! user: @user
+end
+
+Given(/^there is a problem created by this user$/) do
+  @problem = Problem.make! user: @user
+end
+
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
   attach_file to_element(arg1), File.dirname(__FILE__) + "/../support/mobilization.jpg"
 end

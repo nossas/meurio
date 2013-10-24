@@ -38,10 +38,8 @@ body.users.show
     font-size: .8em
     a.icon-facebook
       color: $fb_blue
-      margin-right: .5em
     a.icon-twitter
       color: $tw_blue
-      margin-right: 1em
     .user_state
       text-transform: uppercase
     *:before
@@ -49,12 +47,31 @@ body.users.show
       position: relative
       top: 3px
     a.icon-link-24
-      margin-left: 1em
       color: $light_gray
       &:before
         margin-right: .25em
+    a, span.user_location
+      display: inline-block
+      margin-right: 1em
+      margin-bottom: .25em
   .user_bio
     margin-top: 2em
     strong
       display: block
       margin-bottom: .5em
+  h3
+    font-size: 1em
+    border-bottom: $lightest_gray solid 1px
+    padding-bottom: .25em
+    margin-bottom: 1em
+  .activities
+    .activity
+      font-size: .9em
+      margin-bottom: 1em
+      img, span.user
+        display: none
+      span.created_at
+        display: block
+        font-size: .8em
+      span.text
+        font-weight: bold

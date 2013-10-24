@@ -3,7 +3,7 @@
     = image_tag activity.user.image.square
     span.user= activity.user.name
     |  
-    = t "activity.#{activity.relname}"
+    span.text= t "activity.#{activity.relname}"
     |  
-    .mobilization= link_to "##{activity.hashtag}", activity.mobilization
-    .created_at #{distance_of_time_in_words_to_now activity.created_at} atrás
+    span.mobilization= link_to "##{activity.hashtag}", activity.mobilization
+    span.created_at #{distance_of_time_in_words_to_now activity.created_at} atrás

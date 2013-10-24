@@ -75,6 +75,11 @@ def to_element string
   return ".user_state"                                              if string == "this user state"
   return ".user_bio"                                                if string == "this user bio"
   return ".alert"                                                   if string == "you are not authorized to access this page"
+  return ".activities .empty"                                       if string == "there is no activity yet"
+  return ".activities .pokes"                                       if string == "this poke in the activity feed"
+  return ".activities .campaigns"                                   if string == "this campaign in the activity feed"
+  return ".activities .ideas"                                       if string == "this idea in the activity feed"
+  return ".activities .problems"                                    if string == "this problem in the activity feed"
   return string
 end
 
@@ -104,6 +109,10 @@ def to_text string
   return @user.home_state                           if string == "this user state"
   return @user.bio                                  if string == "this user bio"
   return I18n.t("unauthorized.default")             if string == "you are not authorized to access this page"
+  return I18n.t("activity.pokes")                   if string == "this poke in the activity feed"
+  return I18n.t("activity.campaigns")               if string == "this campaign in the activity feed"
+  return I18n.t("activity.ideas")                   if string == "this idea in the activity feed"
+  return I18n.t("activity.problems")                if string == "this problem in the activity feed"
 end
 
 def mobilization_field field
