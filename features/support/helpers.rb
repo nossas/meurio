@@ -5,7 +5,8 @@ def to_url string
   return mobilization_path(1)                  if string == "the first mobilization page"
   return new_mobilization_path                 if string == "new mobilization page"
   return edit_mobilization_path(@mobilization) if string == "edit mobilization page"
-  return edit_user_path(@user)                 if string == "edit profile page"
+  return edit_profile_path(@user)              if string == "edit profile page"
+  return edit_user_registration_path(@user)    if string == "change password page"
   return user_path(@user)                      if string == "this user page"
 end
 
@@ -52,6 +53,7 @@ def to_element string
   return ".field_with_errors label[for='signup_email']"             if string == "signup email field error"
   return ".field_with_errors label[for='signup_password']"          if string == "signup password field error"
   return ".field_with_errors label[for='password_recovery_email']"  if string == "password recovery email field error"
+  return ".field_with_errors label[for='user_current_password']"    if string == "current password field error"
   return ".flash .notice"                                           if string == "a success message"
   return ".flash .alert"                                            if string == "an alert message"
   return ".mobilizations .mobilization"                             if string == "this mobilization in the mobilizations list"
@@ -120,4 +122,8 @@ def mobilization_field field
   return @mobilization.short_title if field == "title"
   return @mobilization.description if field == "description"
   return @mobilization.hashtag     if field == "hashtag"
+end
+
+def user_field field
+  return @mobilization.password if field == "password"
 end
