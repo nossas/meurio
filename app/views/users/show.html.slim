@@ -18,7 +18,7 @@
           = @user.bio
       .large-3.columns.activities
         h3 Atividade
-        - if @user.activities.empty?
+        - if @activities.empty?
           .empty Nenhuma ativade ainda...
         - else
-          = render @user.activities
+          = render @activities
