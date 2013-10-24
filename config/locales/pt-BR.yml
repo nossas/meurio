@@ -224,6 +224,7 @@ pt-BR:
         last_name: Sobrenome
         email: Email
         password: Senha
+        password_confirmation: Confirmação de senha
         bio: Um pouco mais sobre você
         birthdate: Data de nascimento
         profession: Profissão
