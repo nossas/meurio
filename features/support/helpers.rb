@@ -5,7 +5,7 @@ def to_url string
   return mobilization_path(1)                  if string == "the first mobilization page"
   return new_mobilization_path                 if string == "new mobilization page"
   return edit_mobilization_path(@mobilization) if string == "edit mobilization page"
-  return edit_profile_path(@user)              if string == "edit profile page"
+  return edit_user_path(@user)                 if string == "edit profile page"
   return edit_user_registration_path(@user)    if string == "change password page"
   return user_path(@user)                      if string == "this user page"
 end
@@ -125,5 +125,5 @@ def mobilization_field field
 end
 
 def user_field field
-  return @mobilization.password if field == "password"
+  return @user.password if field == "password"
 end
