@@ -29,4 +29,4 @@ Feature: change password
     And I fill "Senha atual" with "incorrect password"
     And I press "Trocar senha"
     Then I should see "current password field error"
-    And I should be in "change password page"
+    
