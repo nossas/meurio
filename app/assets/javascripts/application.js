@@ -59,8 +59,8 @@ $(document).bind('reveal.facebox', function() {
   $('form.new_user').enableClientSideValidations();
 });
 
+// Initialization
 $(function(){
-  // Initialization
   flash();
   maskElements();
   $('a[rel*=facebox]').facebox();
