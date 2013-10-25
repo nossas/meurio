@@ -240,8 +240,8 @@ pt-BR:
         secondary_email: Email secundário
         gender: Gênero
         public: Outros podem ver meu perfil?
-        facebook_url: Facebook
-        twitter_url: Twitter
+        facebook_url: facebook.com/
+        twitter_url: twitter.com/
   fact:
     campaigns: "Pressione agora"
     problems: "Dê uma ideia"

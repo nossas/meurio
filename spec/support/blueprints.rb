@@ -92,8 +92,8 @@ User.blueprint do
   password      { Faker::Internet.password }
   confirmed_at  { Time.now }
   profession    { "Programmer" }
-  facebook_url  { Faker::Internet.url }
-  twitter_url   { Faker::Internet.url }
+  facebook_url  { Faker::Internet.user_name }
+  twitter_url   { Faker::Internet.user_name }
   home_city     { "Rio de Janeiro" }
   home_state    { "RJ" }
   bio           { Faker::Lorem.paragraph }
