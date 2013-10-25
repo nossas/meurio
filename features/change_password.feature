@@ -10,9 +10,9 @@ Feature: change password
   Scenario: change password succeeded
     Given I'm in "edit profile page"
     When I click "Alterar minha senha"
-    And I fill "Nova senha" with "mypasswd"
-    And I fill "Confirmação de senha" with "mypasswd"
-    And I fill "Senha atual" with my "password"
+    And I fill "Digite sua senha atual" with my "password"
+    And I fill "Digite sua nova senha" with "mypasswd"
+    And I fill "Confirme sua nova senha" with "mypasswd"
     And I press "Trocar senha"
     Then I should see "a success message"
     And I should be in "edit profile page"
@@ -24,9 +24,9 @@ Feature: change password
   Scenario: change password failed due incorrect current password
     Given I'm in "edit profile page"
     When I click "Alterar minha senha"
-    And I fill "Nova senha" with "mypasswd"
-    And I fill "Confirmação de senha" with "mypasswd"
-    And I fill "Senha atual" with "incorrect password"
+    And I fill "Digite sua senha atual" with "incorrect password"
+    And I fill "Digite sua nova senha" with "mypasswd"
+    And I fill "Confirme sua nova senha" with "mypasswd"
     And I press "Trocar senha"
     Then I should see "current password field error"
     
