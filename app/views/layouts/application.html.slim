@@ -23,13 +23,8 @@ html
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
 
-    = render 'layouts/header'
-    - if flash[:alert] || flash[:notice]
-      .flash
-        .row
-          .large-12.columns
-            .alert= alert
-            .notice= notice
+    = render 'layouts/flash', locals: { flash: flash } unless flash.empty?
+    = render 'layouts/header'    
     = yield
     footer
       .row

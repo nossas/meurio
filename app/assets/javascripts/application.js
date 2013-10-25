@@ -49,12 +49,19 @@ function maskElements() {
   });
 }
 
+function flash() {
+  setTimeout( function(){ $(".flash").slideDown('slow') }, 100)
+  setTimeout( function(){ $(".flash").slideUp('slow') }, 16000)
+  $(document).on('click', '.flash', function(){ $('.flash').slideUp() })
+}
+
 $(document).bind('reveal.facebox', function() {
   $('form.new_user').enableClientSideValidations();
 });
 
 $(function(){
   // Initialization
+  flash();
   maskElements();
   $('a[rel*=facebox]').facebox();
 
