@@ -12,7 +12,7 @@ Feature: view an user's profile
     And I should see "this user Facebook link"
     And I should see "this user Twitter link"
     And I should see "this user city"
-    And I should see "this user state"
+    And I should see "this user district"
     And I should see "this user bio"
 
   Scenario: when the user have a private profile

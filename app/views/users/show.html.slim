@@ -8,12 +8,18 @@
         = link_to "Editar perfil", edit_user_path(@user), class: :edit_user if can? :edit, @user
         .user_profession= @user.profession
         .user_details
-          = link_to("", "https://www.facebook.com/" + @user.facebook_url, class: ["user_facebook_url", "icon-facebook"], target: :blank) if @user.facebook_url.present?
-          = link_to("", "https://twitter.com/" + @user.twitter_url, class: ["user_twitter_url", "icon-twitter"], target: :blank) if @user.twitter_url.present?
+          - if @user.facebook_url.present?
+            = link_to("", "https://www.facebook.com/" + @user.facebook_url, class: ["user_facebook_url", "icon-facebook"], target: :blank)
+          - else
+            span.icon-facebook
+          - if @user.twitter_url.present?
+            = link_to("", "https://twitter.com/" + @user.twitter_url, class: ["user_twitter_url", "icon-twitter"], target: :blank) if @user.twitter_url.present?
+          - else
+            span.icon-twitter
           span.user_location
-            span.user_city.icon-location-24= @user.home_city
+            span.user_district.icon-location-24= @user.home_address_district
             | , 
-            span.user_state= @user.home_state
+            span.user_city= @user.home_city
           = link_to(@user.website, "http://" + @user.website, class: ["icon-link-24"], target: :blank) if @user.website.present?
         .user_bio
           strong Quem sou eu:
