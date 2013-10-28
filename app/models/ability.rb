@@ -10,6 +10,10 @@ class Ability
       can :create, Mobilization
       can(:manage, Mobilization) { |m| m.user_id == user.id }
       can(:manage, User) { |u| u.id == user.id }
+
+      if user.admin?
+        can(:manage, :all)
+      end
     end
 
     # Define abilities for the passed in user here. For example:
