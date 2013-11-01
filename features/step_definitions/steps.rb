@@ -1,9 +1,5 @@
 Given(/^I'm logged in$/) do
-  @user = User.make! password: "12345678"
-  visit root_path
-  fill_in "login_email", with: @user.email
-  fill_in "login_password", with: "12345678"
-  click_button "Entrar na Rede"
+  pending
 end
 
 Given(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
@@ -211,8 +207,5 @@ Then(/^no email should be sent$/) do
 end
 
 Then(/^I log in with password "(.*?)"$/) do |password|
-  visit root_path
-  fill_in "login_email", with: @user.email
-  fill_in "login_password", with: password
-  click_button "Entrar na Rede"
+  pending
 end

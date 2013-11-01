@@ -89,13 +89,11 @@ User.blueprint do
   first_name    { Faker::Name.first_name }
   last_name     { Faker::Name.last_name }
   email         { Faker::Internet.email }
-  password      { Faker::Internet.password }
-  confirmed_at  { Time.now }
   profession    { "Programmer" }
-  facebook_url  { Faker::Internet.user_name }
-  twitter_url   { Faker::Internet.user_name }
-  home_city     { "Rio de Janeiro" }
-  home_state    { "RJ" }
+  facebook      { Faker::Internet.user_name }
+  twitter       { Faker::Internet.user_name }
+  city          { "Rio de Janeiro" }
+  state         { "RJ" }
   bio           { Faker::Lorem.paragraph }
 end
 
