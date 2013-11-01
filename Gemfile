@@ -85,6 +85,5 @@ gem 'newrelic_rpm'
 gem 'client_side_validations', github: 'bcardarella/client_side_validations', branch: "4-0-beta"
 gem 'client_side_validations-turbolinks', '~> 1.1.1'
 gem 'meurio_ui'
-gem 'devise'
 gem 'delayed_job_active_record'
 gem 'cancan'

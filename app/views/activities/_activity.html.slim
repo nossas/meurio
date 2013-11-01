@@ -1,6 +1,6 @@
 .activity class=[activity.relname]
   - if activity.user
-    = image_tag activity.user.image.square
+    = image_tag activity.user.avatar_url
     span.user= link_to activity.user.name, activity.user
     |  
     span.text= t "activity.#{activity.relname}"
