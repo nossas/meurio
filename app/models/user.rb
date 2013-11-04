@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  establish_connection "accounts_#{Rails.env}"
+  establish_connection Rails.env.production? ? ENV["ACCOUNTS_DATABASE"] : "accounts_#{Rails.env}"
   has_many :activities
 
   def name

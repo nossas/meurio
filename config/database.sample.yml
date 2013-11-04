@@ -37,11 +37,3 @@ accounts_test:
   pool: 5
   username: meurio
   password:
-
-accounts_production:
-  adapter: postgresql
-  encoding: unicode
-  database: meurio_accounts_production
-  pool: 5
-  username: meurio
-  password:
