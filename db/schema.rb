@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131101195259) do
+ActiveRecord::Schema.define(version: 20131126180328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20131101195259) do
     t.string   "hashtag"
     t.integer  "user_id"
     t.string   "user_email"
-    t.index ["user_id"], :name => "fk__campaigns_user_id", :order => {"user_id" => :asc}
   end
 
   create_table "problems", force: true do |t|
@@ -39,7 +38,6 @@ ActiveRecord::Schema.define(version: 20131101195259) do
     t.string   "hashtag"
     t.integer  "user_id"
     t.string   "user_email"
-    t.index ["user_id"], :name => "fk__problems_user_id", :order => {"user_id" => :asc}
   end
 
   create_table "ideas", force: true do |t|
@@ -52,7 +50,6 @@ ActiveRecord::Schema.define(version: 20131101195259) do
     t.string   "uid"
     t.integer  "user_id"
     t.string   "user_email"
-    t.index ["user_id"], :name => "fk__ideas_user_id", :order => {"user_id" => :asc}
     t.index ["problem_id"], :name => "index_ideas_on_problem_id", :order => {"problem_id" => :asc}
     t.foreign_key ["problem_id"], "problems", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_ideas_problem_id"
   end
@@ -65,7 +62,6 @@ ActiveRecord::Schema.define(version: 20131101195259) do
     t.integer  "user_id"
     t.string   "user_email"
     t.index ["campaign_id"], :name => "fk__pokes_campaign_id", :order => {"campaign_id" => :asc}
-    t.index ["user_id"], :name => "fk__pokes_user_id", :order => {"user_id" => :asc}
     t.foreign_key ["campaign_id"], "campaigns", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_pokes_campaign_id"
   end
 
@@ -154,7 +150,6 @@ ActiveRecord::Schema.define(version: 20131101195259) do
     t.string   "hashtag"
     t.string   "short_title"
     t.integer  "user_id"
-    t.index ["user_id"], :name => "fk__mobilizations_user_id", :order => {"user_id" => :asc}
   end
 
 end
