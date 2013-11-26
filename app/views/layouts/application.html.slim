@@ -2,6 +2,7 @@ doctype html
 html
   head
     title= "#{content_for?(:title) ? yield(:title) : "Meu Rio"}"
+    = meurio_ui_assets
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
@@ -24,7 +25,7 @@ html
       }(document, 'script', 'facebook-jssdk'));
 
     = render 'layouts/flash', locals: { flash: flash } unless flash.empty?
-    = render 'layouts/header'    
+    = meurio_header_for :mr20
     = yield
     footer
       .row

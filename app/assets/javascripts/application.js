@@ -21,6 +21,7 @@
 //= require rails.validations
 //= require rails.validations.turbolinks
 //= require users
+//= require meurio_ui
 
 $.facebox.settings.closeImage = 'http://i.imgur.com/k9awT9O.png'
 $.facebox.settings.loadingImage = 'http://i.imgur.com/bFbQqWu.gif'

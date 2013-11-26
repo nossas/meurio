@@ -18,18 +18,10 @@ p
 img.user
   +border-radius(100%)
 
-header
-  background: $green
-  padding: .5em 0
-  margin-bottom: 2em
-  img
-    width: 60px
-    height: 60px
-  &.logged
-    padding: .5em 0
-    img
-      width: 36px
-      height: 36px
+header.meurio_header
+  margin-bottom: 40px
+  .meurio_logo, .user_menu, .meurio_apps, .application_menu
+    +grid-column(6)
 
 footer
   background: #333
