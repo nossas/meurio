@@ -19,8 +19,12 @@ img.user
   +border-radius(100%)
 
 header.meurio_header
-  .meurio_logo, .user_menu, .meurio_apps, .application_menu
+  .meurio_logo, .user_menu
     +grid-column(6)
+  .meurio_apps
+    +grid-column(3)
+  .application_menu
+    +grid-column(9)
 
 footer
   background: #333

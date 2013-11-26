@@ -25,7 +25,16 @@ html
       }(document, 'script', 'facebook-jssdk'));
 
     = render 'layouts/flash', locals: { flash: flash } unless flash.empty?
+    
+    - content_for :application_menu do
+      = link_to "A Rede", root_path + "#network"
+      = link_to "Mobilizações", root_path + "#mobilizations"
+      = link_to "Visão de Cidade", root_path + "#vision"
+      = link_to "Princípios", root_path + "#principles"
+      = link_to "Financiamento", root_path + "#funding"
+      = link_to "Cidadãos em Rede", root_path + "#net"
     = meurio_header_for :mr20
+    
     = yield
     footer
       .row

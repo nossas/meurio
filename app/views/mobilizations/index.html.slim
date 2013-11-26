@@ -8,7 +8,7 @@
         .row
           .large-12
             h2 Ainda não faz parte da rede?
-.network
+.network#network
   .row
     .large-6.columns
       h2 Como funciona a Rede
@@ -19,14 +19,14 @@
       h2 Atividade recente dos membros
       = render Activity.where("user_id IS NOT NULL").order("created_at DESC").limit(5)
 
-.mobilizations
+.mobilizations#mobilizations
   .row
     .large-8.large-offset-2.columns
       h2 Uma Rede de mobilizações
       p Essas são as mobilizações imaginadas, criadas, apoiadas e compartilhadas pelos membros que formam essa grande Rede em prol de um Rio de Janeiro melhor. Saiba mais sobre elas e una-se à Rede Meu Rio!
   .row= render Mobilization.all
 
-.vision
+.vision#vision
   .row
     .large-8.large-offset-2.columns
       h2 Visão de cidade
@@ -50,7 +50,7 @@
     .large-12.columns
       .infographic
 
-.principles
+.principles#principles
   .row
     .large-8.large-offset-2.columns
       h2 Princípios da ação em Rede
@@ -96,7 +96,7 @@
           h3 Diálogo
           p As mobilizações buscam diálogo com os representantes eleitos e indicados, e com toda a sociedade.      
 
-.funding
+.funding#funding
   .row
     .large-8.large-offset-2.columns
       h2 O Financiamento da Rede
@@ -113,7 +113,7 @@
       .large-3.columns.donation
         = link_to 'Quero Contribuir', 'https://facaacontecer.meurio.org.br/', class: 'btn', target: :blank
 
-.net
+.net#net
   .row
     .large-8.large-offset-2.small-12.columns
       h2 Quem trabalha em Rede
