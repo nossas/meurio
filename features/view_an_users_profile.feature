@@ -14,9 +14,3 @@ Feature: view an user's profile
     And I should see "this user city"
     And I should see "this user district"
     And I should see "this user bio"
-
-  Scenario: when the user have a private profile
-    Given there is an user with a private profile
-    When I go to "this user page"
-    Then I should be in "the homepage"
-    And I should see "you are not authorized to access this page"

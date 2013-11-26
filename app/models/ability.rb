@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     can :index, User
-    can(:read, User) { |u| u.public? }
+    can :read, User
     can :read, Mobilization
     
     if user.present?

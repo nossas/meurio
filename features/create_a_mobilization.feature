@@ -3,12 +3,13 @@ Feature: Create a mobilization
   As an user
   I want to create a mobilization
 
+  @ssi
   Scenario: when I'm logged in
     Given I'm logged in
     When I go to "new mobilization page"
     Then I should see "the mobilization form"
 
-  @javascript
+  @javascript @ssi
   Scenario: when I fill the form correctly
     Given I'm logged in
     And I'm in "new mobilization page"
@@ -20,7 +21,7 @@ Feature: Create a mobilization
     When I press "Criar Mobilização"
     And I should be in "the first mobilization page"
 
-  @javascript
+  @javascript @ssi
   Scenario: when I don't fill the form correctly
     Given I'm logged in
     And I'm in "new mobilization page"

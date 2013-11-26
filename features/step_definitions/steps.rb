@@ -1,5 +1,6 @@
 Given(/^I'm logged in$/) do
-  pending
+  @current_user = User.make! email: "ssi@meurio.org.br"
+  visit root_path
 end
 
 Given(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
@@ -94,12 +95,8 @@ Given(/^there is an idea$/) do
   @idea = Idea.make!
 end
 
-Given(/^there is an user with a private profile$/) do
-  @user = User.make! public: false
-end
-
 Given(/^there is a mobilization of mine$/) do
-  @mobilization = Mobilization.make! user: @user
+  @mobilization = Mobilization.make! user: @current_user
 end
 
 Given(/^there is a poke made by this user$/) do
