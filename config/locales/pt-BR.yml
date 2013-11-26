@@ -251,12 +251,15 @@ pt-BR:
     one: "pressão"
     other: "pressões"
   ideas:
+    zero: "ideias"
     one: "ideia"
     other: "ideias"
   shares:
+    zero: "compartilhamentos"
     one: "compartilhamento"
     other: "compartilhamentos"
   attending:
+    zero: "participações"
     one: "participação"
     other: "participações"
   facebook_posts: "no Facebook"
@@ -272,3 +275,8 @@ pt-BR:
       formats: ["(##) ########", "(##) #########"]
   unauthorized:
     default: "Você não tem autorização para acessar esta página."
+
+  app:
+    pdp: Panela de Pressão
+    imagine: Imagine
+    fb: Facebook
