@@ -16,7 +16,7 @@
       .large-7.columns
         .content
           h1= @mobilization.short_title
-          p= @mobilization.description
+          = simple_format @mobilization.description
       - if @mobilization.action_of_the_day
         .large-5.columns
           #action-of-the-day
