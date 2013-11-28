@@ -44,13 +44,13 @@
   .large-4.small-12.columns.data
     h2 Dados
     - if @mobilization.pokes.any?
-      .pokes_counter.icon-message
+      .pokes_counter.icon-comments
         span.counter= number_with_delimiter @mobilization.pokes.count
         |  
         span.counter_label= t("pokers", count: @mobilization.pokes.count)
         span.where no Panela de Pressão
     - if @mobilization.ideas.any?
-      .ideas_counter.icon-chat-24
+      .ideas_counter.icon-bubbles
         span.counter= number_with_delimiter @mobilization.ideas.count
         |  
         span.counter_label= t("ideas", count: @mobilization.ideas.count)
@@ -62,7 +62,7 @@
         span.counter_label= t("shares", count: @mobilization.comments.count)
         span.where nas redes sociais
     - if @mobilization.attending_count > 0
-      .attending_count.icon-location-24
+      .attending_count.icon-location
         span.counter= number_with_delimiter @mobilization.attending_count
         |  
         span.counter_label= t("attending", count: @mobilization.attending_count)
