@@ -78,13 +78,17 @@ body.mobilizations.index
     .mobilization
       +rgrid(6, 4)
       margin-bottom: 2em
-      img
-        +border-radius(5px 5px 0 0)
-      .title
-        +border-radius(0 0 5px 5px)
-        background: white
-        padding: 1em
-        font-weight: bolder
+      .image
+        +border-radius(5px)
+        overflow: hidden
+        position: relative
+        .title
+          background: white
+          font-weight: bolder
+          position: absolute
+          bottom: 0
+          padding: 1em
+          width: 100%
 
   .principles
     background: image-url("bg-03.jpg") top center
