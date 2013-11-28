@@ -69,15 +69,7 @@
         span.where em eventos
 
 .row
-  .large-4.small-12.columns.comments
-    h2 Comentários
-    .tip
-      | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre essa mobilização nas redes sociais.
-    - if @comments.empty?
-      .empty Esta mobilização ainda não possui comentários :\
-    - else      
-      = render @comments
-  .large-4.small-12.columns.images
+  .large-8.small-12.columns.images
     h2 Imagens
     - if @mobilization.images.empty?
       .empty Esta mobilização ainda não possui imagens :(
@@ -89,3 +81,11 @@
       .empty Esta mobilização ainda não possui clippings
     - else
       = render @mobilization.clippings
+  .large-4.small-12.columns.comments
+    h2 Comentários
+    .tip
+      | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre essa mobilização nas redes sociais.
+    - if @comments.empty?
+      .empty Esta mobilização ainda não possui comentários :\
+    - else      
+      = render @comments
