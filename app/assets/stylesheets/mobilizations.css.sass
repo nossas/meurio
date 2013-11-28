@@ -241,7 +241,7 @@ body.mobilizations.show
         font-weight: bolder
       #action-header
         overflow: hidden
-        background-color: #e6e7e8
+        background-color: $mob-gray
         padding: .8em
         img
           float: left
@@ -298,18 +298,29 @@ body.mobilizations.show
 
   .history
     .item
-      background: white
-      padding: 1em
+      background-color: $mob-gray        
       margin-bottom: 1em
       overflow: hidden
       +border-radius(3px)
-      .name
-        font-weight: 800
-        color: $green
-        margin-bottom: 1em
-      .description
-        font-size: .9em
-        margin-bottom: 1em
+      .columns
+        padding: 0
+      .app
+        text-align: center
+      .content
+        background: white        
+        .name
+          font-weight: 600
+          font-size: 1.2em
+          padding: .9em
+        .description
+          font-size: .9em
+          padding: 0 1.2em
+        .btn
+          text-align: center
+          font-size: .9em
+          padding: .6em
+          margin: 1.2em
+          width: 40%
 
   .data
     .row
