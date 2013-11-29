@@ -66,7 +66,7 @@ $(function(){
   maskElements();
   $('a[rel*=facebox]').facebox();
 
-  showNetDiv("funders");
+  showNetDiv("users");
   $('#funders_button').click(function(){ showNetDiv('funders'); });
   $('#team_button').click(function(){ showNetDiv('team'); });
   $('#users_button').click(function(){ showNetDiv('users'); });
