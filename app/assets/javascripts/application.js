@@ -21,6 +21,7 @@
 //= require rails.validations
 //= require rails.validations.turbolinks
 //= require users
+//= require mobilizations
 //= require meurio_ui
 
 $.facebox.settings.closeImage = 'http://i.imgur.com/k9awT9O.png'
@@ -87,5 +88,15 @@ $(function(){
       'width=626,height=436'
     ); 
     return false;
+  });
+
+  $(document).on('click', ".application_menu a", function (e) {
+    var target = this.hash, $target = $(target);   
+
+    $('html, body').stop().animate({
+      'scrollTop': $target.offset().top
+    }, 1000, 'swing', function () {
+      window.location.hash = target;
+    });
   });
 })

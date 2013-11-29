@@ -191,14 +191,16 @@ body.mobilizations.index
 
 body.mobilizations.show
   h2
-    font-size: 1.5em
-    border-bottom: 3px solid #eee
+    border-bottom: 1px solid $lightest-gray
+    margin: 2em 0
+    font-weight: bold
+    font-size: 1em
+    color: $green
 
   .manage
-    background: white
     padding: .7em 0 .9em 0
     a
-      &.icon-new-24
+      &.icon-pencil
         color: $light_gray
         font-size: .9em
         font-weight: bold
@@ -220,14 +222,12 @@ body.mobilizations.show
         height: 40px
     .content      
       h1, p
-        +text-shadow(black 0 0 10px)
         color: white
       h1
-        font-weight: normal
-        font-family: "Populaire" 
-        font-size: 3.8em
-        line-height: 1em
-        text-transform: uppercase
+        font-weight: bolder
+        font-family: Proxima Nova
+        font-size: 2em
+        line-height: 1em        
       p
         font-weight: bold
         font-family: "Proxima Nova" 
@@ -243,7 +243,7 @@ body.mobilizations.show
         font-weight: bolder
       #action-header
         overflow: hidden
-        background-color: #e6e7e8
+        background-color: $mob-gray
         padding: .8em
         img
           float: left
@@ -273,7 +273,7 @@ body.mobilizations.show
 
   .social-media
     font-family: "Proxima Nova" 
-    background-color: $light_gray
+    background-color: $dark-gray
     color: white
     padding: 0.7em
     text-align: center
@@ -281,7 +281,6 @@ body.mobilizations.show
   .share
     text-align: center
     background: white
-    margin-bottom: 2em
     padding: .5em 0
     .twitter-share-button
       color: $tw_blue
@@ -300,18 +299,29 @@ body.mobilizations.show
 
   .history
     .item
-      background: white
-      padding: 1em
+      background-color: $mob-gray        
       margin-bottom: 1em
       overflow: hidden
       +border-radius(3px)
-      .name
-        font-weight: 800
-        color: $green
-        margin-bottom: 1em
-      .description
-        font-size: .9em
-        margin-bottom: 1em
+      .columns
+        padding: 0
+      .app
+        text-align: center
+      .content
+        background: white        
+        .name
+          font-weight: 600
+          font-size: 1.2em
+          padding: .9em
+        .description
+          font-size: .9em
+          padding: 0 1.2em
+        .btn
+          text-align: center
+          font-size: .9em
+          padding: .6em
+          margin: 1.2em
+          width: 40%
 
   .data
     .row
@@ -325,7 +335,7 @@ body.mobilizations.show
         font-weight: bold
       .where
         display: block
-        color: #999999
+        color: $orange
         font-size: .9em
       &:before
         font-size: 2em
@@ -354,18 +364,20 @@ body.mobilizations.show
       .header
         margin-bottom: .25em
         span.username, span.published_at
-          color: $green
+          color: $orange
           a
-            color: $green
-        span.username, span.where, span.published_at
+            color: $orange
+        span.username, span.published_at
           font-weight: 800
+        span.where
+          font-weight: 600
         span.when
           font-size: .9em
-      span.where, span.when
-        color: $light_gray
+      span.where
+        color: black
       .text
         a
-          color: $orange
+          color: $green
         .hashtag
           color: $light_gray
           font-weight: 600
@@ -398,7 +410,7 @@ body.mobilizations.show
 
   .images
     img
-      width: 33%
+      width: 25%
       vertical-align: top
       border: 4px solid transparent
       +border-radius(5px)
