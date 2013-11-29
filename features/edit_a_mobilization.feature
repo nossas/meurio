@@ -18,6 +18,7 @@ Feature: Edit a mobilization
     Given I'm in "edit mobilization page"
     And I fill "Nome da Mobilização" with "Nome alterado da mobilização!"
     And I fill "Hashtag" with "NomeAlterado"
+    And I attach an image to "Thumbnail"
     When I press "Atualizar Mobilização"
     Then I should be in "this mobilization page"
 
