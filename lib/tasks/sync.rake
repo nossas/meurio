@@ -141,6 +141,7 @@ namespace :sync do
       posts = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "posts", fields: "from,message,created_time,id", limit: limit)
       posts.each do |post|
         Mobilization.all.each do |mobilization|
+          next if post["message"].nil?
           begin
             if post["message"].index(mobilization.hashtag).present?
               FacebookPost.create(
