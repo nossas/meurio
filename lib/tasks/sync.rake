@@ -136,8 +136,9 @@ namespace :sync do
       end
     end
 
-    task :posts_by_meurio => :environment do
-      posts = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "posts", fields: "from,message,created_time,id")
+    task :posts_by_meurio, [:limit] => :environment do |t, args|
+      limit = args[:limit] || 25
+      posts = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "posts", fields: "from,message,created_time,id", limit: limit)
       posts.each do |post|
         Mobilization.all.each do |mobilization|
           begin
