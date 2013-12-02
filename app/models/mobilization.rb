@@ -17,7 +17,7 @@ class Mobilization < ActiveRecord::Base
   validates_presence_of :image, on: :create
 
   def share_count
-    self.comments.sum(:share_count) + self.comments.sum(:like_count)
+    self.comments.sum(:share_count) + self.comments.sum(:like_count) + self.images.sum(:share_count) + self.images.sum(:like_count)
   end
 
   def attending_count
