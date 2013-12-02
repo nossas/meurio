@@ -15,6 +15,7 @@ def to_element string
   return ".principles"                                                                if string == "the Meu Rio's principles"
   return ".funding"                                                                   if string == "the Meu Rio's funding"
   return ".history .item.campaigns"                                                   if string == "the campaign on the mobilization history"
+  return ".history .item.petitions"                                                   if string == "the petition on the mobilization history"
   return ".history .item.problems"                                                    if string == "the problem on the mobilization history"
   return ".history .item.events"                                                      if string == "the event on the mobilization history"
   return ".comments .item.tweets"                                                     if string == "the tweet on the mobilization comments"

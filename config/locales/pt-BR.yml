@@ -246,6 +246,7 @@ pt-BR:
     campaigns: "Pressione agora"
     problems: "Dê uma ideia"
     events: "Participe do evento"
+    petitions: "Assine embaixo"
   pokers:
     zero: "pressões"
     one: "pressão"
@@ -288,3 +289,4 @@ pt-BR:
     pdp: Panela de Pressão
     imagine: Imagine
     fb: Facebook
+    petitions: Petição

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131202142012) do
+ActiveRecord::Schema.define(version: 20131202230252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,7 +134,17 @@ ActiveRecord::Schema.define(version: 20131202142012) do
     t.string   "link"
   end
 
-  create_view "facts", "(SELECT c.id, c.created_at, c.name, c.description_html, c.link, c.hashtag, 'campaigns'::text AS relname FROM campaigns c UNION ALL SELECT p.id, p.created_at, p.name, p.description AS description_html, p.link, p.hashtag, 'problems'::text AS relname FROM problems p) UNION ALL SELECT e.id, e.created_at, e.name, e.description AS description_html, e.link, e.hashtag, 'events'::text AS relname FROM events e", :force => true
+  create_table "petitions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "hashtag"
+    t.string   "name"
+    t.text     "description_html"
+    t.string   "link"
+    t.string   "uid"
+  end
+
+  create_view "facts", "((SELECT e.id, e.created_at, e.name, e.description_html, e.link, e.hashtag, 'petitions'::text AS relname FROM petitions e UNION ALL SELECT c.id, c.created_at, c.name, c.description_html, c.link, c.hashtag, 'campaigns'::text AS relname FROM campaigns c) UNION ALL SELECT p.id, p.created_at, p.name, p.description AS description_html, p.link, p.hashtag, 'problems'::text AS relname FROM problems p) UNION ALL SELECT e.id, e.created_at, e.name, e.description AS description_html, e.link, e.hashtag, 'events'::text AS relname FROM events e", :force => true
   create_table "images", force: true do |t|
     t.string   "file"
     t.string   "hashtag"

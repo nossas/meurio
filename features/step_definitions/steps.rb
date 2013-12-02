@@ -115,6 +115,10 @@ Given(/^there is a problem created by this user$/) do
   @problem = Problem.make! user: @user
 end
 
+Given(/^this mobilization have a petition$/) do
+  @petition = Petition.make!(hashtag: @mobilization.hashtag)
+end
+
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
   attach_file to_element(arg1), File.dirname(__FILE__) + "/../support/mobilization.jpg"
 end

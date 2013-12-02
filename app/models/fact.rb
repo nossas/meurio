@@ -11,6 +11,8 @@ class Fact < ActiveRecord::Base
       self.app = :imagine
     elsif relname == 'events'
       self.app = :fb
+    elsif relname == 'petitions'
+      self.app = :petitions
     end
   end
 end

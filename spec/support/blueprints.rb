@@ -100,3 +100,11 @@ end
 Activity.blueprint do
   # Attributes here
 end
+
+Petition.blueprint do
+  name              { Faker::Lorem.sentence }
+  description_html  { Faker::Lorem.paragraph }
+  link              { Faker::Internet.url }
+  uid               { sn }
+  hashtag           { Mobilization.make!.hashtag }
+end
