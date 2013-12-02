@@ -153,7 +153,7 @@ namespace :sync do
               )
             end
           rescue Exception => e
-            Rails.logger.info "Could not create post #{post['uid']}"
+            Rails.logger.info "Could not create post #{post.inspect}"
             Rails.logger.info e.message
           end
         end
