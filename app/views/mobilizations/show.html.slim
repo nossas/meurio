@@ -55,12 +55,24 @@
         |  
         span.counter_label= t("ideas", count: @mobilization.ideas.count)
         span.where no Imagine
-    - if @mobilization.comments.any?
+    - if @mobilization.facebook_share_count > 0
       .shares_counter.icon-share
-        span.counter= number_with_delimiter @mobilization.share_count
+        span.counter= number_with_delimiter @mobilization.facebook_share_count
         |  
-        span.counter_label= t("shares", count: @mobilization.share_count)
-        span.where nas redes sociais
+        span.counter_label= t("shares", count: @mobilization.facebook_share_count)
+        span.where no Facebook
+    - if @mobilization.facebook_like_count > 0
+      .likes_counter.icon-thumbs-up
+        span.counter= number_with_delimiter @mobilization.facebook_like_count
+        |  
+        span.counter_label= t("likes", count: @mobilization.facebook_like_count)
+        span.where no Facebook
+    - if @mobilization.facebook_comment_count > 0
+      .likes_counter.icon-comments
+        span.counter= number_with_delimiter @mobilization.facebook_comment_count
+        |  
+        span.counter_label= t("comments", count: @mobilization.facebook_comment_count)
+        span.where no Facebook
     - if @mobilization.attending_count > 0
       .attending_count.icon-location
         span.counter= number_with_delimiter @mobilization.attending_count

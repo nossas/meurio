@@ -114,7 +114,7 @@ namespace :sync do
       end
     end
 
-    task :posts => :environment do
+    task :posts_by_hashtag => :environment do
       graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
       Mobilization.all.each do |mobilization|
         begin
@@ -132,6 +132,29 @@ namespace :sync do
         rescue Exception => e
           Rails.logger.info "Could not update Mobilization ##{mobilization.id}"
           Rails.logger.info e.message
+        end
+      end
+    end
+
+    task :posts_by_meurio => :environment do
+      posts = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "posts", fields: "from,message,created_time,id")
+      posts.each do |post|
+        Mobilization.all.each do |mobilization|
+          begin
+            if post["message"].index(mobilization.hashtag).present?
+              FacebookPost.create(
+                hashtag:      mobilization.hashtag,
+                username:     post["from"]["name"],
+                text:         post["message"],
+                published_at: post["created_time"],
+                user_uid:     post["from"]["id"],
+                uid:          post["id"]
+              )
+            end
+          rescue Exception => e
+            Rails.logger.info "Could not update Mobilization ##{mobilization.id}"
+            Rails.logger.info e.message
+          end
         end
       end
     end
@@ -154,13 +177,14 @@ namespace :sync do
       end
     end
 
-    task :likes_and_shares => :environment do
+    task :likes_shares_and_comments => :environment do
       graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
       FacebookPost.where("created_at >= ?", Time.now - 1.day).all.each do |fp|
         begin
-          post = graph.get_object(fp.uid, fields: "shares,likes")
-          if post["shares"].present? then fp.share_count = post["shares"]["count"] end
-          if post["likes"].present? then fp.like_count = post["likes"]["count"] end
+          post = graph.get_object(fp.uid, fields: "shares,likes.limit(1).summary(1),comments.limit(1).summary(1)")
+          if post["shares"].present?    then fp.share_count = post["shares"]["count"] end
+          if post["likes"].present?     then fp.like_count = post["likes"]["summary"]["total_count"] end
+          if post["comments"].present?  then fp.comment_count = post["comments"]["summary"]["total_count"] end
           fp.save!
         rescue Exception => e
           message = "Could not update FacebookPost ##{fp.id} | #{e.message}"

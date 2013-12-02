@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129181924) do
+ActiveRecord::Schema.define(version: 20131202142012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20131129181924) do
     t.string   "user_uid"
     t.integer  "share_count"
     t.integer  "like_count"
+    t.integer  "comment_count"
   end
 
   create_table "tweets", force: true do |t|
@@ -103,9 +104,10 @@ ActiveRecord::Schema.define(version: 20131129181924) do
     t.string   "user_uid"
     t.integer  "retweet_count"
     t.integer  "favorite_count"
+    t.integer  "comment_count"
   end
 
-  create_view "comments", "SELECT t.id, t.created_at, t.text, t.hashtag, t.username, t.published_at, t.text_html, t.user_uid, t.retweet_count AS share_count, t.favorite_count AS like_count, 'tweets'::text AS relname FROM tweets t UNION ALL SELECT fp.id, fp.created_at, fp.text, fp.hashtag, fp.username, fp.published_at, fp.text_html, fp.user_uid, fp.share_count, fp.like_count, 'facebook_posts'::text AS relname FROM facebook_posts fp", :force => true
+  create_view "comments", "SELECT t.id, t.created_at, t.text, t.hashtag, t.username, t.published_at, t.text_html, t.user_uid, t.retweet_count AS share_count, t.favorite_count AS like_count, t.comment_count, 'tweets'::text AS relname FROM tweets t UNION ALL SELECT fp.id, fp.created_at, fp.text, fp.hashtag, fp.username, fp.published_at, fp.text_html, fp.user_uid, fp.share_count, fp.like_count, fp.comment_count, 'facebook_posts'::text AS relname FROM facebook_posts fp", :force => true
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false

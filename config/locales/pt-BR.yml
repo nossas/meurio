@@ -258,6 +258,14 @@ pt-BR:
     zero: "compartilhamentos"
     one: "compartilhamento"
     other: "compartilhamentos"
+  likes:
+    zero: "curtidas"
+    one: "curtida"
+    other: "curtidas"
+  comments:
+    zero: "comentários"
+    one: "comentário"
+    other: "comentários"
   attending:
     zero: "participações"
     one: "participação"
