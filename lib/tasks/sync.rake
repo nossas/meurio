@@ -180,7 +180,7 @@ namespace :sync do
 
     task :likes_shares_and_comments => :environment do
       graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
-      FacebookPost.where("created_at >= ?", Time.now - 1.day).all.each do |fp|
+      FacebookPost.where("created_at >= ? AND username = 'Meu Rio'", Time.now - 1.day).all.each do |fp|
         begin
           post = graph.get_object(fp.uid, fields: "shares,likes.limit(1).summary(1),comments.limit(1).summary(1)")
           if post["shares"].present?    then fp.share_count = post["shares"]["count"] end
