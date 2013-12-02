@@ -152,7 +152,7 @@ namespace :sync do
               )
             end
           rescue Exception => e
-            Rails.logger.info "Could not update Mobilization ##{mobilization.id}"
+            Rails.logger.info "Could not create post #{post['uid']}"
             Rails.logger.info e.message
           end
         end
