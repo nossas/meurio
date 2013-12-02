@@ -98,7 +98,7 @@ namespace :sync do
       images.each do |image|
         mobilization = Mobilization.where("hashtag IN (?)", image["name"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
         if mobilization.present?
-          if image["name"].match(/#namidia/)
+          if image["name"].match(/#namídia/)
             Clipping.create(
               remote_image_url: image["source"], 
               hashtag:          mobilization.hashtag, 
