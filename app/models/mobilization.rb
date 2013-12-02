@@ -12,6 +12,7 @@ class Mobilization < ActiveRecord::Base
   belongs_to :user
 
   mount_uploader :image, MobilizationUploader
+  mount_uploader :thumbnail, MobilizationUploader
 
   validates_presence_of :title, :short_title, :hashtag, :description
   validates_presence_of :image, on: :create
