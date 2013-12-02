@@ -20,12 +20,14 @@
   .row
     .large-12.columns
       = f.label :image
+      = image_tag @mobilization.image
       = f.file_field :image
       .hint
         span A imagem ideal deve ter no mínimo 1900px de largura
   .row
     .large-12.columns
       = f.label :thumbnail
+      = image_tag @mobilization.thumbnail
       = f.file_field :thumbnail
       .hint
         span A imagem ideal deve ter 400 x 400px. Caso nenhuma imagem seja selecionada, a imagem de fundo será usada como thumbnail.
