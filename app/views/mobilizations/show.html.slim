@@ -38,66 +38,69 @@
         = link_to "Twittar", "https://twitter.com/share?url=#{request.url}&text=#{@mobilization.short_title}&hashtags=#{@mobilization.hashtag}", class: ["twitter-share-button", "icon-twitter"]
 
 .row
-  .large-8.small-12.columns.history
-    h2 História da Mobilização
-    = render @facts
-  .large-4.small-12.columns.data
-    h2 Dados
-    - if @mobilization.pokes.any?
-      .pokes_counter.icon-comments
-        span.counter= number_with_delimiter @mobilization.pokes.count
-        |  
-        span.counter_label= t("pokers", count: @mobilization.pokes.count)
-        span.where no Panela de Pressão
-    - if @mobilization.ideas.any?
-      .ideas_counter.icon-bubbles
-        span.counter= number_with_delimiter @mobilization.ideas.count
-        |  
-        span.counter_label= t("ideas", count: @mobilization.ideas.count)
-        span.where no Imagine
-    - if @mobilization.facebook_share_count > 0
-      .shares_counter.icon-share
-        span.counter= number_with_delimiter @mobilization.facebook_share_count
-        |  
-        span.counter_label= t("shares", count: @mobilization.facebook_share_count)
-        span.where no Facebook
-    - if @mobilization.facebook_like_count > 0
-      .likes_counter.icon-thumbs-up
-        span.counter= number_with_delimiter @mobilization.facebook_like_count
-        |  
-        span.counter_label= t("likes", count: @mobilization.facebook_like_count)
-        span.where no Facebook
-    - if @mobilization.facebook_comment_count > 0
-      .likes_counter.icon-comments
-        span.counter= number_with_delimiter @mobilization.facebook_comment_count
-        |  
-        span.counter_label= t("comments", count: @mobilization.facebook_comment_count)
-        span.where no Facebook
-    - if @mobilization.attending_count > 0
-      .attending_count.icon-location
-        span.counter= number_with_delimiter @mobilization.attending_count
-        |  
-        span.counter_label= t("attending", count: @mobilization.attending_count)
-        span.where em eventos
+  .large-8.small-12.columns
+    .history
+      h2 História da Mobilização
+      = render @facts
+    .images
+      h2 Imagens
+      - if @mobilization.images.empty?
+        .empty Esta mobilização ainda não possui imagens :(
+      - else
+        = render @mobilization.images
 
-.row
-  .large-8.small-12.columns.images
-    h2 Imagens
-    - if @mobilization.images.empty?
-      .empty Esta mobilização ainda não possui imagens :(
-    - else
-      = render @mobilization.images
-  .large-4.small-12.columns.clippings
-    h2 Imprensa
-    - if @mobilization.clippings.empty?
-      .empty Esta mobilização ainda não possui clippings
-    - else
-      = render @mobilization.clippings
-  .large-4.small-12.columns.comments
-    h2 Nas redes
-    .tip
-      | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre essa mobilização nas redes sociais.
-    - if @comments.empty?
-      .empty Esta mobilização ainda não possui comentários :\
-    - else      
-      = render @comments
+  .large-4.small-12.columns
+    .data
+      h2 Dados
+      - if @mobilization.pokes.any?
+        .pokes_counter.icon-comments
+          span.counter= number_with_delimiter @mobilization.pokes.count
+          |  
+          span.counter_label= t("pokers", count: @mobilization.pokes.count)
+          span.where no Panela de Pressão
+      - if @mobilization.ideas.any?
+        .ideas_counter.icon-bubbles
+          span.counter= number_with_delimiter @mobilization.ideas.count
+          |  
+          span.counter_label= t("ideas", count: @mobilization.ideas.count)
+          span.where no Imagine
+      - if @mobilization.facebook_share_count > 0
+        .shares_counter.icon-share
+          span.counter= number_with_delimiter @mobilization.facebook_share_count
+          |  
+          span.counter_label= t("shares", count: @mobilization.facebook_share_count)
+          span.where no Facebook
+      - if @mobilization.facebook_like_count > 0
+        .likes_counter.icon-thumbs-up
+          span.counter= number_with_delimiter @mobilization.facebook_like_count
+          |  
+          span.counter_label= t("likes", count: @mobilization.facebook_like_count)
+          span.where no Facebook
+      - if @mobilization.facebook_comment_count > 0
+        .likes_counter.icon-comments
+          span.counter= number_with_delimiter @mobilization.facebook_comment_count
+          |  
+          span.counter_label= t("comments", count: @mobilization.facebook_comment_count)
+          span.where no Facebook
+      - if @mobilization.attending_count > 0
+        .attending_count.icon-location
+          span.counter= number_with_delimiter @mobilization.attending_count
+          |  
+          span.counter_label= t("attending", count: @mobilization.attending_count)
+          span.where em eventos
+
+    .clippings
+      h2 Imprensa
+      - if @mobilization.clippings.empty?
+        .empty Esta mobilização ainda não possui clippings
+      - else
+        = render @mobilization.clippings
+
+    .comments
+      h2 Nas redes
+      .tip
+        | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre essa mobilização nas redes sociais.
+      - if @comments.empty?
+        .empty Esta mobilização ainda não possui comentários :\
+      - else      
+        = render @comments
