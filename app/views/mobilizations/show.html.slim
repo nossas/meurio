@@ -88,6 +88,12 @@
           |  
           span.counter_label= t("attending", count: @mobilization.attending_count)
           span.where em eventos
+      - if @mobilization.signatures_count > 0
+        .signatures_count.icon-signature
+          span.counter= number_with_delimiter @mobilization.signatures_count
+          |  
+          span.counter_label= t("signatures", count: @mobilization.signatures_count)
+          span.where em petições
 
     .clippings
       h2 Imprensa

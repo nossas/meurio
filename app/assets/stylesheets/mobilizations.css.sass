@@ -332,7 +332,7 @@ body.mobilizations.show
   .data
     .row
       margin-bottom: 1.5em
-    .pokes_counter, .ideas_counter, .shares_counter, .attending_count, .likes_counter
+    .pokes_counter, .ideas_counter, .shares_counter, .attending_count, .signatures_count, .likes_counter
       clear: both
       margin-bottom: 1.5em
       .counter
@@ -356,6 +356,11 @@ body.mobilizations.show
         top: -5px
         position: relative
     .attending_count
+      &:before
+        top: -5px
+        left: 5px
+        position: relative
+    .signatures_count
       &:before
         top: -5px
         left: 5px
