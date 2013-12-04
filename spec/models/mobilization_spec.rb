@@ -9,6 +9,7 @@ describe Mobilization do
   it { should validate_presence_of :user_id }
   it { should have_many(:campaigns) }
   it { should have_many(:problems) }
+  it { should have_many(:petitions) }
   it { should belong_to(:user) }
 
   describe "#facebook_share_count" do
