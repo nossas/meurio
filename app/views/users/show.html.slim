@@ -24,7 +24,7 @@
             = link_to(@user.website, "http://" + @user.website, class: ["icon-link"], target: :blank) if @user.website.present?
           .user_bio
             strong Quem sou eu:
-            = @user.bio
+            .content= @user.bio
         .large-3.columns.activities
           h3 Atividade
           - if @activities.empty?
