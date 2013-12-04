@@ -36,17 +36,21 @@ body.users.edit
         margin-bottom: 1em
 
 body.users.show
+  .profile
+    margin-top: 2em
   h2
     margin-bottom: 0
     line-height: normal
-    font-weight: bold
+    font-weight: 800
     font-size: 1.25em
     &.user_name
       display: inline-block
   a.edit_user
     font-size: .8em
+    color: $profile-orange
   .user_profession
-    margin-bottom: 1em
+    margin: .3em 0 1em 0
+    font-size: .8em
   .user_details
     font-size: .8em
     a.icon-facebook
@@ -57,7 +61,7 @@ body.users.show
       font-size: 1.25em
       position: relative
       top: 3px
-    a.icon-link-24
+    a.icon-link
       color: $light_gray
       &:before
         margin-right: .25em
@@ -68,11 +72,12 @@ body.users.show
   .user_bio
     margin-top: 2em
     margin-bottom: 1em
+    font-size: .9em
     strong
       display: block
       margin-bottom: .5em
   h3
-    font-size: 1em
+    font-size: .9em
     border-bottom: $lightest_gray solid 1px
     padding-bottom: .25em
     margin-bottom: 1em

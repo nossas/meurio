@@ -172,7 +172,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meurio_ui (1.3.9)
+    meurio_ui (1.3.10)
     mime-types (1.25)
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
