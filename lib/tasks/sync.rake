@@ -27,8 +27,8 @@ namespace :sync do
           Poke.create(
             uid:        poke["id"], 
             campaign:   campaign, 
-            user:       User.find_by_email(poke["user_email"]), 
-            user_email: poke["user_email"]
+            user:       User.find_by_email(poke["user"]["email"]), 
+            user_email: poke["user"]["email"]
           )
         end
       end
