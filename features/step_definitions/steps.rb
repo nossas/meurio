@@ -1,3 +1,8 @@
+Given(/^I'm logged in$/) do
+  @current_user = User.make! email: "ssi@meurio.org.br"
+  visit root_path
+end
+
 Given(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
   visit to_url(arg1)
 end
@@ -78,6 +83,10 @@ Given(/^this mobilization have a clipping$/) do
   @clipping = Clipping.make! hashtag: @mobilization.hashtag
 end
 
+Given(/^this petition have some signatures$/) do
+  @petition.update_attributes signatures_count: 100
+end
+
 Given(/^there is a poke$/) do
   @poke = Poke.make!
 end
@@ -90,12 +99,40 @@ Given(/^there is an idea$/) do
   @idea = Idea.make!
 end
 
+Given(/^there is a mobilization of mine$/) do
+  @mobilization = Mobilization.make! user: @current_user
+end
+
+Given(/^there is a poke made by this user$/) do
+  @poke = Poke.make! user: @user
+end
+
+Given(/^there is a campaign created by this user$/) do
+  @campaign = Campaign.make! user: @user
+end
+
+Given(/^there is an idea created by this user$/) do
+  @idea = Idea.make! user: @user
+end
+
+Given(/^there is a problem created by this user$/) do
+  @problem = Problem.make! user: @user
+end
+
+Given(/^this mobilization have a petition$/) do
+  @petition = Petition.make!(hashtag: @mobilization.hashtag)
+end
+
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
   attach_file to_element(arg1), File.dirname(__FILE__) + "/../support/mobilization.jpg"
 end
 
 When(/^I fill "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in arg1, with: arg2
+end
+
+When(/^I fill "([^"]*)" with my "([^"]*)"$/) do |arg1, arg2|
+  fill_in arg1, with: user_field(arg2)
 end
 
 When(/^I fill "(.*?)" within "(.*?)" with "(.*?)"$/) do |field, where, text|
@@ -164,4 +201,16 @@ end
 
 Then(/^show me the page$/) do
   save_and_open_page
+end
+
+Then(/^an email should be sent to "(.*?)"$/) do |arg1|
+  ActionMailer::Base.deliveries.select{|e| e.to.include?(arg1)}.should_not be_empty
+end
+
+Then(/^no email should be sent$/) do
+  ActionMailer::Base.deliveries.should be_empty
+end
+
+Then(/^I log in with password "(.*?)"$/) do |password|
+  pending
 end

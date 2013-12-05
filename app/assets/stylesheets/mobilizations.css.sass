@@ -1,8 +1,6 @@
 body.mobilizations.index
-  h2
-    font-size: 1.75em
-    font-weight: normal
-
+  footer
+    margin-top: 0
   .vision, .principles, .funding, .mobilizations, .net, .network
     padding: 2em 0
     text-align: center
@@ -16,35 +14,41 @@ body.mobilizations.index
 
   .main
     background: image-url("bg-01.jpg") top center
-    text-align: left
-    .infographic, .signup
-      margin-top: 2em
-    .infographic
-      text-align: center
-      img
-        margin-top: 2.5em
-    .signup
-      margin-bottom: 2em
-      h2, h4
-        padding: 0 .5em
-      h2
-        font-size: 1.3em
-        font-weight: bolder
-        margin-bottom: 0
-      h4
-        font-size: 1em
-        font-weight: normal
-        margin-top: 0
-      p.hint
-        margin-top: 1em
-        font-size: .7em
+    padding: 4em 0
+    text-align: center
+    h3
+      font-size: 1em
+    p
+      line-height: 1.1em
+      font-size: .8em
+    .item
+      .image
+        height: 160px
+        &.participate
+          padding-top: 30px
+        &.support
+          padding-top: 20px
+      h3
+        color: $title-green
         font-weight: bold
         line-height: 1em
-        margin-bottom: 0
-      form
-        input
-          height: 1.9em
-          margin-top: 1em
+    .call-to-action
+      .content
+        min-height: 160px
+        text-align: left
+        padding-top: 3em
+        &.not-signed
+          padding-top: 2em
+          font-size: 1.2em
+      h2, h3
+        margin: 0
+      h2
+        font-size: 1.2em
+        font-weight: bold
+    .btn
+      width: 100%
+      padding: 1em 0
+      margin-top: .4em
 
   .network
     text-align: left
@@ -57,13 +61,16 @@ body.mobilizations.index
       background: #f9f9f9
       span.user
         font-weight: bold
-        color: $green
+        a
+          color: $green
       img
         width: 50px
         height: 50px
         float: left
         margin-right: .5em
         +border-radius(100%)
+      span.mobilization, span.created_at
+        display: block
 
   .vision
     .infographic
@@ -77,13 +84,17 @@ body.mobilizations.index
     .mobilization
       +rgrid(6, 4)
       margin-bottom: 2em
-      img
-        +border-radius(5px 5px 0 0)
-      .title
-        +border-radius(0 0 5px 5px)
-        background: white
-        padding: 1em
-        font-weight: bolder
+      .image
+        +border-radius(5px)
+        overflow: hidden
+        position: relative
+        .title
+          background: white
+          font-weight: bolder
+          position: absolute
+          bottom: 0
+          padding: 1em
+          width: 100%
 
   .principles
     background: image-url("bg-03.jpg") top center
@@ -91,15 +102,17 @@ body.mobilizations.index
       +rgrid(12, 4)
       text-align: left
       margin-top: 1em
+      img
+        float: left
+        margin-right: 10px
+        width: 75px
+        display: block
       h3
         font-size: 1.1em
       p
         font-size: .9em
         line-height: 1.2em
-      .image
-        height: 100px
-        background: rgba(255,255,255,.25)
-        margin-bottom: .5em
+        padding-left: 85px
 
   .funding
     .description
@@ -124,7 +137,7 @@ body.mobilizations.index
         padding: 1em
         .text
           padding-top: 1em
-          border-right: 1px solid $lightest-grey
+          border-right: 1px solid $lightest_gray
           text-align: left
           height: 100%
       .donation
@@ -137,7 +150,7 @@ body.mobilizations.index
           font-size: 1.4em
 
   .net
-    background: image-url("bg-financiadores.jpg") $green
+    background: image-url("bg-03.jpg") top center $green
     .buttons
       margin-top: 3em
       margin-bottom: 2em
@@ -183,17 +196,18 @@ body.mobilizations.index
         +border-radius(100%)
 
 body.mobilizations.show
-  background: $background-grey
   h2
-    font-size: 1.5em
-    border-bottom: 3px solid #eee
+    border-bottom: 1px solid $lightest-gray
+    margin: 2em 0
+    font-weight: bold
+    font-size: 1em
+    color: $green
 
   .manage
-    background: white
     padding: .7em 0 .9em 0
     a
-      &.icon-new-24
-        color: $light-grey
+      &.icon-pencil
+        color: $light_gray
         font-size: .9em
         font-weight: bold
         &:before
@@ -214,14 +228,12 @@ body.mobilizations.show
         height: 40px
     .content      
       h1, p
-        +text-shadow(black 0 0 10px)
         color: white
       h1
-        font-weight: normal
-        font-family: "Populaire" 
-        font-size: 3.8em
-        line-height: 1em
-        text-transform: uppercase
+        font-weight: bolder
+        font-family: Proxima Nova
+        font-size: 2em
+        line-height: 1em        
       p
         font-weight: bold
         font-family: "Proxima Nova" 
@@ -234,44 +246,40 @@ body.mobilizations.show
       width: 100%
       overflow: hidden
       .title
-        color: white
         font-weight: bolder
-        font-size: 1.2em
       #action-header
         overflow: hidden
-        background-color: $green
-        height: 2.8em
-        .first
-          padding: .8em 0 .7em 1.2em
-          background-color: $dark-green
-        .last
-          padding: .7em 1.2em .7em 0
-          color: $light-green
-          .number
-            text-align: center
-            padding: 0 .2em
-            font-size: 1.6em
-            font-weight: bolder
-          .text
-            padding: .5em 0 0 .5em
-            font-size: .8em
+        background-color: $mob-gray
+        padding: .8em
+        img
+          float: left
+          height: 40px
+          margin-right: .5em
+        .title
+          color: $green
       #action-event
         padding: 1.2em
         .title
-          color: $green
+          font-size: 1.2em
+          margin-bottom: 1em
+        .counter
+          padding: 1em 0
+          font-size: .8em
+          font-weight: bold
+          .number 
+            margin-right: .3em
         p
-          margin-top: 1em
           font-size: 0.9em
           line-height: 1.2em
         .btn
           text-align: center
+          text-transform: normal !important
           padding: .6em
           width: 100%
-          font-weight: bolder
 
   .social-media
     font-family: "Proxima Nova" 
-    background-color: $light-grey
+    background-color: $dark-gray
     color: white
     padding: 0.7em
     text-align: center
@@ -279,7 +287,6 @@ body.mobilizations.show
   .share
     text-align: center
     background: white
-    margin-bottom: 2em
     padding: .5em 0
     .twitter-share-button
       color: $tw_blue
@@ -298,23 +305,34 @@ body.mobilizations.show
 
   .history
     .item
-      background: white
-      padding: 1em
+      background-color: $mob-gray        
       margin-bottom: 1em
       overflow: hidden
       +border-radius(3px)
-      .name
-        font-weight: 800
-        color: $green
-        margin-bottom: 1em
-      .description
-        font-size: .9em
-        margin-bottom: 1em
+      .columns
+        padding: 0
+      .app
+        text-align: center
+      .content
+        background: white        
+        .name
+          font-weight: 600
+          font-size: 1.2em
+          padding: .9em
+        .description
+          font-size: .9em
+          padding: 0 1.2em
+        .btn
+          text-align: center
+          font-size: .9em
+          padding: .6em
+          margin: 1.2em
+          width: 40%
 
   .data
     .row
       margin-bottom: 1.5em
-    .pokes_counter, .ideas_counter, .shares_counter, .attending_count
+    .pokes_counter, .ideas_counter, .shares_counter, .attending_count, .signatures_count, .likes_counter
       clear: both
       margin-bottom: 1.5em
       .counter
@@ -323,14 +341,14 @@ body.mobilizations.show
         font-weight: bold
       .where
         display: block
-        color: #999999
+        color: $orange
         font-size: .9em
       &:before
         font-size: 2em
         float: left
         margin-right: .25em
         padding-top: .1em
-        color: $lightest_grey
+        color: $lightest_gray
         width: 40px
         text-align: center
     .shares_counter
@@ -342,6 +360,15 @@ body.mobilizations.show
         top: -5px
         left: 5px
         position: relative
+    .signatures_count
+      &:before
+        top: -5px
+        left: 5px
+        position: relative
+    .likes_counter
+      &:before
+        top: -5px
+        position: relative
 
   .comments, .clippings
     .tweets, .facebook_posts, .clipping
@@ -352,20 +379,22 @@ body.mobilizations.show
       .header
         margin-bottom: .25em
         span.username, span.published_at
-          color: $green
+          color: $orange
           a
-            color: $green
-        span.username, span.where, span.published_at
+            color: $orange
+        span.username, span.published_at
           font-weight: 800
+        span.where
+          font-weight: 600
         span.when
           font-size: .9em
-      span.where, span.when
-        color: $light-grey
+      span.where
+        color: black
       .text
         a
-          color: $orange
+          color: $green
         .hashtag
-          color: $light-grey
+          color: $light_gray
           font-weight: 600
     .tweets
       .header
@@ -387,7 +416,7 @@ body.mobilizations.show
       font-weight: bold
       padding: .5em
       color: gray
-      border: 3px solid $lightest_grey
+      border: 3px solid $lightest_gray
       line-height: 1.5em
       margin-bottom: 1em
       strong
@@ -396,7 +425,7 @@ body.mobilizations.show
 
   .images
     img
-      width: 33%
+      width: 25%
       vertical-align: top
       border: 4px solid transparent
       +border-radius(5px)
@@ -407,7 +436,6 @@ body.mobilizations.show
     width: auto
 
 body.mobilizations.new, body.mobilizations.edit
-  background-color: $background-grey
   h2
     color: $green
     font-size: 1.5em

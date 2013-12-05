@@ -224,6 +224,8 @@ pt-BR:
         last_name: Sobrenome
         email: Email
         password: Senha
+        password_confirmation: Confirmação de senha
+        current_password: Senha atual
         bio: Um pouco mais sobre você
         birthdate: Data de nascimento
         profession: Profissão
@@ -234,34 +236,45 @@ pt-BR:
         home_address_district: Bairro
         home_city: Cidade
         home_state: Estado
-        work_postcode: CEP onde trabalha
-        work_address_street: Endereço
-        work_address_number: Número
-        work_address_extra: Complemento
-        work_address_district: Bairro
-        work_city: Cidade
-        work_state: Estado
         phone: Celular
         secondary_email: Email secundário
         gender: Gênero
         public: Outros podem ver meu perfil?
+        facebook_url: facebook.com/
+        twitter_url: twitter.com/
   fact:
     campaigns: "Pressione agora"
     problems: "Dê uma ideia"
     events: "Participe do evento"
+    petitions: "Assine embaixo"
   pokers:
     zero: "pressões"
     one: "pressão"
     other: "pressões"
   ideas:
+    zero: "ideias"
     one: "ideia"
     other: "ideias"
   shares:
+    zero: "compartilhamentos"
     one: "compartilhamento"
     other: "compartilhamentos"
+  likes:
+    zero: "curtidas"
+    one: "curtida"
+    other: "curtidas"
+  comments:
+    zero: "comentários"
+    one: "comentário"
+    other: "comentários"
   attending:
+    zero: "participações"
     one: "participação"
     other: "participações"
+  signatures:
+    zero: "assinaturas"
+    one: "assinatura"
+    other: "assinaturas"
   facebook_posts: "no Facebook"
   tweets: "no Twitter"
   activity:
@@ -273,3 +286,11 @@ pt-BR:
   faker:
     phone_number:
       formats: ["(##) ########", "(##) #########"]
+  unauthorized:
+    default: "Você não tem autorização para acessar esta página."
+
+  app:
+    pdp: Panela de Pressão
+    imagine: Imagine
+    fb: Facebook
+    petitions: Petição

@@ -1,35 +1,27 @@
 = content_for(:title) { @mobilization.short_title }
-= content_for(:image) { @mobilization.image.square.url }
+= content_for(:image) { @mobilization.thumbnail.square.url }
 = content_for(:description) { @mobilization.description }
 
 .mobilization
-  - if true # user.admin?
+  - if can? :manage, @mobilization
     .manage
       .row
-        .large-12.columns= link_to 'Editar', edit_mobilization_path(@mobilization), class: 'icon-new-24', id: :edit_mobilization_button
+        .large-12.columns= link_to 'Editar', edit_mobilization_path(@mobilization), class: 'icon-pencil', id: :edit_mobilization_button
   .cover *{style: show_mobilization_bg}
-    - if false # not user.admin?
-      .row
-        .header
-          .large-12.columns= link_to image_tag("marca-mr.png"), root_path
     .row
-      .large-7.columns
+      .large-8.columns
         .content
           h1= @mobilization.short_title
-          p= @mobilization.description
+          = simple_format @mobilization.description
       - if @mobilization.action_of_the_day
-        .large-5.columns
+        .large-4.columns
           #action-of-the-day
             #action-header
-              .large-5.small-5.columns.first
-                span.title Ação do Dia
-              .large-7.small-7.columns.last
-                .large-6.small-6.columns.number
-                  span= @mobilization.action_of_the_day.counter
-                .large-6.small-6.columns.text
-                  span= t(@mobilization.action_of_the_day.caption, count: @mobilization.action_of_the_day.counter)
+              = image_tag "#{@mobilization.action_of_the_day.app}.png"
+              .title Ação do Dia
+              .subtitle= t "app.#{@mobilization.action_of_the_day.app}"
             #action-event
-              span.title= @mobilization.action_of_the_day.name
+              .title= @mobilization.action_of_the_day.name              
               p= strip_tags(@mobilization.action_of_the_day.description_html).truncate(200)
               = link_to t("fact.#{@mobilization.action_of_the_day.relname}"), @mobilization.action_of_the_day.link, class: 'btn', target: :blank
 
@@ -46,54 +38,75 @@
         = link_to "Twittar", "https://twitter.com/share?url=#{request.url}&text=#{@mobilization.short_title}&hashtags=#{@mobilization.hashtag}", class: ["twitter-share-button", "icon-twitter"]
 
 .row
-  .large-8.small-12.columns.history
-    h2 História da Mobilização
-    = render @facts
-  .large-4.small-12.columns.data
-    h2 Dados
-    - if @mobilization.pokes.any?
-      .pokes_counter.icon-message
-        span.counter= number_with_delimiter @mobilization.pokes.count
-        |  
-        span.counter_label= t("pokers", count: @mobilization.pokes.count)
-        span.where no Panela de Pressão
-    - if @mobilization.ideas.any?
-      .ideas_counter.icon-chat-24
-        span.counter= number_with_delimiter @mobilization.ideas.count
-        |  
-        span.counter_label= t("ideas", count: @mobilization.ideas.count)
-        span.where no Imagine
-    - if @mobilization.comments.any?
-      .shares_counter.icon-share
-        span.counter= number_with_delimiter @mobilization.share_count
-        |  
-        span.counter_label= t("shares", count: @mobilization.comments.count)
-        span.where nas redes sociais
-    - if @mobilization.attending_count > 0
-      .attending_count.icon-location-24
-        span.counter= number_with_delimiter @mobilization.attending_count
-        |  
-        span.counter_label= t("attending", count: @mobilization.attending_count)
-        span.where em eventos
+  .large-8.small-12.columns
+    .history
+      h2 História da Mobilização
+      = render @facts
+    .images
+      h2 Imagens
+      - if @mobilization.images.empty?
+        .empty Esta mobilização ainda não possui imagens :(
+      - else
+        = render @mobilization.images
 
-.row
-  .large-4.small-12.columns.comments
-    h2 Comentários
-    .tip
-      | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre essa mobilização nas redes sociais.
-    - if @comments.empty?
-      .empty Esta mobilização ainda não possui comentários :\
-    - else      
-      = render @comments
-  .large-4.small-12.columns.images
-    h2 Imagens
-    - if @mobilization.images.empty?
-      .empty Esta mobilização ainda não possui imagens :(
-    - else
-      = render @mobilization.images
-  .large-4.small-12.columns.clippings
-    h2 Imprensa
-    - if @mobilization.clippings.empty?
-      .empty Esta mobilização ainda não possui clippings
-    - else
-      = render @mobilization.clippings
+  .large-4.small-12.columns
+    .data
+      h2 Dados
+      - if @mobilization.pokes.any?
+        .pokes_counter.icon-comments
+          span.counter= number_with_delimiter @mobilization.pokes.count
+          |  
+          span.counter_label= t("pokers", count: @mobilization.pokes.count)
+          span.where no Panela de Pressão
+      - if @mobilization.ideas.any?
+        .ideas_counter.icon-bubbles
+          span.counter= number_with_delimiter @mobilization.ideas.count
+          |  
+          span.counter_label= t("ideas", count: @mobilization.ideas.count)
+          span.where no Imagine
+      - if @mobilization.facebook_share_count > 0
+        .shares_counter.icon-share
+          span.counter= number_with_delimiter @mobilization.facebook_share_count
+          |  
+          span.counter_label= t("shares", count: @mobilization.facebook_share_count)
+          span.where no Facebook
+      - if @mobilization.facebook_like_count > 0
+        .likes_counter.icon-thumbs-up
+          span.counter= number_with_delimiter @mobilization.facebook_like_count
+          |  
+          span.counter_label= t("likes", count: @mobilization.facebook_like_count)
+          span.where no Facebook
+      - if @mobilization.facebook_comment_count > 0
+        .likes_counter.icon-comments
+          span.counter= number_with_delimiter @mobilization.facebook_comment_count
+          |  
+          span.counter_label= t("comments", count: @mobilization.facebook_comment_count)
+          span.where no Facebook
+      - if @mobilization.attending_count > 0
+        .attending_count.icon-location
+          span.counter= number_with_delimiter @mobilization.attending_count
+          |  
+          span.counter_label= t("attending", count: @mobilization.attending_count)
+          span.where em eventos
+      - if @mobilization.signatures_count > 0
+        .signatures_count.icon-signature
+          span.counter= number_with_delimiter @mobilization.signatures_count
+          |  
+          span.counter_label= t("signatures", count: @mobilization.signatures_count)
+          span.where em petições
+
+    .clippings
+      h2 Imprensa
+      - if @mobilization.clippings.empty?
+        .empty Esta mobilização ainda não possui clippings
+      - else
+        = render @mobilization.clippings
+
+    .comments
+      h2 Nas redes
+      .tip
+        | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre essa mobilização nas redes sociais.
+      - if @comments.empty?
+        .empty Esta mobilização ainda não possui comentários :\
+      - else      
+        = render @comments

@@ -2,6 +2,7 @@ doctype html
 html
   head
     title= "#{content_for?(:title) ? yield(:title) : "Meu Rio"}"
+    = meurio_ui_assets
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
@@ -23,13 +24,17 @@ html
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
 
-    = render 'layouts/header'
-    - if flash[:alert] || flash[:notice]
-      .flash
-        .row
-          .large-12.columns
-            .alert= alert
-            .notice= notice
+    = render 'layouts/flash', locals: { flash: flash } unless flash.empty?
+    
+    - content_for :application_menu do
+      = link_to "A Rede", root_path + "#network"
+      = link_to "Mobilizações", root_path + "#mobilizations"
+      = link_to "Visão de Cidade", root_path + "#vision"
+      = link_to "Princípios", root_path + "#principles"
+      = link_to "Financiamento", root_path + "#funding"
+      = link_to "Cidadãos em Rede", root_path + "#net"
+    = meurio_header_for :mr20
+    
     = yield
     footer
       .row

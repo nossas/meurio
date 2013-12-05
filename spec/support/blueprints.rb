@@ -8,6 +8,7 @@ Mobilization.blueprint do
   description { Faker::Lorem.paragraph }
   image       { File.open("#{Rails.root}/features/support/image.jpeg") }
   hashtag     { Faker::Lorem.word }
+  user        { User.make! }
 end
 
 Campaign.blueprint do
@@ -85,13 +86,25 @@ Clipping.blueprint do
 end
 
 User.blueprint do
-  first_name   { Faker::Name.first_name }
-  last_name    { Faker::Name.last_name }
-  email        { Faker::Internet.email }
-  password     { Faker::Internet.password }
-  confirmed_at { Time.now }
+  first_name    { Faker::Name.first_name }
+  last_name     { Faker::Name.last_name }
+  email         { "#{sn.to_s}@meurio.org.br" }
+  profession    { "Programmer" }
+  facebook      { Faker::Internet.user_name }
+  twitter       { Faker::Internet.user_name }
+  city          { "Rio de Janeiro" }
+  state         { "RJ" }
+  bio           { Faker::Lorem.paragraph }
 end
 
 Activity.blueprint do
   # Attributes here
+end
+
+Petition.blueprint do
+  name              { Faker::Lorem.sentence }
+  description_html  { Faker::Lorem.paragraph }
+  link              { Faker::Internet.url }
+  uid               { sn }
+  hashtag           { Mobilization.make!.hashtag }
 end

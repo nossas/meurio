@@ -8,9 +8,9 @@ Feature: view how many shares a mobilization have
 
   Scenario: when the mobilization have no shares yet
     When I go to "this mobilization page"
-    Then I should not see "the shares counter"
+    Then I should not see "the Facebook shares counter"
 
   Scenario: when the mobilization have at least one share
     Given this mobilization have some shares
     When I go to "this mobilization page"
-    Then I should see "the shares counter"
+    Then I should see "the Facebook shares counter"

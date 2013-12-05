@@ -1,14 +1,33 @@
-.row
-  ul
-    li.avatar= image_tag @user.image
-    li= @user.name
-    li= @user.email
-    li= @user.bio
-    li= @user.birthdate
-    li= @user.profession
-    li= @user.home_postcode
-    li= @user.work_postcode
-    li= @user.phone
-    li= @user.secondary_email
-    li= @user.gender
-    li= @user.public?
+.profile
+  .row
+    .large-12.columns
+      .row
+        .large-2.columns= image_tag @user.avatar_url, class: :user
+        .large-7.columns
+          h2.user_name= @user.name
+          |  
+          = link_to "Editar perfil", "http://accounts.meurio.org.br/edit_profile", class: :edit_user if can? :edit, @user
+          .user_profession= @user.profession
+          .user_details
+            - if @user.facebook.present?
+              = link_to("", "https://www.facebook.com/" + @user.facebook, class: ["user_facebook_url", "icon-facebook"], target: :blank)
+            - else
+              span.icon-facebook
+            - if @user.twitter.present?
+              = link_to("", "https://twitter.com/" + @user.twitter, class: ["user_twitter_url", "icon-twitter"], target: :blank) if @user.twitter.present?
+            - else
+              span.icon-twitter
+            span.user_location
+              span.user_district.icon-location= @user.address_district
+              | , 
+              span.user_city= @user.city
+            = link_to(@user.website, "http://" + @user.website, class: ["icon-link"], target: :blank) if @user.website.present?
+          .user_bio
+            strong Quem sou eu:
+            .content= @user.bio
+        .large-3.columns.activities
+          h3 Atividade
+          - if @activities.empty?
+            .empty Nenhuma atividade ainda...
+          - else
+            = render @activities

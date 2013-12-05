@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Meurio::Application.config.secret_key_base = '2cca36f0b213a1858d4862bd2dda1fc63e4d070206d5b1e63cee55fe907cb86a5240951335135105f356d452d176ece80ffa7eb5bee8c54208d2f2cdc57055e0'
+Meurio::Application.config.secret_token = 'c9a9f838489ee41537e443c03bd7a391e3af30ddc4280452574c5de3c33e87f174473accce3b1c7dc5edf70c8b90c602ffe47b9fe626e57533dc682d469b0855'

@@ -1,4 +1,5 @@
 class MobilizationsController < InheritedResources::Base
+  load_and_authorize_resource
   respond_to :html, :js
   
   def show
@@ -8,6 +9,7 @@ class MobilizationsController < InheritedResources::Base
   end
 
   def create
+    @mobilization.user_id = current_user.id
     create! do |success, failure|
       success.html { return redirect_to @mobilization }
       failure.html { redirect_to new_mobilization_path }
@@ -15,6 +17,6 @@ class MobilizationsController < InheritedResources::Base
   end
 
   def permitted_params
-    {:mobilization => params.fetch(:mobilization, {}).permit(:title, :short_title, :hashtag, :description, :image)}
+    {:mobilization => params.fetch(:mobilization, {}).permit(:title, :short_title, :hashtag, :description, :image, :thumbnail, :user_id)}
   end
 end

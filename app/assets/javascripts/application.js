@@ -20,6 +20,9 @@
 //= require foundation
 //= require rails.validations
 //= require rails.validations.turbolinks
+//= require users
+//= require mobilizations
+//= require meurio_ui
 
 $.facebox.settings.closeImage = 'http://i.imgur.com/k9awT9O.png'
 $.facebox.settings.loadingImage = 'http://i.imgur.com/bFbQqWu.gif'
@@ -48,46 +51,23 @@ function maskElements() {
   });
 }
 
-function getPostcodeInfo(cepField) {
-  $.getJSON('//brazilapi.herokuapp.com/api?cep=' + cepField.val(), function(response) {
-    if(response[0].cep.result) {
-      populatePostcodeInfo(cepField[0].id, response[0].cep.data)
-    }
-  })
+function flash() {
+  setTimeout( function(){ $(".flash").slideDown('slow') }, 100)
+  setTimeout( function(){ $(".flash").slideUp('slow') }, 16000)
+  $(document).on('click', '.flash', function(){ $('.flash').slideUp() })
 }
 
-function populatePostcodeInfo(field, data) {
-  var context = "#" + field.substr(0, 9);
+$(document).bind('reveal.facebox', function() {
+  $('form.new_user').enableClientSideValidations();
+});
 
-  if(data.tp_logradouro !== undefined && data.logradouro !== undefined)
-    $(context + "_address_street").val(data.tp_logradouro + ' ' + data.logradouro);
-
-  $(context + "_address_district").val(data.bairro);
-  $(context + "_city").val(data.cidade);
-  $(context + "_state").val(data.uf.toUpperCase());
-}
-
+// Initialization
 $(function(){
-  // Initialization
+  flash();
   maskElements();
   $('a[rel*=facebox]').facebox();
 
-  // Event handling
-  $('.image-upload').on('change', function() {
-    if (this.files && this.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        $('.image-preview').attr('src', e.target.result);
-      };
-      reader.readAsDataURL(this.files[0]);
-    }   
-  });
-
-  $('.postcode-request').on('blur', function() {
-    getPostcodeInfo($(this));
-  })
-
-  showNetDiv("funders");
+  showNetDiv("users");
   $('#funders_button').click(function(){ showNetDiv('funders'); });
   $('#team_button').click(function(){ showNetDiv('team'); });
   $('#users_button').click(function(){ showNetDiv('users'); });
@@ -108,5 +88,15 @@ $(function(){
       'width=626,height=436'
     ); 
     return false;
+  });
+
+  $(document).on('click', ".application_menu a", function (e) {
+    var target = this.hash, $target = $(target);   
+
+    $('html, body').stop().animate({
+      'scrollTop': $target.offset().top
+    }, 1000, 'swing', function () {
+      window.location.hash = target;
+    });
   });
 })

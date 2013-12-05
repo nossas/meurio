@@ -2,33 +2,48 @@ $row-width: 980px
 
 body
   font-size: 1.1em
+  background: $background_gray
 
 body, h2, h3
   font-family: Proxima Nova
   color: #666
 
+h2
+  font-size: 1.75em
+  font-weight: normal
+
 p
   color: #999
 
-header
-  background: $green
-  padding: .5em 0
-  img
-    width: 60px
-    height: 60px
-  &.logged
-    padding: .5em 0
-    img
-      width: 36px
-      height: 36px
+img.user
+  +border-radius(100%)
 
+header.meurio_header
+  .meurio_logo, .user_menu
+    +grid-column(6)
+  .meurio_apps
+    +grid-column(3)
+  .application_menu
+    +grid-column(9)
 
 footer
   background: #333
   padding: 1em 0
+  margin-top: 2em
 
 form
   margin-bottom: 5em
+
+hr
+  margin: 2em 0
+
+a
+  &.alert
+    color: red
+
+#facebox
+  .content
+    padding: 1em 2em
 
 .fb-like
   iframe
@@ -43,7 +58,6 @@ form
 .btn
   outline: none
   background: $orange
-  text-transform: uppercase
   padding: .4em 1em
   border: 0
   margin: 0
@@ -51,23 +65,30 @@ form
   font-weight: bold
   display: inline-block
   +border-radius(3px)
-  +box-shadow(darken($orange, 20%) 0 2px 0)
   &:hover
     background: darken($orange, 10%)
     color: white
   &:active
-    +box-shadow(darken($orange, 20%) 0 2px 0)
+    background: darken($orange, 20%)
   cursor: pointer
 
 .flash
+  display: none
+  bottom: 0
+  width: 100%
+  z-index: 500
+  color: white
+  position: fixed
   text-align: center
-  padding: 1em 0
-  .alert
-    color: $orange
-  .notice
-    color: $green
+  .wrapper
+    padding: 20px
+  .success.wrapper, .notice.wrapper
+    background-color: $green
+  .failure.wrapper, .error.wrapper, .alert.wrapper
+    background-color: $orange
 
 .login, .signup
+  float: right
   form
     margin: 0
     .columns
@@ -84,7 +105,6 @@ form
       margin: 0
       +border-radius(3px)
     .btn
-      text-transform: none
       margin-top: 1em
       padding: 0
       font-size: .9em
@@ -97,8 +117,6 @@ form
     font-size: .9em
     .image
       margin-right: 1em
-      img
-        +border-radius(100%)
     span, a
       font-weight: bolder
       padding: .6em 0
@@ -122,7 +140,7 @@ form
         margin-left: .5em      
     input
       margin-bottom: .5em
-    input[type="text"], input[type="tel"], input[type="date"], textarea, select
+    input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"], textarea, select
       +border-radius(5px)
       border: 2px $form-border solid
       font-size: 1.1em
@@ -139,12 +157,29 @@ form
     .action
       margin-top: 2em
       .btn
-        text-transform: none
         font-size: 1em
         padding: .7em
-        width: 100%
       .cancel
         padding: 1em 0
         a
           color: red
           font-weight: bold
+
+.password-recovery
+  h2, h4
+    color: $green
+  h2
+    font-size: 1.3em
+    font-weight: bolder
+    margin-bottom: 0
+  h4
+    font-size: 1em
+    font-weight: normal
+    margin-top: 0
+  form
+    margin: 1em 0 0 0
+    input[type="email"], input[type="password"]
+      padding: 0 .5em
+      font-size: 1em
+    .btn
+      width: 100%

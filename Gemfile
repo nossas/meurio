@@ -48,13 +48,14 @@ end
 
 group :test do
   gem 'cucumber-rails', :require => false
-  gem "database_cleaner", '1.0.0.RC1'
+  gem 'database_cleaner', '1.0.0.RC1'
   gem 'faker'
   gem 'launchy'
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'simplecov', :require => false
+  gem 'webmock'
 end
 
 group :development, :test do
@@ -81,7 +82,9 @@ gem 'fog'
 gem 'auto_html', github: 'josiasds/auto_html'
 gem 'truncate_html'
 gem 'newrelic_rpm'
-gem 'client_side_validations', github: 'bcardarella/client_side_validations', branch: "4-0-beta"
+gem 'client_side_validations', github: 'bcardarella/client_side_validations', branch: '4-0-beta'
 gem 'client_side_validations-turbolinks', '~> 1.1.1'
 gem 'meurio_ui'
-gem 'devise'
+gem 'delayed_job_active_record'
+gem 'cancan'
+gem 'thin'
