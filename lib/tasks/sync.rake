@@ -26,7 +26,7 @@ namespace :sync do
 
       Campaign.all.each do |campaign|
         pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json?from=#{date_from}&until=#{date_until}", query: {token: ENV["PDP_API_TOKEN"]}).body)
-        Rails.logger.info "Found #{pokes.count} querying from #{date_from} until #{date_until}"
+        Rails.logger.info "Found #{pokes.count} pokes from #{date_from} until #{date_until}"
         pokes.each do |poke|
           Poke.create(
             uid:        poke["id"], 
