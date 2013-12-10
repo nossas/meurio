@@ -6,4 +6,4 @@
     .content
       .name= fact.name
       .description = strip_tags(fact.description_html).truncate(200)
-      = link_to t("fact.#{fact.relname}"), fact.link, class: :btn
+      = link_to t("fact.#{fact.relname}"), fact.link, class: :btn, target: :blank
