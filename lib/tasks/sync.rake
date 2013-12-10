@@ -20,9 +20,13 @@ namespace :sync do
       end
     end
 
-    task :pokes => :environment do
+    task :pokes, [:from, :until] => :environment do |t, args|
+      date_from = args[:from] || (Poke.last.created_at.strftime('%Y-%m-%d-%H-%M-%S') if Poke.any?)
+      date_until = args[:until]
+
       Campaign.all.each do |campaign|
-        pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json", query: {token: ENV["PDP_API_TOKEN"]}).body)
+        pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json?from=#{date_from}&until=#{date_until}", query: {token: ENV["PDP_API_TOKEN"]}).body)
+        Rails.logger.info "Found #{pokes.count} querying from #{date_from} until #{date_until}"
         pokes.each do |poke|
           Poke.create(
             uid:        poke["id"], 
