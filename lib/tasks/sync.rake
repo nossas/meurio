@@ -170,7 +170,7 @@ namespace :sync do
       events.each do |event|
         mobilization = Mobilization.where("hashtag IN (?)", event["description"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
         if mobilization.present?
-          Event.create!(
+          Event.create(
             hashtag:     mobilization.hashtag, 
             name:        event["name"], 
             description: event["description"], 
