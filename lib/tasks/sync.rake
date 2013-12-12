@@ -20,15 +20,19 @@ namespace :sync do
       end
     end
 
-    task :pokes => :environment do
+    task :pokes, [:from, :until] => :environment do |t, args|
+      date_from = args[:from] || (Poke.last.created_at.strftime('%Y-%m-%d-%H-%M-%S') if Poke.any?)
+      date_until = args[:until]
+
       Campaign.all.each do |campaign|
-        pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json", query: {token: ENV["PDP_API_TOKEN"]}).body)
+        pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json?from=#{date_from}&until=#{date_until}", query: {token: ENV["PDP_API_TOKEN"]}).body)
+        Rails.logger.info "Found #{pokes.count} pokes in campaign #{campaign.uid} from #{date_from} until #{date_until}"
         pokes.each do |poke|
           Poke.create(
             uid:        poke["id"], 
             campaign:   campaign, 
-            user:       User.find_by_email(poke["user_email"]), 
-            user_email: poke["user_email"]
+            user:       User.find_by_email(poke["user"]["email"]), 
+            user_email: poke["user"]["email"]
           )
         end
       end
@@ -98,7 +102,7 @@ namespace :sync do
       images.each do |image|
         mobilization = Mobilization.where("hashtag IN (?)", image["name"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
         if mobilization.present?
-          if image["name"].match(/#namídia/)
+          if image["name"].match(/#NaMídia/)
             Clipping.create(
               remote_image_url: image["source"], 
               hashtag:          mobilization.hashtag, 
@@ -162,11 +166,17 @@ namespace :sync do
     end
 
     task :events => :environment do
-      events = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "events", fields: "id,description").select{|event| event["description"].present?}
+      events = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "events", fields: "id,description,name").select{|event| event["description"].present?}
       events.each do |event|
         mobilization = Mobilization.where("hashtag IN (?)", event["description"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
         if mobilization.present?
-          Event.create hashtag: mobilization.hashtag, uid: event["id"]
+          Event.create(
+            hashtag:     mobilization.hashtag, 
+            name:        event["name"], 
+            description: event["description"], 
+            link:        "http://facebook.com/events/#{event['id']}",
+            uid:         event["id"]
+          )
         end
       end
     end

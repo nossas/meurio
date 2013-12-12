@@ -83,6 +83,10 @@ Given(/^this mobilization have a clipping$/) do
   @clipping = Clipping.make! hashtag: @mobilization.hashtag
 end
 
+Given(/^this petition have some signatures$/) do
+  @petition.update_attributes signatures_count: 100
+end
+
 Given(/^there is a poke$/) do
   @poke = Poke.make!
 end

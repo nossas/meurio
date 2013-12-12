@@ -2,6 +2,7 @@ doctype html
 html
   head
     title= "#{content_for?(:title) ? yield(:title) : "Meu Rio"}"
+    = favicon_link_tag 'favicon.jpg'
     = meurio_ui_assets
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true

@@ -1,13 +1,35 @@
 .main
   .row
-    .large-8.columns.infographic
-      p O Meu Rio é uma Rede Mobilizadora de pessoas que compartilham conhecimento, talento, recursos e tecnologia para criar e divulgar mobilizações por um Rio de Janeiro melhor. 
-      = image_tag "infografico-1.png"
-    .large-4.columns
-      .signup
-        .row
-          .large-12
-            h2 Ainda não faz parte da rede?
+    .large-3.small-12.columns.item
+      .image.create
+        = image_tag 'icon-signup-01.png'
+      .content
+        h3 Você cria!
+        p Crie a sua própria mobilização usando um ou mais aplicativos da rede.
+    .large-3.small-12.columns.item
+      .image.participate
+        = image_tag 'icon-signup-02.png'
+      .content
+        h3 Você participa!
+        p Use seu tempo e talento para dar força às mobilizações nas redes e nas ruas.
+    .large-3.small-12.columns.item
+      .image.support
+        = image_tag 'icon-signup-03.png'
+      .content
+        h3 Você com a equipe a seu serviço!
+        p Receba suporte da equipe da rede para obter sucesso nas mobilizações.
+    .large-3.small-12.columns.call-to-action
+      - if current_user
+        .content
+          h2= "Bem vindo, #{current_user.first_name}!"
+          h3 Você já faz parte da rede!
+          h3 Veja e complete seu perfil
+        = link_to 'Veja seu Perfil', current_user, class: :btn
+      - else
+        .content.not-signed
+          h2 Ainda não faz parte da rede?
+          h3 Crie sua conta agora!
+        = link_to 'Crie sua Conta', 'http://accounts.meurio.org.br/validate_email', class: :btn
 .network#network
   .row
     .large-6.columns
@@ -28,9 +50,10 @@
 
 .vision#vision
   .row
-    .large-8.large-offset-2.columns
+    .large-centered.large-8.small-12.columns
       h2 Visão de cidade
       p A Rede Meu Rio é feita de milhares de cidadãos com diferentes opiniões sobre os mais variados temas. Essa diversidade não os impede de trabalharem juntos por uma visão de cidade comum com 5 características principais.
+    .large-centered.large-7.small-12.columns
       ul
         li
           strong Democracia 
@@ -105,7 +128,7 @@
           h2 Faça Acontecer!
           p Para manter esse trabalho, não precisamos de muito, mas precisamos de muitos! Muita gente que doa bem pouquinho mas faz essa ideia acontecer. Centenas de cariocas já são doadores mensais da Rede Meu Rio. Seja um deles você também!
       .large-3.columns.donation
-        = link_to 'Contribua!', 'https://facaacontecer.meurio.org.br/', class: 'btn', target: :blank
+        = link_to 'Contribua!', 'http://facaacontecer.meurio.org.br/', class: 'btn', target: :blank
 
 .net#net
   .row

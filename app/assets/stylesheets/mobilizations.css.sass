@@ -14,35 +14,41 @@ body.mobilizations.index
 
   .main
     background: image-url("bg-01.jpg") top center
-    text-align: left
-    .infographic, .signup
-      margin-top: 2em
-    .infographic
-      text-align: center
-      img
-        margin-top: 2.5em
-    .signup
-      margin-bottom: 2em
-      h2, h4
-        padding: 0 .5em
-      h2
-        font-size: 1.3em
-        font-weight: bolder
-        margin-bottom: 0
-      h4
-        font-size: 1em
-        font-weight: normal
-        margin-top: 0
-      p.hint
-        margin-top: 1em
-        font-size: .7em
+    padding: 4em 0
+    text-align: center
+    h3
+      font-size: 1em
+    p
+      line-height: 1.1em
+      font-size: .8em
+    .item
+      .image
+        height: 160px
+        &.participate
+          padding-top: 30px
+        &.support
+          padding-top: 20px
+      h3
+        color: $title-green
         font-weight: bold
         line-height: 1em
-        margin-bottom: 0
-      form
-        input
-          height: 1.9em
-          margin-top: 1em
+    .call-to-action
+      .content
+        min-height: 160px
+        text-align: left
+        padding-top: 3em
+        &.not-signed
+          padding-top: 2em
+          font-size: 1.2em
+      h2, h3
+        margin: 0
+      h2
+        font-size: 1.2em
+        font-weight: bold
+    .btn
+      width: 100%
+      padding: 1em 0
+      margin-top: .4em
 
   .network
     text-align: left
@@ -144,7 +150,7 @@ body.mobilizations.index
           font-size: 1.4em
 
   .net
-    background: image-url("bg-financiadores.jpg") $green
+    background: image-url("bg-03.jpg") top center $green
     .buttons
       margin-top: 3em
       margin-bottom: 2em
@@ -307,6 +313,8 @@ body.mobilizations.show
         padding: 0
       .app
         text-align: center
+        img
+          height: 60px
       .content
         background: white        
         .name
@@ -326,7 +334,7 @@ body.mobilizations.show
   .data
     .row
       margin-bottom: 1.5em
-    .pokes_counter, .ideas_counter, .shares_counter, .attending_count, .likes_counter
+    .pokes_counter, .ideas_counter, .shares_counter, .attending_count, .signatures_count, .likes_counter
       clear: both
       margin-bottom: 1.5em
       .counter
@@ -350,6 +358,11 @@ body.mobilizations.show
         top: -5px
         position: relative
     .attending_count
+      &:before
+        top: -5px
+        left: 5px
+        position: relative
+    .signatures_count
       &:before
         top: -5px
         left: 5px

@@ -10,6 +10,7 @@ class Mobilization < ActiveRecord::Base
   has_many :facebook_posts, primary_key: :hashtag, foreign_key: :hashtag
   has_many :events, primary_key: :hashtag, foreign_key: :hashtag
   has_many :clippings, primary_key: :hashtag, foreign_key: :hashtag
+  has_many :petitions, primary_key: :hashtag, foreign_key: :hashtag
   belongs_to :user
 
   mount_uploader :image, MobilizationUploader
@@ -32,6 +33,10 @@ class Mobilization < ActiveRecord::Base
 
   def attending_count
     self.events.sum(:attending_count)
+  end
+
+  def signatures_count
+    self.petitions.sum(:signatures_count)
   end
 
   def action_of_the_day
