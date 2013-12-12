@@ -81,4 +81,5 @@ Meurio::Application.configure do
   # Mailer config
   default_url_options[:host] = ENV["HOST"]
   ActionMailer::Base.delivery_method = :smtp
+  GA.tracker = "UA-26278513-18"
 end
