@@ -123,6 +123,10 @@ Given(/^this mobilization have a petition$/) do
   @petition = Petition.make!(hashtag: @mobilization.hashtag)
 end
 
+Given(/^there is an admin$/) do
+  User.make! admin: true
+end
+
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
   attach_file to_element(arg1), File.dirname(__FILE__) + "/../support/mobilization.jpg"
 end
