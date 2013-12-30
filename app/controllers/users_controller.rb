@@ -5,6 +5,10 @@ class UsersController < InheritedResources::Base
 
   layout false, only: :index
 
+  def index
+    @users = User.all.order("random()")
+  end
+
   def update
     update! notice: 'Perfil atualizado!'
   end

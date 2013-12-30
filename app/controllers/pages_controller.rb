@@ -6,5 +6,6 @@ class PagesController < ApplicationController
   end
 
   def funders
+    @funders = User.funders.order("random()")
   end
 end

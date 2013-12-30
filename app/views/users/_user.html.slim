@@ -1,1 +1,3 @@
-= link_to image_tag(user.avatar_url, alt: user.name, title: user.name), user
+.member
+  = link_to image_tag(user.avatar_url), user
+  .name= user.name
