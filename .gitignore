@@ -21,3 +21,4 @@ coverage
 config/initializers/01_envvars.rb
 public/uploads
 db/schema.rb
+*.swo
