@@ -6,7 +6,7 @@ class UsersController < InheritedResources::Base
   layout false, only: :index
 
   def index
-    @users = User.all.order("random()")
+    @users = User.limit(50).order("random()")
   end
 
   def update
