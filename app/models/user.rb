@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   establish_connection Rails.env.production? ? ENV["ACCOUNTS_DATABASE"] : "accounts_#{Rails.env}"
   has_many :activities
-  scope :admins, where(admin: true)
-  scope :funders, where(funder: true)
+  scope :admins, -> { where(admin: true) }
+  scope :funders, -> { where(funder: true) }
 
   def name
     "#{first_name} #{last_name}"
