@@ -68,10 +68,6 @@ def to_element string
     ".clippings .body"
   when "the team"
     "#team"
-  when "the team button"
-    "team_button"
-  when "the edit mobilization button"
-    "edit_mobilization_button"
   when "the login form"
     ".login form"
   when "login email field error"
@@ -98,8 +94,6 @@ def to_element string
     ".mobilizations .mobilization"
   when "the network explanation"
     ".network"
-  when "the users button"
-    "users_button"
   when "the users"
     "#users"
   when "the edit user form"
@@ -148,6 +142,16 @@ def to_element string
     ".activities .ideas"
   when "this problem in the activity feed"
     ".activities .problems"
+  when "users"
+    sleep 1
+    "#users .member"
+  when "team members"
+    "#team .member"
+  when "funders"
+    sleep 1
+    "#funders .member"
+  when "the load more users button"
+    "a#load_more_users_button"
   else
     string    
   end

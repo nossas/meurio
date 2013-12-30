@@ -171,22 +171,25 @@ body.mobilizations.index
           display: block
           font-size: .9em
           font-weight: normal
-    #team, #users, #funders
+    .users, .team, .funders
       +grid-row
-      margin-top: 1em
-    #users, #funders, #team
-      .member
+      .loader
         color: white
-        height: 150px
-        width: 75px
-        float: left
-        margin-right: 20px
-        overflow: hidden
-        font-size: 14px
-        img
-          +border-radius(100%)
-          margin-bottom: 10px
-        
+      #users, #funders, #team
+        margin-top: 1em
+        +rgrid(12)
+        .member
+          color: white
+          height: 150px
+          width: 75px
+          float: left
+          margin-right: 20px
+          overflow: hidden
+          font-size: 14px
+          img
+            +border-radius(100%)
+            margin-bottom: 10px
+       
 body.mobilizations.show
   h2
     border-bottom: 1px solid $lightest-gray

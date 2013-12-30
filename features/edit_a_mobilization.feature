@@ -7,7 +7,7 @@ Feature: Edit a mobilization
     Given I'm logged in
     And there is a mobilization of mine
 
-  @ssi
+  @ssi @javascript
   Scenario:
     Given I'm in "this mobilization page"
     When I click "the edit mobilization button"

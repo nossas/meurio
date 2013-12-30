@@ -3,10 +3,20 @@ class UsersController < InheritedResources::Base
   before_action(only: [:edit, :update]) { @user = current_user }
   before_action(only: :show) { @activities = @user.activities.order("created_at DESC").limit(5) }
 
-  layout false, only: :index
+  layout false, only: [:index, :team, :funders]
 
   def index
-    @users = User.limit(50).order("random()")
+    @users = User.order("created_at DESC").page(params[:page]).per(30)
+  end
+
+  def team
+    @users = User.admins.order(:first_name)
+    render :index
+  end
+
+  def funders
+    @users = User.funders.order("created_at DESC").page(params[:page]).per(30)
+    render :index
   end
 
   def update

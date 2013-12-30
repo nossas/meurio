@@ -127,6 +127,18 @@ Given(/^there is an admin$/) do
   User.make! admin: true
 end
 
+Given(/^there is (\d+) users$/) do |arg1|
+  arg1.to_i.times { User.make! }
+end
+
+Given(/^there is (\d+) admin users$/) do |arg1|
+  arg1.to_i.times { User.make! admin: true }
+end
+
+Given(/^there is (\d+) funders$/) do |arg1|
+  arg1.to_i.times { User.make! funder: true }
+end
+
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
   attach_file to_element(arg1), File.dirname(__FILE__) + "/../support/mobilization.jpg"
 end
@@ -150,7 +162,7 @@ When /^I press "([^"]*)"$/ do |arg1|
 end
 
 When /^I click "([^"]*)"$/ do |arg1|
-  click_link to_element(arg1)
+  click_link to_link(arg1)
 end
 
 When /^I choose "([^"]*)"$/ do |arg1|
@@ -217,4 +229,8 @@ end
 
 Then(/^I log in with password "(.*?)"$/) do |password|
   pending
+end
+
+Then(/^I should see (\d+) "(.*?)"$/) do |arg1, arg2|
+  page.should have_css(to_element(arg2), count: arg1)
 end

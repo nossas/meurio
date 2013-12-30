@@ -16,6 +16,8 @@ Before do
       website           varchar(255),
       bio               text,
       address_district  varchar(255),
+      funder            boolean DEFAULT false,
+      created_at        timestamp without time zone,
       phone             varchar(255)
     );
   ")

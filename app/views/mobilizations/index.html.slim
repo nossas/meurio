@@ -146,4 +146,18 @@
       = link_to "#team", id: :team_button do
         | Equipe
         small Quem trabalha pelas mobilizações
-  #net_content
+
+  .funders
+    #funders{data-count = User.funders.count}
+    .large-12.columns
+      a.btn-green#load_more_funders_button href="#" Veja outros financiadores
+      .loader Carregando...
+
+  .users
+    #users{data-count = User.count}
+    .large-12.columns
+      a.btn-green#load_more_users_button href="#" Veja outros agitadores
+      .loader Carregando...
+
+  .team
+    #team

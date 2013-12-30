@@ -3,6 +3,8 @@ class Ability
 
   def initialize(user)
     can :index, User
+    can :team, User
+    can :funders, User
     can :read, User
     can :read, Mobilization
     

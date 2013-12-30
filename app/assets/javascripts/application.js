@@ -27,14 +27,6 @@
 $.facebox.settings.closeImage = 'http://i.imgur.com/k9awT9O.png'
 $.facebox.settings.loadingImage = 'http://i.imgur.com/bFbQqWu.gif'
 
-function showNetDiv(div){
-  $('#funders_button').removeClass("selected");
-  $('#team_button').removeClass("selected");
-  $('#users_button').removeClass("selected");
-  $('#' + div + '_button').addClass("selected")
-  $('#net_content').load(div);
-}
-
 function maskElements() {
   $('.phone_with_ddd').mask('(00) 000000000');
   $('.postcode').mask('00000-000');
@@ -66,11 +58,6 @@ $(function(){
   flash();
   maskElements();
   $('a[rel*=facebox]').facebox();
-
-  showNetDiv("users");
-  $('#funders_button').click(function(){ showNetDiv('funders'); });
-  $('#team_button').click(function(){ showNetDiv('team'); });
-  $('#users_button').click(function(){ showNetDiv('users'); });
   
   $(".twitter-share-button").click(function(event){
     window.open(
