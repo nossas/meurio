@@ -1,5 +1,2 @@
 #team
-  - @team.each do |user|
-    .member.large-2.small-4.columns.left
-      = link_to image_tag(user.avatar_url), user
-      .name= user.name
+  .large-12.columns= render @team
