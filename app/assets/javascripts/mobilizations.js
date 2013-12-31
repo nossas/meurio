@@ -40,7 +40,7 @@ function loadFunders(){
   fundersPage++;
   $("a#load_more_funders_button").hide();
   $(".funders .loader").show();
-  $.get("/funders", function(data) { 
+  $.get("/funders?page=" + fundersPage, function(data) { 
     $("#funders").append(data);
     if($("#funders").data("count") <= $("#funders .member").length)
       $("a#load_more_funders_button").remove();
