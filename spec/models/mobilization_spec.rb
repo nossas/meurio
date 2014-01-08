@@ -21,7 +21,12 @@ describe Mobilization do
 
     context "when there is a Facebook post with one share" do
       before { FacebookPost.make! hashtag: subject.hashtag, share_count: 1 }
-      its(:facebook_share_count) { should be_== 1 }
+      its(:facebook_share_count) { should eq 1 }
     end
+  end
+
+  describe "before_save" do
+    subject { Mobilization.make! hashtag: '#MyHashtagWithSymbol' }
+    its(:hashtag) { should eq 'MyHashtagWithSymbol' }
   end
 end

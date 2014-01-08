@@ -19,6 +19,8 @@ class Mobilization < ActiveRecord::Base
   validates_presence_of :title, :short_title, :hashtag, :description
   validates_presence_of :image, on: :create
 
+  before_save { self.hashtag.gsub!('#', '') }
+
   def facebook_share_count
     self.facebook_posts.sum(:share_count)
   end
