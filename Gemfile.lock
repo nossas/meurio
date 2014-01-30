@@ -191,7 +191,7 @@ GEM
     newrelic_rpm (3.5.6.55)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    pg (0.17.1)
+    pg (0.16.0)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -343,7 +343,7 @@ DEPENDENCIES
   meurio_ui
   mini_magick
   newrelic_rpm
-  pg
+  pg (~> 0.16.0)
   rails (= 4.0.0)
   rails_12factor
   rspec-rails (~> 2.0)
