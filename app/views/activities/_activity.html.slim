@@ -5,5 +5,5 @@
     |  
     span.text= t "activity.#{activity.relname}"
     |  
-    span.mobilization= link_to activity.mobilization.short_title, activity.mobilization
+    span.mobilization= link_to activity.mobilization.try(:short_title), activity.mobilization
     span.created_at #{distance_of_time_in_words_to_now activity.created_at} atrás
