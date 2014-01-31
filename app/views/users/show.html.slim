@@ -6,7 +6,7 @@
         .large-7.columns
           h2.user_name= @user.name
           |  
-          = link_to "Editar perfil", "http://accounts.meurio.org.br/edit_profile", class: :edit_user if can? :edit, @user
+          = link_to "Editar perfil", "http://accounts.#{ENV['MEURIO_DOMAIN']}.org.br/edit_profile", class: :edit_user if can? :edit, @user
           .user_profession= @user.profession
           .user_details
             - if @user.facebook.present?
