@@ -1,9 +1,9 @@
 class AddTaskIdToTaskSubscription < ActiveRecord::Migration
   def up
-    "ALTER TABLE task_subscriptions ADD COLUMN task_id integer"
+    execute "ALTER TABLE task_subscriptions ADD COLUMN task_id integer"
   end
 
   def down
-    "ALTER TABLE task_subscriptions DROP COLUMN task_id"
+    execute "ALTER TABLE task_subscriptions DROP COLUMN IF EXISTS task_id"
   end
 end
