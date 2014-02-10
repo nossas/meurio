@@ -3,7 +3,7 @@ class CreateTasks < ActiveRecord::Migration
     if Rails.env.production? || Rails.env.staging?
       execute "CREATE FOREIGN TABLE tasks() SERVER multitude OPTIONS (table_name 'tasks');"
     else
-      create_table :tasks
+      execute "CREATE TABLE tasks();"
     end
   end
 
@@ -11,7 +11,7 @@ class CreateTasks < ActiveRecord::Migration
     if Rails.env.production? || Rails.env.staging?
       execute "DROP FOREIGN TABLE tasks;"
     else
-      drop_table :tasks
+      execute "DROP TABLE tasks;"
     end
   end
 end
