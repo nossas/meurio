@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210125649) do
+ActiveRecord::Schema.define(version: 20140210132049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,6 +129,9 @@ ActiveRecord::Schema.define(version: 20140210125649) do
     t.index ["priority", "run_at"], :name => "delayed_jobs_priority", :order => {"priority" => :asc, "run_at" => :asc}
   end
 
+  create_table "deliveries", force: true do |t|
+  end
+
   create_table "events", force: true do |t|
     t.string   "hashtag"
     t.integer  "attending_count"
@@ -172,6 +175,12 @@ ActiveRecord::Schema.define(version: 20140210125649) do
     t.string   "short_title"
     t.integer  "user_id"
     t.string   "thumbnail"
+  end
+
+  create_table "task_subscriptions", force: true do |t|
+  end
+
+  create_table "tasks", force: true do |t|
   end
 
 end

@@ -108,3 +108,15 @@ Petition.blueprint do
   uid               { sn }
   hashtag           { Mobilization.make!.hashtag }
 end
+
+Task.blueprint do
+  # Attributes here
+end
+
+TaskSubscription.blueprint do
+  # Attributes here
+end
+
+Delivery.blueprint do
+  # Attributes here
+end
