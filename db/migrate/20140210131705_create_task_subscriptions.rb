@@ -3,7 +3,7 @@ class CreateTaskSubscriptions < ActiveRecord::Migration
     if Rails.env.production? || Rails.env.staging?
       execute "CREATE FOREIGN TABLE task_subscriptions() SERVER multitude OPTIONS (table_name 'task_subscriptions');"
     else
-      create_table :task_subscriptions
+      execute "CREATE TABLE task_subscriptions();"
     end
   end
 
@@ -11,7 +11,7 @@ class CreateTaskSubscriptions < ActiveRecord::Migration
     if Rails.env.production? || Rails.env.staging?
       execute "DROP FOREIGN TABLE task_subscriptions;"
     else
-      drop_table :task_subscriptions
+      execute "DROP TABLE task_subscriptions;"
     end
   end
 end
