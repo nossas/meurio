@@ -4,6 +4,6 @@ class AddTaskSubscriptionIdToDeliveries < ActiveRecord::Migration
   end
 
   def down
-    execute "ALTER TABLE deliveries DROP COLUMN task_subscription_id"
+    execute "ALTER TABLE deliveries DROP COLUMN IF EXISTS task_subscription_id"
   end
 end
