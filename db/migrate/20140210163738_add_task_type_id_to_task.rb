@@ -4,6 +4,6 @@ class AddTaskTypeIdToTask < ActiveRecord::Migration
   end
 
   def down
-    execute "ALTER TABLE tasks DROP COLUMN task_type_id;"
+    execute "ALTER TABLE tasks DROP COLUMN IF EXISTS task_type_id;"
   end
 end
