@@ -2,6 +2,7 @@ class UsersController < InheritedResources::Base
   load_and_authorize_resource
   before_action(only: [:edit, :update]) { @user = current_user }
   before_action(only: :show) { @activities = @user.activities.order("created_at DESC").limit(5) }
+  before_action(only: :show) { @categories = Category.score(@user.id) }
 
   layout false, only: [:index, :team, :funders]
 

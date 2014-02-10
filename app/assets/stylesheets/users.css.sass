@@ -53,6 +53,7 @@ body.users.show
     font-size: .8em
   .user_details
     font-size: .8em
+    margin-bottom: 3em
     a.icon-facebook
       color: $fb_blue
     a.icon-twitter
@@ -69,6 +70,22 @@ body.users.show
       display: inline-block
       margin-right: 1em
       margin-bottom: .25em
+  .user_categories
+    overflow: hidden
+    .categories
+      .category
+        font-size: .8em
+        border-right: 1px solid lightgray
+        padding-right: 1em
+        float: left
+        margin-right: 1em
+        margin-bottom: 1em
+        &:last-child
+          border-right: 0
+        span
+          display: block
+          strong
+            font-size: 1.7em
   .user_bio
     margin-top: 2em
     margin-bottom: 1em

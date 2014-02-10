@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210185841) do
+ActiveRecord::Schema.define(version: 20140210194149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,6 +139,7 @@ ActiveRecord::Schema.define(version: 20140210185841) do
 
   create_table "tasks", force: true do |t|
     t.integer "task_type_id"
+    t.integer "points",       null: false
     t.index ["task_type_id"], :name => "fk__tasks_task_type_id", :order => {"task_type_id" => :asc}
     t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_tasks_task_type_id"
   end

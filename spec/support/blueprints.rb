@@ -110,7 +110,7 @@ Petition.blueprint do
 end
 
 Task.blueprint do
-  # Attributes here
+  points { 10 }
 end
 
 TaskSubscription.blueprint do

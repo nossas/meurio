@@ -12,6 +12,3 @@ Feature: view all the points of an user
   Scenario: when the user have at least one point in two categories
 
   Scenario: when the user have no point
-    Given there is an user
-    When I go to "this user page"
-    Then I should not see "any category points"

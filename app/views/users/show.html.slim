@@ -22,6 +22,15 @@
               | , 
               span.user_city= @user.city
             = link_to(@user.website, "http://" + @user.website, class: ["icon-link"], target: :blank) if @user.website.present?
+          .user_categories
+            h3 Tempo dedicado à cidade
+            .categories
+              - @categories.each do |category|
+                .category
+                  span
+                    strong= category.score
+                    |  min
+                  | em #{category.name}
           .user_bio
             strong Quem sou eu:
             .content= @user.bio
