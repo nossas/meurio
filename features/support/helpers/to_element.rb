@@ -152,6 +152,8 @@ def to_element string
     "#funders .member"
   when "the load more users button"
     "a#load_more_users_button"
+  when "this category score"
+    ".category"
   else
     string    
   end

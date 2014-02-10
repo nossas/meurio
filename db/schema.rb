@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210132049) do
+ActiveRecord::Schema.define(version: 20140210185841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,18 +20,6 @@ ActiveRecord::Schema.define(version: 20140210132049) do
     t.string   "name"
     t.string   "link"
     t.text     "description_html"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "uid"
-    t.string   "hashtag"
-    t.integer  "user_id"
-    t.string   "user_email"
-  end
-
-  create_table "problems", force: true do |t|
-    t.string   "name"
-    t.string   "link"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "uid"
@@ -50,8 +38,6 @@ ActiveRecord::Schema.define(version: 20140210132049) do
     t.string   "uid"
     t.integer  "user_id"
     t.string   "user_email"
-    t.index ["problem_id"], :name => "index_ideas_on_problem_id", :order => {"problem_id" => :asc}
-    t.foreign_key ["problem_id"], "problems", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_ideas_problem_id"
   end
 
   create_table "pokes", force: true do |t|
@@ -63,6 +49,18 @@ ActiveRecord::Schema.define(version: 20140210132049) do
     t.string   "user_email"
     t.index ["campaign_id"], :name => "fk__pokes_campaign_id", :order => {"campaign_id" => :asc}
     t.foreign_key ["campaign_id"], "campaigns", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_pokes_campaign_id"
+  end
+
+  create_table "problems", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "uid"
+    t.string   "hashtag"
+    t.integer  "user_id"
+    t.string   "user_email"
   end
 
   create_view "activities", "        (        (         SELECT campaigns.id, \n                            campaigns.user_id, \n                            campaigns.created_at, \n                            campaigns.hashtag, \n                            'campaigns'::text AS relname\n                           FROM campaigns\n                UNION ALL \n                         SELECT pokes.id, \n                            pokes.user_id, \n                            pokes.created_at, \n                            pokes_campaigns.hashtag, \n                            'pokes'::text AS relname\n                           FROM (pokes\n                      JOIN campaigns pokes_campaigns ON ((pokes_campaigns.id = pokes.campaign_id))))\n        UNION ALL \n                 SELECT problems.id, \n                    problems.user_id, \n                    problems.created_at, \n                    problems.hashtag, \n                    'problems'::text AS relname\n                   FROM problems)\nUNION ALL \n         SELECT ideas.id, \n            ideas.user_id, \n            ideas.created_at, \n            ideas_problems.hashtag, \n            'ideas'::text AS relname\n           FROM (ideas\n      JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id)))", :force => true
@@ -129,7 +127,34 @@ ActiveRecord::Schema.define(version: 20140210132049) do
     t.index ["priority", "run_at"], :name => "delayed_jobs_priority", :order => {"priority" => :asc, "run_at" => :asc}
   end
 
+  create_table "task_types", force: true do |t|
+    t.string   "name",        null: false
+    t.integer  "points",      null: false
+    t.integer  "category_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["category_id"], :name => "fk__task_types_category_id", :order => {"category_id" => :asc}
+    t.foreign_key ["category_id"], "categories", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_task_types_category_id"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.integer "task_type_id"
+    t.index ["task_type_id"], :name => "fk__tasks_task_type_id", :order => {"task_type_id" => :asc}
+    t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_tasks_task_type_id"
+  end
+
+  create_table "task_subscriptions", force: true do |t|
+    t.integer "user_id"
+    t.integer "task_id"
+    t.index ["task_id"], :name => "fk__task_subscriptions_task_id", :order => {"task_id" => :asc}
+    t.foreign_key ["task_id"], "tasks", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_task_subscriptions_task_id"
+  end
+
   create_table "deliveries", force: true do |t|
+    t.integer  "task_subscription_id"
+    t.datetime "accepted_at"
+    t.index ["task_subscription_id"], :name => "fk__deliveries_task_subscription_id", :order => {"task_subscription_id" => :asc}
+    t.foreign_key ["task_subscription_id"], "task_subscriptions", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_deliveries_task_subscription_id"
   end
 
   create_table "events", force: true do |t|
@@ -175,12 +200,6 @@ ActiveRecord::Schema.define(version: 20140210132049) do
     t.string   "short_title"
     t.integer  "user_id"
     t.string   "thumbnail"
-  end
-
-  create_table "task_subscriptions", force: true do |t|
-  end
-
-  create_table "tasks", force: true do |t|
   end
 
 end

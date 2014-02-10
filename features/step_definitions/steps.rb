@@ -234,3 +234,19 @@ end
 Then(/^I should see (\d+) "(.*?)"$/) do |arg1, arg2|
   page.should have_css(to_element(arg2), count: arg1)
 end
+
+Given(/^there is a task category$/) do
+  @category = Category.make!
+end
+
+Given(/^there is a task for this category$/) do
+  @task = Task.make!(task_type: TaskType.make!(category: @category))
+end
+
+Given(/^this user delivered this task$/) do
+  @delivery = Delivery.make! task_subscription: TaskSubscription.make!(user: @user, task: @task)
+end
+
+Given(/^this delivery is accepted$/) do
+  @delivery.update_attribute :accepted_at, Time.now
+end

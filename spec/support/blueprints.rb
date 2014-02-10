@@ -120,3 +120,12 @@ end
 Delivery.blueprint do
   # Attributes here
 end
+
+Category.blueprint do
+  name { "Human Rights" }
+end
+
+TaskType.blueprint do
+  name { "Programming" }
+  points { 10 }
+end
