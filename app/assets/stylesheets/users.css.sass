@@ -74,7 +74,7 @@ body.users.show
     overflow: hidden
     .categories
       .category
-        font-size: .8em
+        font-size: .7em
         border-right: 1px solid lightgray
         padding-right: 1em
         float: left
@@ -82,6 +82,21 @@ body.users.show
         margin-bottom: 1em
         &:last-child
           border-right: 0
+        &.mobilizacao-em-rede
+          span
+            color: $mobilizacao-em-rede
+        &.mobilizacao-na-rua
+          span
+            color: $mobilizacao-na-rua
+        &.audio-e-visual
+          span
+            color: $audio-e-visual
+        &.producao-e-consultoria
+          span
+            color: $producao-e-consultoria
+        &.tecnologia
+          span
+            color: $tecnologia
         span
           display: block
           strong

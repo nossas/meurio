@@ -6,7 +6,7 @@ class Category < ActiveRecord::Base
 
   def self.score user_id
     Category.
-      select("categories.id, categories.name, sum(t.points) AS score").
+      select("categories.id, categories.name, categories.slug, sum(t.points) AS score").
       joins("INNER JOIN task_types tt ON tt.category_id = categories.id").
       joins("INNER JOIN tasks t ON t.task_type_id = tt.id").
       joins("INNER JOIN task_subscriptions ts ON ts.task_id = t.id").
