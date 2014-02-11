@@ -180,10 +180,9 @@ ActiveRecord::Schema.define(version: 20140211125531) do
     t.string   "thumbnail"
   end
 
-  create_table "task_subscriptions", id: false, force: true do |t|
+  create_table "task_subscriptions", force: true do |t|
     t.integer "user_id"
     t.integer "task_id"
-    t.integer "id"
   end
 
   create_table "task_types", force: true do |t|
@@ -196,10 +195,9 @@ ActiveRecord::Schema.define(version: 20140211125531) do
     t.foreign_key ["category_id"], "categories", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_task_types_category_id"
   end
 
-  create_table "tasks", id: false, force: true do |t|
+  create_table "tasks", force: true do |t|
     t.integer "task_type_id"
     t.integer "points",       null: false
-    t.integer "id"
   end
 
 end

@@ -6,10 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.create name: "Ativismo de Rua"
-Category.create name: "Ativismo Online"
-Category.create name: "Audiovisual"
-Category.create name: "Comunicação"
-Category.create name: "Design"
-Category.create name: "Embasamento"
-Category.create name: "Tecnologia"
+Category.create name: "Mobilização em Rede", slug: "mobilizacao-em-rede"
+Category.create name: "Mobilização na Rua", slug: "mobilizacao-na-rua"
+Category.create name: "Áudio & Visual", slug: "audio-e-visual"
+Category.create name: "Produção & Consultoria", slug: "producao-e-consultoria"
+Category.create name: "Tecnologia", slug: "tecnologia"
