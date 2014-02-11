@@ -8,7 +8,3 @@ Feature: view all the points of an user
     And this delivery is accepted
     When I go to "this user page"
     Then I should see "this category score"
-
-  Scenario: when the user have at least one point in two categories
-
-  Scenario: when the user have no point
