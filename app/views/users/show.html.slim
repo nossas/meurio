@@ -40,7 +40,7 @@
         .matching_tasks_title
           h3 Tarefas Perfeitas para Mim
         - if @matching_tasks.empty?
-          .empty Não encontramos tarefas para você.
+          .empty Não existem tarefas para este usuário
         - else
           = render @matching_tasks
   .user_right
