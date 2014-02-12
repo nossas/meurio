@@ -154,6 +154,10 @@ def to_element string
     "a#load_more_users_button"
   when "this category score"
     ".category"
+  when "you have no matching task"
+    ".matching_tasks .empty"
+  when "this task in the matching tasks"
+    ".matching_tasks .task .title"
   else
     string    
   end

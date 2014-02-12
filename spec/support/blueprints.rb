@@ -111,6 +111,8 @@ end
 
 Task.blueprint do
   points { 10 }
+  task_type { TaskType.make! }
+  mobilization { Mobilization.make! }
 end
 
 TaskSubscription.blueprint do
@@ -128,4 +130,5 @@ end
 TaskType.blueprint do
   name { "Programming" }
   points { 10 }
+  category { Category.make! }
 end

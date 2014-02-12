@@ -1,0 +1,8 @@
+.task class=task.task_type.category.slug
+  .task-wrapper
+    span class="label radius" = task.category.name
+    .title_and_mobilization
+      .title= link_to truncate(task.title, length: 60), task, title: task.title
+      .mobilization = task.mobilization.short_title
+    .max_deliveries.icon-user
+      span= task.max_deliveries.nil? ? 'Ilimitado' : t('count.person.short', count: task.deliveries_missing)

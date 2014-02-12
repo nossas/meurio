@@ -250,3 +250,8 @@ end
 Given(/^this delivery is accepted$/) do
   @delivery.update_attribute :accepted_at, Time.now
 end
+
+Given(/^there is a matching task with my profile$/) do
+  @current_user.update_attribute :skills, [:programming]
+  @task = Task.make! skills: [:programming]
+end

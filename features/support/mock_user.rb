@@ -18,6 +18,7 @@ Before do
       address_district  varchar(255),
       funder            boolean DEFAULT false,
       created_at        timestamp without time zone,
+      skills character varying(255)[] DEFAULT '{}'::character varying[],
       phone             varchar(255)
     );
   ")

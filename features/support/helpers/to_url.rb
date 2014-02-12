@@ -7,5 +7,6 @@ def to_url string
   return edit_mobilization_path(@mobilization) if string == "edit mobilization page"
   return edit_profile_path                     if string == "edit profile page"
   return user_path(@user)                      if string == "this user page"
+  return user_path(@current_user)              if string == "my profile page"
   return "/meurio_accounts"                    if string == "the Meu Rio accounts login page"
 end

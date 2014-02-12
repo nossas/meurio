@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211125531) do
+ActiveRecord::Schema.define(version: 20140212180656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -197,7 +197,11 @@ ActiveRecord::Schema.define(version: 20140211125531) do
 
   create_table "tasks", force: true do |t|
     t.integer "task_type_id"
-    t.integer "points",       null: false
+    t.integer "points",         null: false
+    t.string  "skills",                      array: true
+    t.string  "title"
+    t.string  "hashtag"
+    t.integer "max_deliveries"
   end
 
 end
