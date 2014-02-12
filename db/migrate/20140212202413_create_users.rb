@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration
         t.string :first_name
         t.string :last_name
         t.string :avatar
-        t.string :skills, array: true
+        t.string :skills, array: true, default: '{}'
         t.timestamps
       end
     end

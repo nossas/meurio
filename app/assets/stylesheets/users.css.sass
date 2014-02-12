@@ -36,8 +36,23 @@ body.users.edit
         margin-bottom: 1em
 
 body.users.show
-  .profile
-    margin-top: 2em
+  .user_left
+    +grid-column(9)
+    .avatar
+      +grid-column(2)
+    .user_info
+      +grid-column(10)
+      margin-bottom: 2em
+    .task
+      +grid-column(4)
+      margin-bottom: 1em
+      span.label
+        font-size: .6em
+        padding: 0 1em
+        line-height: 25px
+        font-weight: normal
+  .user_right
+    +grid-column(3)
   h2
     margin-bottom: 0
     line-height: normal
@@ -115,6 +130,9 @@ body.users.show
     border-bottom: $lightest_gray solid 1px
     padding-bottom: .25em
     margin-bottom: 1em
+  .matching_tasks
+    .empty, .matching_tasks_title
+      +grid-column(12)
   .activities
     .activity
       font-size: .9em

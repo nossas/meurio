@@ -209,7 +209,7 @@ ActiveRecord::Schema.define(version: 20140212204817) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "avatar"
-    t.string   "skills",           array: true
+    t.string   "skills",           default: [], array: true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "profession"

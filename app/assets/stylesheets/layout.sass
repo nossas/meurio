@@ -18,13 +18,8 @@ p
 img.user
   +border-radius(100%)
 
-header.meurio_header
-  .meurio_logo, .user_menu
-    +grid-column(6)
-  .meurio_apps
-    +grid-column(3)
-  .application_menu
-    +grid-column(9)
+.meurio_header
+  margin-bottom: 40px
 
 footer
   background: #333
@@ -190,3 +185,63 @@ a
       font-size: 1em
     .btn
       width: 100%
+
+.task
+  span.label
+    text-transform: uppercase
+    padding: 0 1em
+    line-height: 2em
+    margin-bottom: 1em
+    background: gray
+  &.mobilizacao-em-rede
+    span.label
+      background: $mobilizacao-em-rede
+    .mobilization
+      color: $mobilizacao-em-rede
+  &.mobilizacao-na-rua
+    span.label
+      background: $mobilizacao-na-rua
+    .mobilization
+      color: $mobilizacao-na-rua
+  &.audio-e-visual
+    span.label
+      background: $audio-e-visual
+    .mobilization
+      color: $audio-e-visual
+  &.producao-e-consultoria
+    span.label
+      background: $producao-e-consultoria
+    .mobilization
+      color: $producao-e-consultoria
+  &.tecnologia
+    span.label
+      background: $tecnologia
+    .mobilization
+      color: $tecnologia
+  .task-wrapper
+    background: white
+    padding: 1em
+    border: 1px solid #e6e7e9
+    +border-radius(3px)
+    .title_and_mobilization
+      height: 64px
+      margin-bottom: 1em
+      color: #333
+      a
+        color: #333
+    .title
+      font-weight: bold
+      margin-bottom: .2em
+    .mobilization
+      font-size: .8em
+      margin-bottom: 1em
+    .max_deliveries
+      &:before
+        position: relative
+        top: 2px
+        color: lightgray
+      span
+        margin-left: .5em
+        font-size: .8em
+        color: gray
+        font-family: "Proxima Nova Soft"
