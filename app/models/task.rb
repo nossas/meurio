@@ -9,6 +9,6 @@ class Task < ActiveRecord::Base
   end
 
   def expired?
-    self.deadline.present? ? self.deadline < Time.now : false
+    self.deadline < Time.now
   end
 end

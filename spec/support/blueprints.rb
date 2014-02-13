@@ -113,6 +113,7 @@ Task.blueprint do
   points { 10 }
   task_type { TaskType.make! }
   mobilization { Mobilization.make! }
+  deadline { Time.now + 1.day }
   title { Faker::Lorem.sentence }
 end
 
