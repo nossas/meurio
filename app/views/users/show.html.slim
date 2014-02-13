@@ -36,9 +36,17 @@
             strong Quem sou eu:
             .content= @user.bio
     .row
+      .subscribed_tasks
+        .subscribed_tasks_title
+          h3 Tarefas aceitas
+        - if @subscribed_tasks.empty?
+          .empty Ainda não aceitou nenhuma tarefa
+        - else
+          = render @subscribed_tasks
+    .row
       .matching_tasks
         .matching_tasks_title
-          h3 Tarefas Perfeitas para Mim
+          h3 Tarefas perfeitas para mim
         - if @matching_tasks.empty?
           .empty Não existem tarefas para este usuário
         - else

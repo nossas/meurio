@@ -30,4 +30,5 @@ def to_text string
   return I18n.t("activity.problems")                if string == "this problem in the activity feed"
   return @category.name                             if string == "this category score"
   return @task.title                                if string == "this task in the matching tasks"
+  return @task.title                                if string == "this task in the subscribed tasks"
 end

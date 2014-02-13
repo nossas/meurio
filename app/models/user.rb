@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :activities
+  has_many :task_subscriptions
   scope :admins, -> { where(admin: true) }
   scope :funders, -> { where(funder: true) }
 

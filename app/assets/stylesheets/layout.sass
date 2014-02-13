@@ -221,8 +221,9 @@ a
   .task-wrapper
     background: white
     padding: 1em
-    border: 1px solid #e6e7e9
-    +border-radius(3px)
+    border: 1px solid #d8dadd
+    border-bottom: 0
+    +border-radius(3px 3px 0 0)
     .title_and_mobilization
       height: 64px
       margin-bottom: 1em
@@ -245,3 +246,15 @@ a
         font-size: .8em
         color: gray
         font-family: "Proxima Nova Soft"
+  .task-status
+    background: #d8dadd
+    padding: 1em
+    color: white
+    font-size: .9em
+    +border-radius(0 0 3px 3px)
+    &.pending
+      background: #ffad01
+    &.awaiting_validation
+      background: #b0d27b
+    &.late
+      background: #ed1b24

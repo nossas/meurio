@@ -158,6 +158,10 @@ def to_element string
     ".matching_tasks .empty"
   when "this task in the matching tasks"
     ".matching_tasks .task .title"
+  when "this user didn't subscribe any task"
+    ".subscribed_tasks .empty"
+  when "this task in the subscribed tasks"
+    ".subscribed_tasks .task .title"
   else
     string    
   end

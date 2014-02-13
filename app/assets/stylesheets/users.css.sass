@@ -130,8 +130,11 @@ body.users.show
     border-bottom: $lightest_gray solid 1px
     padding-bottom: .25em
     margin-bottom: 1em
-  .matching_tasks
-    .empty, .matching_tasks_title
+  .subscribed_tasks
+    overflow: hidden
+    margin-bottom: 2em
+  .matching_tasks, .subscribed_tasks
+    .empty, .matching_tasks_title, .subscribed_tasks_title
       +grid-column(12)
   .activities
     .activity

@@ -255,3 +255,8 @@ Given(/^there is a matching task with my profile$/) do
   @current_user.update_attribute :skills, [:programming]
   @task = Task.make! skills: [:programming]
 end
+
+Given(/^this user subscribed for a task$/) do
+  @task = Task.make!
+  TaskSubscription.make! user: @user, task: @task
+end

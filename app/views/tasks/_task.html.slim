@@ -4,3 +4,11 @@
     .title_and_mobilization
       .title= link_to truncate(task.title, length: 60), task, title: task.title
       .mobilization = task.mobilization.short_title
+  - if @user.nil? || @user.task_subscriptions.find_by(task_id: task.id).nil?
+    .task-status Disponível
+  - elsif @user.task_subscriptions.find_by(task_id: task.id).pending?
+    .task-status class="pending" Faltam 3 dias
+  - elsif @user.task_subscriptions.find_by(task_id: task.id).awaiting_validation?
+    .task-status class="awaiting_validation" Aguardando validação
+  - elsif @user.task_subscriptions.find_by(task_id: task.id).late?
+    .task-status class="late" Atrasado
