@@ -12,3 +12,5 @@
     .task-status class="awaiting_validation" Aguardando validação
   - elsif @user.task_subscriptions.find_by(task_id: task.id).late?
     .task-status class="late" Atrasado
+  - elsif @user.task_subscriptions.find_by(task_id: task.id).accepted?
+    .task-status class="accepted" Concluído

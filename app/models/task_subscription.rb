@@ -14,4 +14,8 @@ class TaskSubscription < ActiveRecord::Base
   def late?
     self.task.expired? && self.deliveries.where("accepted_at IS NOT NULL").empty?
   end
+
+  def accepted?
+    self.deliveries.where("accepted_at IS NOT NULL").any?
+  end
 end
