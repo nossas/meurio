@@ -7,7 +7,7 @@
   - if @user.nil? || @user.task_subscriptions.find_by(task_id: task.id).nil?
     .task-status Disponível
   - elsif @user.task_subscriptions.find_by(task_id: task.id).pending?
-    .task-status class="pending" Faltam 3 dias
+    .task-status class="pending" Faltam #{distance_of_time_in_words_to_now task.deadline}
   - elsif @user.task_subscriptions.find_by(task_id: task.id).awaiting_validation?
     .task-status class="awaiting_validation" Aguardando validação
   - elsif @user.task_subscriptions.find_by(task_id: task.id).late?
