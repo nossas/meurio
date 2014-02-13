@@ -3,7 +3,7 @@ class UsersController < InheritedResources::Base
   before_action(only: [:edit, :update]) { @user = current_user }
   before_action(only: :show) { @activities = @user.activities.order("created_at DESC").limit(5) }
   before_action(only: :show) { @categories = Category.score(@user.id) }
-  before_action(only: :show) { @matching_tasks = Task.matching(@user.skills) }
+  before_action(only: :show) { @matching_tasks = Task.matching(@user.skills).joins("LEFT JOIN task_subscriptions ON task_subscriptions.task_id = tasks.id").where("task_subscriptions.id IS NULL") }
   before_action(only: :show) { @subscribed_tasks = Task.joins(:task_subscriptions).where("task_subscriptions.user_id = ?", @user.id) }
 
   layout false, only: [:index, :team, :funders]
