@@ -8,5 +8,4 @@ Meurio::Application.routes.draw do
   get 'funders' => 'users#funders'
   get 'edit_profile' => 'users#edit', as: :edit_profile
   get 'login' => redirect { |params, request| "#{ENV['ACCOUNTS_HOST']}/login?#{request.params.to_query}" }, as: :login
-  get 'task' => redirect { |params, request| "#{ENV['MULTITUDE_HOST']}/tasks/#{params[:id]}" }, as: :task
 end
