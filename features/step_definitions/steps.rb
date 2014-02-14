@@ -258,5 +258,9 @@ end
 
 Given(/^this user subscribed for a task$/) do
   @task = Task.make!
-  TaskSubscription.make! user: @user, task: @task
+  @task_subscription = TaskSubscription.make! user: @user, task: @task
+end
+
+Given(/^this user finished this task$/) do
+  Delivery.make! task_subscription: @task_subscription, accepted_at: Time.now
 end
