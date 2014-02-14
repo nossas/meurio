@@ -35,6 +35,7 @@
           .user_bio
             strong Quem sou eu:
             .content= @user.bio
+
     .row
       .subscribed_tasks
         .subscribed_tasks_title
@@ -43,6 +44,7 @@
           .empty Ainda não aceitou nenhuma tarefa
         - else
           = render @subscribed_tasks
+
     .row
       .matching_tasks
         .matching_tasks_title
@@ -51,6 +53,16 @@
           .empty Não existem tarefas para este usuário
         - else
           = render @matching_tasks
+
+    .row
+      .finished_tasks
+        .finished_tasks_title
+          h3 Tarefas concluídas
+        - if @finished_tasks.empty?
+          .empty Ainda não concluíu nenhuma tarefa
+        - else
+          = render @finished_tasks
+
   .user_right
     h3 Atividade
     - if @activities.empty?

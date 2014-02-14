@@ -11,7 +11,7 @@ before_script:
 env:
   - DISPLAY=:99.0
 
-script: "bundle exec rake db:migrate && bundle exec rspec spec && bundle exec cucumber"
+script: "bundle exec rake db:migrate && bundle exec rake db:test:prepare && bundle exec rspec spec && bundle exec cucumber"
 
 branches:
   only:
