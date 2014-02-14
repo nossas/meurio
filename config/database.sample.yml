@@ -21,19 +21,3 @@ production:
   pool: 5
   username: meurio
   password:
-
-accounts_development:
-  adapter: postgresql
-  encoding: unicode
-  database: meurio_accounts_development
-  pool: 5
-  username: meurio
-  password:
-
-accounts_test:
-  adapter: postgresql
-  encoding: unicode
-  database: meurio_test
-  pool: 5
-  username: meurio
-  password:
