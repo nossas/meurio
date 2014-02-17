@@ -8,5 +8,6 @@ def to_url string
   return edit_profile_path                     if string == "edit profile page"
   return user_path(@user)                      if string == "this user page"
   return user_path(@current_user)              if string == "my profile page"
+  return new_badge_path                        if string == "the new badge page"
   return "/meurio_accounts"                    if string == "the Meu Rio accounts login page"
 end
