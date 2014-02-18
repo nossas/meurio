@@ -108,6 +108,10 @@ Given(/^there is a category called "(.*?)"$/) do |arg1|
   @category = Category.make! name: arg1
 end
 
+Given(/^there is a task type$/) do
+  @task_type = TaskType.make!
+end
+
 Given(/^there is a mobilization of mine$/) do
   @mobilization = Mobilization.make! user: @current_user
 end

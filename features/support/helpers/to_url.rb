@@ -13,5 +13,6 @@ def to_url string
   return badges_path                              if string == "the badges page"
   return new_task_type_path                       if string == "the new task type page"
   return task_type_path(TaskType.order(:id).last) if string == "this new task type page"
+  return task_types_path                          if string == "the task types page"
   return "/meurio_accounts"
 end

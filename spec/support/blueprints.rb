@@ -126,13 +126,14 @@ Delivery.blueprint do
 end
 
 Category.blueprint do
-  name { "Human Rights" }
+  name { "Technology" }
 end
 
 TaskType.blueprint do
   name { "Programming" }
   points { 10 }
   category { Category.make! }
+  mode { 'remote' }
 end
 
 Badge.blueprint do

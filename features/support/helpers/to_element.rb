@@ -182,6 +182,8 @@ def to_element string
     ".field_with_errors label[for='task_type_points']"
   when "the task type category field error"
     ".field_with_errors label[for='task_type_category_id']"
+  when "this task type"
+    ".task_type .name"  
   else
     string    
   end
