@@ -1,0 +1,7 @@
+.row
+  .title
+    h2 Tipos de Tarefa
+  .new_task_type= link_to "Criar novo Tipo de Tarefa", new_task_type_path, class: :btn
+
+.row
+  = render collection

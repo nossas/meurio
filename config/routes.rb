@@ -2,7 +2,7 @@ Meurio::Application.routes.draw do
   root 'mobilizations#index'
 
   resources :mobilizations
-  resources :task_types, only: [:new, :create, :show]
+  resources :task_types, only: [:new, :create, :show, :index]
   resources :badges, except: [:show]
   resources :users, only: [:index, :show, :edit, :update]
 
