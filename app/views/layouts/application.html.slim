@@ -32,6 +32,7 @@ html
     - content_for :current_user_links do
       = link_to "Nova mobilização", new_mobilization_path
       = link_to "Badges", badges_path
+      = link_to "Tipos de Tarefa", task_types_path
 
     - content_for :application_menu do
       = link_to "A Rede", root_path + "#network"
