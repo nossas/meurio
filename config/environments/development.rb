@@ -32,4 +32,6 @@ Meurio::Application.configure do
   config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 
   default_url_options[:host] = "localhost:3000"
+
+  config.middleware.delete Rack::Lock
 end
