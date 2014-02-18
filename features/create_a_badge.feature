@@ -16,4 +16,11 @@ Feature: create a badge
     When I press "Criar Badge"
     Then I should be in "this new badge page"
 
+  @ssi @javascript
   Scenario: when I fill the form wrongly
+    Given I'm logged in as admin
+    And I'm in "the new badge page"
+    When I press "Criar Badge"
+    Then I should see "the badge name field error"
+    And I should see "the badge points field error"
+    And I should see "the badge image field error"

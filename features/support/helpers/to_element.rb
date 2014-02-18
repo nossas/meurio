@@ -166,6 +166,12 @@ def to_element string
     ".finished_tasks .empty"
   when "this task in the finished tasks"
     ".finished_tasks .task .title"
+  when "the badge name field error"
+    ".field_with_errors label[for='badge_name']"
+  when "the badge points field error"
+    ".field_with_errors label[for='badge_points']"
+  when "the badge image field error"
+    ".field_with_errors label[for='badge_image']"
   else
     string    
   end
