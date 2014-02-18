@@ -89,7 +89,7 @@ body.mobilizations.index
 
   .mobilizations
     background: image-url("bg-02.jpg") top center
-    .title
+    .mobilizations-title
       +grid-column(8, nil, nil, 2)
     .mobilization
       +grid-column(4)
@@ -221,6 +221,9 @@ body.mobilizations.index
             margin-bottom: 10px
        
 body.mobilizations.show
+  .page-wrap
+    padding: 0 0 60px 0
+
   h2
     border-bottom: 1px solid $lightest-gray
     margin: 2em 0
