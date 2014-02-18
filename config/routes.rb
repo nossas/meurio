@@ -3,7 +3,7 @@ Meurio::Application.routes.draw do
 
   resources :mobilizations
   resources :task_types, only: [:new, :create, :show]
-  resources :badges, only: [:new, :create, :show]
+  resources :badges, except: [:show]
   resources :users, only: [:index, :show, :edit, :update]
 
   get 'team' => 'users#team'

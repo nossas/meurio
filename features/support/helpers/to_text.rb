@@ -31,4 +31,6 @@ def to_text string
   return @category.name                             if string == "this category score"
   return @task.title                                if string == "this task in the matching tasks"
   return @task.title                                if string == "this task in the subscribed tasks"
+  return @badge.name                                if string == "this badge"
+  return Badge.order(:id).last.name                 if string == "this new badge"
 end

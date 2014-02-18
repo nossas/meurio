@@ -136,5 +136,7 @@ TaskType.blueprint do
 end
 
 Badge.blueprint do
-  # Attributes here
+  name { Faker::Lorem.sentence }
+  points { 2000 }
+  image { File.open("#{Rails.root}/features/support/image.jpeg") }
 end

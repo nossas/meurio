@@ -14,7 +14,8 @@ Feature: create a badge
     And I fill "badge_points" with "1000"
     And I attach an image to "badge_image"
     When I press "Criar Badge"
-    Then I should be in "this new badge page"
+    Then I should be in "the badges page"
+    And I should see "this new badge"
 
   @ssi @javascript
   Scenario: when I fill the form wrongly

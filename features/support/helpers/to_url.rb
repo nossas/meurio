@@ -1,4 +1,5 @@
 def to_url string
+<<<<<<< HEAD
   return root_path                                if string == "the homepage"
   return mobilizations_path                       if string == "the mobilizations page"
   return mobilization_path(@mobilization)         if string == "this mobilization page"
@@ -10,7 +11,8 @@ def to_url string
   return user_path(@current_user)                 if string == "my profile page"
   return new_badge_path                           if string == "the new badge page"
   return badge_path(Badge.order(:id).last)        if string == "this new badge page"
+  return badges_path                              if string == "the badges page"
   return new_task_type_path                       if string == "the new task type page"
   return task_type_path(TaskType.order(:id).last) if string == "this new task type page"
-  return "/meurio_accounts"                       if string == "the Meu Rio accounts login page"
+  return "/meurio_accounts"
 end
