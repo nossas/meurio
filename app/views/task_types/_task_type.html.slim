@@ -4,3 +4,4 @@
       .name= link_to task_type.name, task_type
       .category= task_type.category.name
       .points #{task_type.points} pontos
+      .edit= link_to 'Editar', edit_task_type_path(task_type)

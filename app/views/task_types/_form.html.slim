@@ -1,0 +1,21 @@
+= form_for @task_type, validate: true do |f|
+  .row
+    .name_field
+      = f.label :name, 'Nome do novo tipo de tarefa'
+      = f.text_field :name
+  .row
+    .points_field
+      = f.label :points, 'Pontuação média pela realização desse tipo de tarefa'
+      = f.number_field :points
+    .category_id_field
+      = f.label :category_id, 'Categoria da tarefa'
+      = f.collection_select :category_id, Category.order(:name).load, :id, :name, { include_blank: "Escolha uma categoria" }, required: true
+  .row
+    .mode_field
+      = f.label 'Modo de realização'
+      = f.radio_button :mode, 'local' 
+      = f.label :mode, 'Presencial', value: 'local', class: 'radio-option'
+      = f.radio_button :mode, 'remote'
+      = f.label :mode, 'À distância', value: 'remote', class: 'radio-option'
+  .row
+    .submit= f.submit 'Salvar', class: :btn

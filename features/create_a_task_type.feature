@@ -17,14 +17,14 @@ Feature: create a task type
     And I fill "task_type_points" with "500"
     And I select "Tecnologia" from "task_type_category_id"
     And I choose "Presencial"
-    When I press "Criar Tipo de Tarefa"
+    When I press "Salvar"
     Then I should be in "this new task type page"
 
   @ssi @javascript
   Scenario: when I fill the form wrongly
     Given I'm logged in as admin
     And I'm in "the new task type page"
-    When I press "Criar Tipo de Tarefa"
+    When I press "Salvar"
     Then I should see "the task type name field error"
     Then I should see "the task type points field error"
     Then I should see "the task type category field error"
