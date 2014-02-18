@@ -16,9 +16,10 @@
       = f.collection_select :category_id, Category.order(:name).load, :id, :name, { include_blank: "Escolha uma categoria" }, required: true
   .row
     .mode_field
+      = f.label 'Modo de realização'
       = f.radio_button :mode, 'local' 
-      = f.label :mode, 'Presencial', value: 'local'
+      = f.label :mode, 'Presencial', value: 'local', class: 'radio-option'
       = f.radio_button :mode, 'remote'
-      = f.label :mode, 'À distância', value: 'remote'
+      = f.label :mode, 'À distância', value: 'remote', class: 'radio-option'
   .row
     .submit= f.submit 'Criar Tipo de Tarefa', class: :btn
