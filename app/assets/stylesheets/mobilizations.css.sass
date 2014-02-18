@@ -22,6 +22,7 @@ body.mobilizations.index
       line-height: 1.1em
       font-size: .8em
     .item
+      +grid-column(3)
       .image
         height: 160px
         &.participate
@@ -33,6 +34,7 @@ body.mobilizations.index
         font-weight: bold
         line-height: 1em
     .call-to-action
+      +grid-column(3)
       .content
         min-height: 160px
         text-align: left
@@ -52,6 +54,8 @@ body.mobilizations.index
 
   .network
     text-align: left
+    .how-it-works, .users_activities
+      +grid-column(6)
     .activity
       clear: both
       font-size: .9em
@@ -73,6 +77,10 @@ body.mobilizations.index
         display: block
 
   .vision
+    .vision-title
+      +grid-column(8, nil, nil, 2)
+    .vision-list
+      +grid-column(8, nil, nil, 2)
     .infographic
       height: 300px
       background: gray
@@ -81,8 +89,10 @@ body.mobilizations.index
 
   .mobilizations
     background: image-url("bg-02.jpg") top center
+    .title
+      +grid-column(8, nil, nil, 2)
     .mobilization
-      +rgrid(6, 4)
+      +grid-column(4)
       margin-bottom: 2em
       .image
         +border-radius(5px)
@@ -98,8 +108,12 @@ body.mobilizations.index
 
   .principles
     background: image-url("bg-03.jpg") top center
+    .principles-title
+      +grid-column(8, nil, nil, 2)
+    .principles-list
+      +grid-column(12)
     .principle
-      +rgrid(12, 4)
+      +grid-column(4)
       text-align: left
       margin-top: 1em
       img
@@ -115,6 +129,8 @@ body.mobilizations.index
         padding-left: 85px
 
   .funding
+    .funding-title
+      +grid-column(8, nil, nil, 2)
     .description
       padding: 1em 0
       text-align: left
@@ -148,9 +164,19 @@ body.mobilizations.index
           text-transform: none
           font-weight: bolder
           font-size: 1.4em
+    .crowdfunding
+      +grid-column(12)
+      .description
+        +grid-column(9)
+      .donation
+        +grid-column(3)
 
   .net
     background: image-url("bg-03.jpg") top center $green
+    .net-title
+      +grid-column(8, nil, nil, 2)
+    .net-people
+      +grid-column(12)
     .buttons
       margin-top: 3em
       margin-bottom: 2em
@@ -173,11 +199,13 @@ body.mobilizations.index
           font-weight: normal
     .users, .team, .funders
       +grid-row
+      .funders-list, .users-list
+        +grid-column(12)
       .loader
         color: white
       #users, #funders, #team
         margin-top: 1em
-        +rgrid(12)
+        +grid-column(12)
         .member
           color: white
           height: 114px
