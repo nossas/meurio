@@ -16,6 +16,7 @@ Feature: create a task type
     And I fill "task_type_name" with "My Task Type"
     And I fill "task_type_points" with "500"
     And I select "Tecnologia" from "task_type_category_id"
+    And I choose "Presencial"
     When I press "Criar Tipo de Tarefa"
     Then I should be in "this new task type page"
 
