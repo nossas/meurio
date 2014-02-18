@@ -246,6 +246,10 @@ pt-BR:
         name: Nome
         points: Pontuação necessária para conquistar a badge
         image: Imagem
+      task_type:
+        name: Nome
+        points: Pontuação
+        category_id: Categoria
 
   fact:
     campaigns: "Pressione agora"

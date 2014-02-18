@@ -172,6 +172,12 @@ def to_element string
     ".field_with_errors label[for='badge_points']"
   when "the badge image field error"
     ".field_with_errors label[for='badge_image']"
+  when "the task type name field error"
+    ".field_with_errors label[for='task_type_name']"
+  when "the task type points field error"
+    ".field_with_errors label[for='task_type_points']"
+  when "the task type category field error"
+    ".field_with_errors label[for='task_type_category_id']"
   else
     string    
   end

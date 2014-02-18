@@ -1,0 +1,18 @@
+.row
+  .title
+    h2 Novo Tipo de Tarefa
+
+= form_for @task_type, validate: true do |f|
+  .row
+    .name_field
+      = f.label :name
+      = f.text_field :name
+  .row
+    .points_field
+      = f.label :points
+      = f.number_field :points
+    .category_id_field
+      = f.label :category_id
+      = f.collection_select :category_id, Category.order(:name).load, :id, :name, { include_blank: "Escolha uma categoria" }, required: true
+  .row
+    .submit= f.submit 'Criar Tipo de Tarefa', class: :btn
