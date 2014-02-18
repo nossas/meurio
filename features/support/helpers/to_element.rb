@@ -176,6 +176,12 @@ def to_element string
     ".badge .name"
   when "this new badge"
     ".badge .name"
+  when "the task type name field error"
+    ".field_with_errors label[for='task_type_name']"
+  when "the task type points field error"
+    ".field_with_errors label[for='task_type_points']"
+  when "the task type category field error"
+    ".field_with_errors label[for='task_type_category_id']"
   else
     string    
   end
