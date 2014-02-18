@@ -6,5 +6,14 @@ Feature: create a badge
     When I go to "the new badge page"
     Then I should be in "the Meu Rio accounts login page"
 
+  @ssi
   Scenario: when I fill the form correctly
+    Given I'm logged in as admin
+    And I'm in "the new badge page"
+    And I fill "badge_name" with "My Badge"
+    And I fill "badge_points" with "1000"
+    And I attach an image to "badge_image"
+    When I press "Criar Badge"
+    Then I should be in "this new badge page"
+
   Scenario: when I fill the form wrongly

@@ -2,7 +2,7 @@ Meurio::Application.routes.draw do
   root 'mobilizations#index'
 
   resources :mobilizations
-  resources :badges, only: [:new, :create]
+  resources :badges, only: [:new, :create, :show]
   resources :users, only: [:index, :show, :edit, :update]
 
   get 'team' => 'users#team'
