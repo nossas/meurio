@@ -10,3 +10,21 @@ body.task_types.new, body.task_types.create
     label.radio-option
       display: inline-block
       margin: 0 .5em
+
+body.task_types.index
+  .new_task_type, .title
+    +grid-column(6)
+  .new_task_type
+    text-align: right
+  .task_type
+    +grid-column(12)
+    .task_type-wrap
+      padding-top: 1em
+      border-top: 1px solid gray
+      margin-top: 1em
+    .name
+      +grid-column(6)
+    .category
+      +grid-column(4)
+    .points
+      +grid-column(2)
