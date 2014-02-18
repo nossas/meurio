@@ -10,5 +10,6 @@ def to_url string
   return user_path(@current_user)              if string == "my profile page"
   return new_badge_path                        if string == "the new badge page"
   return badge_path(Badge.order(:id).last)     if string == "this new badge page"
+  return badges_path                           if string == "the badges page"
   return "/meurio_accounts"                    if string == "the Meu Rio accounts login page"
 end

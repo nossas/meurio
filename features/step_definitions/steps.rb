@@ -269,3 +269,7 @@ end
 Given(/^this user finished this task$/) do
   Delivery.make! task_subscription: @task_subscription, accepted_at: Time.now
 end
+
+Given(/^there is a badge$/) do
+  @badge = Badge.make!
+end

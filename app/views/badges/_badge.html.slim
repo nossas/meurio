@@ -1,0 +1,6 @@
+.badge
+  .badge-wrap
+    .row
+      .image= image_tag badge.image.square
+      .name= link_to badge.name, edit_badge_path(badge)
+      .points #{badge.points} pontos

@@ -172,6 +172,10 @@ def to_element string
     ".field_with_errors label[for='badge_points']"
   when "the badge image field error"
     ".field_with_errors label[for='badge_image']"
+  when "this badge"
+    ".badge .name"
+  when "this new badge"
+    ".badge .name"
   else
     string    
   end
