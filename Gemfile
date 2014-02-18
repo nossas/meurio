@@ -69,7 +69,7 @@ end
 gem 'slim-rails'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
-gem 'zurb-foundation'
+gem 'foundation-rails'
 gem 'coveralls', require: false
 gem 'httparty'
 gem 'schema_plus'

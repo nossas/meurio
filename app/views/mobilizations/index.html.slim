@@ -1,24 +1,24 @@
 .main
   .row
-    .large-3.small-12.columns.item
+    .item
       .image.create
         = image_tag 'icon-signup-01.png'
       .content
         h3 Você cria!
         p Crie a sua própria mobilização usando um ou mais aplicativos da rede.
-    .large-3.small-12.columns.item
+    .item
       .image.participate
         = image_tag 'icon-signup-02.png'
       .content
         h3 Você participa!
         p Use seu tempo e talento para dar força às mobilizações nas redes e nas ruas.
-    .large-3.small-12.columns.item
+    .item
       .image.support
         = image_tag 'icon-signup-03.png'
       .content
         h3 Você com a equipe a seu serviço!
         p Receba suporte da equipe da rede para obter sucesso nas mobilizações.
-    .large-3.small-12.columns.call-to-action
+    .call-to-action
       - if current_user
         .content
           h2= "Bem vindo, #{current_user.first_name}!"
@@ -32,28 +32,28 @@
         = link_to 'Crie sua Conta', "http://accounts.#{ENV['MEURIO_DOMAIN']}/validate_email", class: :btn
 .network#network
   .row
-    .large-6.columns
+    .how-it-works
       h2 Como funciona a Rede
       p A Rede Mobilizadora Meu Rio é formada por cariocas, de nascença e de coração, que se mobilizam para participar ativamente dos processos de decisão da cidade.
       p Todas as mobilizações criadas por esses cariocas ganham o apoio de uma equipe multidisciplinar de profissionais que mantém ativas plataformas como o #{link_to "Panela de Pressão", "http://paneladepressao.org.br/"}, o #{link_to "Imagine", "http://imagine.meurio.org.br/"} e o #{link_to "De Olho", "http://deolho.meurio.org.br/"}. Baseada em critérios públicos, essa equipe seleciona algumas das mobilizações para dar um suporte ainda maior, com estratégica, pesquisa, articulação e comunicação.
       p A equipe também facilita a comunicação entre os membros da Rede Meu Rio para que eles se auxiliem, dedicando voluntariamente seu tempo e seus talentos para aumentar o impacto de suas mobilizações.
-    .large-6.columns.users_activities
+    .users_activities
       h2 Atividade recente dos membros
       = render Activity.where("user_id IS NOT NULL").order("created_at DESC").limit(5)
 
 .mobilizations#mobilizations
   .row
-    .large-8.large-offset-2.columns
+    .mobilizations-title
       h2 Uma Rede de mobilizações
       p Essas são as mobilizações imaginadas, criadas, apoiadas e compartilhadas pelos membros que formam essa grande Rede em prol de um Rio de Janeiro melhor. Saiba mais sobre elas e una-se à Rede Meu Rio!
   .row= render Mobilization.all
 
 .vision#vision
   .row
-    .large-centered.large-8.small-12.columns
+    .vision-title
       h2 Visão de cidade
       p A Rede Meu Rio é feita de milhares de cidadãos com diferentes opiniões sobre os mais variados temas. Essa diversidade não os impede de trabalharem juntos por uma visão de cidade comum com 5 características principais.
-    .large-centered.large-7.small-12.columns
+    .vision-list
       ul
         li
           strong Democracia 
@@ -73,10 +73,10 @@
 
 .principles#principles
   .row
-    .large-8.large-offset-2.columns
+    .principles-title
       h2 Princípios da ação em Rede
       p Tão importante quanto os objetivos a serem alcançados em uma mobilização é a forma como ela é realizada. Os fins são produtos do meio.
-    .large-12.columns
+    .principles-list
       .row
         .principle
           = image_tag 'principios/independencia.png'
@@ -119,24 +119,24 @@
 
 .funding#funding
   .row
-    .large-8.large-offset-2.columns
+    .funding-title
       h2 O Financiamento da Rede
       p A independência da Rede Meu Rio é fundamental para a idoneidade e efetividade das mobilizações. Por isso, a equipe multidisciplinar de profissionais e a infraestrutura online e offline do Meu Rio não podem ser financiadas por dinheiro proveniente de governos, de partidos, de empresas públicas e de concessionárias de serviços públicos.
-    .large-12.columns.crowdfunding
-      .large-9.columns.description
+    .crowdfunding
+      .description
         .text
           h2 Faça Acontecer!
           p Para manter esse trabalho, não precisamos de muito, mas precisamos de muitos! Muita gente que doa bem pouquinho mas faz essa ideia acontecer. Centenas de cariocas já são doadores mensais da Rede Meu Rio. Seja um deles você também!
-      .large-3.columns.donation
+      .donation
         = link_to 'Contribua!', 'http://facaacontecer.meurio.org.br/', class: 'btn', target: :blank
 
 .net#net
   .row
-    .large-8.large-offset-2.small-12.columns
+    .net-title
       h2 Quem trabalha em Rede
       p Somos milhares de cidadãos envolvidos nas mobilizações políticas da cidade. Compartilhamos dinheiro, muitas horas de trabalho, inúmeros talentos e entusiasmo de sobra por um Rio de Janeiro melhor.
   .buttons.row
-    .large-12.columns
+    .net-people
       = link_to "#funders", id: :funders_button do
         | Financiadores
         small Quem financia as mobilizações
@@ -149,13 +149,13 @@
 
   .funders
     #funders{data-count = User.funders.count}
-    .large-12.columns
+    .funders-list
       a.btn-green#load_more_funders_button href="#" Veja outros financiadores
       .loader Carregando...
 
   .users
     #users{data-count = User.count}
-    .large-12.columns
+    .users-list
       a.btn-green#load_more_users_button href="#" Veja outros agitadores
       .loader Carregando...
 
