@@ -242,6 +242,11 @@ pt-BR:
         public: Outros podem ver meu perfil?
         facebook_url: facebook.com/
         twitter_url: twitter.com/
+      badge:
+        name: Nome
+        points: Pontuação necessária para conquistar a badge
+        image: Imagem
+
   fact:
     campaigns: "Pressione agora"
     problems: "Dê uma ideia"
