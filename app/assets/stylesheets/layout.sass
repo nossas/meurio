@@ -2,7 +2,7 @@ $row-width: 980px
 
 body
   font-size: 1.1em
-  background: $background_gray
+  background: #333
 
 body, h2, h3
   font-family: Proxima Nova
@@ -19,12 +19,13 @@ img.user
   +border-radius(100%)
 
 .meurio_header
-  margin-bottom: 40px
+  .meurio_logo_and_user_menu
+    .user_menu
+      .current_user_links
+        width: 170px
 
 footer
-  background: #333
   padding: 1em 0
-  margin-top: 2em
 
 form
   margin-bottom: 5em
@@ -35,6 +36,10 @@ hr
 a
   &.alert
     color: red
+
+.page-wrap
+  background: $background_gray
+  padding: 40px 0
 
 #facebox
   .content

@@ -3,6 +3,11 @@ Given(/^I'm logged in$/) do
   visit root_path
 end
 
+Given(/^I'm logged in as admin$/) do
+  @current_user = User.make! email: "ssi@meurio.org.br", admin: true
+  visit root_path
+end
+
 Given(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
   visit to_url(arg1)
 end

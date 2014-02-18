@@ -134,3 +134,7 @@ TaskType.blueprint do
   points { 10 }
   category { Category.make! }
 end
+
+Badge.blueprint do
+  # Attributes here
+end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140214152021) do
+ActiveRecord::Schema.define(version: 20140217164301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,7 +65,15 @@ ActiveRecord::Schema.define(version: 20140214152021) do
     t.foreign_key ["campaign_id"], "campaigns", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_pokes_campaign_id"
   end
 
-  create_view "activities", "        (        (         SELECT campaigns.id,\n                            campaigns.user_id,\n                            campaigns.created_at,\n                            campaigns.hashtag,\n                            'campaigns'::text AS relname\n                           FROM campaigns\n                UNION ALL\n                         SELECT pokes.id,\n                            pokes.user_id,\n                            pokes.created_at,\n                            pokes_campaigns.hashtag,\n                            'pokes'::text AS relname\n                           FROM (pokes\n                      JOIN campaigns pokes_campaigns ON ((pokes_campaigns.id = pokes.campaign_id))))\n        UNION ALL\n                 SELECT problems.id,\n                    problems.user_id,\n                    problems.created_at,\n                    problems.hashtag,\n                    'problems'::text AS relname\n                   FROM problems)\nUNION ALL\n         SELECT ideas.id,\n            ideas.user_id,\n            ideas.created_at,\n            ideas_problems.hashtag,\n            'ideas'::text AS relname\n           FROM (ideas\n      JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id)))", :force => true
+  create_view "activities", "        (        (         SELECT campaigns.id, \n                            campaigns.user_id, \n                            campaigns.created_at, \n                            campaigns.hashtag, \n                            'campaigns'::text AS relname\n                           FROM campaigns\n                UNION ALL \n                         SELECT pokes.id, \n                            pokes.user_id, \n                            pokes.created_at, \n                            pokes_campaigns.hashtag, \n                            'pokes'::text AS relname\n                           FROM (pokes\n                      JOIN campaigns pokes_campaigns ON ((pokes_campaigns.id = pokes.campaign_id))))\n        UNION ALL \n                 SELECT problems.id, \n                    problems.user_id, \n                    problems.created_at, \n                    problems.hashtag, \n                    'problems'::text AS relname\n                   FROM problems)\nUNION ALL \n         SELECT ideas.id, \n            ideas.user_id, \n            ideas.created_at, \n            ideas_problems.hashtag, \n            'ideas'::text AS relname\n           FROM (ideas\n      JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id)))", :force => true
+  create_table "badges", force: true do |t|
+    t.string   "name",       null: false
+    t.string   "image",      null: false
+    t.integer  "points",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
