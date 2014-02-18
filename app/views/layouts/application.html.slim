@@ -28,7 +28,11 @@ html
       }(document, 'script', 'facebook-jssdk'));
 
     = render 'layouts/flash', locals: { flash: flash } unless flash.empty?
-    
+
+    - content_for :current_user_links do
+      = link_to "Nova mobilização", new_mobilization_path
+      = link_to "Nova badge", new_badge_path
+
     - content_for :application_menu do
       = link_to "A Rede", root_path + "#network"
       = link_to "Mobilizações", root_path + "#mobilizations"
