@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140218200840) do
+ActiveRecord::Schema.define(version: 20140219160659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,27 @@ ActiveRecord::Schema.define(version: 20140218200840) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+  end
+
+  create_table "task_types", force: true do |t|
+    t.string   "name",        null: false
+    t.integer  "points",      null: false
+    t.integer  "category_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "mode"
+    t.index ["category_id"], :name => "fk__task_types_category_id", :order => {"category_id" => :asc}
+    t.foreign_key ["category_id"], "categories", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_task_types_category_id"
+  end
+
+  create_table "badges_task_types", id: false, force: true do |t|
+    t.integer "badge_id"
+    t.integer "task_type_id"
+    t.index ["badge_id"], :name => "fk__badges_task_types_badge_id", :order => {"badge_id" => :asc}
+    t.index ["task_type_id"], :name => "fk__badges_task_types_task_type_id", :order => {"task_type_id" => :asc}
+    t.index ["badge_id", "task_type_id"], :name => "index_badges_task_types_on_badge_id_and_task_type_id", :unique => true, :order => {"badge_id" => :asc, "task_type_id" => :asc}
+    t.foreign_key ["badge_id"], "badges", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_badges_task_types_badge_id"
+    t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_badges_task_types_task_type_id"
   end
 
   create_table "clippings", force: true do |t|
@@ -192,17 +213,6 @@ ActiveRecord::Schema.define(version: 20140218200840) do
   create_table "task_subscriptions", force: true do |t|
     t.integer "user_id"
     t.integer "task_id"
-  end
-
-  create_table "task_types", force: true do |t|
-    t.string   "name",        null: false
-    t.integer  "points",      null: false
-    t.integer  "category_id", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "mode"
-    t.index ["category_id"], :name => "fk__task_types_category_id", :order => {"category_id" => :asc}
-    t.foreign_key ["category_id"], "categories", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_task_types_category_id"
   end
 
   create_table "tasks", force: true do |t|
