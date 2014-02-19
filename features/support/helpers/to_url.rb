@@ -11,9 +11,10 @@ def to_url string
   return new_badge_path                           if string == "the new badge page"
   return badge_path(Badge.order(:id).last)        if string == "this new badge page"
   return badges_path                              if string == "the badges page"
+  return edit_badge_path(@badge)                  if string == "this badge edit page"
   return new_task_type_path                       if string == "the new task type page"
   return task_type_path(TaskType.order(:id).last) if string == "this new task type page"
   return task_types_path                          if string == "the task types page"
-  return edit_badge_path(@badge)                  if string == "this badge edit page"
+  return edit_task_type_path(@task_type)          if string == "this task type edit page"
   return "/meurio_accounts"                       if string == "the Meu Rio accounts login page"
 end
