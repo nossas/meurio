@@ -8,6 +8,13 @@ class BadgesController < InheritedResources::Base
     end
   end
 
+  def update
+    update! do |success, failure|
+      success.html { redirect_to badges_path }
+      failure.html { render :edit }
+    end
+  end
+
   def permitted_params
     {:badge => params.fetch(:badge, {}).permit(:name, :points, :image)}
   end

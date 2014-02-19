@@ -1,0 +1,14 @@
+= form_for @badge, validate: true do |f|
+  .row
+    .name_field
+      = f.label :name
+      = f.text_field :name
+  .row
+    .points_field
+      = f.label :points
+      = f.number_field :points
+    .image_field
+      = f.label :image
+      = f.file_field :image
+  .row
+    .submit= f.submit nil, class: :btn
