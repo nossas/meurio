@@ -2,6 +2,8 @@ Feature: create a task type
   
   Background:
     Given there is a category called "Tecnologia"
+    And there is a badge called "Pressionador"
+    And there is a badge called "Designer"
 
   @javascript
   Scenario: when I don't have permission
@@ -17,8 +19,12 @@ Feature: create a task type
     And I fill "task_type_points" with "500"
     And I select "Tecnologia" from "task_type_category_id"
     And I choose "Presencial"
+    And I check "the Pressionador badge field"
+    And I check "the Designer badge field"
     When I press "Salvar"
     Then I should be in "this new task type page"
+    And I should see "this task type"
+    And I should see "this task type badges"
 
   @ssi @javascript
   Scenario: when I fill the form wrongly
