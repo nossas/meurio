@@ -16,6 +16,6 @@ class TaskTypesController < InheritedResources::Base
   end
 
   def permitted_params
-    {:task_type => params.fetch(:task_type, {}).permit(:name, :points, :category_id, :mode)}
+    {:task_type => params.fetch(:task_type, {}).permit(:name, :points, :category_id, :mode, { :badge_ids => [] }) }
   end
 end
