@@ -33,4 +33,6 @@ def to_text string
   return @task.title                                if string == "this task in the subscribed tasks"
   return @badge.name                                if string == "this badge"
   return Badge.order(:id).last.name                 if string == "this new badge"
+  return @task_type.name                            if string == "this task type"
+  return TaskType.order(:id).last.name              if string == "this new task type"
 end
