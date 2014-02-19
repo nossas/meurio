@@ -10,22 +10,12 @@ body.task_types.new, body.task_types.create, body.task_types.edit, body.task_typ
     label.radio-option
       display: inline-block
       margin: 0 .5em
-  .badges_field
+  .badges_list
     +grid-column(8, false, false, 2)
     margin: 1em 0
-    .badge_field
-      margin-bottom: 1em
-      .checkbox
-        padding-top: 18px
-        float: left
-      .badge
-        font-size: .8em
-        .image, .name, .points
-          display: inline-block
-          margin-right: 1em
-        .image
-          margin-left: 1em
-          width: 50px
+    .checkbox
+      padding-top: 18px
+      float: left
 
 body.task_types.index
   .new_task_type, .title
@@ -46,3 +36,7 @@ body.task_types.index
       +grid-column(2)
     .edit
       +grid-column(2)
+
+body.task_types.show
+  .edit
+    margin-bottom: 1em

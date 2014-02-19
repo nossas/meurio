@@ -1,4 +1,16 @@
-p= @task_type.name
-p= @task_type.points
-p= @task_type.category.name
-p= @task_type.mode
+.row
+  .title
+    h2= @task_type.name
+  .edit= link_to 'Editar', edit_task_type_path(@task_type)
+  dl
+    dt Pontos:
+    dd= @task_type.points
+  dl
+    dt Categoria:
+    dd= @task_type.category.name
+  dl
+    dt Modo de realização:
+    dd= t "mode.#{@task_type.mode}"
+  dl
+    dt Badges associadas:
+    .badges_list= render @task_type.badges

@@ -18,7 +18,7 @@
       = f.radio_button :mode, 'remote'
       = f.label :mode, 'À distância', value: 'remote', class: 'radio-option'
   .row
-    .badges_field
+    .badges_list
       h5 Escolha as medalhas relacionadas a esse tipo de tarefa
       = hidden_field_tag "task_type[badge_ids][]", nil
       - Badge.all.each do |badge|

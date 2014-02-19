@@ -250,6 +250,7 @@ pt-BR:
         name: Nome
         points: Pontuação
         category_id: Categoria
+        mode: Modo de realização
 
   fact:
     campaigns: "Pressione agora"
@@ -291,6 +292,9 @@ pt-BR:
     campaigns: "criou uma campanha na mobilização"
     problems: "criou um problema na mobilização"
     ideas: "criou uma ideia na mobilização"
+  mode:
+    local: Presencial
+    remote: À distância
 
   faker:
     phone_number:
