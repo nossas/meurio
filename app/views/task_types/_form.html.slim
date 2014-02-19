@@ -18,11 +18,12 @@
       = f.radio_button :mode, 'remote'
       = f.label :mode, 'À distância', value: 'remote', class: 'radio-option'
   .row
-    .badges_field
+    .badges_list
       h5 Escolha as medalhas relacionadas a esse tipo de tarefa
       = hidden_field_tag "task_type[badge_ids][]", nil
       - Badge.all.each do |badge|
-        = check_box_tag "task_type[badge_ids][]", badge.id, @task_type.badge_ids.include?(badge.id), id: dom_id(badge)
-        = label_tag dom_id(badge), badge.name
+        .badge_field
+          .checkbox= check_box_tag "task_type[badge_ids][]", badge.id, @task_type.badge_ids.include?(badge.id), id: dom_id(badge)
+          = render badge
   .row
     .submit= f.submit 'Salvar', class: :btn
