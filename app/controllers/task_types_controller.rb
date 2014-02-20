@@ -1,5 +1,9 @@
 class TaskTypesController < InheritedResources::Base
   load_and_authorize_resource
+  
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to ENV["MEURIO_ACCOUNTS_URL"] + "?redirect_url=#{request.url}"
+  end
 
   def create
     create! do |success, failure|
