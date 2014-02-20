@@ -78,7 +78,7 @@ end
 
 Clipping.blueprint do
   uid           { sn.to_s }
-  body          { Faker::Lorem.paragraph(1) }
+  body          { "My clipping body #{sn}" }
   published_at  { Time.now }
   link          { Faker::Internet.url }
   image         { File.open("#{Rails.root}/features/support/image.jpeg") }
