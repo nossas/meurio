@@ -4,14 +4,14 @@ Feature: Create a mobilization
   I want to create a mobilization
 
   @ssi
-  Scenario: when I'm logged in
-    Given I'm logged in
+  Scenario: when I'm logged in as admin
+    Given I'm logged in as admin
     When I go to "new mobilization page"
     Then I should see "the mobilization form"
 
   @javascript @ssi
   Scenario: when I fill the form correctly
-    Given I'm logged in
+    Given I'm logged in as admin
     And I'm in "new mobilization page"
     And I fill "Nome da Mobilização" with "Estamos De Guarda no Bondinho de Santa Teresa!"
     And I fill "Título curto" with "De Guarda no Bondinho"
@@ -24,7 +24,7 @@ Feature: Create a mobilization
 
   @javascript @ssi
   Scenario: when I don't fill the form correctly
-    Given I'm logged in
+    Given I'm logged in as admin
     And I'm in "new mobilization page"
     When I press "Criar Mobilização"
     Then I should be in "new mobilization page"

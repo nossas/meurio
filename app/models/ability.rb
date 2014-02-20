@@ -2,20 +2,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :index, User
-    can :team, User
-    can :funders, User
-    can :read, User
     can :read, Mobilization
     
-    if user.present?
-      can :create, Mobilization
-      can(:manage, Mobilization) { |m| m.user_id == user.id }
-      can(:manage, User) { |u| u.id == user.id }
-
-      if user.admin?
-        can(:manage, :all)
-      end
+    if user && user.admin?
+      can(:manage, :all)
     end
 
     # Define abilities for the passed in user here. For example:

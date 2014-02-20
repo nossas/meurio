@@ -4,8 +4,8 @@ Feature: Edit a mobilization
   I want to edit a mobilization
 
   Background:
-    Given I'm logged in
-    And there is a mobilization of mine
+    Given I'm logged in as admin
+    And there is a mobilization
 
   @ssi @javascript
   Scenario:
