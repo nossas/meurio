@@ -16,5 +16,5 @@ def to_url string
   return task_type_path(TaskType.order(:id).last) if string == "this new task type page"
   return task_types_path                          if string == "the task types page"
   return edit_task_type_path(@task_type)          if string == "this task type edit page"
-  return "/meurio_accounts"                       if string == "the Meu Rio accounts login page"
+  return ENV["MEURIO_ACCOUNTS_URL"]               if string == "the Meu Rio accounts login page"
 end

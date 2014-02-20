@@ -1,6 +1,6 @@
 Feature: create a badge
   
-  @javascript
+  @ssi
   Scenario: when I don't have permission
     Given I'm logged in
     When I go to "the new badge page"

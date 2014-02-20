@@ -95,6 +95,7 @@ User.blueprint do
   city          { "Rio de Janeiro" }
   state         { "RJ" }
   bio           { Faker::Lorem.paragraph }
+  admin         { false }
 end
 
 Activity.blueprint do
@@ -114,7 +115,7 @@ Task.blueprint do
   task_type { TaskType.make! }
   mobilization { Mobilization.make! }
   deadline { Time.now + 1.day }
-  title { Faker::Lorem.sentence }
+  title { "Task #{sn}" }
 end
 
 TaskSubscription.blueprint do
