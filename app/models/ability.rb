@@ -1,14 +1,14 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user, request)
+  def initialize(user, request = nil)
     can :read, Mobilization
     
     if user && user.admin?
       can(:manage, :all)
     end
 
-    if request.params[:format] == "json"
+    if request && request.params[:format] == "json"
       if request.params[:token] == ENV["API_TOKEN"]
         can :create, Reward
       else
