@@ -1,11 +1,19 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(user, request)
     can :read, Mobilization
     
     if user && user.admin?
       can(:manage, :all)
+    end
+
+    if request.params[:format] == "json"
+      if request.params[:token] == ENV["API_TOKEN"]
+        can :create, Reward
+      else
+        cannot :create, Reward
+      end
     end
 
     # Define abilities for the passed in user here. For example:

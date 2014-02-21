@@ -5,6 +5,7 @@ Meurio::Application.routes.draw do
   resources :task_types, except: [:destroy]
   resources :badges, except: [:show]
   resources :users, only: [:index, :show]
+  resources :rewards, only: [:create]
 
   get 'team' => 'users#team'
   get 'funders' => 'users#funders'
