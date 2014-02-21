@@ -1,5 +1,6 @@
 class RewardsController < InheritedResources::Base
   load_and_authorize_resource
+  skip_before_filter :verify_authenticity_token, if: Proc.new { |c| c.request.format == 'application/json' }
   respond_to :json
 
   rescue_from CanCan::AccessDenied do |exception|
