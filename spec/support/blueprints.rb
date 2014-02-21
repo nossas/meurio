@@ -142,3 +142,7 @@ Badge.blueprint do
   points { 2000 }
   image { File.open("#{Rails.root}/features/support/image.jpeg") }
 end
+
+Reward.blueprint do
+  # Attributes here
+end

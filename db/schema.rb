@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219160659) do
+ActiveRecord::Schema.define(version: 20140221192032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -210,21 +210,6 @@ ActiveRecord::Schema.define(version: 20140219160659) do
     t.string   "thumbnail"
   end
 
-  create_table "task_subscriptions", force: true do |t|
-    t.integer "user_id"
-    t.integer "task_id"
-  end
-
-  create_table "tasks", force: true do |t|
-    t.integer  "task_type_id"
-    t.integer  "points",         null: false
-    t.string   "skills",                      array: true
-    t.string   "title"
-    t.string   "hashtag"
-    t.integer  "max_deliveries"
-    t.datetime "deadline"
-  end
-
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "first_name"
@@ -243,6 +228,45 @@ ActiveRecord::Schema.define(version: 20140219160659) do
     t.boolean  "funder"
     t.string   "address_district"
     t.string   "website"
+  end
+
+  create_table "points", force: true do |t|
+    t.integer  "user_id",      null: false
+    t.integer  "task_type_id", null: false
+    t.integer  "value",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["task_type_id"], :name => "fk__points_task_type_id", :order => {"task_type_id" => :asc}
+    t.index ["user_id"], :name => "fk__points_user_id", :order => {"user_id" => :asc}
+    t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_points_task_type_id"
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_points_user_id"
+  end
+
+  create_table "rewards", force: true do |t|
+    t.integer  "user_id",      null: false
+    t.integer  "task_type_id", null: false
+    t.integer  "points",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["task_type_id"], :name => "fk__rewards_task_type_id", :order => {"task_type_id" => :asc}
+    t.index ["user_id"], :name => "fk__rewards_user_id", :order => {"user_id" => :asc}
+    t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_rewards_task_type_id"
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_rewards_user_id"
+  end
+
+  create_table "task_subscriptions", force: true do |t|
+    t.integer "user_id"
+    t.integer "task_id"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.integer  "task_type_id"
+    t.integer  "points",         null: false
+    t.string   "skills",                      array: true
+    t.string   "title"
+    t.string   "hashtag"
+    t.integer  "max_deliveries"
+    t.datetime "deadline"
   end
 
 end
