@@ -8,6 +8,6 @@ class RewardsController < InheritedResources::Base
   end
 
   def permitted_params
-    {:reward => params.fetch(:reward, {}).permit(:user_id, :task_type_id, :points)}
+    {:reward => params.fetch(:reward, {}).permit(:user_uid, :task_type_id, :points)}
   end
 end
