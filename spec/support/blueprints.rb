@@ -144,5 +144,10 @@ Badge.blueprint do
 end
 
 Reward.blueprint do
-  # Attributes here
+  user_id { 1 }
+  points { 100 }
+  task_type_id { Task.make!.id }
+  source_app { "Multitude" }
+  source_model { "Delivery" }
+  source_id { 1 }
 end
