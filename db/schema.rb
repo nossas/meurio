@@ -243,9 +243,12 @@ ActiveRecord::Schema.define(version: 20140221192032) do
   end
 
   create_table "rewards", force: true do |t|
-    t.integer  "user_uid",     null: false
+    t.integer  "user_id",      null: false
     t.integer  "task_type_id", null: false
     t.integer  "points",       null: false
+    t.string   "source_app",   null: false
+    t.string   "source_model", null: false
+    t.integer  "source_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["task_type_id"], :name => "fk__rewards_task_type_id", :order => {"task_type_id" => :asc}
