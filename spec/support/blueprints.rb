@@ -127,14 +127,15 @@ Delivery.blueprint do
 end
 
 Category.blueprint do
-  name { "Technology" }
+  name { 'Technology' }
 end
 
 TaskType.blueprint do
-  name { "Programming" }
+  name { 'Programming' }
   points { 10 }
   category { Category.make! }
   mode { 'remote' }
+  badges { [ Badge.make! ] }
 end
 
 Badge.blueprint do
@@ -144,5 +145,10 @@ Badge.blueprint do
 end
 
 Reward.blueprint do
-  # Attributes here
+  user { User.make! }
+  task_type { TaskType.make! }
+  points { 500 }
+  source_app { 'Multitude' }
+  source_model { 'Delivery' }
+  source_id { 1 }
 end
