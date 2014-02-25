@@ -4,9 +4,9 @@ describe RewardsController do
   describe "POST create" do
     before(:all) { @user = User.make! }
     before(:all) { @task_type = TaskType.make! }
-    let(:valid_params) { {format: 'json', token: ENV["API_TOKEN"], reward: { user_uid: @user.id, task_type_id: @task_type.id, points: 100 }} }
-    let(:invalid_params) { {format: 'json', token: ENV["API_TOKEN"], reward: { user_uid: nil, task_type_id: nil, points: nil }} }
-    let(:unauthorized_params) { {format: 'json', token: nil, reward: { user_uid: @user.id, task_type_id: @task_type.id, points: 100 }} }
+    let(:valid_params) { {format: 'json', token: ENV["API_TOKEN"], reward: { user_id: @user.id, task_type_id: @task_type.id, points: 100, source_app: "Multitude", source_model: "Delivery", source_id: 1 }} }
+    let(:invalid_params) { {format: 'json', token: ENV["API_TOKEN"], reward: { user_id: nil, task_type_id: nil, points: nil, source_app: nil, source_model: nil, source_id: nil }} }
+    let(:unauthorized_params) { {format: 'json', token: nil, reward: { user_id: @user.id, task_type_id: @task_type.id, points: 100, source_app: "Multitude", source_model: "Delivery", source_id: 1 }} }
 
     context "when the token is valid" do
       context "when the params are correct" do
