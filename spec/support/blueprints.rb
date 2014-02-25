@@ -147,8 +147,8 @@ end
 Reward.blueprint do
   user { User.make! }
   task_type { TaskType.make! }
-  points { 500 }
+  points { 100 }
   source_app { 'Multitude' }
   source_model { 'Delivery' }
-  source_id { 1 }
+  source_id { sn }
 end
