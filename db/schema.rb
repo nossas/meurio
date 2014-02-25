@@ -102,34 +102,12 @@ ActiveRecord::Schema.define(version: 20140225201504) do
     t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_badges_task_types_task_type_id"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "avatar"
-    t.string   "skills",           default: [], array: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "profession"
-    t.string   "facebook"
-    t.string   "twitter"
-    t.string   "city"
-    t.string   "state"
-    t.text     "bio"
-    t.boolean  "admin"
-    t.boolean  "funder"
-    t.string   "address_district"
-    t.string   "website"
-  end
-
   create_table "badges_users", id: false, force: true do |t|
-    t.integer "badge_id"
-    t.integer "user_id"
+    t.integer "badge_id", null: false
+    t.integer "user_id",  null: false
     t.index ["badge_id"], :name => "fk__badges_users_badge_id", :order => {"badge_id" => :asc}
-    t.index ["user_id"], :name => "fk__badges_users_user_id", :order => {"user_id" => :asc}
     t.index ["badge_id", "user_id"], :name => "index_badges_users_on_badge_id_and_user_id", :unique => true, :order => {"badge_id" => :asc, "user_id" => :asc}
     t.foreign_key ["badge_id"], "badges", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_badges_users_badge_id"
-    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_badges_users_user_id"
   end
 
   create_table "clippings", force: true do |t|
@@ -266,6 +244,26 @@ ActiveRecord::Schema.define(version: 20140225201504) do
     t.string   "hashtag"
     t.integer  "max_deliveries"
     t.datetime "deadline"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "avatar"
+    t.string   "skills",           default: [], array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "profession"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "city"
+    t.string   "state"
+    t.text     "bio"
+    t.boolean  "admin"
+    t.boolean  "funder"
+    t.string   "address_district"
+    t.string   "website"
   end
 
 end
