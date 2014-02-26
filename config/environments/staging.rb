@@ -79,6 +79,16 @@ Meurio::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   
   # Mailer config
-  default_url_options[:host] = "www.meurio-staging.org.br"
+  default_url_options[:host] = "meurio-staging.org.br"
   ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    user_name: ENV["SENDGRID_USERNAME"],
+    password: ENV["SENDGRID_PASSWORD"],
+    domain: "meurio-staging.org.br",
+    address: "smtp.sendgrid.net",
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
 end
