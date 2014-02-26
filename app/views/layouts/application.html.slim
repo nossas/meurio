@@ -9,7 +9,7 @@ html
     = csrf_meta_tags
     == "<!--[if lt IE 7 ]>#{javascript_include_tag "lte-ie7"}<![endif]-->"
     meta name="fb:app_id" content="#{ENV["FB_APP_ID"]}"
-    meta name="og:title" content="#{content_for?(:fb_title) ? yield(:fb_title) : (content_for?(:title) ? yield(:title) : "Meu Rio"}"
+    meta name="og:title" content="#{content_for?(:fb_title) ? yield(:fb_title) : (content_for?(:title) ? yield(:title) : "Meu Rio")}"
     meta name="og:image" content="#{content_for?(:image) ? yield(:image) : "http://i.imgur.com/zbXo6hm.png"}"
     meta name="og:type" content="#{content_for?(:type) ? yield(:type) : "website"}"
     meta name="og:description"  content="#{content_for?(:description) ? yield(:description) : "A Rede do Meu Rio é formada por cariocas, de nascença e de coração, que desejam participar ativamente dos processos de decisão da cidade. Esses cariocas imaginam, criam, apoiam, pressionam e compartilham mobilizações."}"
