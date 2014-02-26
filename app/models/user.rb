@@ -28,4 +28,8 @@ class User < ActiveRecord::Base
       MeurioMailer.delay.you_earned_a_badge(self, badge)
     end
   end
+
+  def last_badge
+    self.badges.order(:created_at).last if self.badges.any?
+  end
 end
