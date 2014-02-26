@@ -23,6 +23,9 @@ class User < ActiveRecord::Base
   end
 
   def earn_badge badge
-    self.badges << badge unless self.badges.include? badge
+    unless self.badges.include? badge
+      self.badges << badge
+      MeurioMailer.delay.you_earned_a_badge(self, badge)
+    end
   end
 end

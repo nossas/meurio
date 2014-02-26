@@ -1,0 +1,16 @@
+p Olá #{@user.name},
+
+p Acabei de ver a sua entrega da tarefa. Gostei muito e quero te parabenizar por ter dedicado seu tempo e talento pela mobilização.
+
+p Com essa validação, seu tempo e talento dedicados já foram inseridos em seu perfil da Rede Meu Rio. Além disso, com o acúmulo de tempo de serviço, o Multitude lhe concedeu uma medalha. Depois vai lá conferir (;
+
+p 
+  div= image_tag @badge.image.square
+  div= @badge.name
+
+/p E antes de me despedir, uma dica: compartilhe com seus amigos a notícia de sua participação nessa mobilização #{link_to "clicando aqui", "http://www.facebook.com/sharer/sharer.php?u=#{@task_url}"}.
+
+p Um grande abraço e até a próxima tarefa!
+
+p Equipe da Rede Meu Rio
+p Multitude: compartilhando recursos da Rede Meu Rio por uma cidade melhor e ainda mais nossa!
