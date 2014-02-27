@@ -130,10 +130,12 @@ def to_element string
     ".user_district"
   when "this user bio"
     ".user_bio"
+  when "this user badges"
+    ".badges"
   when "you are not authorized to access this page"
     ".alert"
   when "there is no activity yet"
-    ".user_right .empty"
+    ".user_right .activities .empty"
   when "this poke in the activity feed"
     ".user_right .pokes"
   when "this campaign in the activity feed"
@@ -190,6 +192,8 @@ def to_element string
     ".task_type .name"
   when "this user have no badge yet"
     ".badges .empty"
+  when "badges on user profile"
+    ".badges .badge"
   else
     string    
   end

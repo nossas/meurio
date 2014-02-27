@@ -14,3 +14,4 @@ Feature: view an user's profile
     And I should see "this user city"
     And I should see "this user district"
     And I should see "this user bio"
+    And I should see "this user badges"

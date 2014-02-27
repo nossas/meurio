@@ -152,3 +152,7 @@ Reward.blueprint do
   source_model { 'Delivery' }
   source_id { sn }
 end
+
+Achievement.blueprint do
+  # Attributes here
+end

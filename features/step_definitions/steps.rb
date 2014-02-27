@@ -294,3 +294,7 @@ Given(/^this user have a badge$/) do
   @badge = Badge.make!
   @user.badges << @badge
 end
+
+Given(/^this user have (\d+) badges$/) do |arg1|
+  arg1.to_i.times { @user.badges << Badge.make! }
+end

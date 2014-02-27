@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  it { should have_and_belong_to_many :badges }
+  it { should have_many(:badges).through :achievements }
   it { should have_many :activities }
   it { should have_many :task_subscriptions }
   it { should have_many :rewards }
@@ -68,6 +68,36 @@ describe User do
     context "when the user doesn't have a badge" do
       it "gets nil" do
         expect(user.last_badge).to be_nil
+      end
+    end
+  end
+
+  describe "#last_badges" do
+    let(:user) { User.make! }
+    let(:first_badge) { Badge.make! points: 1000 }
+    let(:last_badge) { Badge.make! points: 1000 }
+
+    context "when the user have badges" do
+      before { user.earn_badge first_badge }
+      before { 15.times { user.earn_badge(Badge.make! points: 500) } }
+      before { user.earn_badge last_badge }
+      
+      it "gets the last 9 badges" do
+        expect(user.last_badges.count).to eq(9)
+      end
+
+      it "includes the last badge" do
+        expect(user.last_badges).to include last_badge
+      end
+
+      it "doesn't include the first badge" do
+        expect(user.last_badges).not_to include first_badge
+      end
+    end
+
+    context "when the user doesn't have badges" do
+      it "gets nil" do
+        expect(user.last_badges).to be_nil
       end
     end
   end
