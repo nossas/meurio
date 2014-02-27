@@ -12,7 +12,7 @@ class Reward < ActiveRecord::Base
     score = self.user.score_in_task_type(self.task_type_id)
     
     possible_badges.each do |badge|
-      self.user.earn_badge(badge) if score > badge.points
+      self.user.earn_badge(badge) if score >= badge.points
     end
   end
 end
