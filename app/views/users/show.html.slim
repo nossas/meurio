@@ -1,3 +1,8 @@
+- if @user.last_badge
+  = content_for(:fb_title) { 'Acabei de ganhar uma medalha pelo tempo de serviço voluntário ao Rio' }
+  = content_for(:image) { @user.last_badge.image.thumb.url }
+  = content_for(:description) { 'No Multitude você usa os seus talentos e habilidades para participar de mobilizações em prol de uma cidade melhor!' }
+
 .row
   .user_left
     .row

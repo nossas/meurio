@@ -50,4 +50,25 @@ describe User do
       end
     end
   end
+
+  describe "#last_badge" do
+    let(:user) { User.make! }
+    let(:first_badge) { Badge.make! points: 500 }
+    let(:second_badge) { Badge.make! points: 500 }
+
+    context "when the user have badges" do
+      before { user.earn_badge first_badge }
+      before { user.earn_badge second_badge }
+      
+      it "gets the last badge" do
+        expect(user.last_badge).to eq(second_badge)
+      end
+    end
+
+    context "when the user doesn't have a badge" do
+      it "gets nil" do
+        expect(user.last_badge).to be_nil
+      end
+    end
+  end
 end

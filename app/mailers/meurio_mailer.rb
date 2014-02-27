@@ -3,6 +3,7 @@ class MeurioMailer < ActionMailer::Base
 
   def you_earned_a_badge user, badge
     @user = user
+    @user_url = user_url(@user)
     @badge = badge
     
     headers "X-SMTPAPI" => "{ \"category\": [\"meurio\", \"you_earned_a_badge\"] }"
