@@ -289,3 +289,8 @@ end
 Given(/^there is a badge called "(.*?)"$/) do |arg1|
   @badge = Badge.make! name: arg1
 end
+
+Given(/^this user have a badge$/) do
+  @badge = Badge.make!
+  @user.badges << @badge
+end

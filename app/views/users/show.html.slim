@@ -64,6 +64,13 @@
           = render @finished_tasks
 
   .user_right
+    h3 Badges
+    .badges
+      - if @user.badges.empty?
+        .empty Este usuário ainda não conquistou nenhuma badge
+      - else
+        = render @user.badges
+
     h3 Atividade
     - if @activities.empty?
       .empty Nenhuma atividade ainda...

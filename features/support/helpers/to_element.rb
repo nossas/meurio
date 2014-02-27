@@ -188,6 +188,8 @@ def to_element string
     ".task_type .name"
   when "this new task type"
     ".task_type .name"
+  when "this user have no badge yet"
+    ".badges .empty"
   else
     string    
   end
