@@ -126,16 +126,24 @@ body.users.show
     .content
       font-size: .8em
   h3
-    font-size: .9em
     border-bottom: $lightest_gray solid 1px
     padding-bottom: .25em
     margin-bottom: 1em
+    font-weight: bold
+    font-size: .9em
   .subscribed_tasks, .matching_tasks, .finished_tasks
     overflow: hidden
     margin-bottom: 2em
   .matching_tasks, .subscribed_tasks, .finished_tasks
     .empty, .matching_tasks_title, .subscribed_tasks_title, .finished_tasks_title
       +grid-column(12)
+  .badges
+    margin-bottom: 2em
+    .image
+      display: inline-block
+      margin: .3em
+      img
+        width: 60px
   .activities
     .activity
       font-size: .9em

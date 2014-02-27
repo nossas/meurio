@@ -32,4 +32,8 @@ class User < ActiveRecord::Base
   def last_badge
     self.badges.order(:created_at).last if self.badges.any?
   end
+
+  def last_badges
+    self.badges.order('created_at DESC').first(9)
+  end
 end
