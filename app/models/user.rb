@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   has_many :activities
   has_many :task_subscriptions
   has_many :rewards
-  has_and_belongs_to_many :badges
+  has_many :achievements
+  has_many :badges, through: :achievements
   scope :admins, -> { where(admin: true) }
   scope :funders, -> { where(funder: true) }
 
@@ -30,10 +31,10 @@ class User < ActiveRecord::Base
   end
 
   def last_badge
-    self.badges.order(:created_at).last if self.badges.any?
+    self.last_badges.first if self.badges.any?
   end
 
   def last_badges
-    self.badges.order('created_at DESC').first(9)
+    self.achievements.first(9).collect(&:badge) if self.badges.any?
   end
 end
