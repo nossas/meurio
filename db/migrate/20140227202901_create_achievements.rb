@@ -1,7 +1,7 @@
 class CreateAchievements < ActiveRecord::Migration
   def change
     create_table :achievements do |t|
-      t.integer :user_id, null: false
+      t.integer :user_id, null: false, foreign_key: false
       t.integer :badge_id, null: false
 
       t.timestamps
