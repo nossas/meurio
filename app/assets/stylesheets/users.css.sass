@@ -157,3 +157,19 @@ body.users.show
         font-weight: bold
   .empty
     font-size: .8em
+
+.badge-hint
+  @extend .hint--bottom
+  @extend .hint--rounded
+  &:before /* arrow */
+    border-bottom-color: white
+  &:after /* body */
+    text-shadow: 0 0 0 white
+    background-color: white
+    font-weight: bold
+    font-size: .8em
+    color: #333
+    white-space: normal
+    text-align: center
+    min-width: 100px
+    padding: 1em

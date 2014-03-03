@@ -76,7 +76,8 @@
       - else
         - @user.last_badges.each do |badge|
           .badge
-            .image= image_tag badge.image.square
+            span.badge-hint {data-hint="#{badge.name}"}
+              .image= image_tag badge.image.square
             .name.hidden= badge.name
 
     h3 Atividade
