@@ -20,6 +20,7 @@
 //= require foundation
 //= require rails.validations
 //= require rails.validations.turbolinks
+//= require modernizr
 //= require users
 //= require mobilizations
 //= require meurio_ui
