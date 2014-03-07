@@ -1,6 +1,5 @@
 class UsersController < InheritedResources::Base
   before_action(only: :show) { @activities = resource.activities.order("created_at DESC").limit(5) }
-  before_action(only: :show) { @categories = Category.score(@user.id) }
   before_action(only: :show) { @matching_tasks = Task.matching(@user.skills) }
   before_action(only: :show) { @subscribed_tasks = Task.subscribed(@user.id) }
   before_action(only: :show) { @finished_tasks = Task.finished(@user.id) }

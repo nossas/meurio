@@ -6,14 +6,14 @@ describe User do
   it { should have_many :task_subscriptions }
   it { should have_many :rewards }
 
-  describe "#score_in_task_type" do
+  describe "#task_type_score" do
     let(:user) { User.make! }
     let(:task_type) { TaskType.make! }
     let(:second_task_type) { TaskType.make! }
 
     context "when there are no rewards" do
       it "is zero" do
-        expect(user.score_in_task_type task_type.id).to eq(0)
+        expect(user.task_type_score task_type.id).to eq(0)
       end
     end
 
@@ -22,12 +22,40 @@ describe User do
       before { points.each { |p| Reward.make! user: user, task_type: task_type, points: p } }
 
       it "sums all reward points of a task type" do
-        expect(user.score_in_task_type task_type.id).to eq(points.sum)
+        expect(user.task_type_score task_type.id).to eq(points.sum)
       end
 
       it "sums only the current task type's points" do
         Reward.make! user: user, task_type: second_task_type, points: 50
-        expect(user.score_in_task_type second_task_type.id).to eq(50)
+        expect(user.task_type_score second_task_type.id).to eq(50)
+      end
+    end
+  end
+
+  describe "#category_score" do
+    let(:user) { User.make! }
+    let(:category) { Category.make! }
+    let(:task_type) { TaskType.make! category: category }
+    let(:second_category) { Category.make! }
+    let(:second_task_type) { TaskType.make! category: second_category }
+
+    context "when there are no rewards" do
+      it "is zero" do
+        expect(user.category_score category.id).to eq(0)
+      end
+    end
+
+    context "when there are many rewards" do
+      points = [ 500, 700, 1400, 250, 60, 15, 15 ]
+      before { points.each { |p| Reward.make! user: user, task_type: task_type, points: p } }
+
+      it "sums all reward points of a category" do
+        expect(user.category_score category.id).to eq(points.sum)
+      end
+
+      it "sums only the current category's points" do
+        Reward.make! user: user, task_type: second_task_type, points: 50
+        expect(user.category_score second_category.id).to eq(50)
       end
     end
   end

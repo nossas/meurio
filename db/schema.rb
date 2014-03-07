@@ -24,36 +24,14 @@ ActiveRecord::Schema.define(version: 20140227202901) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "avatar"
-    t.string   "skills",           default: [], array: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "profession"
-    t.string   "facebook"
-    t.string   "twitter"
-    t.string   "city"
-    t.string   "state"
-    t.text     "bio"
-    t.boolean  "admin"
-    t.boolean  "funder"
-    t.string   "address_district"
-    t.string   "website"
-  end
-
   create_table "achievements", force: true do |t|
     t.integer  "user_id",    null: false
     t.integer  "badge_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["badge_id"], :name => "fk__achievements_badge_id", :order => {"badge_id" => :asc}
-    t.index ["user_id"], :name => "fk__achievements_user_id", :order => {"user_id" => :asc}
     t.index ["badge_id", "user_id"], :name => "index_achievements_on_badge_id_and_user_id", :unique => true, :order => {"badge_id" => :asc, "user_id" => :asc}
     t.foreign_key ["badge_id"], "badges", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_achievements_badge_id"
-    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_achievements_user_id"
   end
 
   create_table "campaigns", force: true do |t|
@@ -268,6 +246,26 @@ ActiveRecord::Schema.define(version: 20140227202901) do
     t.string   "hashtag"
     t.integer  "max_deliveries"
     t.datetime "deadline"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "avatar"
+    t.string   "skills",           default: [], array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "profession"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "city"
+    t.string   "state"
+    t.text     "bio"
+    t.boolean  "admin"
+    t.boolean  "funder"
+    t.string   "address_district"
+    t.string   "website"
   end
 
 end

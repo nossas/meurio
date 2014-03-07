@@ -266,6 +266,7 @@ end
 
 Given(/^this delivery is accepted$/) do
   @delivery.update_attribute :accepted_at, Time.now
+  Reward.make! user: @user, task_type: @task.task_type
 end
 
 Given(/^there is a matching task with my profile$/) do

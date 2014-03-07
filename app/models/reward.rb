@@ -9,7 +9,7 @@ class Reward < ActiveRecord::Base
   private
   def grant_badges
     possible_badges = TaskType.find(self.task_type_id).badges
-    score = self.user.score_in_task_type(self.task_type_id)
+    score = self.user.task_type_score(self.task_type_id)
     
     possible_badges.each do |badge|
       self.user.earn_badge(badge) if score >= badge.points

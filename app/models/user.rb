@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :activities
   has_many :task_subscriptions
   has_many :rewards
+  has_many :task_types, through: :rewards
+  has_many :categories, through: :task_types
   has_many :achievements
   has_many :badges, through: :achievements
   scope :admins, -> { where(admin: true) }
@@ -19,8 +21,12 @@ class User < ActiveRecord::Base
     end
   end
 
-  def score_in_task_type task_type_id
-    self.rewards.where(task_type_id: task_type_id).sum(:points)
+  def task_type_score task_type_ids
+    self.rewards.where(task_type_id: task_type_ids).sum(:points)
+  end
+
+  def category_score category_id
+    self.task_type_score Category.find(category_id).task_type_ids
   end
 
   def earn_badge badge
