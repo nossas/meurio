@@ -292,6 +292,7 @@ pt-BR:
     campaigns: "criou uma campanha na mobilização"
     problems: "criou um problema na mobilização"
     ideas: "criou uma ideia na mobilização"
+    task_subscriptions: "aceitou realizar uma tarefa da mobilização"
   mode:
     local: Presencial
     remote: À distância
