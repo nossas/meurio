@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   has_many :activities
   has_many :task_subscriptions
   has_many :rewards
-  has_many :task_types, through: :rewards
-  has_many :categories, through: :task_types
+  has_many :task_types, -> { uniq }, through: :rewards
+  has_many :categories, -> { uniq }, through: :task_types
   has_many :achievements
   has_many :badges, through: :achievements
   scope :admins, -> { where(admin: true) }
