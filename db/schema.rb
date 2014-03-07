@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307202614) do
+ActiveRecord::Schema.define(version: 20140307204515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 20140307202614) do
     t.string   "hashtag"
     t.integer  "user_id"
     t.string   "user_email"
+  end
+
+  create_table "deliveries", force: true do |t|
+    t.integer  "task_subscription_id"
+    t.datetime "accepted_at"
+    t.datetime "rejected_at"
   end
 
   create_table "problems", force: true do |t|
@@ -100,7 +106,7 @@ ActiveRecord::Schema.define(version: 20140307202614) do
     t.datetime "deadline"
   end
 
-  create_view "activities", "        (        (        (         SELECT campaigns.id,\n                                    campaigns.user_id,\n                                    campaigns.created_at,\n                                    campaigns.hashtag,\n                                    'campaigns'::text AS relname\n                                   FROM campaigns\n                        UNION ALL\n                                 SELECT pokes.id,\n                                    pokes.user_id,\n                                    pokes.created_at,\n                                    pokes_campaigns.hashtag,\n                                    'pokes'::text AS relname\n                                   FROM (pokes\n                              JOIN campaigns pokes_campaigns ON ((pokes_campaigns.id = pokes.campaign_id))))\n                UNION ALL\n                         SELECT problems.id,\n                            problems.user_id,\n                            problems.created_at,\n                            problems.hashtag,\n                            'problems'::text AS relname\n                           FROM problems)\n        UNION ALL\n                 SELECT ideas.id,\n                    ideas.user_id,\n                    ideas.created_at,\n                    ideas_problems.hashtag,\n                    'ideas'::text AS relname\n                   FROM (ideas\n              JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id))))\nUNION ALL\n         SELECT task_subscriptions.id,\n            task_subscriptions.user_id,\n            task_subscriptions.created_at,\n            tasks.hashtag,\n            'task_subscriptions'::text AS relname\n           FROM (task_subscriptions\n      JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))", :force => true
+  create_view "activities", "        (        (        (        (         SELECT campaigns.id,\n                                            campaigns.user_id,\n                                            campaigns.created_at,\n                                            campaigns.hashtag,\n                                            'campaigns'::text AS relname\n                                           FROM campaigns\n                                UNION ALL\n                                         SELECT pokes.id,\n                                            pokes.user_id,\n                                            pokes.created_at,\n                                            pokes_campaigns.hashtag,\n                                            'pokes'::text AS relname\n                                           FROM (pokes\n                                      JOIN campaigns pokes_campaigns ON ((pokes_campaigns.id = pokes.campaign_id))))\n                        UNION ALL\n                                 SELECT problems.id,\n                                    problems.user_id,\n                                    problems.created_at,\n                                    problems.hashtag,\n                                    'problems'::text AS relname\n                                   FROM problems)\n                UNION ALL\n                         SELECT ideas.id,\n                            ideas.user_id,\n                            ideas.created_at,\n                            ideas_problems.hashtag,\n                            'ideas'::text AS relname\n                           FROM (ideas\n                      JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id))))\n        UNION ALL\n                 SELECT task_subscriptions.id,\n                    task_subscriptions.user_id,\n                    task_subscriptions.created_at,\n                    tasks.hashtag,\n                    'task_subscriptions'::text AS relname\n                   FROM (task_subscriptions\n              JOIN tasks ON ((tasks.id = task_subscriptions.task_id))))\nUNION ALL\n         SELECT deliveries.id,\n            task_subscriptions.user_id,\n            deliveries.accepted_at AS created_at,\n            tasks.hashtag,\n            'accepted_deliveries'::text AS relname\n           FROM ((deliveries\n      JOIN task_subscriptions ON ((task_subscriptions.id = deliveries.task_subscription_id)))\n   JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\n  WHERE (deliveries.accepted_at IS NOT NULL)", :force => true
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -184,12 +190,6 @@ ActiveRecord::Schema.define(version: 20140307202614) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], :name => "delayed_jobs_priority", :order => {"priority" => :asc, "run_at" => :asc}
-  end
-
-  create_table "deliveries", force: true do |t|
-    t.integer  "task_subscription_id"
-    t.datetime "accepted_at"
-    t.datetime "rejected_at"
   end
 
   create_table "events", force: true do |t|
