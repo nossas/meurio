@@ -95,6 +95,12 @@
   .large-4.small-12.columns
     .data
       h2 Dados
+      - if @mobilization.hashtag == 'salveainternet' && Squeeze.any?
+        .squeezes_counter.icon-mail
+          span.counter= number_with_delimiter Squeeze.count
+          |  
+          span.counter_label= t("squeezes", count: Squeeze.count)
+          span.where enviados aos deputados
       - if @mobilization.pokes.any?
         .pokes_counter.icon-comments
           span.counter= number_with_delimiter @mobilization.pokes.count
