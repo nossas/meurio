@@ -24,7 +24,7 @@
               .title Verão do Saneamento
               p= "Você sabia que o Rio já perdeu 20 praias para a poluição? Chegou a hora de dizer chega! Precisamos de milhares de cariocas para mostrar que saneamento é sim uma prioridade! Se inscreva para apoiar a mobilização e receber um SMS te chamando para as ações do Verão.".truncate(200)
               = link_to 'Verão do Saneamento', 'http://verao.meurio.org.br', class: 'btn', target: :blank
-      - elsif true || @mobilization.hashtag == 'salveainternet'
+      - elsif @mobilization.hashtag == 'salveainternet'
         .large-4.columns
           #action-of-the-day
             #action-header
@@ -73,7 +73,7 @@
               .name Verão do Saneamento
               .description = "Você sabia que o Rio já perdeu 20 praias para a poluição? Chegou a hora de dizer chega! Precisamos de milhares de cariocas para mostrar que saneamento é sim uma prioridade! Se inscreva para apoiar a mobilização e receber um SMS te chamando para as ações do Verão.".truncate(200)
               = link_to 'Verão do Saneamento', 'http://verao.meurio.org.br', class: :btn, target: :blank
-      - elsif true || @mobilization.hashtag == 'salveainternet'
+      - elsif @mobilization.hashtag == 'salveainternet'
         .item.vds
           .large-2.small-2.columns
             .app
