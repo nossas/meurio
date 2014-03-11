@@ -48,7 +48,7 @@ Tweet.blueprint do
   username     { Faker::Internet.user_name }
   text         { Faker::Lorem.sentence(10) }
   hashtag      { Faker::Lorem.word }
-  published_at { Time.now }
+  published_at { Time.current }
   uid          { sn.to_s }
 end
 
@@ -61,7 +61,7 @@ FacebookPost.blueprint do
   username      { Faker::Internet.user_name }
   text          { Faker::Lorem.sentence(10) }
   hashtag       { Faker::Lorem.word }
-  published_at  { Time.now }
+  published_at  { Time.current }
   uid           { sn.to_s }
 end
 
@@ -79,7 +79,7 @@ end
 Clipping.blueprint do
   uid           { sn.to_s }
   body          { "My clipping body #{sn}" }
-  published_at  { Time.now }
+  published_at  { Time.current }
   link          { Faker::Internet.url }
   image         { File.open("#{Rails.root}/features/support/image.jpeg") }
   hashtag       { Faker::Lorem.word }
@@ -114,7 +114,7 @@ Task.blueprint do
   points { 10 }
   task_type { TaskType.make! }
   mobilization { Mobilization.make! }
-  deadline { Time.now + 1.day }
+  deadline { Time.current + 1.day }
   title { "Task #{sn}" }
 end
 
