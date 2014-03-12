@@ -26,20 +26,22 @@
             | , 
             span.user_city= @user.city
           = link_to(@user.website, "http://" + @user.website, class: ["icon-link"], target: :blank) if @user.website.present?
-        - if @user.categories
-          .user_categories
-            h3 Tempo dedicado à cidade
-            .categories
-              - @user.categories.each do |category|
-                .category class=category.slug
-                  span
-                    strong= @user.category_score category.id
-                    |  min
-                  | em #{category.name}
-        - if @user.bio
-          .user_bio
-            strong Quem sou eu:
-            .content= @user.bio
+    
+    .row
+      - if @user.categories
+        .user_categories
+          h3 Tempo dedicado à cidade
+          .categories
+            - @user.categories.each do |category|
+              .category class=category.slug
+                span
+                  strong= @user.category_score category.id
+                  |  min
+                | em #{category.name}
+      - if @user.bio
+        .user_bio
+          strong Quem sou eu:
+          .content= @user.bio
 
     .row
       .subscribed_tasks
