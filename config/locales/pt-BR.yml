@@ -285,6 +285,10 @@ pt-BR:
     zero: "assinaturas"
     one: "assinatura"
     other: "assinaturas"
+  squeezes:
+    zero: "emails"
+    one: "email"
+    other: "emails"
   facebook_posts: "no Facebook"
   tweets: "no Twitter"
   activity:

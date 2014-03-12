@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307204515) do
+ActiveRecord::Schema.define(version: 20140310200144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -248,6 +248,10 @@ ActiveRecord::Schema.define(version: 20140307204515) do
     t.datetime "updated_at"
     t.index ["task_type_id"], :name => "fk__rewards_task_type_id", :order => {"task_type_id" => :asc}
     t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_rewards_task_type_id"
+  end
+
+  create_table "squeezes", force: true do |t|
+    t.string "email"
   end
 
   create_table "users", force: true do |t|

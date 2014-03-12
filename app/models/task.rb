@@ -8,24 +8,27 @@ class Task < ActiveRecord::Base
   def self.matching skills
     Task.
       joins("LEFT JOIN task_subscriptions ON task_subscriptions.task_id = tasks.id").
-      where("skills && ARRAY[?]::character varying[] AND task_subscriptions.id IS NULL", skills)
+      where("skills && ARRAY[?]::character varying[] AND task_subscriptions.id IS NULL", skills).
+      order(:deadline)
   end
 
   def self.finished user_id
     Task.
       joins(:task_subscriptions).
       joins(:deliveries).
-      where("task_subscriptions.user_id = ? AND deliveries.task_subscription_id = task_subscriptions.id AND deliveries.accepted_at IS NOT NULL", user_id)
+      where("task_subscriptions.user_id = ? AND deliveries.task_subscription_id = task_subscriptions.id AND deliveries.accepted_at IS NOT NULL", user_id).
+      order(:deadline)
   end
 
   def self.subscribed user_id
     Task.
       joins(:task_subscriptions).
       joins("LEFT JOIN deliveries ON deliveries.task_subscription_id = task_subscriptions.id AND deliveries.accepted_at IS NOT NULL").
-      where("task_subscriptions.user_id = ? AND deliveries.id IS NULL", user_id)
+      where("task_subscriptions.user_id = ? AND deliveries.id IS NULL", user_id).
+      order(:deadline)
   end
 
   def expired?
-    self.deadline < Time.now
+    self.deadline < Time.current
   end
 end

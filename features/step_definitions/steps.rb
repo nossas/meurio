@@ -265,7 +265,7 @@ Given(/^this user delivered this task$/) do
 end
 
 Given(/^this delivery is accepted$/) do
-  @delivery.update_attribute :accepted_at, Time.now
+  @delivery.update_attribute :accepted_at, Time.current
   Reward.make! user: @user, task_type: @task.task_type
 end
 
@@ -280,7 +280,7 @@ Given(/^this user subscribed for a task$/) do
 end
 
 Given(/^this user finished this task$/) do
-  Delivery.make! task_subscription: @task_subscription, accepted_at: Time.now
+  Delivery.make! task_subscription: @task_subscription, accepted_at: Time.current
 end
 
 Given(/^there is a badge$/) do
