@@ -11,8 +11,8 @@ Feature: view all badges an user have
     When I go to "this user page"
     Then I should see "this badge"
 
-  Scenario: when the user have more badges than shown
+  Scenario: when the user have many badges
     Given there is an user
     And this user have 15 badges
     When I go to "this user page"
-    Then I should see only 9 "badges on user profile"
+    Then I should see only 15 "badges on user profile"

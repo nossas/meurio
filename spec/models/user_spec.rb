@@ -110,16 +110,16 @@ describe User do
       before { 15.times { user.earn_badge(Badge.make! points: 500) } }
       before { user.earn_badge last_badge }
       
-      it "gets the last 9 badges" do
-        expect(user.last_badges.count).to eq(9)
+      it "gets all badges" do
+        expect(user.last_badges.count).to eq(17)
       end
 
-      it "includes the last badge" do
-        expect(user.last_badges).to include last_badge
+      it "gets first the last badge" do
+        expect(user.last_badges.first).to eq(last_badge)
       end
 
-      it "doesn't include the first badge" do
-        expect(user.last_badges).not_to include first_badge
+      it "gets last the first badge" do
+        expect(user.last_badges.last).to eq(first_badge)
       end
     end
 

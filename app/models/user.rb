@@ -41,6 +41,6 @@ class User < ActiveRecord::Base
   end
 
   def last_badges
-    self.achievements.first(9).collect(&:badge) if self.badges.any?
+    self.achievements.collect(&:badge) if self.badges.any?
   end
 end
