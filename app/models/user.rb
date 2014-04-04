@@ -29,11 +29,19 @@ class User < ActiveRecord::Base
     self.task_type_score Category.find(category_id).task_type_ids
   end
 
+  def total_points
+    self.rewards.sum(:points)
+  end
+
   def earn_badge badge
     unless self.badges.include? badge
       self.badges << badge
       MeurioMailer.delay.you_earned_a_badge(self, badge)
     end
+  end
+
+  def deserve_badge_for_time?
+    self.total_points >= Badge.for_volunteer_time.points if Badge.for_volunteer_time.present?
   end
 
   def last_badge
