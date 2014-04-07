@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :badges, through: :achievements
   scope :admins, -> { where(admin: true) }
   scope :funders, -> { where(funder: true) }
+  scope :funders_and_sponsors, -> { where('funder = true OR sponsor = true') }
 
   def name
     "#{first_name} #{last_name}"

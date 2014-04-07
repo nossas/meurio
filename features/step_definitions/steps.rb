@@ -152,6 +152,10 @@ Given(/^there is (\d+) funders$/) do |arg1|
   arg1.to_i.times { User.make! funder: true }
 end
 
+Given(/^there is (\d+) sponsors$/) do |arg1|
+  arg1.to_i.times { User.make! sponsor: true }
+end
+
 When(/^I attach an image to "([^"]*)"$/) do |arg1|
   attach_file to_element(arg1), File.dirname(__FILE__) + "/../support/mobilization.jpg"
 end

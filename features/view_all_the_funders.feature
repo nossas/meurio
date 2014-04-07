@@ -5,7 +5,8 @@ Feature: view all the funders
 
   @javascript
   Scenario: when there is 30 funders
-    Given there is 30 funders
+    Given there is 20 funders
+    And there is 10 sponsors
     And I go to "the homepage"
     When I click "the funders button"
     Then I should see 30 "funders"
