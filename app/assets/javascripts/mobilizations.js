@@ -10,6 +10,7 @@ $(function(){
 // mobilizations#index
 var usersPage = 0;
 var fundersPage = 0;
+var mobilizationsPage = 0;
 
 function showNetDiv(div){
   $('#funders_button').removeClass("selected");
@@ -27,7 +28,7 @@ function loadUsers(){
   usersPage++;
   $("a#load_more_users_button").hide();
   $(".users .loader").show();
-  $.get("/users?page=" + usersPage, function(data) { 
+  $.get("/users?page=" + usersPage, function(data) {
     $("#users").append(data);
     if($("#users").data("count") <= $("#users .member").length)
       $("a#load_more_users_button").remove();
@@ -40,7 +41,7 @@ function loadFunders(){
   fundersPage++;
   $("a#load_more_funders_button").hide();
   $(".funders .loader").show();
-  $.get("/funders?page=" + fundersPage, function(data) { 
+  $.get("/funders?page=" + fundersPage, function(data) {
     $("#funders").append(data);
     if($("#funders").data("count") <= $("#funders .member").length)
       $("a#load_more_funders_button").remove();
@@ -53,6 +54,19 @@ function loadTeam(){
   $.get("/team", function(data) { $("#team").append(data); });
 }
 
+function loadMobilizations(){
+  mobilizationsPage++;
+  $("a#load_more_mobilizations_button").hide();
+  $(".mobilizations .loader").show();
+  $.get("/mobilizations?page=" + mobilizationsPage, function(data) {
+    $("#mobilizations-list").append(data);
+    if($("#mobilizations-list").data("count") <= $("#mobilizations-list .mobilization").length)
+      $("a#load_more_mobilizations_button").remove();
+    $("a#load_more_mobilizations_button").show();
+    $(".mobilizations .loader").hide();
+  });
+}
+
 $(function(){
   loadUsers();
   loadFunders();
@@ -63,7 +77,7 @@ $(function(){
     loadUsers();
     return false;
   });
-  
+
   $("a#load_more_funders_button").click(function(){
     loadFunders();
     return false;
@@ -83,4 +97,6 @@ $(function(){
     showNetDiv('users');
     return false;
   });
+
+  loadMobilizations();
 });

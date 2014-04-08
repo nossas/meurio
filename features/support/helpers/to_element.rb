@@ -194,7 +194,9 @@ def to_element string
     ".badges .empty"
   when "badges on user profile"
     ".badges .badge"
+  when "mobilizations"
+      ".mobilization"
   else
-    string    
+    string
   end
 end

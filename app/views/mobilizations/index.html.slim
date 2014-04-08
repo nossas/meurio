@@ -46,7 +46,7 @@
     .mobilizations-title
       h2 Uma Rede de mobilizações
       p Essas são as mobilizações imaginadas, criadas, apoiadas e compartilhadas pelos membros que formam essa grande Rede em prol de um Rio de Janeiro melhor. Saiba mais sobre elas e una-se à Rede Meu Rio!
-  .row= render Mobilization.all
+  .row#mobilizations-list
 
 .vision#vision
   .row
@@ -56,19 +56,19 @@
     .vision-list
       ul
         li
-          strong Democracia 
+          strong Democracia
           | - O cidadão é dono da cidade, e mais ninguém.
         li
-          strong Participação 
+          strong Participação
           | - O cidadão participa das decisões que governam a cidade.
         li
-          strong Controle Social 
+          strong Controle Social
           | - O cidadão fiscaliza as ações do poder público.
         li
-          strong Espaço Público 
+          strong Espaço Público
           | - O cidadão tem acesso à cidade.
         li
-          strong Cultura Política 
+          strong Cultura Política
           | - O cidadão existe politicamente, em direitos e deveres.
 
 .principles#principles
@@ -81,7 +81,7 @@
         .principle
           = image_tag 'principios/independencia.png'
           h3 Independência
-          p As mobilizações são criadas pelos cidadãos, a eles pertencem, e expressam o que eles desejam de forma independente. 
+          p As mobilizações são criadas pelos cidadãos, a eles pertencem, e expressam o que eles desejam de forma independente.
         .principle
           = image_tag 'principios/apartidarismo.png'
           h3 Apartidarismo
@@ -89,12 +89,12 @@
         .principle
           = image_tag 'principios/compartilhamento.png'
           h3 Compartilhamento
-          p As mobilizações são realizadas com a partilha de conhecimentos que potencializam a ação coletiva. 
-      .row  
+          p As mobilizações são realizadas com a partilha de conhecimentos que potencializam a ação coletiva.
+      .row
         .principle
           = image_tag 'principios/embasamento.png'
           h3 Embasamento
-          p As mobilizações não são levianas ou abstratas, têm objetivos concretos e usam informações de fontes públicas e confiáveis. 
+          p As mobilizações não são levianas ou abstratas, têm objetivos concretos e usam informações de fontes públicas e confiáveis.
         .principle
           = image_tag 'principios/canalizacao.png'
           h3 Canalização da ação
@@ -115,7 +115,7 @@
         .principle
           = image_tag 'principios/dialogo.png'
           h3 Diálogo
-          p As mobilizações buscam diálogo com os representantes eleitos e indicados, e com toda a sociedade.      
+          p As mobilizações buscam diálogo com os representantes eleitos e indicados, e com toda a sociedade.
 
 .funding#funding
   .row

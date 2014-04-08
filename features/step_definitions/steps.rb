@@ -13,7 +13,7 @@ Given(/^(?:I'm in|I go to) "(.*?)"$/) do |arg1|
 end
 
 Given(/^there is a mobilization$/) do
-  @mobilization = Mobilization.make!  
+  @mobilization = Mobilization.make!
 end
 
 Given(/^this mobilization have a campaign$/) do
@@ -298,4 +298,8 @@ end
 
 Given(/^this user have (\d+) badges$/) do |arg1|
   arg1.to_i.times { @user.badges << Badge.make! }
+end
+
+Given(/^there is (\d+) mobilizations$/) do |arg1|
+  arg1.to_i.times { Mobilization.make! }
 end

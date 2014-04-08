@@ -1,7 +1,14 @@
 class MobilizationsController < InheritedResources::Base
   load_and_authorize_resource
   respond_to :html, :js
-  
+
+  def index
+    if request.xhr?
+      mobilizations = Mobilization.order("created_at DESC").page(params[:page]).per(3)
+      render mobilizations
+    end
+  end
+
   def show
     @facts = resource.facts.order("created_at DESC")
     @comments = resource.comments.order("published_at DESC").limit(5)

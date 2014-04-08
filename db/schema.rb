@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310200144) do
+ActiveRecord::Schema.define(version: 20140408084725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 20140310200144) do
     t.datetime "deadline"
   end
 
-  create_view "activities", "        (        (        (        (         SELECT campaigns.id, \n                                            campaigns.user_id, \n                                            campaigns.created_at, \n                                            campaigns.hashtag, \n                                            'campaigns'::text AS relname\n                                           FROM campaigns\n                                UNION ALL \n                                         SELECT pokes.id, \n                                            pokes.user_id, \n                                            pokes.created_at, \n                                            pokes_campaigns.hashtag, \n                                            'pokes'::text AS relname\n                                           FROM (pokes\n                                      JOIN campaigns pokes_campaigns ON ((pokes_campaigns.id = pokes.campaign_id))))\n                        UNION ALL \n                                 SELECT problems.id, \n                                    problems.user_id, \n                                    problems.created_at, \n                                    problems.hashtag, \n                                    'problems'::text AS relname\n                                   FROM problems)\n                UNION ALL \n                         SELECT ideas.id, \n                            ideas.user_id, \n                            ideas.created_at, \n                            ideas_problems.hashtag, \n                            'ideas'::text AS relname\n                           FROM (ideas\n                      JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id))))\n        UNION ALL \n                 SELECT task_subscriptions.id, \n                    task_subscriptions.user_id, \n                    task_subscriptions.created_at, \n                    tasks.hashtag, \n                    'task_subscriptions'::text AS relname\n                   FROM (task_subscriptions\n              JOIN tasks ON ((tasks.id = task_subscriptions.task_id))))\nUNION ALL \n         SELECT deliveries.id, \n            task_subscriptions.user_id, \n            deliveries.accepted_at AS created_at, \n            tasks.hashtag, \n            'accepted_deliveries'::text AS relname\n           FROM ((deliveries\n      JOIN task_subscriptions ON ((task_subscriptions.id = deliveries.task_subscription_id)))\n   JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\n  WHERE (deliveries.accepted_at IS NOT NULL)", :force => true
+  create_view "activities", "        (        (        (        (         SELECT campaigns.id,\n                                            campaigns.user_id,\n                                            campaigns.created_at,\n                                            campaigns.hashtag,\n                                            'campaigns'::text AS relname\n                                           FROM campaigns\n                                UNION ALL\n                                         SELECT pokes.id,\n                                            pokes.user_id,\n                                            pokes.created_at,\n                                            pokes_campaigns.hashtag,\n                                            'pokes'::text AS relname\n                                           FROM (pokes\n                                      JOIN campaigns pokes_campaigns ON ((pokes_campaigns.id = pokes.campaign_id))))\n                        UNION ALL\n                                 SELECT problems.id,\n                                    problems.user_id,\n                                    problems.created_at,\n                                    problems.hashtag,\n                                    'problems'::text AS relname\n                                   FROM problems)\n                UNION ALL\n                         SELECT ideas.id,\n                            ideas.user_id,\n                            ideas.created_at,\n                            ideas_problems.hashtag,\n                            'ideas'::text AS relname\n                           FROM (ideas\n                      JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id))))\n        UNION ALL\n                 SELECT task_subscriptions.id,\n                    task_subscriptions.user_id,\n                    task_subscriptions.created_at,\n                    tasks.hashtag,\n                    'task_subscriptions'::text AS relname\n                   FROM (task_subscriptions\n              JOIN tasks ON ((tasks.id = task_subscriptions.task_id))))\nUNION ALL\n         SELECT deliveries.id,\n            task_subscriptions.user_id,\n            deliveries.accepted_at AS created_at,\n            tasks.hashtag,\n            'accepted_deliveries'::text AS relname\n           FROM ((deliveries\n      JOIN task_subscriptions ON ((task_subscriptions.id = deliveries.task_subscription_id)))\n   JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\n  WHERE (deliveries.accepted_at IS NOT NULL)", :force => true
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -176,7 +176,7 @@ ActiveRecord::Schema.define(version: 20140310200144) do
     t.integer  "comment_count"
   end
 
-  create_view "comments", "         SELECT t.id, \n            t.created_at, \n            t.text, \n            t.hashtag, \n            t.username, \n            t.published_at, \n            t.text_html, \n            t.user_uid, \n            t.retweet_count AS share_count, \n            t.favorite_count AS like_count, \n            t.comment_count, \n            'tweets'::text AS relname\n           FROM tweets t\nUNION ALL \n         SELECT fp.id, \n            fp.created_at, \n            fp.text, \n            fp.hashtag, \n            fp.username, \n            fp.published_at, \n            fp.text_html, \n            fp.user_uid, \n            fp.share_count, \n            fp.like_count, \n            fp.comment_count, \n            'facebook_posts'::text AS relname\n           FROM facebook_posts fp", :force => true
+  create_view "comments", "         SELECT t.id,\n            t.created_at,\n            t.text,\n            t.hashtag,\n            t.username,\n            t.published_at,\n            t.text_html,\n            t.user_uid,\n            t.retweet_count AS share_count,\n            t.favorite_count AS like_count,\n            t.comment_count,\n            'tweets'::text AS relname\n           FROM tweets t\nUNION ALL\n         SELECT fp.id,\n            fp.created_at,\n            fp.text,\n            fp.hashtag,\n            fp.username,\n            fp.published_at,\n            fp.text_html,\n            fp.user_uid,\n            fp.share_count,\n            fp.like_count,\n            fp.comment_count,\n            'facebook_posts'::text AS relname\n           FROM facebook_posts fp", :force => true
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -214,7 +214,7 @@ ActiveRecord::Schema.define(version: 20140310200144) do
     t.integer  "signatures_count"
   end
 
-  create_view "facts", "        (        (         SELECT e.id, \n                            e.created_at, \n                            e.name, \n                            e.description_html, \n                            e.link, \n                            e.hashtag, \n                            'petitions'::text AS relname\n                           FROM petitions e\n                UNION ALL \n                         SELECT c.id, \n                            c.created_at, \n                            c.name, \n                            c.description_html, \n                            c.link, \n                            c.hashtag, \n                            'campaigns'::text AS relname\n                           FROM campaigns c)\n        UNION ALL \n                 SELECT p.id, \n                    p.created_at, \n                    p.name, \n                    p.description AS description_html, \n                    p.link, \n                    p.hashtag, \n                    'problems'::text AS relname\n                   FROM problems p)\nUNION ALL \n         SELECT e.id, \n            e.created_at, \n            e.name, \n            e.description AS description_html, \n            e.link, \n            e.hashtag, \n            'events'::text AS relname\n           FROM events e", :force => true
+  create_view "facts", "        (        (         SELECT e.id,\n                            e.created_at,\n                            e.name,\n                            e.description_html,\n                            e.link,\n                            e.hashtag,\n                            'petitions'::text AS relname\n                           FROM petitions e\n                UNION ALL\n                         SELECT c.id,\n                            c.created_at,\n                            c.name,\n                            c.description_html,\n                            c.link,\n                            c.hashtag,\n                            'campaigns'::text AS relname\n                           FROM campaigns c)\n        UNION ALL\n                 SELECT p.id,\n                    p.created_at,\n                    p.name,\n                    p.description AS description_html,\n                    p.link,\n                    p.hashtag,\n                    'problems'::text AS relname\n                   FROM problems p)\nUNION ALL\n         SELECT e.id,\n            e.created_at,\n            e.name,\n            e.description AS description_html,\n            e.link,\n            e.hashtag,\n            'events'::text AS relname\n           FROM events e", :force => true
   create_table "images", force: true do |t|
     t.string   "file"
     t.string   "hashtag"
@@ -237,6 +237,23 @@ ActiveRecord::Schema.define(version: 20140310200144) do
     t.string   "thumbnail"
   end
 
+  create_table "rewards", force: true do |t|
+    t.integer  "user_id",      null: false
+    t.integer  "task_type_id", null: false
+    t.integer  "points",       null: false
+    t.string   "source_app",   null: false
+    t.string   "source_model", null: false
+    t.integer  "source_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["task_type_id"], :name => "fk__rewards_task_type_id", :order => {"task_type_id" => :asc}
+    t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_rewards_task_type_id"
+  end
+
+  create_table "squeezes", force: true do |t|
+    t.string "email"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "first_name"
@@ -255,35 +272,6 @@ ActiveRecord::Schema.define(version: 20140310200144) do
     t.boolean  "funder"
     t.string   "address_district"
     t.string   "website"
-  end
-
-  create_table "points", force: true do |t|
-    t.integer  "user_id",      null: false
-    t.integer  "task_type_id", null: false
-    t.integer  "value",        null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["task_type_id"], :name => "fk__points_task_type_id", :order => {"task_type_id" => :asc}
-    t.index ["user_id"], :name => "fk__points_user_id", :order => {"user_id" => :asc}
-    t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_points_task_type_id"
-    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_points_user_id"
-  end
-
-  create_table "rewards", force: true do |t|
-    t.integer  "user_id",      null: false
-    t.integer  "task_type_id", null: false
-    t.integer  "points",       null: false
-    t.string   "source_app",   null: false
-    t.string   "source_model", null: false
-    t.integer  "source_id",    null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["task_type_id"], :name => "fk__rewards_task_type_id", :order => {"task_type_id" => :asc}
-    t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_rewards_task_type_id"
-  end
-
-  create_table "squeezes", force: true do |t|
-    t.string "email"
   end
 
 end
