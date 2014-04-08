@@ -21,7 +21,8 @@ class CreateUsersForeignTableOlive < ActiveRecord::Migration
           admin boolean,
           funder boolean DEFAULT false,
           address_district character varying(255),
-          website character varying(255)
+          website character varying(255),
+          sponsor boolean DEFAULT false
         )
         SERVER meurio_accounts
         OPTIONS (table_name 'users');
