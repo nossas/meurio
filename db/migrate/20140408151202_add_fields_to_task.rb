@@ -1,7 +1,7 @@
 class AddFieldsToTask < ActiveRecord::Migration
   def change
     if Rails.env.production? || Rails.env.staging?
-      add_column :tasks, :task_type_id, :integer
+      add_column :tasks, :task_type_id, :integer, foreign_key: false
       add_column :tasks, :points, :integer, null: false
       add_column :tasks, :skills, :string, array: true
       add_column :tasks, :title, :string
