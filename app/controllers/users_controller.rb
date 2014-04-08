@@ -16,7 +16,7 @@ class UsersController < InheritedResources::Base
   end
 
   def funders
-    @users = User.funders.order("created_at DESC").page(params[:page]).per(30)
+    @users = User.funders_and_sponsors.order(:first_name, :last_name).page(params[:page]).per(30)
     render :index
   end
 end

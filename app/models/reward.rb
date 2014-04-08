@@ -14,5 +14,7 @@ class Reward < ActiveRecord::Base
     possible_badges.each do |badge|
       self.user.earn_badge(badge) if score >= badge.points
     end
+
+    self.user.earn_badge(Badge.for_volunteer_time) if self.user.deserve_badge_for_time? && Badge.for_volunteer_time.present?
   end
 end

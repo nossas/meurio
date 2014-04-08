@@ -259,7 +259,7 @@ ActiveRecord::Schema.define(version: 20140408084725) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "avatar"
-    t.string   "skills",           default: [], array: true
+    t.string   "skills",           default: [],    array: true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "profession"
@@ -272,6 +272,7 @@ ActiveRecord::Schema.define(version: 20140408084725) do
     t.boolean  "funder"
     t.string   "address_district"
     t.string   "website"
+    t.boolean  "sponsor",          default: false
   end
 
 end

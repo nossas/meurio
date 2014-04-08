@@ -7,4 +7,8 @@ class Badge < ActiveRecord::Base
 
   mount_uploader :image, BadgeUploader
   validates :name, :points, :image, presence: true
+
+  def self.for_volunteer_time
+    self.find_by(name: 'Eu Faço')
+  end
 end
