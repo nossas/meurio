@@ -33,7 +33,7 @@
               .subtitle Salve a Internet
             #action-event
               .title Salve a Internet
-              p= "Empresas de telecomunicação como Oi, Vivo, Tim e Claro estão pressionando os deputados para ter o poder de dizer o que você pode e não pode ver na internet, dependendo de quanto você e os diferentes sites e aplicativos estiverem dispostos a pagar.".truncate(200)
+              p= "A neutralidade da rede e a liberdade de expressão foram preservadas no Marco Civil aprovado pela Câmara dos Deputados. Agora, temos pouco tempo para pressionar o Senado antes que o texto seja votado!".truncate(200)
               = link_to 'Salve a Internet', 'http://salveainternet.meurio.org.br', class: 'btn', target: :blank
       - elsif @mobilization.action_of_the_day
         .large-4.columns
@@ -43,14 +43,14 @@
               .title Ação do Dia
               .subtitle= t "app.#{@mobilization.action_of_the_day.app}"
             #action-event
-              .title= @mobilization.action_of_the_day.name              
+              .title= @mobilization.action_of_the_day.name
               p= strip_tags(@mobilization.action_of_the_day.description_html).truncate(200)
               = link_to t("fact.#{@mobilization.action_of_the_day.relname}"), @mobilization.action_of_the_day.link, class: 'btn', target: :blank
 
   .social-media
     .row
       .large-12.columns
-        span 
+        span
           | Compartilhe essa mobilização nas redes sociais usando a hashtag #
           strong= @mobilization.hashtag
   .share
@@ -98,49 +98,49 @@
       - if @mobilization.hashtag == 'salveainternet' && Squeeze.any?
         .squeezes_counter.icon-mail
           span.counter= number_with_delimiter Squeeze.count
-          |  
+          |
           span.counter_label= t("squeezes", count: Squeeze.count)
           span.where enviados aos deputados
       - if @mobilization.pokes.any?
         .pokes_counter.icon-comments
           span.counter= number_with_delimiter @mobilization.pokes.count
-          |  
+          |
           span.counter_label= t("pokers", count: @mobilization.pokes.count)
           span.where no Panela de Pressão
       - if @mobilization.ideas.any?
         .ideas_counter.icon-bubbles
           span.counter= number_with_delimiter @mobilization.ideas.count
-          |  
+          |
           span.counter_label= t("ideas", count: @mobilization.ideas.count)
           span.where no Imagine
       - if @mobilization.facebook_share_count > 0
         .shares_counter.icon-share
           span.counter= number_with_delimiter @mobilization.facebook_share_count
-          |  
+          |
           span.counter_label= t("shares", count: @mobilization.facebook_share_count)
           span.where no Facebook
       - if @mobilization.facebook_like_count > 0
         .likes_counter.icon-thumbs-up
           span.counter= number_with_delimiter @mobilization.facebook_like_count
-          |  
+          |
           span.counter_label= t("likes", count: @mobilization.facebook_like_count)
           span.where no Facebook
       - if @mobilization.facebook_comment_count > 0
         .likes_counter.icon-comments
           span.counter= number_with_delimiter @mobilization.facebook_comment_count
-          |  
+          |
           span.counter_label= t("comments", count: @mobilization.facebook_comment_count)
           span.where no Facebook
       - if @mobilization.attending_count > 0
         .attending_count.icon-location
           span.counter= number_with_delimiter @mobilization.attending_count
-          |  
+          |
           span.counter_label= t("attending", count: @mobilization.attending_count)
           span.where em eventos
       - if @mobilization.signatures_count > 0
         .signatures_count.icon-signature
           span.counter= number_with_delimiter @mobilization.signatures_count
-          |  
+          |
           span.counter_label= t("signatures", count: @mobilization.signatures_count)
           span.where em petições
 
@@ -157,5 +157,5 @@
         | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre essa mobilização nas redes sociais.
       - if @comments.empty?
         .empty Esta mobilização ainda não possui comentários :\
-      - else      
+      - else
         = render @comments
