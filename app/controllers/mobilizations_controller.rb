@@ -4,7 +4,7 @@ class MobilizationsController < InheritedResources::Base
 
   def index
     if request.xhr?
-      mobilizations = Mobilization.order("created_at DESC").page(params[:page]).per(3)
+      mobilizations = Mobilization.order("created_at DESC").page(params[:page]).per(6)
       render mobilizations
     end
   end
