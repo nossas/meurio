@@ -46,8 +46,11 @@
     .mobilizations-title
       h2 Uma Rede de mobilizações
       p Essas são as mobilizações imaginadas, criadas, apoiadas e compartilhadas pelos membros que formam essa grande Rede em prol de um Rio de Janeiro melhor. Saiba mais sobre elas e una-se à Rede Meu Rio!
-  / .row#mobilizations-list
-  .row= render Mobilization.all
+  .row#mobilizations-list{data-count = Mobilization.count}
+  .row
+    .load-more
+      a.btn-green#load_more_mobilizations_button href="#" + Veja mais
+      .loader Carregando...
 
 .vision#vision
   .row

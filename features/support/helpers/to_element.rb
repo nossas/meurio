@@ -92,6 +92,8 @@ def to_element string
     ".flash .alert"
   when "this mobilization in the mobilizations list"
     ".mobilizations .mobilization"
+  when "the load more mobilizations button"
+    "a#load_more_mobilizations_button"
   when "the network explanation"
     ".network"
   when "the users"

@@ -68,6 +68,7 @@ function loadMobilizations(){
 }
 
 $(function(){
+  loadMobilizations();
   loadUsers();
   loadFunders();
   loadTeam();
@@ -98,5 +99,8 @@ $(function(){
     return false;
   });
 
-  loadMobilizations();
+  $("a#load_more_mobilizations_button").click(function(){
+    loadMobilizations();
+    return false;
+  });
 });

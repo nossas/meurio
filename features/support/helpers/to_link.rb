@@ -12,6 +12,8 @@ def to_link string
     "funders_button"
   when "the edit mobilization button"
     "edit_mobilization_button"
+  when "the load more mobilizations button"
+    "load_more_mobilizations_button"
   else
     nil
   end
