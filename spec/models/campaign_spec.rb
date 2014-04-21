@@ -8,4 +8,9 @@ describe Campaign do
   it { should validate_uniqueness_of :uid }
   it { should belong_to :mobilization }
   it { should belong_to :user }
+
+  describe "before_save" do
+    subject { Campaign.make! description_html: '<p>&quot;Eu quero voltar para a escola&quot;</p>' }
+    its(:description_html) { should eq '<p>"Eu quero voltar para a escola"</p>' }
+  end
 end

@@ -4,4 +4,6 @@ class Campaign < ActiveRecord::Base
   belongs_to :mobilization, foreign_key: :hashtag, primary_key: :hashtag
   belongs_to :user
   has_many :pokes
+
+  before_save { self.description_html.gsub!('&quot;', '"') if self.description_html }
 end
