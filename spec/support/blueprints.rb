@@ -156,3 +156,7 @@ end
 Achievement.blueprint do
   # Attributes here
 end
+
+SuccessfulTransactions.blueprint do
+  # Attributes here
+end

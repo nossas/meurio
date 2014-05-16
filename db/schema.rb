@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516184536) do
+ActiveRecord::Schema.define(version: 20140516191726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -273,6 +273,14 @@ ActiveRecord::Schema.define(version: 20140516184536) do
     t.string   "address_district"
     t.string   "website"
     t.boolean  "sponsor",          default: false
+  end
+
+  create_table "successful_transactions", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["user_id"], :name => "fk__successful_transactions_user_id", :order => {"user_id" => :asc}
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_successful_transactions_user_id"
   end
 
 end
