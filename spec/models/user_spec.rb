@@ -63,10 +63,10 @@ describe User do
   describe "#earn_badge" do
     let(:user) { User.make! }
     let(:badge) { Badge.make! points: 500 }
-    
+
     context "when the user already have this badge" do
       before { user.badges << badge }
-      
+
       it "doesn't earn a duplicated badge" do
         expect { user.earn_badge badge }.to change { user.badges.count }.by(0)
       end
@@ -87,7 +87,7 @@ describe User do
     context "when the user have badges" do
       before { user.earn_badge first_badge }
       before { user.earn_badge second_badge }
-      
+
       it "gets the last badge" do
         expect(user.last_badge).to eq(second_badge)
       end
@@ -109,7 +109,7 @@ describe User do
       before { user.earn_badge first_badge }
       before { 15.times { user.earn_badge(Badge.make! points: 500) } }
       before { user.earn_badge last_badge }
-      
+
       it "gets all badges" do
         expect(user.last_badges.count).to eq(17)
       end
@@ -127,6 +127,26 @@ describe User do
       it "gets nil" do
         expect(user.last_badges).to be_nil
       end
+    end
+  end
+
+  describe ".funders" do
+    subject { User }
+
+    context "when there is no successful transaction" do
+      its(:funders){ should be_empty }
+    end
+
+    context "when there is at least one successful transaction" do
+      before { SuccessfulTransaction.make! }
+      its(:funders){ should_not be_empty }
+    end
+
+    context "when there is two successful transactions for the same user" do
+      let(:user){ User.make! }
+      before { SuccessfulTransaction.make! user: user }
+      before { SuccessfulTransaction.make! user: user }
+      its(:funders){ should have(1).user }
     end
   end
 end

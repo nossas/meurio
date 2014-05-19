@@ -6,9 +6,10 @@ class User < ActiveRecord::Base
   has_many :categories, -> { uniq }, through: :task_types
   has_many :achievements
   has_many :badges, through: :achievements
+  has_many :successful_transactions
   scope :admins, -> { where(admin: true) }
-  scope :funders, -> { where(funder: true) }
-  scope :funders_and_sponsors, -> { where('funder = true OR sponsor = true') }
+  scope :funders, -> { joins(:successful_transactions).uniq }
+  scope :sponsors, -> { where(sponsor: true) }
 
   def name
     "#{first_name} #{last_name}"
@@ -51,5 +52,9 @@ class User < ActiveRecord::Base
 
   def last_badges
     self.achievements.collect(&:badge) if self.badges.any?
+  end
+
+  def self.funders_or_sponsors
+    User.where("id IN (?)", User.funders.pluck(:id) + User.sponsors.pluck(:id))
   end
 end

@@ -158,5 +158,5 @@ Achievement.blueprint do
 end
 
 SuccessfulTransaction.blueprint do
-  # Attributes here
+  user { User.make! }
 end

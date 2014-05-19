@@ -149,7 +149,7 @@ Given(/^there is (\d+) admin users$/) do |arg1|
 end
 
 Given(/^there is (\d+) funders$/) do |arg1|
-  arg1.to_i.times { User.make! funder: true }
+  arg1.to_i.times { SuccessfulTransaction.make! }
 end
 
 Given(/^there is (\d+) sponsors$/) do |arg1|
