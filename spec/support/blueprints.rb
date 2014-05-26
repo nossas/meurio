@@ -160,3 +160,7 @@ end
 SuccessfulTransaction.blueprint do
   user { User.make! }
 end
+
+Organization.blueprint do
+  # Attributes here
+end
