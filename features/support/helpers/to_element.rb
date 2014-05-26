@@ -197,9 +197,9 @@ def to_element string
   when "badges on user profile"
     ".badges .badge"
   when "mobilizations"
-      ".mobilization"
+    ".mobilization"
   when "mobilization organization field error"
-      ".field_with_errors label[for='mobilization_organization_id']"
+    ".field_with_errors label[for='mobilization_organization_id']"
   else
     string
   end
