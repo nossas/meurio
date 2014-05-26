@@ -4,9 +4,12 @@
       = f.label :title
       = f.text_field :title
   .row
-    .large-12.columns
+    .large-6.columns
       = f.label :short_title
       = f.text_field :short_title
+    .large-6.columns
+      = f.label :organization_id
+      = f.select :organization_id, @organizations.map{|c| [c.city, c.id]}, include_blank: true
   .row.hashtag
     .large-6.columns
       = f.label :hashtag
@@ -35,5 +38,5 @@
     .large-6.columns.submit
       = f.submit nil, class: 'btn'
     .large-6.columns.cancel
-      span ou 
+      span ou
       = link_to 'Cancelar', root_path

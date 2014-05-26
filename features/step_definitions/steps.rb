@@ -307,3 +307,7 @@ end
 Given(/^there is (\d+) mobilizations$/) do |arg1|
   arg1.to_i.times { Mobilization.make! }
 end
+
+Given(/^there is a organization from "(.*?)"$/) do |arg1|
+  Organization.make! city: arg1
+end

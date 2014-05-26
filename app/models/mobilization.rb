@@ -12,6 +12,7 @@ class Mobilization < ActiveRecord::Base
   has_many :clippings, primary_key: :hashtag, foreign_key: :hashtag
   has_many :petitions, primary_key: :hashtag, foreign_key: :hashtag
   belongs_to :user
+  belongs_to :organization
 
   mount_uploader :image, MobilizationUploader
   mount_uploader :thumbnail, MobilizationUploader

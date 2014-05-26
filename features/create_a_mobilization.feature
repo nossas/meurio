@@ -3,6 +3,9 @@ Feature: Create a mobilization
   As an user
   I want to create a mobilization
 
+  Background:
+    Given there is a organization from "Rio de Janeiro"
+
   @ssi
   Scenario: when I'm logged in as admin
     Given I'm logged in as admin
@@ -14,6 +17,7 @@ Feature: Create a mobilization
     Given I'm logged in as admin
     And I'm in "new mobilization page"
     And I fill "Nome da Mobilização" with "Estamos De Guarda no Bondinho de Santa Teresa!"
+    And I select "Rio de Janeiro" from "Cidade"
     And I fill "Título curto" with "De Guarda no Bondinho"
     And I fill "Hashtag" with "DeGuardaNoBondinho"
     And I fill "Descrição" with "O Governo do Estado do Rio de Janeiro está sucateando o patrimônio histórico nacional."
