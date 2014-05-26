@@ -12,6 +12,7 @@ class Mobilization < ActiveRecord::Base
   has_many :clippings, primary_key: :hashtag, foreign_key: :hashtag
   has_many :petitions, primary_key: :hashtag, foreign_key: :hashtag
   belongs_to :user
+  belongs_to :organization
 
   mount_uploader :image, MobilizationUploader
   mount_uploader :thumbnail, MobilizationUploader
@@ -28,7 +29,7 @@ class Mobilization < ActiveRecord::Base
   def facebook_like_count
     self.facebook_posts.sum(:like_count)
   end
-  
+
   def facebook_comment_count
     self.facebook_posts.sum(:comment_count)
   end

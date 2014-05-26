@@ -1,6 +1,7 @@
 class MobilizationsController < InheritedResources::Base
   load_and_authorize_resource
   respond_to :html, :js
+  before_filter only: [:new, :create, :edit, :update] { @organizations = Organization.all }
 
   def index
     if request.xhr?
@@ -24,6 +25,10 @@ class MobilizationsController < InheritedResources::Base
   end
 
   def permitted_params
-    {:mobilization => params.fetch(:mobilization, {}).permit(:title, :short_title, :hashtag, :description, :image, :thumbnail, :user_id)}
+    {
+      :mobilization => params
+        .fetch(:mobilization, {})
+        .permit(:title, :short_title, :hashtag, :description, :image, :thumbnail, :user_id, :organization_id)
+    }
   end
 end

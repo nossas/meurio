@@ -3,12 +3,13 @@ require 'machinist/active_record'
 # Add your blueprints here.
 
 Mobilization.blueprint do
-  title       { Faker::Lorem.sentence }
-  short_title { Faker::Lorem.sentence }
-  description { Faker::Lorem.paragraph }
-  image       { File.open("#{Rails.root}/features/support/image.jpeg") }
-  hashtag     { Faker::Lorem.word }
-  user        { User.make! }
+  title         { Faker::Lorem.sentence }
+  short_title   { Faker::Lorem.sentence }
+  description   { Faker::Lorem.paragraph }
+  image         { File.open("#{Rails.root}/features/support/image.jpeg") }
+  hashtag       { Faker::Lorem.word }
+  user          { User.make! }
+  organization  { Organization.make! }
 end
 
 Campaign.blueprint do
@@ -162,5 +163,5 @@ SuccessfulTransaction.blueprint do
 end
 
 Organization.blueprint do
-  # Attributes here
+  city { "Rio de Janeiro" }
 end

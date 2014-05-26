@@ -219,6 +219,7 @@ pt-BR:
         short_title: "Título curto"
         description: "Descrição"
         image: "Imagem de fundo"
+        organization_id: "Cidade"
       user:
         first_name: Nome
         last_name: Sobrenome
