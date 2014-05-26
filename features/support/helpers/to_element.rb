@@ -198,6 +198,8 @@ def to_element string
     ".badges .badge"
   when "mobilizations"
       ".mobilization"
+  when "mobilization organization field error"
+      ".field_with_errors label[for='mobilization_organization_id']"
   else
     string
   end

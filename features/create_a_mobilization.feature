@@ -29,6 +29,7 @@ Feature: Create a mobilization
     When I press "Criar Mobilização"
     Then I should be in "new mobilization page"
     And I should see "mobilization title field error"
+    And I should see "mobilization organization field error"
     And I should see "mobilization short title field error"
     And I should see "mobilization hashtag field error"
     And I should see "mobilization description field error"

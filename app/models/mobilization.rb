@@ -16,7 +16,7 @@ class Mobilization < ActiveRecord::Base
   mount_uploader :image, MobilizationUploader
   mount_uploader :thumbnail, MobilizationUploader
 
-  validates_presence_of :title, :short_title, :hashtag, :description
+  validates_presence_of :title, :short_title, :hashtag, :description, :organization_id
   validates_presence_of :image, on: :create
 
   before_save { self.hashtag.gsub!('#', '') }
@@ -28,7 +28,7 @@ class Mobilization < ActiveRecord::Base
   def facebook_like_count
     self.facebook_posts.sum(:like_count)
   end
-  
+
   def facebook_comment_count
     self.facebook_posts.sum(:comment_count)
   end
