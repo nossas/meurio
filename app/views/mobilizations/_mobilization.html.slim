@@ -1,4 +1,6 @@
 .mobilization
   .image
   	= link_to image_tag(mobilization.thumbnail.present? ? mobilization.thumbnail.square : mobilization.image.square), mobilization
-    .title= mobilization.title
+    .title_and_city
+      .title= mobilization.title
+      .icon-location.city= mobilization.organization.city

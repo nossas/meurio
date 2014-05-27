@@ -98,13 +98,20 @@ body.mobilizations.index
         +border-radius(5px)
         overflow: hidden
         position: relative
-        .title
+        .title_and_city
           background: white
-          font-weight: bolder
           position: absolute
           bottom: 0
           padding: 1em
           width: 100%
+          text-align: left
+          .title
+            font-weight: bolder
+            margin-bottom: .25em
+          .city
+            &:before
+              position: relative
+              top: 1px
     .load-more
       +grid-column(12)
       #load_more_mobilizations_button
@@ -227,7 +234,7 @@ body.mobilizations.index
           img
             +border-radius(100%)
             margin-bottom: 10px
-       
+
 body.mobilizations.show
   .page-wrap
     padding: 0 0 60px 0
@@ -262,17 +269,17 @@ body.mobilizations.show
       img
         width: 40px
         height: 40px
-    .content      
+    .content
       h1, p
         color: white
       h1
         font-weight: bolder
         font-family: Proxima Nova
         font-size: 2em
-        line-height: 1em        
+        line-height: 1em
       p
         font-weight: bold
-        font-family: "Proxima Nova" 
+        font-family: "Proxima Nova"
         font-size: 0.9em
         line-height: 1.2em
     #action-of-the-day
@@ -302,7 +309,7 @@ body.mobilizations.show
           padding: 1em 0
           font-size: .8em
           font-weight: bold
-          .number 
+          .number
             margin-right: .3em
         p
           font-size: 0.9em
@@ -314,7 +321,7 @@ body.mobilizations.show
           width: 100%
 
   .social-media
-    font-family: "Proxima Nova" 
+    font-family: "Proxima Nova"
     background-color: $dark-gray
     color: white
     padding: 0.7em
@@ -341,7 +348,7 @@ body.mobilizations.show
 
   .history
     .item
-      background-color: $mob-gray        
+      background-color: $mob-gray
       margin-bottom: 1em
       overflow: hidden
       +border-radius(3px)
@@ -352,7 +359,7 @@ body.mobilizations.show
         img
           height: 60px
       .content
-        background: white        
+        background: white
         .name
           font-weight: 600
           font-size: 1.2em
@@ -484,4 +491,3 @@ body.mobilizations.new, body.mobilizations.edit
     .hashtag
       .hint
         margin-top: 2em
-  
