@@ -11,6 +11,7 @@ describe Mobilization do
   it { should have_many(:problems) }
   it { should have_many(:petitions) }
   it { should belong_to(:user) }
+  it { should belong_to(:organization) }
 
   describe "#facebook_share_count" do
     subject { Mobilization.make! }
