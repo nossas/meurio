@@ -2,8 +2,7 @@
   - if activity.user
     = image_tag activity.user.avatar_url
     span.user= activity.user.name
-    |  
-    span.text= t "activity.#{activity.relname}"
-    |  
-    span.mobilization= link_to activity.mobilization.try(:short_title), activity.mobilization
-    span.created_at #{distance_of_time_in_words_to_now activity.created_at} atrás
+    span.text  #{t("activity.#{activity.relname}")}
+    span.mobilization  #{link_to(activity.mobilization.try(:short_title), activity.mobilization)}
+    span.created_at  #{distance_of_time_in_words_to_now activity.created_at} atrás
+    span.organization  · #{activity.mobilization.organization.name}
