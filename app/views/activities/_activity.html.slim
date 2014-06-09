@@ -1,7 +1,7 @@
 .activity class=[activity.relname]
   - if activity.user
-    = image_tag activity.user.avatar_url
-    span.user= activity.user.name
+    = link_to image_tag(activity.user.avatar_url), user_path(activity.user)
+    span.user= link_to activity.user.name, user_path(activity.user)
     span.text  #{t("activity.#{activity.relname}")}
     span.mobilization  #{link_to(activity.mobilization.try(:short_title), activity.mobilization)}
     span.created_at  #{distance_of_time_in_words_to_now activity.created_at} atrás
