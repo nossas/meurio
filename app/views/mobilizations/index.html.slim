@@ -1,35 +1,23 @@
 .main
   .row
     .item
-      .image.create
-        = image_tag 'icon-signup-01.png'
-      .content
-        h3 Você cria!
-        p Crie a sua própria mobilização usando um ou mais aplicativos da rede.
+      = image_tag 'icon-signup-01.png'
+      p Inicie sua própria mobilização ou colabore com mobilizações iniciadas por outras pessoas usando uma de nossas ferramentas
     .item
-      .image.participate
-        = image_tag 'icon-signup-02.png'
-      .content
-        h3 Você participa!
-        p Use seu tempo e talento para dar força às mobilizações nas redes e nas ruas.
+      = image_tag 'icon-signup-02.png'
+      p Conte com o apoio de uma equipe de profissionais especializados em fazer a sua mobilização bombar
     .item
-      .image.support
-        = image_tag 'icon-signup-03.png'
-      .content
-        h3 Você com a equipe a seu serviço!
-        p Receba suporte da equipe da rede para obter sucesso nas mobilizações.
+      = image_tag 'icon-signup-03.png'
+      p Veja sua cidade mudar para melhor!
+  .row
     .call-to-action
       - if current_user
-        .content
-          h2= "Bem vindo, #{current_user.first_name}!"
-          h3 Você já faz parte da rede!
-          h3 Veja e complete seu perfil
-        = link_to 'Veja seu Perfil', current_user, class: :btn
+        h2= "Bem vindo, #{current_user.first_name}!"
+        = link_to 'Veja seu Perfil', current_user, class: [:button, :radius, :large]
       - else
-        .content.not-signed
-          h2 Ainda não faz parte da rede?
-          h3 Crie sua conta agora!
-        = link_to 'Crie sua Conta', "http://accounts.#{ENV['MEURIO_DOMAIN']}/validate_email", class: :btn
+        h2 Ainda não faz parte da rede?
+        = link_to 'Entrar na Rede', "http://accounts.#{ENV['MEURIO_DOMAIN']}/validate_email", class: [:button, :radius, :large]
+
 .network#network
   .row
     .how-it-works
