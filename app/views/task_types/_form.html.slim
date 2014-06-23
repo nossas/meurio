@@ -13,7 +13,7 @@
   .row
     .mode_field
       = f.label 'Modo de realização'
-      = f.radio_button :mode, 'local' 
+      = f.radio_button :mode, 'local'
       = f.label :mode, 'Presencial', value: 'local', class: 'radio-option'
       = f.radio_button :mode, 'remote'
       = f.label :mode, 'À distância', value: 'remote', class: 'radio-option'
@@ -26,4 +26,4 @@
           .checkbox= check_box_tag "task_type[badge_ids][]", badge.id, @task_type.badge_ids.include?(badge.id), id: dom_id(badge)
           = render badge
   .row
-    .submit= f.submit 'Salvar', class: :btn
+    .submit= f.submit 'Salvar', class: [:button, :radius]

@@ -37,7 +37,7 @@
   .row#mobilizations-list{data-count = Mobilization.count}
   .row
     .load-more
-      a.btn-green#load_more_mobilizations_button href="#" + Veja mais
+      a.button.radius#load_more_mobilizations_button href="#" + Veja mais
       .loader Carregando...
 
 .vision#vision
@@ -120,7 +120,7 @@
           h2 Faça Acontecer!
           p Para manter esse trabalho, não precisamos de muito, mas precisamos de muitos! Muita gente que doa bem pouquinho mas faz essa ideia acontecer. Centenas de cariocas já são doadores mensais da Rede Meu Rio. Seja um deles você também!
       .donation
-        = link_to 'Contribua!', 'http://facaacontecer.meurio.org.br/', class: 'btn', target: :blank
+        = link_to 'Contribua!', 'http://facaacontecer.meurio.org.br/', class: [:button, :radius], target: :blank
 
 .net#net
   .row
@@ -142,13 +142,13 @@
   .funders
     #funders{data-count = User.funders.count}
     .funders-list
-      a.btn-green#load_more_funders_button href="#" Veja outros financiadores
+      a.button.radius#load_more_funders_button href="#" Veja outros financiadores
       .loader Carregando...
 
   .users
     #users{data-count = User.count}
     .users-list
-      a.btn-green#load_more_users_button href="#" Veja outros agitadores
+      a.button.radius#load_more_users_button href="#" Veja outros agitadores
       .loader Carregando...
 
   .team

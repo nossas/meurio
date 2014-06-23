@@ -3,7 +3,7 @@
     = form_for @user, validate: true, html: { id: "edit_user_image" } do |f|
       = image_tag @user.image.square.url, class: "user"
       = f.file_field :image
-      a.btn Alterar imagem
+      a.button.radius Alterar imagem
   .large-9.columns
     = form_for @user, validate: true do |f|
       .row.title
@@ -75,6 +75,6 @@
           = link_to 'Alterar minha senha', edit_user_registration_path
       .row.action
         .large-12.columns.submit
-          = f.submit 'Salvar Perfil', class: 'btn'
-          span  ou 
+          = f.submit 'Salvar Perfil', class: [:button, :radius]
+          span  ou
           = link_to 'Cancelar', edit_profile_path, class: :alert
