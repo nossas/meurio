@@ -14,11 +14,14 @@ body.mobilizations.index
       text-align: center
 
   .vision, .principles, .funding, .mobilizations, .net, .network
-    padding: 2em 0
+    padding: 2em 0 4em 0
     text-align: center
     font-size: .9em
     p
       margin-bottom: 2em
+
+  .principles, .mobilizations
+    margin-top: -44px
 
   .main, .principles, .mobilizations, .net, .slide-divisor
     p, h2, h3, h4
@@ -93,16 +96,20 @@ body.mobilizations.index
   .vision
     .vision-title
       +grid-column(8, nil, nil, 2)
-    .vision-list
-      +grid-column(8, nil, nil, 2)
-    .infographic
-      height: 300px
-      background: gray
-    ul
-      text-align: left
+      margin-bottom: 3em
+    .vision-item
+      font-size: .9em
+      strong
+        font-size: 1.2em
+        margin-bottom: .5em
+        display: block
+        color: $primary-color
+      +grid-column(2)
+      &:first-child
+        +grid-column(2, false, false, 1)
 
   .mobilizations
-    background: image-url("bg-02.jpg") top center
+    background: darken($primary-color, 10%)
     .mobilizations-title
       +grid-column(8, nil, nil, 2)
     .mobilization
@@ -137,7 +144,7 @@ body.mobilizations.index
         color: white
 
   .principles
-    background: image-url("bg-03.jpg") top center
+    background: darken($primary-color, 10%)
     .principles-title
       +grid-column(8, nil, nil, 2)
     .principles-list
@@ -160,35 +167,22 @@ body.mobilizations.index
 
   .funding
     .funding-title
-      +grid-column(8, nil, nil, 2)
-    .description
-      padding: 1em 0
-      text-align: left
-      font-size: .8em
-    .donation
-      padding: 3em 1em
-      font-size: .9em
-    .infographic
-      height: 300px
-    .crowdfunding, .infographic
-      background: #F8F8F8
-      +border-radius(5px)
-      margin-bottom: 2em
-      .description
-        padding: 1em
-        .text
-          padding-top: 1em
-          border-right: 1px solid $lightest_gray
-          text-align: left
-          height: 100%
-      .donation
-        padding: 5em 1em
+      +grid-column(8, nil, true)
     .crowdfunding
-      +grid-column(12)
-      .description
+      background: $lightest_gray
+      padding: 2em
+      +border-radius(5px)
+      .text
         +grid-column(9)
+        text-align: left
+        p
+          margin: 0
+        h2
+          margin-top: 0
       .donation
         +grid-column(3)
+        padding-top: 35px
+        text-align: right
 
   .net
     background: image-url("bg-03.jpg") top center $green

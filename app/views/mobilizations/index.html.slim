@@ -31,10 +31,12 @@
       h2 Atividade recente dos membros
       = render Activity.where("user_id IS NOT NULL").order("created_at DESC").limit(5)
 
+.slide-divisor
+  h2 Uma Rede de mobilizações
+
 .mobilizations#mobilizations
   .row
     .mobilizations-title
-      h2 Uma Rede de mobilizações
       p Essas são as mobilizações imaginadas, criadas, apoiadas e compartilhadas pelos membros que formam essa grande Rede em prol de um Rio de Janeiro melhor. Saiba mais sobre elas e una-se à Rede Meu Rio!
   .row#mobilizations-list{data-count = Mobilization.count}
   .row
@@ -42,33 +44,36 @@
       a.button.radius#load_more_mobilizations_button href="#" + Veja mais
       .loader Carregando...
 
+.slide-divisor
+  h2 Visão de cidade
+
 .vision#vision
   .row
     .vision-title
-      h2 Visão de cidade
       p A Rede Meu Rio é feita de milhares de cidadãos com diferentes opiniões sobre os mais variados temas. Essa diversidade não os impede de trabalharem juntos por uma visão de cidade comum com 5 características principais.
-    .vision-list
-      ul
-        li
-          strong Democracia
-          | - O cidadão é dono da cidade, e mais ninguém.
-        li
-          strong Participação
-          | - O cidadão participa das decisões que governam a cidade.
-        li
-          strong Controle Social
-          | - O cidadão fiscaliza as ações do poder público.
-        li
-          strong Espaço Público
-          | - O cidadão tem acesso à cidade.
-        li
-          strong Cultura Política
-          | - O cidadão existe politicamente, em direitos e deveres.
+    .row
+      .vision-item
+        strong Democracia
+        | O cidadão é dono da cidade, e mais ninguém.
+      .vision-item
+        strong Participação
+        | O cidadão participa das decisões que governam a cidade.
+      .vision-item
+        strong Controle Social
+        | O cidadão fiscaliza as ações do poder público.
+      .vision-item
+        strong Espaço Público
+        | O cidadão tem acesso à cidade.
+      .vision-item
+        strong Cultura Política
+        | O cidadão existe politicamente, em direitos e deveres.
+
+.slide-divisor
+  h2 Princípios da ação em Rede
 
 .principles#principles
   .row
     .principles-title
-      h2 Princípios da ação em Rede
       p Tão importante quanto os objetivos a serem alcançados em uma mobilização é a forma como ela é realizada. Os fins são produtos do meio.
     .principles-list
       .row
@@ -111,18 +116,19 @@
           h3 Diálogo
           p As mobilizações buscam diálogo com os representantes eleitos e indicados, e com toda a sociedade.
 
+.slide-divisor
+  h2 O Financiamento da Rede
+
 .funding#funding
   .row
     .funding-title
-      h2 O Financiamento da Rede
       p A independência da Rede Meu Rio é fundamental para a idoneidade e efetividade das mobilizações. Por isso, a equipe multidisciplinar de profissionais e a infraestrutura online e offline do Meu Rio não podem ser financiadas por dinheiro proveniente de governos, de partidos, de empresas públicas e de concessionárias de serviços públicos.
     .crowdfunding
-      .description
+      .row
         .text
           h2 Faça Acontecer!
           p Para manter esse trabalho, não precisamos de muito, mas precisamos de muitos! Muita gente que doa bem pouquinho mas faz essa ideia acontecer. Centenas de cariocas já são doadores mensais da Rede Meu Rio. Seja um deles você também!
-      .donation
-        = link_to 'Contribua!', 'http://facaacontecer.meurio.org.br/', class: [:button, :radius], target: :blank
+        .donation= link_to 'Contribua!', 'http://facaacontecer.meurio.org.br/', class: [:button, :radius, :large], target: :blank
 
 .net#net
   .row
