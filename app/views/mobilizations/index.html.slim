@@ -24,11 +24,11 @@
 .network#network
   .row
     .how-it-works
-      p A Rede Mobilizadora Meu Rio é formada por cariocas, de nascença e de coração, que se mobilizam para participar ativamente dos processos de decisão da cidade.
-      p Todas as mobilizações criadas por esses cariocas ganham o apoio de uma equipe multidisciplinar de profissionais que mantém ativas os aplicativos como o #{link_to "Panela de Pressão", "http://paneladepressao.org.br/"}, o #{link_to "Imagine", "http://imagine.meurio.org.br/"} e o #{link_to "De Olho", "http://deolho.meurio.org.br/"}. Baseada em critérios públicos, essa equipe seleciona algumas das mobilizações para dar um suporte ainda maior, com estratégia, pesquisa, articulação e comunicação.
-      p A equipe também facilita a comunicação entre os membros da Rede Meu Rio para que eles se auxiliem, dedicando voluntariamente seu tempo e seus talentos para aumentar o impacto de suas mobilizações.
+      p A Rede Minhas Cidades é feita por pessoas que acreditam que cidades melhores começam com cidadãos mais ativos, conectados e engajados. Aqui, qualquer pessoa pode começar uma mobilização, disponibilizar tempo e talento para dar aquela força pra mobilização iniciada por outros, colaborar com uma comunidade de centenas de milhares de membros para desenvolver soluções urbanas, se cadastrar para vigiar espaços públicos, fazer uma doação para manter nosso trabalho de pé, e muito mais.
+      p Já estamos no Rio de Janeiro e em São Paulo, e em breve levaremos esse modelo a outras cidades do Brasil e do mundo. Para ser avisado quando a Rede chegar na sua cidade, não deixe de #{link_to "preencher seu perfil", ENV["MEURIO_ACCOUNTS_URL"]}.
+      p Juntos, estamos criando cidades mais inclusivas, sustentáveis, criativas, acessíveis e gostosas de se viver. Juntos, estamos mostrando que a cidade é nossa. Faça parte você também!
     .users_activities
-      h2 Atividade recente dos membros
+      h2 Atividade recente dos membros na Rede
       = render Activity.where("user_id IS NOT NULL").order("created_at DESC").limit(5)
 
 .slide-divisor
@@ -74,7 +74,7 @@
 .principles#principles
   .row
     .principles-title
-      p Tão importante quanto os objetivos a serem alcançados em uma mobilização é a forma como ela é realizada. Os fins são produtos do meio.
+      h3 Tão importante quanto os objetivos a serem alcançados em uma mobilização é a forma como ela é realizada. Os fins são produtos do meio.
     .principles-list
       .row
         .principle
@@ -130,11 +130,13 @@
           p Para manter esse trabalho, não precisamos de muito, mas precisamos de muitos! Muita gente que doa bem pouquinho mas faz essa ideia acontecer. Centenas de cariocas já são doadores mensais da Rede Meu Rio. Seja um deles você também!
         .donation= link_to 'Contribua!', 'http://facaacontecer.meurio.org.br/', class: [:button, :radius, :large], target: :blank
 
+.slide-divisor
+  h2 Quem trabalha em Rede
+
 .net#net
   .row
     .net-title
-      h2 Quem trabalha em Rede
-      p Somos milhares de cidadãos envolvidos nas mobilizações políticas da cidade. Compartilhamos dinheiro, muitas horas de trabalho, inúmeros talentos e entusiasmo de sobra por um Rio de Janeiro melhor.
+      h3 Somos milhares de cidadãos envolvidos nas mobilizações políticas da cidade. Compartilhamos dinheiro, muitas horas de trabalho, inúmeros talentos e entusiasmo de sobra por um Rio de Janeiro melhor.
   .buttons.row
     .net-people
       = link_to "#funders", id: :funders_button do
