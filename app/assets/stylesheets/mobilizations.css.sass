@@ -1,6 +1,18 @@
 body.mobilizations.index
   .page-wrap
     padding: 0
+
+  .slide-divisor
+    text-align: center
+    &:after
+      +css-triangle(20px, $dark-gray, top)
+      display: inline-block
+    h2
+      background: $dark-gray
+      padding: 1em 0
+      margin: 0
+      text-align: center
+
   .vision, .principles, .funding, .mobilizations, .net, .network
     padding: 2em 0
     text-align: center
@@ -8,7 +20,7 @@ body.mobilizations.index
     p
       margin-bottom: 2em
 
-  .main, .principles, .mobilizations, .net
+  .main, .principles, .mobilizations, .net, .slide-divisor
     p, h2, h3, h4
       color: white
 
@@ -36,13 +48,32 @@ body.mobilizations.index
     text-align: left
     .how-it-works, .users_activities
       +grid-column(6)
+      h2
+        background: $lightest_gray
+        color: $dark-gray
+        font-size: 1em
+        text-align: center
+        font-weight: bold
+        padding: .25em
+        +border-radius(3px)
     .activity
       clear: both
       font-size: .9em
       line-height: 16px
       margin-bottom: .5em
       padding: 1em
-      background: #f9f9f9
+      border-left: 4px solid $lightest_gray
+      position: relative
+      &:after
+        content: ""
+        width: 20px
+        height: 20px
+        border: 3px solid white
+        position: absolute
+        background: $lightest_gray
+        top: 28px
+        left: -12px
+        +border-radius(100%)
       span.user
         font-weight: bold
       img
@@ -53,6 +84,11 @@ body.mobilizations.index
         +border-radius(100%)
       span.mobilization
         display: block
+        font-weight: bold
+        a
+          color: $orange
+      span.organization, span.created_at
+        font-size: .9em
 
   .vision
     .vision-title
