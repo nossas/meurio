@@ -1,39 +1,29 @@
 .main
   .row
     .item
-      .image.create
-        = image_tag 'icon-signup-01.png'
-      .content
-        h3 Você cria!
-        p Crie a sua própria mobilização usando um ou mais aplicativos da rede.
+      = image_tag 'icon-signup-01.png'
+      p Inicie sua própria mobilização ou colabore com mobilizações iniciadas por outras pessoas usando uma de nossas ferramentas
     .item
-      .image.participate
-        = image_tag 'icon-signup-02.png'
-      .content
-        h3 Você participa!
-        p Use seu tempo e talento para dar força às mobilizações nas redes e nas ruas.
+      = image_tag 'icon-signup-02.png'
+      p Conte com o apoio de uma equipe de profissionais especializados em fazer a sua mobilização bombar
     .item
-      .image.support
-        = image_tag 'icon-signup-03.png'
-      .content
-        h3 Você com a equipe a seu serviço!
-        p Receba suporte da equipe da rede para obter sucesso nas mobilizações.
+      = image_tag 'icon-signup-03.png'
+      p Veja sua cidade mudar para melhor!
+  .row
     .call-to-action
       - if current_user
-        .content
-          h2= "Bem vindo, #{current_user.first_name}!"
-          h3 Você já faz parte da rede!
-          h3 Veja e complete seu perfil
-        = link_to 'Veja seu Perfil', current_user, class: :btn
+        h2= "Bem vindo, #{current_user.first_name}!"
+        = link_to 'Veja seu Perfil', current_user, class: [:button, :radius, :large]
       - else
-        .content.not-signed
-          h2 Ainda não faz parte da rede?
-          h3 Crie sua conta agora!
-        = link_to 'Crie sua Conta', "http://accounts.#{ENV['MEURIO_DOMAIN']}/validate_email", class: :btn
+        h2 Ainda não faz parte da rede?
+        = link_to 'Entrar na Rede', "http://accounts.#{ENV['MEURIO_DOMAIN']}/validate_email", class: [:button, :radius, :large]
+
+.slide-divisor
+  h2 Como funciona a Rede?
+
 .network#network
   .row
     .how-it-works
-      h2 Como funciona a Rede
       p A Rede Mobilizadora Meu Rio é formada por cariocas, de nascença e de coração, que se mobilizam para participar ativamente dos processos de decisão da cidade.
       p Todas as mobilizações criadas por esses cariocas ganham o apoio de uma equipe multidisciplinar de profissionais que mantém ativas os aplicativos como o #{link_to "Panela de Pressão", "http://paneladepressao.org.br/"}, o #{link_to "Imagine", "http://imagine.meurio.org.br/"} e o #{link_to "De Olho", "http://deolho.meurio.org.br/"}. Baseada em critérios públicos, essa equipe seleciona algumas das mobilizações para dar um suporte ainda maior, com estratégia, pesquisa, articulação e comunicação.
       p A equipe também facilita a comunicação entre os membros da Rede Meu Rio para que eles se auxiliem, dedicando voluntariamente seu tempo e seus talentos para aumentar o impacto de suas mobilizações.
@@ -49,7 +39,7 @@
   .row#mobilizations-list{data-count = Mobilization.count}
   .row
     .load-more
-      a.btn-green#load_more_mobilizations_button href="#" + Veja mais
+      a.button.radius#load_more_mobilizations_button href="#" + Veja mais
       .loader Carregando...
 
 .vision#vision
@@ -132,7 +122,7 @@
           h2 Faça Acontecer!
           p Para manter esse trabalho, não precisamos de muito, mas precisamos de muitos! Muita gente que doa bem pouquinho mas faz essa ideia acontecer. Centenas de cariocas já são doadores mensais da Rede Meu Rio. Seja um deles você também!
       .donation
-        = link_to 'Contribua!', 'http://facaacontecer.meurio.org.br/', class: 'btn', target: :blank
+        = link_to 'Contribua!', 'http://facaacontecer.meurio.org.br/', class: [:button, :radius], target: :blank
 
 .net#net
   .row
@@ -154,13 +144,13 @@
   .funders
     #funders{data-count = User.funders.count}
     .funders-list
-      a.btn-green#load_more_funders_button href="#" Veja outros financiadores
+      a.button.radius#load_more_funders_button href="#" Veja outros financiadores
       .loader Carregando...
 
   .users
     #users{data-count = User.count}
     .users-list
-      a.btn-green#load_more_users_button href="#" Veja outros agitadores
+      a.button.radius#load_more_users_button href="#" Veja outros agitadores
       .loader Carregando...
 
   .team

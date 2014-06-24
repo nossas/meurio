@@ -29,6 +29,13 @@ GIT
       redcarpet (~> 2.0)
       rinku (~> 1.5.0)
 
+GIT
+  remote: git://github.com/meurio/meurio_ui.git
+  revision: e1d1bbda1f2e0901f40cc7e8d6d951eeab4616ca
+  branch: minhascidades
+  specs:
+    meurio_ui (1.4.4)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -178,7 +185,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meurio_ui (1.4.4)
     mime-types (1.25.1)
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
@@ -340,7 +346,7 @@ DEPENDENCIES
   koala
   launchy
   machinist (>= 2.0.0.beta2)
-  meurio_ui
+  meurio_ui!
   mini_magick
   newrelic_rpm
   pg (~> 0.16.0)

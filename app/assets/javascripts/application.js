@@ -57,30 +57,31 @@ $(document).bind('reveal.facebox', function() {
 
 // Initialization
 $(function(){
+  $(document).foundation();
   flash();
   maskElements();
   $('a[rel*=facebox]').facebox();
-  
+
   $(".twitter-share-button").click(function(event){
     window.open(
-      $(event.target).attr("href"), 
-      'twitter-share-dialog', 
+      $(event.target).attr("href"),
+      'twitter-share-dialog',
       'width=550,height=450'
-    ); 
+    );
     return false;
   });
 
   $(".facebook-share-button").click(function(event){
     window.open(
-      $(event.target).attr("href"), 
-      'facebox-share-dialog', 
+      $(event.target).attr("href"),
+      'facebox-share-dialog',
       'width=626,height=436'
-    ); 
+    );
     return false;
   });
 
   $(document).on('click', ".application_menu a", function (e) {
-    var target = this.hash, $target = $(target);   
+    var target = this.hash, $target = $(target);
 
     $('html, body').stop().animate({
       'scrollTop': $target.offset().top

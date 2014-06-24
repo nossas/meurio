@@ -1,6 +1,18 @@
 body.mobilizations.index
   .page-wrap
     padding: 0
+
+  .slide-divisor
+    text-align: center
+    &:after
+      +css-triangle(20px, $dark-gray, top)
+      display: inline-block
+    h2
+      background: $dark-gray
+      padding: 1em 0
+      margin: 0
+      text-align: center
+
   .vision, .principles, .funding, .mobilizations, .net, .network
     padding: 2em 0
     text-align: center
@@ -8,61 +20,60 @@ body.mobilizations.index
     p
       margin-bottom: 2em
 
-  .main, .principles, .mobilizations, .net
+  .main, .principles, .mobilizations, .net, .slide-divisor
     p, h2, h3, h4
       color: white
 
   .main
-    background: image-url("bg-01.jpg") top center
-    padding: 4em 0
+    background: image-url("bg-01.jpg") bottom center
+    padding: 3em 0
     text-align: center
-    h3
-      font-size: 1em
-    p
-      line-height: 1.1em
-      font-size: .8em
     .item
-      +grid-column(3)
-      .image
-        height: 160px
-        &.participate
-          padding-top: 30px
-        &.support
-          padding-top: 20px
-      h3
-        color: $title-green
-        font-weight: bold
-        line-height: 1em
+      +grid-column(4)
+      img
+        height: 154px
+        margin-bottom: 1em
+      p
+        line-height: 1.1em
+        font-size: .9em
     .call-to-action
-      +grid-column(3)
-      .content
-        min-height: 160px
-        text-align: left
-        padding-top: 3em
-        &.not-signed
-          padding-top: 2em
-          font-size: 1.2em
-      h2, h3
-        margin: 0
+      +grid-column(4, false, true)
+      margin-top: 1em
       h2
         font-size: 1.2em
         font-weight: bold
-    .btn
-      width: 100%
-      padding: 1em 0
-      margin-top: .4em
+        margin: 0 0 .5em 0
 
   .network
     text-align: left
     .how-it-works, .users_activities
       +grid-column(6)
+      h2
+        background: $lightest_gray
+        color: $dark-gray
+        font-size: 1em
+        text-align: center
+        font-weight: bold
+        padding: .25em
+        +border-radius(3px)
     .activity
       clear: both
       font-size: .9em
       line-height: 16px
       margin-bottom: .5em
       padding: 1em
-      background: #f9f9f9
+      border-left: 4px solid $lightest_gray
+      position: relative
+      &:after
+        content: ""
+        width: 20px
+        height: 20px
+        border: 3px solid white
+        position: absolute
+        background: $lightest_gray
+        top: 28px
+        left: -12px
+        +border-radius(100%)
       span.user
         font-weight: bold
       img
@@ -73,6 +84,11 @@ body.mobilizations.index
         +border-radius(100%)
       span.mobilization
         display: block
+        font-weight: bold
+        a
+          color: $orange
+      span.organization, span.created_at
+        font-size: .9em
 
   .vision
     .vision-title
@@ -152,11 +168,6 @@ body.mobilizations.index
     .donation
       padding: 3em 1em
       font-size: .9em
-      .btn
-        width: 100%
-        padding: .6em
-        text-transform: none
-        font-weight: bolder
     .infographic
       height: 300px
     .crowdfunding, .infographic
@@ -172,12 +183,6 @@ body.mobilizations.index
           height: 100%
       .donation
         padding: 5em 1em
-        .btn
-          width: 100%
-          padding: .4em
-          text-transform: none
-          font-weight: bolder
-          font-size: 1.4em
     .crowdfunding
       +grid-column(12)
       .description
@@ -273,12 +278,12 @@ body.mobilizations.show
         color: white
       h1
         font-weight: bolder
-        font-family: Proxima Nova
+        font-family: Proxima Nova Soft
         font-size: 2em
         line-height: 1em
       p
         font-weight: bold
-        font-family: "Proxima Nova"
+        font-family: "Proxima Nova Soft"
         font-size: 0.9em
         line-height: 1.2em
       .organization
@@ -320,14 +325,9 @@ body.mobilizations.show
         p
           font-size: 0.9em
           line-height: 1.2em
-        .btn
-          text-align: center
-          text-transform: normal !important
-          padding: .6em
-          width: 100%
 
   .social-media
-    font-family: "Proxima Nova"
+    font-family: "Proxima Nova Soft"
     background-color: $dark-gray
     color: white
     padding: 0.7em
@@ -373,12 +373,8 @@ body.mobilizations.show
         .description
           font-size: .9em
           padding: 0 1.2em
-        .btn
-          text-align: center
-          font-size: .9em
-          padding: .6em
+        .button
           margin: 1.2em
-          width: 40%
 
   .data
     .row

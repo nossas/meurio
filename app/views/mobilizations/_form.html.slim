@@ -36,7 +36,6 @@
         span A imagem ideal deve ter 400 x 400px. Caso nenhuma imagem seja selecionada, a imagem de fundo será usada como thumbnail.
   .row.action
     .large-6.columns.submit
-      = f.submit nil, class: 'btn'
-    .large-6.columns.cancel
-      span ou
-      = link_to 'Cancelar', root_path
+      = f.submit nil, class: [:button, :radius]
+      span= " ou "
+      = link_to 'Cancelar', root_path, class: :alert
