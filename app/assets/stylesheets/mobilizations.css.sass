@@ -303,6 +303,8 @@ body.mobilizations.show
       background: white
       width: 100%
       overflow: hidden
+      .button
+        margin: 0
       .title
         font-weight: bolder
       #action-header
@@ -339,7 +341,6 @@ body.mobilizations.show
 
   .share
     text-align: center
-    background: white
     padding: .5em 0
     .twitter-share-button
       color: $tw_blue
@@ -358,7 +359,8 @@ body.mobilizations.show
 
   .history
     .item
-      background-color: $mob-gray
+      background-color: $lightest_gray
+      border: 1px solid #e6e7e8
       margin-bottom: 1em
       overflow: hidden
       +border-radius(3px)
@@ -387,6 +389,7 @@ body.mobilizations.show
       clear: both
       margin-bottom: 1.5em
       .counter
+        margin-right: 5px
         font-size: 1.25em
       .counter_label, .counter
         font-weight: bold
