@@ -113,7 +113,7 @@ body.mobilizations.index
           color: $primary-color
 
   .mobilizations
-    background: darken($primary-color, 10%)
+    +background(linear-gradient(top, darken($primary-color, 10%), darken($primary-color, 15%)))
     .mobilizations-title
       +grid-column(12)
       h3
@@ -150,7 +150,7 @@ body.mobilizations.index
         color: white
 
   .principles
-    background: darken($primary-color, 10%)
+    +background(linear-gradient(top left, darken($primary-color, 10%), darken($primary-color, 30%)))
     .principles-title
       +grid-column(12)
       h3
@@ -193,7 +193,7 @@ body.mobilizations.index
         text-align: right
 
   .net
-    background: darken($primary-color, 10%)
+    +background(linear-gradient(right, darken($primary-color, 10%), darken($primary-color, 30%)))
     .net-title
       +grid-column(12)
     .net-people
