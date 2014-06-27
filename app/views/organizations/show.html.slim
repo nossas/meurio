@@ -2,4 +2,4 @@
 = content_for(:image) { @organization.avatar_url }
 
 .organization
-  = render 'meurio'
+  = render @organization.slug rescue nil
