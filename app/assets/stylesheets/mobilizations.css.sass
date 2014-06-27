@@ -13,14 +13,14 @@ body.mobilizations.index
       margin: 0
       text-align: center
 
-  .vision, .principles, .funding, .mobilizations, .net, .network
+  .vision, .principles, .funding, .cities, .mobilizations, .net, .network
     padding: 2em 0 4em 0
     text-align: center
     font-size: .9em
     p
       margin-bottom: 2em
 
-  .principles, .mobilizations, .net, .funding, .vision, .network
+  .principles, .cities, .mobilizations, .net, .funding, .vision, .network
     margin-top: -44px
 
   .main, .principles, .mobilizations, .net, .slide-divisor
@@ -111,6 +111,17 @@ body.mobilizations.index
           display: block
           font-size: 1.5em
           color: $primary-color
+
+  .cities
+    +background(linear-gradient(top, darken($primary-color, 10%), darken($primary-color, 15%)))
+    padding: 6em 0 8em 0
+    .city
+      +grid-column(6)
+      padding: 0 3em
+      &.meurio
+        text-align: right
+      &.minhasampa
+        text-align: left
 
   .mobilizations
     +background(linear-gradient(top, darken($primary-color, 10%), darken($primary-color, 15%)))
