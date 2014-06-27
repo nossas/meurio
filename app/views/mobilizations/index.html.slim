@@ -37,9 +37,9 @@
 .cities#cities
   .row
     .city.meurio
-      = image_tag 'marca-mr.png'
+      = link_to image_tag('marca-mr.png'), Organization.find_by(slug: 'meurio')
     .city.minhasampa
-      = image_tag 'marca-mr.png'
+      = link_to image_tag('marca-mr.png'), Organization.find_by(slug: 'minhasampa')
 
 .slide-divisor
   h2 Uma Rede de mobilizações
