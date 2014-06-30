@@ -1,9 +1,11 @@
 Meurio::Application.routes.draw do
+  get "organizations/show"
   root 'mobilizations#index'
 
   resources :mobilizations
   resources :task_types, except: [:destroy]
   resources :badges, except: [:show]
+  resources :organizations, only: [:show]
   resources :users, only: [:index, :show]
   resources :rewards, only: [:create]
 

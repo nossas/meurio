@@ -32,6 +32,16 @@
       = render Activity.where("user_id IS NOT NULL").order("created_at DESC").limit(5)
 
 .slide-divisor
+  h2 Uma Rede de cidades
+
+.cities#cities
+  .row
+    .city.meurio
+      = link_to image_tag('marca-mr.png'), Organization.find_by(slug: 'meurio')
+    .city.minhasampa
+      = link_to image_tag('marca-mr.png'), Organization.find_by(slug: 'minhasampa')
+
+.slide-divisor
   h2 Uma Rede de mobilizações
 
 .mobilizations#mobilizations

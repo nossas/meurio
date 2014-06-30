@@ -1,0 +1,45 @@
+body.organizations.show
+  .page-wrap
+    padding: 0 0 60px 0
+  .cover
+    overflow: hidden
+    padding: 6em 0 4em 0
+    .content
+      +grid-column(8, $center: true)
+      text-align: center
+      p
+        color: white
+        margin-top: 2em
+  section
+    .header
+      text-align: center
+      padding: 1.5em 0
+      background: #333
+      position: relative
+      &.light
+        background: $blue
+      h2
+        color: white
+        font-size: 1.5em
+    .header:before
+      border-left: 15px solid transparent
+      border-right: 15px solid transparent
+      border-top: 15px solid #333
+      position: absolute
+      bottom: -0.85em
+      content: ""
+    .header.light:before
+      border-top: 15px solid $blue
+
+    .copy
+      +grid-column(10, $center: true)
+      padding: 4em 0 2em 0
+      p
+        font-size: 1em
+        color: black
+
+  .meurio .cover
+    background: image-url("institucionais/capaMR.jpg") center top
+  .minhasampa .cover
+    background: image-url("institucionais/capaMSP.jpg") center top
+      

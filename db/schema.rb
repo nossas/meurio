@@ -243,6 +243,7 @@ ActiveRecord::Schema.define(version: 20140630124402) do
     t.string   "city"
     t.string   "avatar"
     t.string   "name"
+    t.string   "slug"
   end
 
   create_table "rewards", force: true do |t|
