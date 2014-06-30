@@ -36,7 +36,7 @@
 
 .cities#cities
   .row
-    - Organization.all.each do |organization|
+    - Organization.order(:created_at).all.each do |organization|
       .city
         = link_to image_tag(organization.avatar_url, alt: organization.try(:name)), organization
 
