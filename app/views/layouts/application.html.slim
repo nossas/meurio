@@ -29,13 +29,13 @@ html
     = render 'layouts/flash', locals: { flash: flash } unless flash.empty?
 
     - content_for :current_user_links do
-      li= link_to "Nova mobilização", new_mobilization_path
+      li= link_to "Novo tema", new_mobilization_path
       li= link_to "Badges", badges_path if can? :manage, Badge
       li= link_to "Tipos de Tarefa", task_types_path if can? :manage, TaskType
 
     - content_for :application_menu do
       = link_to "A Rede", root_path + "#network"
-      = link_to "Mobilizações", root_path + "#mobilizations"
+      = link_to "Temas", root_path + "#mobilizations"
       = link_to "Cidades", root_path + "#cities"
       = link_to "Visão de Cidade", root_path + "#vision"
       = link_to "Princípios", root_path + "#principles"

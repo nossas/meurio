@@ -51,7 +51,7 @@
     .row
       .large-12.columns
         span
-          | Compartilhe essa mobilização nas redes sociais usando a hashtag #
+          | Compartilhe esse tema nas redes sociais usando a hashtag #
           strong= @mobilization.hashtag
   .share
     .row
@@ -62,7 +62,7 @@
 .row
   .large-8.small-12.columns
     .history
-      h2 História da Mobilização
+      h2 História do tema
       - if @mobilization.hashtag == 'SaneamentoÉBásico'
         .item.vds
           .large-2.small-2.columns
@@ -88,7 +88,7 @@
     .images
       h2 Imagens
       - if @mobilization.images.empty?
-        .empty Esta mobilização ainda não possui imagens :(
+        .empty Este tema ainda não possui imagens :(
       - else
         = render @mobilization.images
 
@@ -139,15 +139,15 @@
     .clippings
       h2 Imprensa
       - if @mobilization.clippings.empty?
-        .empty Esta mobilização ainda não possui clippings
+        .empty Este tema ainda não possui clippings
       - else
         = render @mobilization.clippings
 
     .comments
       h2 Nas redes
       .tip
-        | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre essa mobilização nas redes sociais.
+        | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre esse tema nas redes sociais.
       - if @comments.empty?
-        .empty Esta mobilização ainda não possui comentários :\
+        .empty Este tema ainda não possui comentários :\
       - else
         = render @comments

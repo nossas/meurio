@@ -211,11 +211,11 @@ pt-BR:
       <<: *errors
     models:
       mobilization:
-        one: Mobilização
-        other: Mobilizações
+        one: Tema
+        other: Temas
     attributes:
       mobilization:
-        title: "Nome da Mobilização"
+        title: "Nome do Tema"
         short_title: "Título curto"
         description: "Descrição"
         image: "Imagem de fundo"
@@ -293,12 +293,12 @@ pt-BR:
   facebook_posts: "no Facebook"
   tweets: "no Twitter"
   activity:
-    pokes: "pressionou na mobilização"
-    campaigns: "criou uma campanha na mobilização"
-    problems: "criou um problema na mobilização"
-    ideas: "criou uma ideia na mobilização"
-    task_subscriptions: "aceitou realizar uma tarefa da mobilização"
-    accepted_deliveries: "realizou uma tarefa da mobilização"
+    pokes: "pressionou no tema"
+    campaigns: "criou uma campanha no tema"
+    problems: "criou um problema no tema"
+    ideas: "criou uma ideia no tema"
+    task_subscriptions: "aceitou realizar uma tarefa no tema"
+    accepted_deliveries: "realizou uma tarefa no tema"
   mode:
     local: Presencial
     remote: À distância
