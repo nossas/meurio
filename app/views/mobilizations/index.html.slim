@@ -36,9 +36,10 @@
 
 .cities#cities
   .row
-    - Organization.order(:id).all.each do |organization|
-      .city
-        = link_to image_tag(organization.avatar_url, alt: organization.try(:name)), organization
+    .city
+      = link_to image_tag('institucionais/mr_logo_inst.png', alt: 'Meu Rio'), Organization.find_by(slug: 'meurio')
+    .city
+      = link_to image_tag('institucionais/msp_logo_inst.jpg', alt: 'Minha Sampa'), Organization.find_by(slug: 'minhasampa')
 
 .slide-divisor
   h2 Uma Rede de mobilizações
