@@ -36,10 +36,9 @@
 
 .cities#cities
   .row
-    .city.meurio
-      = link_to image_tag('marca-mr.png'), Organization.find_by(slug: 'meurio')
-    .city.minhasampa
-      = link_to image_tag('marca-mr.png'), Organization.find_by(slug: 'minhasampa')
+    - Organization.all.each do |organization|
+      .city
+        = link_to image_tag(organization.avatar_url, alt: organization.try(:name)), organization
 
 .slide-divisor
   h2 Uma Rede de mobilizações
