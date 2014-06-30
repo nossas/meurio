@@ -12,12 +12,11 @@ class Mobilization < ActiveRecord::Base
   has_many :clippings, primary_key: :hashtag, foreign_key: :hashtag
   has_many :petitions, primary_key: :hashtag, foreign_key: :hashtag
   belongs_to :user
-  belongs_to :organization
 
   mount_uploader :image, MobilizationUploader
   mount_uploader :thumbnail, MobilizationUploader
 
-  validates_presence_of :title, :short_title, :hashtag, :description, :organization_id
+  validates_presence_of :title, :short_title, :hashtag, :description
   validates_presence_of :image, on: :create
 
   before_save { self.hashtag.gsub!('#', '') }

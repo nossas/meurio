@@ -9,7 +9,6 @@ Mobilization.blueprint do
   image         { File.open("#{Rails.root}/features/support/image.jpeg") }
   hashtag       { Faker::Lorem.word }
   user          { User.make! }
-  organization  { Organization.make! }
 end
 
 Campaign.blueprint do

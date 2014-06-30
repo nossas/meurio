@@ -90,7 +90,7 @@ body.mobilizations.index
         font-weight: bold
         a
           color: $orange
-      span.organization, span.created_at
+      span.created_at
         font-size: .9em
 
   .vision
@@ -125,21 +125,14 @@ body.mobilizations.index
         +border-radius(5px)
         overflow: hidden
         position: relative
-        .title_and_city
+        .title
           background: white
           position: absolute
           bottom: 0
           padding: 1em
           width: 100%
           text-align: left
-          .title
-            font-weight: bolder
-            margin-bottom: .25em
-          .city
-            &:before
-              position: relative
-              top: 2px
-              margin-right: .25em
+          font-weight: bolder
     .load-more
       +grid-column(12)
       #load_more_mobilizations_button
@@ -291,13 +284,6 @@ body.mobilizations.show
         font-family: "Proxima Nova Soft"
         font-size: 0.9em
         line-height: 1.2em
-      .organization
-        color: white
-        img
-          width: 50px
-          height: 50px
-          margin-right: .25em
-          +border-radius(100%)
     #action-of-the-day
       +border-radius(5px)
       margin-top: 1em

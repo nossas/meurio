@@ -4,12 +4,9 @@
       = f.label :title
       = f.text_field :title
   .row
-    .large-6.columns
+    .large-12.columns
       = f.label :short_title
       = f.text_field :short_title
-    .large-6.columns
-      = f.label :organization_id
-      = f.select :organization_id, @organizations.map{|c| [c.city, c.id]}, include_blank: true
   .row.hashtag
     .large-6.columns
       = f.label :hashtag

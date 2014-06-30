@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528121157) do
+ActiveRecord::Schema.define(version: 20140630124402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -225,14 +225,6 @@ ActiveRecord::Schema.define(version: 20140528121157) do
     t.integer  "like_count"
   end
 
-  create_table "organizations", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "city"
-    t.string   "avatar"
-    t.string   "name"
-  end
-
   create_table "mobilizations", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -243,9 +235,14 @@ ActiveRecord::Schema.define(version: 20140528121157) do
     t.string   "short_title"
     t.integer  "user_id"
     t.string   "thumbnail"
-    t.integer  "organization_id", null: false
-    t.index ["organization_id"], :name => "fk__mobilizations_organization_id", :order => {"organization_id" => :asc}
-    t.foreign_key ["organization_id"], "organizations", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_mobilizations_organization_id"
+  end
+
+  create_table "organizations", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "city"
+    t.string   "avatar"
+    t.string   "name"
   end
 
   create_table "rewards", force: true do |t|

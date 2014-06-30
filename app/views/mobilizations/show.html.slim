@@ -13,9 +13,6 @@
         .content
           h1= @mobilization.short_title
           = simple_format @mobilization.description
-          .organization
-            = image_tag @mobilization.organization.avatar_url
-            = @mobilization.organization.name
       - if @mobilization.hashtag == 'SaneamentoÉBásico'
         .large-4.columns
           #action-of-the-day
