@@ -113,15 +113,16 @@ body.mobilizations.index
           color: $primary-color
 
   .cities
-    padding: 6em 0 8em 0
+    background: image-url("bg_cidades.jpg") top center
+    background-size: cover
+    padding: 6em 0
     .city
-      padding: 0 3em
-      display: inline
-      img
-        height: 100px
+      padding: 0 0 0 6em
+      display: inline  
 
   .mobilizations
-    +background(linear-gradient(top, darken($primary-color, 10%), darken($primary-color, 15%)))
+    background: image-url("bg_mob.jpg") top center
+    background-size: cover
     .mobilizations-title
       +grid-column(12)
       h3
