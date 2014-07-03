@@ -13,18 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.datepicker
-//= require jquery.turbolinks
 //= require jquery.facebox
 //= require jquery.mask.min
-//= require turbolinks
 //= require foundation
 //= require rails.validations
-//= require rails.validations.turbolinks
 //= require modernizr
 //= require users
 //= require mobilizations
 //= require meurio_ui
-//= require analytics
 
 $.facebox.settings.closeImage = 'http://i.imgur.com/k9awT9O.png'
 $.facebox.settings.loadingImage = 'http://i.imgur.com/bFbQqWu.gif'

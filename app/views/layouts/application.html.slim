@@ -4,8 +4,8 @@ html
     title= "#{content_for?(:title) ? yield(:title) : "Meu Rio"}"
     = favicon_link_tag 'favicon.jpg'
     = meurio_ui_assets
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
     = csrf_meta_tags
     == "<!--[if lt IE 7 ]>#{javascript_include_tag "lte-ie7"}<![endif]-->"
     meta name="fb:app_id" content="#{ENV["FB_APP_ID"]}"
