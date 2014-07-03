@@ -4,6 +4,8 @@
     .title_and_mobilization
       .title= link_to truncate(task.title, length: 60), "#{ENV['MULTITUDE_HOST']}/tasks/#{task.id}", title: task.title
       .mobilization = task.mobilization.short_title
+    .city.icon-location
+        span= task.organization.city
   - if @user.nil? || @user.task_subscriptions.find_by(task_id: task.id).nil?
     .task-status Disponível
   - elsif @user.task_subscriptions.find_by(task_id: task.id).pending?

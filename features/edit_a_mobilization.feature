@@ -16,20 +16,20 @@ Feature: Edit a mobilization
   @javascript @ssi
   Scenario: when I fill the form correctly
     Given I'm in "edit mobilization page"
-    And I fill "Nome da Mobilização" with "Nome alterado da mobilização!"
+    And I fill "Nome do Tema" with "Nome alterado da mobilização!"
     And I fill "Hashtag" with "NomeAlterado"
     And I attach an image to "Thumbnail"
-    When I press "Atualizar Mobilização"
+    When I press "Atualizar Tema"
     Then I should be in "this mobilization page"
 
   @javascript @ssi
   Scenario: when I don't fill the form correctly
     Given I'm in "edit mobilization page"
-    And I fill "Nome da Mobilização" with ""
+    And I fill "Nome do Tema" with ""
     And I fill "Título curto" with ""
     And I fill "Hashtag" with ""
     And I fill "Descrição" with ""
-    When I press "Atualizar Mobilização"
+    When I press "Atualizar Tema"
     Then I should be in "edit mobilization page"
     And I should see "mobilization title field error"
     And I should see "mobilization short title field error"

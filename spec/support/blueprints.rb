@@ -116,6 +116,7 @@ Task.blueprint do
   mobilization { Mobilization.make! }
   deadline { Time.current + 1.day }
   title { "Task #{sn}" }
+  organization { Organization.make! }
 end
 
 TaskSubscription.blueprint do
