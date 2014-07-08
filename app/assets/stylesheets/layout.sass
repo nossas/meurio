@@ -210,3 +210,15 @@ a
 
 .hidden
   display: none
+
+.slide-divisor
+  text-align: center
+  &:after
+    +css-triangle(20px, $dark-gray, top)
+    display: inline-block
+  h2
+    background: $dark-gray
+    padding: 1em 0
+    margin: 0
+    text-align: center
+    color: white
