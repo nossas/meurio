@@ -13,10 +13,10 @@
     .call-to-action
       - if current_user
         h2= "Bem vindo, #{current_user.first_name}!"
-        = link_to 'Veja seu Perfil', current_user, class: [:button, :radius, :large]
+        = link_to 'Veja seu Perfil', current_user, class: [:button, :radius, :large, :secondary]
       - else
         h2 Ainda não faz parte da rede?
-        = link_to 'Entrar na Rede', "http://accounts.#{ENV['MEURIO_DOMAIN']}/validate_email", class: [:button, :radius, :large]
+        = link_to 'Entrar na Rede', "http://accounts.#{ENV['MEURIO_DOMAIN']}/validate_email", class: [:button, :radius, :large, :secondary]
 
 .slide-divisor
   h2 Como funciona a Rede?
