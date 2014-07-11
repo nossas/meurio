@@ -86,16 +86,17 @@ Clipping.blueprint do
 end
 
 User.blueprint do
-  first_name    { Faker::Name.first_name }
-  last_name     { Faker::Name.last_name }
-  email         { "#{sn.to_s}@meurio.org.br" }
-  profession    { "Programmer" }
-  facebook      { Faker::Internet.user_name }
-  twitter       { Faker::Internet.user_name }
-  city          { "Rio de Janeiro" }
-  state         { "RJ" }
-  bio           { Faker::Lorem.paragraph }
-  admin         { false }
+  first_name        { Faker::Name.first_name }
+  last_name         { Faker::Name.last_name }
+  email             { "#{sn.to_s}@meurio.org.br" }
+  profession        { "Programmer" }
+  facebook          { Faker::Internet.user_name }
+  twitter           { Faker::Internet.user_name }
+  city              { "Rio de Janeiro" }
+  address_district  { "Botafogo" }
+  state             { "RJ" }
+  bio               { Faker::Lorem.paragraph }
+  admin             { false }
 end
 
 Activity.blueprint do
