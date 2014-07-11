@@ -8,8 +8,7 @@
     .row
       .avatar= image_tag @user.avatar_url, class: :user
       .user_info
-        h2.user_name= @user.name
-        |  
+        h2.user_name= "#{@user.name} "
         = link_to "Editar perfil", "http://accounts.#{ENV['MEURIO_DOMAIN']}/edit_profile", class: :edit_user if can? :edit, @user
         .user_profession= @user.profession
         .user_details
@@ -21,12 +20,12 @@
             = link_to("", "https://twitter.com/" + @user.twitter, class: ["user_twitter_url", "icon-twitter"], target: :blank) if @user.twitter.present?
           - else
             span.icon-twitter
-          span.user_location
-            span.user_district.icon-location= @user.address_district
-            | , 
-            span.user_city= @user.city
+          - if @user.address_district.present && @user.city.present?
+            span.user_location
+              span.user_district.icon-location= "#{@user.address_district}, "
+              span.user_city= @user.city
           = link_to(@user.website, "http://" + @user.website, class: ["icon-link"], target: :blank) if @user.website.present?
-    
+
     .row
       - if @user.categories
         .user_categories
@@ -71,10 +70,10 @@
           = render @finished_tasks
 
   .user_right
-    h3 Conquistas
+    h3 Medalhas
     .badges
       - if @user.badges.empty?
-        .empty Este usuário ainda não conquistou nenhuma badge
+        .empty Este usuário ainda não conquistou nenhuma medalha
       - else
         - @user.last_badges.each do |badge|
           .badge
