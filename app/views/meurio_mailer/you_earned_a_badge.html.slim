@@ -1,15 +1,17 @@
 p Olá #{@user.name},
 
-p Acabamos de identificar que você realizou uma nova ação pela sua cidade. Queria te agradecer e parabenizar por ter dedicado seu tempo e talento para as mobilizações da rede.
+p Acabamos de identificar que você realizou uma ação pela sua cidade. Queria te agradecer e parabenizar por ter dedicado seu tempo às mobilizações da rede.
 
-p Sua participação e dedicação pela cidade já foram contabilizadas e registramos essa conquista no #{link_to 'seu perfil', @user_url} da Rede Minhas Cidades.
+p Como você tem sido um cidadão dedicado já há algum tempo, estamos te premiando com uma medalha! Olha que lindona:
 
 p
   div= image_tag @badge.image.square
   div
     strong= @badge.name
 
-p Uma dica: compartilhe com seus amigos a sua conquista nessa mobilização #{link_to "clicando aqui", "http://www.facebook.com/sharer/sharer.php?u=#{@user_url}"} para que mais pessoas possam conhecer novas formas de se mobilizar na cidade! (;
+p Sua participação e dedicação pela cidade já foram contabilizadas e registramos essa conquista no #{link_to 'seu perfil', @user_url} da Rede Minhas Cidades.
+
+p Uma dica: compartilhe sua medalha com seus amigos #{link_to "clicando aqui", "http://www.facebook.com/sharer/sharer.php?u=#{@user_url}"} para que mais pessoas possam conhecer novas formas de se mobilizar na cidade! (;
 
 p Por cidades cada vez mais participativas,
 
