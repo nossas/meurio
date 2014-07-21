@@ -7,7 +7,7 @@ class UsersController < InheritedResources::Base
   layout false, only: [:index, :team, :funders]
 
   def index
-    @users = User.order("created_at DESC").page(params[:page]).per(30)
+    @users = User.page(params[:page]).per(30)
   end
 
   def team
