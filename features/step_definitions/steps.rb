@@ -216,10 +216,6 @@ Then(/^"(.*?)" should contain "(.*?)"$/) do |arg1, arg2|
   find(to_element(arg1)).should have_content(arg2)
 end
 
-Then(/^I should see the mobilization's background image$/) do
-  page.find('.cover')['style'].should include @mobilization.image.url
-end
-
 Then(/^I should see the mobilization's "(.*?)"$/) do |field|
   page.should have_content(mobilization_field(field))
 end
