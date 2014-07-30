@@ -4,16 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
 
-  before_filter { session[:ssi_user_id] = params[:sign_in] if Rails.env.development? && params[:sign_in] }
+  # TODO: move this development environment login workaround to the proper gem (rack-cas for example)
+  before_filter { session['cas'] = { 'user' => params[:sign_in] } if Rails.env.development? && params[:sign_in] }
 
   def current_user
-    if cas_user.present?
-      @current_user ||= User.find_by_email(cas_user['user'])
-    end
-  end
-
-  def cas_user
-    request.session['cas']
+    @current_user ||= User.find_by_email(session['cas']['user']) if session['cas']
   end
 
   private
