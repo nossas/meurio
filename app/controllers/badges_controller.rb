@@ -1,8 +1,8 @@
 class BadgesController < InheritedResources::Base
   load_and_authorize_resource
-  
+
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to ENV["MEURIO_ACCOUNTS_URL"] + "?redirect_url=#{request.url}"
+    redirect_to ENV["CAS_SERVER_URL"] + "?service=#{request.url}"
   end
 
   def create
