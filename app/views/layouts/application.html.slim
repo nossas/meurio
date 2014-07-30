@@ -28,6 +28,7 @@ html
       }(document, 'script', 'facebook-jssdk'));
 
     = render 'layouts/flash', locals: { flash: flash } unless flash.empty?
+    = debug request.session['cas']
 
     - content_for :current_user_links do
       li= link_to "Novo tema", new_mobilization_path

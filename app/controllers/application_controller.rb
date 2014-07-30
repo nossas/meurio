@@ -4,10 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
 
-  before_filter { session[:ssi_user_id] = params[:sign_in] if Rails.env.development? && params[:sign_in] }
-
   def current_user
-    @current_user ||= User.find_by_id(session[:ssi_user_id])
+    if cas_user.present?
+      @current_user ||= User.find_by_email(cas_user['user'])
+    end
+  end
+
+  def cas_user
+    request.session['cas']
   end
 
   private

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703132007) do
+ActiveRecord::Schema.define(version: 20140730131953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -258,6 +258,17 @@ ActiveRecord::Schema.define(version: 20140703132007) do
     t.datetime "updated_at"
     t.index ["task_type_id"], :name => "fk__rewards_task_type_id", :order => {"task_type_id" => :asc}
     t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_rewards_task_type_id"
+  end
+
+  create_table "sessions", force: true do |t|
+    t.string   "session_id", null: false
+    t.string   "cas_ticket"
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["cas_ticket"], :name => "index_sessions_on_cas_ticket", :order => {"cas_ticket" => :asc}
+    t.index ["session_id"], :name => "index_sessions_on_session_id", :order => {"session_id" => :asc}
+    t.index ["updated_at"], :name => "index_sessions_on_updated_at", :order => {"updated_at" => :asc}
   end
 
   create_table "squeezes", force: true do |t|
