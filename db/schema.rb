@@ -236,7 +236,7 @@ ActiveRecord::Schema.define(version: 20140902013621) do
     t.string   "short_title"
     t.integer  "user_id"
     t.string   "thumbnail"
-    t.boolean  "territorial"
+    t.boolean  "territorial", default: false
   end
 
   create_table "organizations", force: true do |t|
