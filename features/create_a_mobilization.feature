@@ -45,7 +45,7 @@ Feature: Create a mobilization
     And I fill "Título curto" with "De Guarda no Bondinho"
     And I fill "Hashtag" with "DeGuardaNoBondinho"
     And I fill "Descrição" with "O Governo do Estado do Rio de Janeiro está sucateando o patrimônio histórico nacional."
-    And I check "Território?"
+    And I check "Território"
     And I attach an image to "Imagem de fundo"
     And I attach an image to "Thumbnail"
     When I press "Criar Tema"
