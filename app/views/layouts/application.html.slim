@@ -49,6 +49,5 @@ html
     footer
       .row
         .large-12.columns
-          a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"
-            img alt="Licença Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+          = link_to "", "http://creativecommons.org/licenses/by-nc-sa/4.0/", target: :blank, class:["icon-cc"], rel: "license"
       = render 'layouts/analytics' if Rails.env.production?
