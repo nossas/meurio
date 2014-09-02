@@ -17,3 +17,9 @@ Feature: view all mobilizations
     When I click "the load more mobilizations button"
     Then I should see 9 "mobilizations"
     And I should not see "the load more mobilizations button"
+
+  @javascript
+  Scenario: when there is a territorial mobilization
+    Given there is a territorial mobilization
+    When I go to "the homepage"
+    Then I should not see this mobilization in the mobilizations list

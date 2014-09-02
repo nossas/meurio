@@ -48,7 +48,7 @@
   .row
     .mobilizations-title
       h3 Esses são os principais temas das mobilizações iniciadas ou apoiadas por membros da Rede. Clique em cada um para saber mais!
-  .row#mobilizations-list{data-count = Mobilization.count}
+  .row#mobilizations-list{data-count = Mobilization.where(territorial: false).count}
   .row
     .load-more
       a.button.radius#load_more_mobilizations_button href="#" + Veja mais

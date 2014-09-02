@@ -315,3 +315,11 @@ end
 Then(/^I should see the mobilization's comments$/) do
   page.should have_css(".fb-comments")
 end
+
+Given(/^there is a territorial mobilization$/) do
+  @mobilization = Mobilization.make! territorial: true
+end
+
+Then(/^I should not see this mobilization in the mobilizations list$/) do
+  page.should_not have_css("#mobilizations-list .mobilization a[href='/mobilizations/#{@mobilization.id}']")
+end
