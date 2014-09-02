@@ -9,10 +9,14 @@
       = f.text_field :short_title
   .row.hashtag
     .large-6.columns
-      = f.label :hashtag
+      = f.label :hashtag do
+        = t("activerecord.attributes.mobilization.hashtag")
+        span.has-tip {data-tooltip=true title="A hashtag escolhida deve ser utilizada em todas as plataformas e comunicações"} ?
       = f.text_field :hashtag
-    .large-6.columns.hint
-      span A hashtag escolhida deve ser utilizada em todas as plataformas e comunicações
+    .large-6.columns
+      = f.label :territorial do
+        = f.check_box :territorial
+        |  Território
   .row
     .large-12.columns
       = f.label :description

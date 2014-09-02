@@ -36,3 +36,18 @@ Feature: Create a mobilization
     And I should see "mobilization hashtag field error"
     And I should see "mobilization description field error"
     And I should see "mobilization image field error"
+
+  @javascript @ssi
+  Scenario: when I create a territorial mobilization
+    Given I'm logged in as admin
+    And I'm in "new mobilization page"
+    And I fill "Nome do Tema" with "Estamos De Guarda no Bondinho de Santa Teresa!"
+    And I fill "Título curto" with "De Guarda no Bondinho"
+    And I fill "Hashtag" with "DeGuardaNoBondinho"
+    And I fill "Descrição" with "O Governo do Estado do Rio de Janeiro está sucateando o patrimônio histórico nacional."
+    And I check "Território?"
+    And I attach an image to "Imagem de fundo"
+    And I attach an image to "Thumbnail"
+    When I press "Criar Tema"
+    Then I should be in "the first mobilization page"
+    And there should be a territorial mobilization

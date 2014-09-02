@@ -307,3 +307,7 @@ end
 Given(/^there is a organization from "(.*?)"$/) do |arg1|
   Organization.make! city: arg1
 end
+
+Then(/^there should be a territorial mobilization$/) do
+  Mobilization.where(territorial: true).should have(1).mobilization
+end

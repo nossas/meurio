@@ -28,7 +28,7 @@ class MobilizationsController < InheritedResources::Base
     {
       :mobilization => params
         .fetch(:mobilization, {})
-        .permit(:title, :short_title, :hashtag, :description, :image, :thumbnail, :user_id, :organization_id)
+        .permit(:title, :short_title, :hashtag, :description, :image, :thumbnail, :user_id, :organization_id, :territorial)
     }
   end
 end
