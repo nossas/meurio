@@ -9,6 +9,7 @@ Feature:
   Scenario: Viewing a mobilization page
     When I go to "this mobilization page"
     Then I should see the mobilization's "title"
+    And I should see the mobilization's comments
 
   Scenario: mobilization's hashtag
     When I go to "this mobilization page"

@@ -311,3 +311,7 @@ end
 Then(/^there should be a territorial mobilization$/) do
   Mobilization.where(territorial: true).should have(1).mobilization
 end
+
+Then(/^I should see the mobilization's comments$/) do
+  page.should have_css(".fb-comments")
+end
