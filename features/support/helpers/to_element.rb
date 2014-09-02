@@ -200,6 +200,8 @@ def to_element string
     ".mobilization"
   when "mobilization organization field error"
     ".field_with_errors label[for='mobilization_organization_id']"
+  when "this territorial mobilization in the territorial mobilizations list"
+    "#territorial-mobilizations-list .mobilization a[href='/mobilizations/#{@mobilization.id}']"
   else
     string
   end

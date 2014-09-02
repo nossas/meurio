@@ -58,7 +58,7 @@ function loadMobilizations(){
   mobilizationsPage++;
   $("a#load_more_mobilizations_button").hide();
   $(".mobilizations .loader").show();
-  $.get("/mobilizations?page=" + mobilizationsPage, function(data) {
+  $.get("/mobilizations?territorial=false&page=" + mobilizationsPage, function(data) {
     $("#mobilizations-list").append(data);
     if($("#mobilizations-list").data("count") <= $("#mobilizations-list .mobilization").length)
       $("a#load_more_mobilizations_button").remove();
@@ -67,8 +67,15 @@ function loadMobilizations(){
   });
 }
 
+function loadTerritorialMobilizations(){
+  $.get("/mobilizations?territorial=true", function(data) {
+    $("#territorial-mobilizations-list").append(data);
+  });
+}
+
 $(function(){
   loadMobilizations();
+  loadTerritorialMobilizations();
   loadUsers();
   loadFunders();
   loadTeam();

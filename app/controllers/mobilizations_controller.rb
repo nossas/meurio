@@ -6,7 +6,7 @@ class MobilizationsController < InheritedResources::Base
   def index
     if request.xhr?
       mobilizations = Mobilization.
-        where(territorial: false).
+        where(territorial: params[:territorial]).
         order("created_at DESC").
         page(params[:page]).
         per(6)
