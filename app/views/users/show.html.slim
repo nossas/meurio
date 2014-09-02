@@ -77,7 +77,7 @@
       - else
         - @user.last_badges.each do |badge|
           .badge
-            span.badge-hint {data-hint="#{badge.name}"}
+            span.has-tip {data-tooltip=true title="#{badge.name}"}
               .image= image_tag badge.image.square
             .name.hidden= badge.name
 
