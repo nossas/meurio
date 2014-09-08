@@ -151,7 +151,4 @@
       h2 Nas redes
       .tip
         | Use a hashtag #{content_tag(:strong, "#" + @mobilization.hashtag)} para comentar sobre esse tema nas redes sociais.
-      - if @comments.empty?
-        .empty Este tema ainda não possui comentários :\
-      - else
-        = render @comments
+      = render @comments
