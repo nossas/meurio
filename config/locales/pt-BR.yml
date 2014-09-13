@@ -299,7 +299,7 @@ pt-BR:
     ideas: "criou uma ideia no tema"
     task_subscriptions: "aceitou realizar uma tarefa no tema"
     accepted_deliveries: "realizou uma tarefa no tema"
-    compartilhaco_campaign: "criou um compartilhaço no tema"
+    compartilhaco_campaigns: "criou um compartilhaço no tema"
   mode:
     local: Presencial
     remote: À distância
