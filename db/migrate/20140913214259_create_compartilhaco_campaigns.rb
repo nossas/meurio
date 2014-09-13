@@ -1,7 +1,7 @@
 class CreateCompartilhacoCampaigns < ActiveRecord::Migration
   def up
     if Rails.env.production? || Rails.env.staging?
-      execute <-SQL
+      execute <<-SQL
         CREATE FOREIGN TABLE compartilhaco_campaigns(id integer)
         SERVER compartilhaco
         OPTIONS (table_name 'campaigns');
