@@ -13,6 +13,8 @@ class Fact < ActiveRecord::Base
       self.app = :eventos
     elsif relname == 'petitions'
       self.app = :petitions
+    elsif relname == 'compartilhaco_campaigns'
+      self.app = :compartilhaco
     end
   end
 end
