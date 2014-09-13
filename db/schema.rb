@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913214259) do
+ActiveRecord::Schema.define(version: 20140913222440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -179,6 +179,8 @@ ActiveRecord::Schema.define(version: 20140913214259) do
 
   create_view "comments", " SELECT t.id,\n    t.created_at,\n    t.text,\n    t.hashtag,\n    t.username,\n    t.published_at,\n    t.text_html,\n    t.user_uid,\n    t.retweet_count AS share_count,\n    t.favorite_count AS like_count,\n    t.comment_count,\n    'tweets'::text AS relname\n   FROM tweets t\nUNION ALL\n SELECT fp.id,\n    fp.created_at,\n    fp.text,\n    fp.hashtag,\n    fp.username,\n    fp.published_at,\n    fp.text_html,\n    fp.user_uid,\n    fp.share_count,\n    fp.like_count,\n    fp.comment_count,\n    'facebook_posts'::text AS relname\n   FROM facebook_posts fp", :force => true
   create_table "compartilhaco_campaigns", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
   end
 
   create_table "delayed_jobs", force: true do |t|
