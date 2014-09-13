@@ -167,6 +167,6 @@ Organization.blueprint do
   city { "Rio de Janeiro" }
 end
 
-CompartilhacoCampaigns.blueprint do
+CompartilhacoCampaign.blueprint do
   # Attributes here
 end
