@@ -302,6 +302,7 @@ pt-BR:
     accepted_deliveries: "realizou uma tarefa no tema"
     compartilhaco_campaigns: "criou um compartilhaço no tema"
     compartilhaco_facebook_profile_spreaders: "emprestou seu Facebook para o tema"
+    compartilhaco_twitter_profile_spreaders: "emprestou seu Twitter para o tema"
   mode:
     local: Presencial
     remote: À distância
