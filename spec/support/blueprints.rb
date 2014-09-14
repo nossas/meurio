@@ -174,3 +174,7 @@ end
 CompartilhacoFacebookProfileSpreader.blueprint do
   # Attributes here
 end
+
+CompartilhacoTwitterProfileSpreader.blueprint do
+  # Attributes here
+end
