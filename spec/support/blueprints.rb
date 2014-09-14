@@ -170,3 +170,7 @@ end
 CompartilhacoCampaign.blueprint do
   # Attributes here
 end
+
+CompartilhacoCampaignSpreader.blueprint do
+  # Attributes here
+end
