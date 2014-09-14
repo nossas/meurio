@@ -171,6 +171,6 @@ CompartilhacoCampaign.blueprint do
   # Attributes here
 end
 
-CompartilhacoFacebookProfileSpreaders.blueprint do
+CompartilhacoFacebookProfileSpreader.blueprint do
   # Attributes here
 end
