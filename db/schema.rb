@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914133544) do
+ActiveRecord::Schema.define(version: 20140922121007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140914133544) do
     t.string   "hashtag"
     t.string   "title"
     t.text     "short_description"
+    t.text     "description"
   end
 
   create_table "compartilhaco_facebook_profile_spreaders", force: true do |t|
@@ -235,7 +236,7 @@ ActiveRecord::Schema.define(version: 20140914133544) do
     t.integer  "signatures_count"
   end
 
-  create_view "facts", " SELECT e.id,\n    e.created_at,\n    e.name,\n    e.description_html,\n    e.link,\n    e.hashtag,\n    'petitions'::text AS relname\n   FROM petitions e\nUNION ALL\n SELECT c.id,\n    c.created_at,\n    c.name,\n    c.description_html,\n    c.link,\n    c.hashtag,\n    'campaigns'::text AS relname\n   FROM campaigns c\nUNION ALL\n SELECT p.id,\n    p.created_at,\n    p.name,\n    p.description AS description_html,\n    p.link,\n    p.hashtag,\n    'problems'::text AS relname\n   FROM problems p\nUNION ALL\n SELECT e.id,\n    e.created_at,\n    e.name,\n    e.description AS description_html,\n    e.link,\n    e.hashtag,\n    'events'::text AS relname\n   FROM events e\nUNION ALL\n SELECT cc.id,\n    cc.created_at,\n    cc.title AS name,\n    cc.short_description AS description_html,\n    ''::character varying AS link,\n    cc.hashtag,\n    'compartilhaco_campaigns'::text AS relname\n   FROM compartilhaco_campaigns cc", :force => true
+  create_view "facts", " SELECT e.id,\n    e.created_at,\n    e.name,\n    e.description_html,\n    e.link,\n    e.hashtag,\n    'petitions'::text AS relname\n   FROM petitions e\nUNION ALL\n SELECT c.id,\n    c.created_at,\n    c.name,\n    c.description_html,\n    c.link,\n    c.hashtag,\n    'campaigns'::text AS relname\n   FROM campaigns c\nUNION ALL\n SELECT p.id,\n    p.created_at,\n    p.name,\n    p.description AS description_html,\n    p.link,\n    p.hashtag,\n    'problems'::text AS relname\n   FROM problems p\nUNION ALL\n SELECT e.id,\n    e.created_at,\n    e.name,\n    e.description AS description_html,\n    e.link,\n    e.hashtag,\n    'events'::text AS relname\n   FROM events e\nUNION ALL\n SELECT cc.id,\n    cc.created_at,\n    cc.title AS name,\n    cc.description AS description_html,\n    ''::character varying AS link,\n    cc.hashtag,\n    'compartilhaco_campaigns'::text AS relname\n   FROM compartilhaco_campaigns cc", :force => true
   create_table "images", force: true do |t|
     t.string   "file"
     t.string   "hashtag"
