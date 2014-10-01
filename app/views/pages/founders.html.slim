@@ -1,1 +1,64 @@
 .founders-slider
+  .row
+    .nossas-cidades= image_tag("nossas_cidades.png")
+
+  ul data={orbit: true, options: "slide_number:false; resume_on_mouseout:true; navigation_arrows: false;"}
+    li.slide-1
+      .row
+        .slide-content
+          h3 Estamos criando uma rede de cidades mobilizadas.
+
+    li.slide-2
+      .row
+        .slide-content
+          h3 Novas tecnologias e linguagens para aproximar os cidadãos das tomadas de decisão sobre o futuro de suas cidades.
+
+    li.slide-3
+      .row
+        .slide-content
+          h3 Um mês de residência e até um ano de incubação.
+
+  .row
+    .founders-subscribe
+      p Seja um fundador dessa rede na sua cidade.
+      = link_to("Quero me inscrever!", "#subscription", class: [:button, :radius, :secondary, :large])
+
+.founders-about
+  .row
+    .about-title
+      h2 Sobre
+  .row
+    .about-content
+      p Nós acreditamos que a construção de cidades melhores começa com cidadãos mais engajados e conectados. É por isso que trabalhamos para que milhares de pessoas pressionem tomadores de decisão, colaborem com ideias e compartilhem seus talentos para tornar suas cidades mais inclusivas, sustentáveis, criativas, compartilhadas e gostosas de se viver. Com mais da metade da população mundial vivendo em centros urbanos, mudar nossas cidades pode ser a melhor maneira de mudar o mundo.
+      p Nosso trabalho é dar suporte - do início ao fim - às mobilizações criadas pelas pessoas, e você pode fazer parte disso levando para sua cidade a metodologia desenvolvida desde 2011 pela Rede Meu Rio, no Rio de Janeiro.
+      p As inscrições para o programa de fundadores da Rede Nossas Cidades estão abertas para pessoas apaixonadas, que irão dedicar coração, tempo, energia e talento para iniciar uma rede de mobilização na sua cidade.
+
+.founders-program
+  .row
+    .program-title
+      h2 Programa
+  .row
+    .program-item
+      = image_tag("pages/founders/program/technology.png")
+      h4 Tecnologia de ponta
+      p Acesso às nossas ferramentas e aplicativos de mobilização, assim como à equipe de tecnologia e design da Rede, servidor, mailing e manutenção.
+    .program-item
+      = image_tag("pages/founders/program/methodology.png")
+      h4 Metodologia
+      p Conhecimento das metodologias de mobilização e gestão da rede desenvolvidas e aprovadas nos últimos 3 anos de trabalho.
+    .program-item
+      = image_tag("pages/founders/program/connections.png")
+      h4 Conexões
+      p Participação do encontro anual da Rede Nossas Cidades e contato direto com financiadores, embaixadores e mobilizadores que vão ajudar a tirar a sua rede de mobilização do papel.
+    .program-item
+      = image_tag("pages/founders/program/legal_support.png")
+      h4 Suporte legal
+      p Apoio da equipe de operações e questões legais na montagem de uma organização robusta e bem estruturada.
+    .program-item
+      = image_tag("pages/founders/program/brand.png")
+      h4 Marca
+      p Oportunidade de construir uma marca forte a partir de valores e cases já reconhecidos através das vitórias das mobilizações da Rede Meu Rio e Minha Sampa.
+    .program-item
+      = image_tag("pages/founders/program/mentoring.png")
+      h4 Mentoria
+      p Suporte no desenvolvimento das suas ações através do acompanhamento periódico da Equipe da Rede até que você se sinta pronto para caminhar com as próprias pernas.

@@ -1,3 +1,72 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass here: http://sass-lang.com/
+body.pages.founders
+  h2
+    background: $primary-color
+    color: white
+    font-weight: bold
+    margin-bottom: rem-calc(40)
+
+  .page-wrap
+    padding: 0
+    .orbit-container
+      .orbit-timer
+        display: none
+      .orbit-bullets
+        li
+          background: white
+          padding: rem-calc(7)
+          margin-right: rem-calc(20)
+          &.active
+            background: $primary-color
+
+  .founders-slider
+    background: asset-url("pages/founders/slider_bg_1.jpg") center center
+    padding: rem-calc(100) 0 rem-calc(20) 0
+    text-align: center
+    .nossas-cidades, .founders-subscribe
+      +grid-column(12)
+      p
+        color: white
+        font-size: rem-calc(20)
+    .nossas-cidades
+      margin-bottom: rem-calc(100)
+    .slide-1, .slide-3
+      h3
+        margin-top: rem-calc(40)
+    .slide-content
+      +grid-column(12)
+      h3
+        color: white
+        font-size: rem-calc(40)
+        font-weight: bold
+        margin-bottom: rem-calc(80)
+
+  .founders-about, .founders-program
+    text-align: center
+    padding: rem-calc(40) 0
+
+  .about-title, .program-title
+    +grid-column(6, $center: true)
+
+  .founders-about
+    background: asset-url("pages/founders/pattern_bg.jpg")
+    .about-content
+      +grid-column(10, $center: true)
+      p
+        color: black
+        font-size: rem-calc(20)
+        font-weight: bold
+
+  .founders-program
+    background: asset-url("pages/founders/program/bg.jpg")  center center
+    .program-item
+      +grid-column(4)
+      img
+        margin-bottom: rem-calc(10)
+      h4
+        color: $primary-color
+        font-weight: bold
+        margin: 0
+      p
+        color: white
+      h4, p
+        line-height: normal
