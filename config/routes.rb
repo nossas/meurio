@@ -11,6 +11,7 @@ Meurio::Application.routes.draw do
 
   get 'team' => 'users#team'
   get 'funders' => 'users#funders'
+  get 'founders' => 'pages#founders'
   # get 'edit_profile' => 'users#edit', as: :edit_profile
   get 'login' => redirect { |params, request| "#{ENV['ACCOUNTS_HOST']}/login?#{request.params.to_query}" }, as: :login
 
