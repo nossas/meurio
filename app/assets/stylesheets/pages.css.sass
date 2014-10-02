@@ -45,15 +45,17 @@ body.pages.founders
         font-weight: bold
         margin-bottom: rem-calc(30)
 
-  .founders-about, .founders-program
+  .founders-about, .founders-program, .founders-steps
     text-align: center
     padding: rem-calc(40) 0
 
-  .about-title, .program-title
+  .about-title, .program-title, .steps-title
     +grid-column(6, $center: true)
 
-  .founders-about
+  .founders-about, .founders-steps
     background: asset-url("pages/founders/pattern_bg.jpg")
+
+  .founders-about
     .about-content
       +grid-column(10, $center: true)
       p
@@ -85,3 +87,32 @@ body.pages.founders
       a
         color: white
         text-decoration: underline
+
+  .founders-steps
+    .founders-step
+      +grid-column(3)
+      margin-bottom: rem-calc(20)
+      .step-box
+        padding: rem-calc(10)
+        height: 200px
+        background: $dark-gray
+        color: white
+        +transition(.25s)
+        .step-cover, .step-content
+          position: relative
+          top: 50%
+          transform: translateY(-50%)
+        .step-cover
+          .step-definition
+            font-weight: bold
+        .step-content
+          display: none
+        &:hover
+          background: $primary-color
+          .step-cover
+            display: none
+          .step-content
+            display: block
+      img
+        height: 150px
+        width: 100%
