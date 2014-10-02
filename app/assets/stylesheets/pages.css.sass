@@ -24,7 +24,8 @@ body.pages.founders
 
   .founders-slider
     background: asset-url("pages/founders/slider_bg_1.jpg") center center
-    padding: rem-calc(100) 0 rem-calc(20) 0
+    background-size: cover
+    padding: rem-calc(20) 0 rem-calc(20) 0
     text-align: center
     .nossas-cidades, .founders-subscribe
       +grid-column(12)
@@ -32,6 +33,7 @@ body.pages.founders
         color: white
         font-size: rem-calc(20)
     .nossas-cidades
+      margin-top: rem-calc(40)
       margin-bottom: rem-calc(100)
     .slide-1, .slide-3
       h3
@@ -74,3 +76,13 @@ body.pages.founders
         color: white
       h4, p
         line-height: normal
+
+  ul.locales
+    text-align: right
+    li
+      font-size: .8em
+      display: inline
+      margin-left: 1em
+      a
+        color: white
+        text-decoration: underline
