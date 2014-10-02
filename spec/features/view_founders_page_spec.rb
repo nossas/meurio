@@ -16,8 +16,13 @@ feature "View founders page" do
     expect(page).to have_css(".founders-program")
   end
 
-  it "should have an program section" do
+  it "should have an steps section" do
     visit founders_path
     expect(page).to have_css(".founders-steps")
+  end
+
+  it "should have an network section" do
+    visit founders_path
+    expect(page).to have_css(".founders-network")
   end
 end

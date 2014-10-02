@@ -45,11 +45,11 @@ body.pages.founders
         font-weight: bold
         margin-bottom: rem-calc(30)
 
-  .founders-about, .founders-program, .founders-steps
+  .founders-about, .founders-program, .founders-steps, .founders-network
     text-align: center
     padding: rem-calc(40) 0
 
-  .about-title, .program-title, .steps-title
+  .title
     +grid-column(6, $center: true)
 
   .founders-about, .founders-steps
@@ -116,3 +116,14 @@ body.pages.founders
       img
         height: 150px
         width: 100%
+
+  .founders-network
+    background: asset-url("pages/founders/network_bg.jpg")
+    img
+      margin: 0 rem-calc(40)
+      width: 100px
+    .text
+      +grid-column(11, $center: true)
+      p
+        color: white
+        font-size: rem-calc(21)
