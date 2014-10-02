@@ -1,12 +1,15 @@
 .founders-slider
   .row
+    ul.locales
+      li= link_to 'Português (BR)'
+      li= link_to 'English (US)', l: 'en'
     .nossas-cidades= image_tag("nossas_cidades.png")
 
   ul data={orbit: true, options: "slide_number:false; resume_on_mouseout:true; navigation_arrows: false;"}
     li.slide-1
       .row
         .slide-content
-          h3 Estamos criando uma rede de cidades mobilizadas.
+          h3= t 'founders.slide_1_title'
 
     li.slide-2
       .row
