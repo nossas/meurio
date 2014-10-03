@@ -1,12 +1,12 @@
 class MeurioMailer < ActionMailer::Base
-  default from: "Meu Rio <contato@meurio.org.br>"
+  default from: "Nossas Cidades <contato@meurio.org.br>"
 
   def you_earned_a_badge user, badge
     @user = user
     @user_url = user_url(@user)
     @badge = badge
-    
+
     headers "X-SMTPAPI" => "{ \"category\": [\"meurio\", \"you_earned_a_badge\"] }"
-    mail(to: "#{user.name} <#{user.email}>", subject: "Registramos a sua participação como uma conquista!", from: "Leonardo - Minhas Cidades <leonardo@minhascidades.org.br>")
+    mail(to: "#{user.name} <#{user.email}>", subject: "Registramos a sua participação como uma conquista!", from: "Leonardo - Nossas Cidades <leonardo@minhascidades.org.br>")
   end
 end
