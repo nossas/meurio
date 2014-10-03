@@ -319,8 +319,20 @@ pt:
     fb: Facebook
     petitions: Petição
 
-  founders:
-    slide_1_title: Estamos criando uma rede de cidades mobilizadas.
+  pages:
+    founders:
+      slider:
+        slide1: Estamos criando uma rede de cidades mobilizadas.
+        slide2: Novas tecnologias e linguagens para aproximar os cidadãos das tomadas de decisão sobre o futuro de suas cidades.
+        slide3: Um mês de residência e até um ano de incubação.
+        subscribe: Seja um fundador dessa rede na sua cidade.
+        subscribe_cta: Quero me inscrever!
+      about:
+        title: Sobre
+        content:
+          p1: Nós acreditamos que a construção de cidades melhores começa com cidadãos mais engajados e conectados. É por isso que trabalhamos para que milhares de pessoas pressionem tomadores de decisão, colaborem com ideias e compartilhem seus talentos para tornar suas cidades mais inclusivas, sustentáveis, criativas, compartilhadas e gostosas de se viver. Com mais da metade da população mundial vivendo em centros urbanos, mudar nossas cidades pode ser a melhor maneira de mudar o mundo.
+          p2: Nosso trabalho é dar suporte - do início ao fim - às mobilizações criadas pelas pessoas, e você pode fazer parte disso levando para sua cidade a metodologia desenvolvida desde 2011 pela Rede Meu Rio, no Rio de Janeiro.
+          p3: As inscrições para o programa de fundadores da Rede Nossas Cidades estão abertas para pessoas apaixonadas, que irão dedicar coração, tempo, energia e talento para iniciar uma rede de mobilização na sua cidade.
 
 
 

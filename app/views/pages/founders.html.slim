@@ -9,32 +9,32 @@
     li.slide-1
       .row
         .slide-content
-          = t 'founders.slide_1_title'
+          = t('pages.founders.slider.slide1')
 
     li.slide-2
       .row
         .slide-content
-          | Novas tecnologias e linguagens para aproximar os cidadãos das tomadas de decisão sobre o futuro de suas cidades.
+          = t('pages.founders.slider.slide2')
 
     li.slide-3
       .row
         .slide-content
-          | Um mês de residência e até um ano de incubação.
+          = t('pages.founders.slider.slide3')
 
   .row
     .founders-subscribe
-      p Seja um fundador dessa rede na sua cidade.
-      = link_to("Quero me inscrever!", "#subscription", class: [:button, :radius, :secondary, :large])
+      p= t('pages.founders.slider.subscribe')
+      = link_to(t('pages.founders.slider.subscribe_cta'), "#subscription", class: [:button, :radius, :secondary, :large])
 
 .founders-about
   .row
     .title
-      h2 Sobre
+      h2= t('pages.founders.about.title')
   .row
     .about-content
-      p Nós acreditamos que a construção de cidades melhores começa com cidadãos mais engajados e conectados. É por isso que trabalhamos para que milhares de pessoas pressionem tomadores de decisão, colaborem com ideias e compartilhem seus talentos para tornar suas cidades mais inclusivas, sustentáveis, criativas, compartilhadas e gostosas de se viver. Com mais da metade da população mundial vivendo em centros urbanos, mudar nossas cidades pode ser a melhor maneira de mudar o mundo.
-      p Nosso trabalho é dar suporte - do início ao fim - às mobilizações criadas pelas pessoas, e você pode fazer parte disso levando para sua cidade a metodologia desenvolvida desde 2011 pela Rede Meu Rio, no Rio de Janeiro.
-      p As inscrições para o programa de fundadores da Rede Nossas Cidades estão abertas para pessoas apaixonadas, que irão dedicar coração, tempo, energia e talento para iniciar uma rede de mobilização na sua cidade.
+      p= t('pages.founders.about.content.p1')
+      p= t('pages.founders.about.content.p2')
+      p= t('pages.founders.about.content.p3')
 
 .founders-program
   .row
