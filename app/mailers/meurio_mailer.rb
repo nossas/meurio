@@ -7,6 +7,6 @@ class MeurioMailer < ActionMailer::Base
     @badge = badge
 
     headers "X-SMTPAPI" => "{ \"category\": [\"meurio\", \"you_earned_a_badge\"] }"
-    mail(to: "#{user.name} <#{user.email}>", subject: "Registramos a sua participação como uma conquista!", from: "Leonardo - Nossas Cidades <leonardo@minhascidades.org.br>")
+    mail(to: "#{user.name} <#{user.email}>", subject: "Registramos a sua participação como uma conquista!", from: "Leonardo - Nossas Cidades <leonardo@nossascidades.org>")
   end
 end
