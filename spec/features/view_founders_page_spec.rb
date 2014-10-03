@@ -30,4 +30,9 @@ feature "View founders page" do
     visit founders_path
     expect(page).to have_css(".founders-moderators")
   end
+
+  it "should have a subscription section" do
+    visit founders_path
+    expect(page).to have_css(".founders-subscription")
+  end
 end
