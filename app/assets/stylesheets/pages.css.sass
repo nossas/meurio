@@ -5,8 +5,9 @@ body.pages.founders
   h2
     background: $primary-color
     color: white
-    font-weight: bold
+    font-weight: normal
     margin-bottom: rem-calc(40)
+    text-transform: uppercase
 
   p
     font-size: rem-calc(21)
@@ -41,15 +42,14 @@ body.pages.founders
     .nossas-cidades
       margin: rem-calc(40) 0
     .slide-1, .slide-3
-      h3
-        margin-top: rem-calc(50)
+      .slide-content
+        padding-top: rem-calc(50)
     .slide-content
       +grid-column(12)
-      h3
-        color: white
-        font-size: rem-calc(40)
-        font-weight: bold
-        margin-bottom: rem-calc(30)
+      color: white
+      font-size: rem-calc(40)
+      font-weight: bold
+      margin-bottom: rem-calc(30)
 
   .founders-about, .founders-program, .founders-steps, .founders-network, .founders-moderators
     text-align: center
@@ -137,6 +137,7 @@ body.pages.founders
     .founders-moderator
       +grid-column(3)
       margin-bottom: rem-calc(40)
+      font-family: Pluto
       img
         +border-radius(100%)
         margin-bottom: rem-calc(10)
