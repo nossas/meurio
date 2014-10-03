@@ -8,6 +8,12 @@ body.pages.founders
     font-weight: bold
     margin-bottom: rem-calc(40)
 
+  p
+    font-size: rem-calc(21)
+
+  .text
+    +grid-column(11, $center: true)
+
   .page-wrap
     padding: 0
     .orbit-container
@@ -45,14 +51,14 @@ body.pages.founders
         font-weight: bold
         margin-bottom: rem-calc(30)
 
-  .founders-about, .founders-program, .founders-steps, .founders-network
+  .founders-about, .founders-program, .founders-steps, .founders-network, .founders-moderators
     text-align: center
     padding: rem-calc(40) 0
 
   .title
     +grid-column(6, $center: true)
 
-  .founders-about, .founders-steps
+  .founders-about, .founders-steps, .founders-moderators
     background: asset-url("pages/founders/pattern_bg.jpg")
 
   .founders-about
@@ -122,8 +128,19 @@ body.pages.founders
     img
       margin: 0 rem-calc(40)
       width: 100px
-    .text
-      +grid-column(11, $center: true)
-      p
-        color: white
-        font-size: rem-calc(21)
+    p
+      color: white
+
+  .founders-moderators
+    p
+      color: black
+    .founders-moderator
+      +grid-column(3)
+      margin-bottom: rem-calc(40)
+      img
+        +border-radius(100%)
+        margin-bottom: rem-calc(10)
+      .moderator-name
+        color: $primary-color
+        font-weight: bold
+        font-size: rem-calc(22)

@@ -25,4 +25,9 @@ feature "View founders page" do
     visit founders_path
     expect(page).to have_css(".founders-network")
   end
+
+  it "should have an moderators section" do
+    visit founders_path
+    expect(page).to have_css(".founders-moderators")
+  end
 end
