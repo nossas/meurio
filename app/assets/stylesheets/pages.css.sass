@@ -30,7 +30,7 @@ body.pages.founders
             background: $primary-color
 
   .founders-slider
-    background: asset-url("pages/founders/slider_bg_1.jpg") center center
+    background: asset-url("pages/founders/slider_bg_1.jpg")
     background-size: cover
     padding: rem-calc(20) 0 rem-calc(20) 0
     text-align: center
@@ -70,7 +70,8 @@ body.pages.founders
         font-weight: bold
 
   .founders-program
-    background: asset-url("pages/founders/program/bg.jpg")  center center
+    background: asset-url("pages/founders/program/bg.jpg")
+    background-size: cover
     .program-item
       +grid-column(4)
       img
@@ -81,6 +82,7 @@ body.pages.founders
         margin: 0
       p
         color: white
+        font-size: rem-calc(18)
       h4, p
         line-height: normal
 
@@ -125,6 +127,7 @@ body.pages.founders
 
   .founders-network
     background: asset-url("pages/founders/network_bg.jpg")
+    background-size: cover
     img
       margin: 0 rem-calc(40)
       width: 100px
