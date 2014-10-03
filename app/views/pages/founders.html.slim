@@ -39,104 +39,108 @@
 .founders-program
   .row
     .title
-      h2 Programa
+      h2= t('pages.founders.program.title')
   .row
     .program-item
       = image_tag("pages/founders/program/technology.png")
-      h4 Tecnologia de ponta
-      p Acesso às nossas ferramentas e aplicativos de mobilização, assim como à equipe de tecnologia e design da Rede, servidor, mailing e manutenção.
+      h4= t('pages.founders.program.item1.title')
+      p= t('pages.founders.program.item1.content')
     .program-item
       = image_tag("pages/founders/program/methodology.png")
-      h4 Metodologia
-      p Conhecimento das metodologias de mobilização e gestão da rede desenvolvidas e aprovadas nos últimos 3 anos de trabalho.
+      h4= t('pages.founders.program.item2.title')
+      p= t('pages.founders.program.item2.content')
     .program-item
       = image_tag("pages/founders/program/connections.png")
-      h4 Conexões
-      p Participação do encontro anual da Rede Nossas Cidades e contato direto com financiadores, embaixadores e mobilizadores que vão ajudar a tirar a sua rede de mobilização do papel.
+      h4= t('pages.founders.program.item3.title')
+      p= t('pages.founders.program.item3.content')
     .program-item
       = image_tag("pages/founders/program/legal_support.png")
-      h4 Suporte legal
-      p Apoio da equipe de operações e questões legais na montagem de uma organização robusta e bem estruturada.
+      h4= t('pages.founders.program.item4.title')
+      p= t('pages.founders.program.item4.content')
     .program-item
       = image_tag("pages/founders/program/brand.png")
-      h4 Marca
-      p Oportunidade de construir uma marca forte a partir de valores e cases já reconhecidos através das vitórias das mobilizações da Rede Meu Rio e Minha Sampa.
+      h4= t('pages.founders.program.item5.title')
+      p= t('pages.founders.program.item5.content')
     .program-item
       = image_tag("pages/founders/program/mentoring.png")
-      h4 Mentoria
-      p Suporte no desenvolvimento das suas ações através do acompanhamento periódico da Equipe da Rede até que você se sinta pronto para caminhar com as próprias pernas.
+      h4= t('pages.founders.program.item6.title')
+      p= t('pages.founders.program.item6.content')
 
 .founders-steps
   .row
     .title
-      h2 Trajeto
+      h2= t('pages.founders.steps.title')
   .row
     .founders-step
       .step-box
         .step-cover
-          .step-name Passo 1
-          .step-definition Inscrição
-        .step-content Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          .step-name= t('pages.founders.steps.step1.name')
+          .step-definition= t('pages.founders.steps.step1.definition')
+        .step-content= t('pages.founders.steps.step1.content')
     .founders-step
       .step-box
         .step-cover
-          .step-name Passo 2
-          .step-definition Entrevista
-        .step-content Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          .step-name= t('pages.founders.steps.step2.name')
+          .step-definition= t('pages.founders.steps.step2.definition')
+        .step-content= t('pages.founders.steps.step2.content')
     .founders-step
       .step-box
         .step-cover
-          .step-name Passo 3
-          .step-definition Financiamento coletivo
-        .step-content Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          .step-name= t('pages.founders.steps.step3.name')
+          .step-definition= t('pages.founders.steps.step3.definition')
+        .step-content= t('pages.founders.steps.step3.content')
     .founders-step
       .step-box
         .step-cover
-          .step-name Passo 4
-          .step-definition Resultado
-        .step-content Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          .step-name= t('pages.founders.steps.step4.name')
+          .step-definition= t('pages.founders.steps.step4.definition')
+        .step-content= t('pages.founders.steps.step4.content')
   .row
     .founders-step
       .step-box
         .step-cover
-          .step-name Passo 5
-          .step-definition Residência
-        .step-content Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          .step-name= t('pages.founders.steps.step5.name')
+          .step-definition= t('pages.founders.steps.step5.definition')
+        .step-content= t('pages.founders.steps.step5.content')
     .founders-step
       .step-box
         .step-cover
-          .step-name Passo 6
-          .step-definition Incubação
-        .step-content Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          .step-name= t('pages.founders.steps.step6.name')
+          .step-definition= t('pages.founders.steps.step6.definition')
+        .step-content= t('pages.founders.steps.step6.content')
     .founders-step
       .step-box
         .step-cover
-          .step-name Passo 7
-          .step-definition Para o infinito e além!
-        .step-content Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          .step-name= t('pages.founders.steps.step7.name')
+          .step-definition= t('pages.founders.steps.step7.definition')
+        .step-content= t('pages.founders.steps.step7.content')
+        .step-cover
+          .step-name
+          .step-definition
+        .step-content
     .founders-step
-      = image_tag "Troféu"
+      = image_tag t('pages.founders.steps.step8')
 
 .founders-network
   .row
     .title
-      h2 Rede
+      h2= t('pages.founders.network.title')
   .row
     .text
       p
         = image_tag("institucionais/meurio/mr_logo_inst.png")
         = image_tag("institucionais/minhasampa/msp_logo_inst.jpg")
-      p Nossa história começa no Rio de Janeiro, em julho de 2011, com a #{link_to "Rede Meu Rio", Organization.find_by(slug: 'meurio')}. Lá, o movimento conseguiu em pouco mais de 3 anos engajar mais de 150 mil pessoas em questões importantes de mobilidade, educação, transparência e formulação de políticas públicas. Hoje, um em cada 20 jovens cariocas entre 20 e 29 anos é membro do Meu Rio.
-      p Em julho de 2014, em São Paulo, lançamos nossa primeira experiência de replicação desse modelo. A #{link_to "Rede Minha Sampa", Organization.find_by(slug: 'minhasampa')} já possui mais de 10 mil membros e algumas vitórias em poucos meses.
-      p Depois de ganhar o Desafio de Impacto Social da Google Brasil, o sonho de levar este modelo para outras lugares do Brasil virou realidade, e a sua cidade pode ser a próxima!
+      p= raw t('pages.founders.network.content.p1', link: link_to('Rede Meu Rio', Organization.find_by(slug: 'meurio')))
+      p= raw t('pages.founders.network.content.p2', link: link_to('Rede Minha Sampa', Organization.find_by(slug: 'minhasampa')))
+      p= t('pages.founders.network.content.p3')
 
 .founders-moderators
   .row
     .title
-      h2 Provocadores
+      h2= t('pages.founders.moderators.title')
   .row
     .text
-      p Esses são os provocadores confirmados para as residências de incubação da rede em 2015, outros nomes de peso se somarão a esse time ao longo do ano.
+      p= t('pages.founders.moderators.content')
   .row
     .founders-moderator
       = image_tag("http://a3.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU1MTIyMTE4MTU5.jpg")
@@ -167,35 +171,35 @@
 .founders-support
   .row
     .title
-      h2 Apoie
+      h2= t('pages.founders.support.title')
   .row
     .text
-      p Curtiu, mas não tem interesse em ser um fundador?
+      p= t('pages.founders.support.content')
   .row
     .support-item
       = image_tag "pages/founders/support/support_icon1.png"
-      p Compartilhe o programa com seus amigos!
+      p= t('pages.founders.support.item1.content')
       = link_to "Ver como", "#share", class: [:button, :radius, :large, :secondary], data: {"reveal-id" => "share"}
       #share.reveal-modal.small data={reveal: true}
-        p Compartilhe o programa com a sua rede de amigos e ajude a levar esta iniciativa para os quatro cantos do Brasil
+        p= t('pages.founders.support.item1.reveal_content')
         p
-          = link_to "Compartilhe no Facebook", "#", class: [:button, :large]
-          = link_to "Compartilhe no Twitter", "#", class: [:button, :large]
+          = link_to t('pages.founders.support.item1.facebook'), "#", class: [:button, :large]
+          = link_to t('pages.founders.support.item1.twitter'), "#", class: [:button, :large]
         a.close-reveal-modal &#215;
 
     .support-item
       = image_tag "pages/founders/support/support_icon2.png"
-      p Deixe seu email para ser avisado quando a rede chegar na sua cidade!
-      = link_to "Deixar email", "#", class: [:button, :radius, :large, :secondary]
+      p= t('pages.founders.support.item2.content')
+      = link_to t('pages.founders.support.item2.link'), "#", class: [:button, :radius, :large, :secondary]
     .support-item
       = image_tag "pages/founders/support/support_icon3.png"
-      p Disponibilize recursos que podem viabilizar a rede na sua cidade
-      = link_to "Apoiar a rede", "#", class: [:button, :radius, :large, :secondary]
+      p= t('pages.founders.support.item3.content')
+      = link_to t('pages.founders.support.item3.link'), "#", class: [:button, :radius, :large, :secondary]
 
 .founders-subscription
   .row
     .title
-      h2 Inscrição
+      h2= t('pages.founders.subscription.title')
   .row
     .text
-      p= link_to "Ir para o formulário de inscrição", "https://docs.google.com/a/minhascidades.org.br/forms/d/1qNV6i84kPbRmP1C5eACTR-h_y8K-4WypDr0rKVV0Buk/viewform", class: [:button, :radius, :large, :secondary]
+      p= link_to t('pages.founders.subscription.link'), "https://docs.google.com/a/minhascidades.org.br/forms/d/1qNV6i84kPbRmP1C5eACTR-h_y8K-4WypDr0rKVV0Buk/viewform", class: [:button, :radius, :large, :secondary]
