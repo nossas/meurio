@@ -79,12 +79,12 @@ Meurio::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Mailer config
-  default_url_options[:host] = "minhascidades.org.br"
+  default_url_options[:host] = "nossascidades.org"
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     user_name: ENV["SENDGRID_USERNAME"],
     password: ENV["SENDGRID_PASSWORD"],
-    domain: "minhascidades.org.br",
+    domain: "nossascidades.org",
     address: "smtp.sendgrid.net",
     port: 587,
     authentication: :plain,
