@@ -1,3 +1,7 @@
 en:
-  founders:
-    slide_1_title: We're gonna rock your world
+  pages:
+    founders:
+      slider:
+        slide1: "We're gonna rock your world, baby."
+        slide2: "You're gonna burn."
+        slide3: "'Cause this is how we do."
