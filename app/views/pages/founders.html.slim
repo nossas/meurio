@@ -164,6 +164,34 @@
       = image_tag("http://a3.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU1MTIyMTE4MTU5.jpg")
       .moderator-name Arnold Schwarzenegger
 
+.founders-support
+  .row
+    .title
+      h2 Apoie
+  .row
+    .text
+      p Curtiu, mas não tem interesse em ser um fundador?
+  .row
+    .support-item
+      = image_tag "pages/founders/support/support_icon1.png"
+      p Compartilhe o programa com seus amigos!
+      = link_to "Ver como", "#share", class: [:button, :radius, :large, :secondary], data: {"reveal-id" => "share"}
+      #share.reveal-modal.small data={reveal: true}
+        p Compartilhe o programa com a sua rede de amigos e ajude a levar esta iniciativa para os quatro cantos do Brasil
+        p
+          = link_to "Compartilhe no Facebook", "#", class: [:button, :large]
+          = link_to "Compartilhe no Twitter", "#", class: [:button, :large]
+        a.close-reveal-modal &#215;
+
+    .support-item
+      = image_tag "pages/founders/support/support_icon2.png"
+      p Deixe seu email para ser avisado quando a rede chegar na sua cidade!
+      = link_to "Deixar email", "#", class: [:button, :radius, :large, :secondary]
+    .support-item
+      = image_tag "pages/founders/support/support_icon3.png"
+      p Disponibilize recursos que podem viabilizar a rede na sua cidade
+      = link_to "Apoiar a rede", "#", class: [:button, :radius, :large, :secondary]
+
 .founders-subscription
   .row
     .title
