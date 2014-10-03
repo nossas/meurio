@@ -1,8 +1,8 @@
 .founders-slider
   .row
     ul.locales
-      li= link_to 'Português (BR)', locale: 'pt'
-      li= link_to 'English (US)', locale: 'en'
+      li class=('active' if I18n.locale == :pt) = link_to 'Português (BR)', locale: :pt
+      li class=('active' if I18n.locale == :en) = link_to 'English (US)', locale: :en
     .nossas-cidades= image_tag("nossas_cidades.png")
 
   ul data={orbit: true, options: "slide_number:false; resume_on_mouseout:true; navigation_arrows: false;"}
