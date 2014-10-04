@@ -188,7 +188,7 @@
         p= t('pages.founders.support.item1.reveal_content')
         p
           = link_to t('pages.founders.support.item1.facebook'), "https://www.facebook.com/sharer/sharer.php?u=#{URI.encode(request.url)}", class: [:button, :large, 'facebook-share-button']
-          = link_to t('pages.founders.support.item1.twitter'), "https://twitter.com/share?url=#{request.url}&text=#{URI.encode('Seja um fundador da Rede Nossas Cidades! Inscreva-se: bit.ly/minhascidades')}", class: [:button, :large, 'twitter-share-button']
+          = link_to t('pages.founders.support.item1.twitter'), "https://twitter.com/share?text=#{URI.encode('Seja um fundador da Rede Nossas Cidades! Inscreva-se: bit.ly/minhascidades')}", class: [:button, :large, 'twitter-share-button']
         a.close-reveal-modal &#215;
 
     .support-item
