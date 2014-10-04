@@ -1,3 +1,7 @@
+= content_for(:title) { "Rede Nossas Cidades busca fundadores pelo Brasil!" }
+= content_for(:fb_title) { "Rede Nossas Cidades busca fundadores pelo Brasil!" }
+= content_for(:description) { "Inscrições para residência e incubação até 30/11." }
+
 .founders-slider
   .row
     ul.locales
@@ -183,7 +187,7 @@
       #share.reveal-modal.small data={reveal: true}
         p= t('pages.founders.support.item1.reveal_content')
         p
-          = link_to t('pages.founders.support.item1.facebook'), "#", class: [:button, :large]
+          = link_to t('pages.founders.support.item1.facebook'), "https://www.facebook.com/sharer/sharer.php?u=#{URI.encode(request.url)}", class: [:button, :large, 'facebook-share-button']
           = link_to t('pages.founders.support.item1.twitter'), "#", class: [:button, :large]
         a.close-reveal-modal &#215;
 
