@@ -47,6 +47,16 @@ function flash() {
   $(document).on('click', '.flash', function(){ $('.flash').slideUp() })
 }
 
+function smoothScroll() {
+  var target = this.hash, $target = $(target);
+
+  $('html, body').stop().animate({
+    'scrollTop': $target.offset().top
+  }, 1000, 'swing', function () {
+    window.location.hash = target;
+  });
+}
+
 $(document).bind('reveal.facebox', function() {
   $('form.new_user').enableClientSideValidations();
 });
@@ -76,7 +86,7 @@ $(function(){
     return false;
   });
 
-  $(document).on('click', ".application_menu a", function (e) {
+  $(document).on('click', ".application_menu a", function(e){
     var target = this.hash, $target = $(target);
 
     $('html, body').stop().animate({
@@ -85,4 +95,6 @@ $(function(){
       window.location.hash = target;
     });
   });
+
+  $(document).on('click', "a[href='#founders-subscription']", smoothScroll);
 })

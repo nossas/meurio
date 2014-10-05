@@ -28,7 +28,7 @@
   .row
     .founders-subscribe
       p= t('.slider.subscribe')
-      = link_to(t('.slider.subscribe_cta'), "#subscription", class: [:button, :radius, :secondary, :large])
+      = link_to(t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary, :large])
 
 .founders-about
   .row
@@ -211,7 +211,7 @@
       p= t('.support.item3.content')
       = link_to t('.support.item3.link'), "https://docs.google.com/forms/d/1_DbNtQu10oBozsoRL3VpUsC1GNVMu5C_CcZ_V36oT8Y/viewform", class: [:button, :radius, :large, :secondary]
 
-.founders-subscription
+.founders-subscription#founders-subscription
   .row
     .title
       h2= t('.subscription.title')
