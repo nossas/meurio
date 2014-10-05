@@ -15,7 +15,7 @@ body.pages.founders
   .title
     +grid-column(6, $center: true)
 
-  .text
+  .text, .action
     +grid-column(11, $center: true)
 
   .page-wrap
@@ -191,3 +191,15 @@ body.pages.founders
     .button
       &:last-child
         margin: 0
+
+  .founders-subscription
+    .text
+      text-align: left
+      color: black
+      p
+        color: black
+      ul
+        li
+          list-style: disc
+          margin-bottom: rem-calc(20)
+          font-size: rem-calc(20)
