@@ -137,6 +137,8 @@
       p= raw t('.network.content.p1', link: link_to('Rede Meu Rio', Organization.find_by(slug: 'meurio')))
       p= raw t('.network.content.p2', link: link_to('Rede Minha Sampa', Organization.find_by(slug: 'minhasampa')))
       p= t('.network.content.p3')
+  .row
+    .action= link_to(t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary, :large])
 
 .founders-moderators
   .row

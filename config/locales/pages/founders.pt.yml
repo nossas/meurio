@@ -65,10 +65,10 @@ pt:
           content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         step8: "Troféu"
       network:
-        title: "Rede"
+        title: "A Rede"
         content:
-          p1: "Nossa história começa no Rio de Janeiro, em julho de 2011, com a %{link}. Lá, o movimento conseguiu em pouco mais de 3 anos engajar mais de 150 mil pessoas em questões importantes de mobilidade, educação, transparência e formulação de políticas públicas. Hoje, um em cada 20 jovens cariocas entre 20 e 29 anos é membro do Meu Rio."
-          p2: "Em julho de 2014, em São Paulo, lançamos nossa primeira experiência de replicação desse modelo. A %{link} já possui mais de 10 mil membros e algumas vitórias em poucos meses."
+          p1: "Nossa história começa no Rio de Janeiro, em julho de 2011, com a <a href='http://www.nossascidades.org/organizations/1'>Rede Meu Rio</a>. Lá, o movimento conseguiu em pouco mais de 3 anos engajar mais de 150 mil pessoas em decisões e formulações de políticas públicas sobre transparência, mobilidade, infraestrutura, educação e saúde. Hoje, um em cada 20 jovens cariocas entre 20 e 29 anos é membro do Meu Rio."
+          p2: "Em julho de 2014, em São Paulo, lançamos nossa primeira experiência de replicação desse modelo. A <a href='http://www.nossascidades.org/organizations/2'>Rede Minha Sampa</a> já possui mais de 10 mil membros e algumas vitórias em poucos meses."
           p3: "Depois de ganhar o Desafio de Impacto Social da Google Brasil, o sonho de levar este modelo para outras lugares do Brasil virou realidade, e a sua cidade pode ser a próxima!"
       moderators:
         title: "Provocadores"
