@@ -2,7 +2,26 @@
 = content_for(:fb_title) { "Rede Nossas Cidades busca fundadores pelo Brasil!" }
 = content_for(:description) { "Inscrições para residência e incubação até 30/11." }
 
-.founders-slider
+.fixed
+  .contain-to-grid.founders-top-bar
+    nav.top-bar data={topbar: true} role="navigation"
+      ul.title-area
+        li.name
+          h1
+            = link_to(root_path) do
+              = image_tag("nossas_cidades.png")
+      section.top-bar-section
+        ul.right
+          li= link_to t('.slider.title'), "#founders-slider"
+          li= link_to t('.about.title'), "#founders-about"
+          li= link_to t('.program.title'), "#founders-program"
+          li= link_to t('.steps.title'), "#founders-steps"
+          li= link_to t('.network.title'), "#founders-network"
+          li= link_to t('.moderators.title'), "#founders-moderators"
+          li= link_to t('.support.title'), "#founders-support"
+          li= link_to t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary]
+
+.founders-slider#founders-slider
   .row
     ul.locales
       li class=('active' if I18n.locale == :pt) = link_to('Português (BR)', locale: :pt)
@@ -29,7 +48,7 @@
       p= t('.slider.subscribe')
       = link_to(t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary, :large])
 
-.founders-about
+.founders-about#founders-about
   .row
     .title
       h2= t('.about.title')
@@ -39,7 +58,7 @@
       p= t('.about.content.p2')
       p= t('.about.content.p3')
 
-.founders-program
+.founders-program#founders-program
   .row
     .title
       h2= t('.program.title')
@@ -69,7 +88,7 @@
       h4= t('.program.item6.title')
       p= t('.program.item6.content')
 
-.founders-steps
+.founders-steps#founders-steps
   .row
     .title
       h2= t('.steps.title')
@@ -124,7 +143,7 @@
     .founders-step
       = image_tag t('.steps.step8')
 
-.founders-network
+.founders-network#founders-network
   .row
     .title
       h2= t('.network.title')
@@ -139,7 +158,7 @@
   .row
     .action= link_to(t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary, :large])
 
-.founders-moderators
+.founders-moderators#founders-moderators
   .row
     .title
       h2= t('.moderators.title')
@@ -178,7 +197,7 @@
   .row
     .action= link_to(t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary, :large])
 
-.founders-support
+.founders-support#founders-support
   .row
     .title
       h2= t('.support.title')

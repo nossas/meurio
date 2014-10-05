@@ -1,4 +1,12 @@
 body.pages.founders
+  .founders-top-bar
+    ul.title-area
+      img
+        height: $topbar-height - 15
+    nav.top-bar
+      a:hover
+        text-decoration: underline
+
   .meurio_header
     display: none
 
@@ -38,7 +46,7 @@ body.pages.founders
 
   .founders-about, .founders-program, .founders-steps, .founders-network, .founders-moderators, .founders-subscription, .founders-support, .founders-slider
     text-align: center
-    padding: rem-calc(40) 0
+    padding: rem-calc(80) 0
 
   .founders-about, .founders-steps, .founders-moderators, .founders-subscription
     background: asset-url("pages/founders/pattern_bg.jpg")
@@ -149,6 +157,7 @@ body.pages.founders
   .founders-moderators
     p
       color: black
+      margin-bottom: rem-calc(40)
     .founders-moderator
       margin-bottom: rem-calc(80)
       +grid-column(3)
