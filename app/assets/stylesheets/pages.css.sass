@@ -67,7 +67,6 @@ body.pages.founders
       p
         color: black
         font-size: rem-calc(20)
-        font-weight: bold
 
   .founders-program
     background: asset-url("pages/founders/program/bg.jpg")
@@ -141,16 +140,29 @@ body.pages.founders
     p
       color: black
     .founders-moderator
+      margin-bottom: rem-calc(80)
       +grid-column(3)
-      margin-bottom: rem-calc(40)
-      font-family: Pluto
-      img
+      .moderator-image
         +border-radius(100%)
+        overflow: hidden
+        position: relative
         margin-bottom: rem-calc(10)
+        .moderator-description
+          position: absolute
+          height: 100%
+          top: 0
+          background: rgba(white, .75)
+          display: none
+          .vertical-align-content
+            padding: rem-calc(10)
+        &:hover
+          .moderator-description
+            display: block
       .moderator-name
+        font-family: Pluto
         color: $primary-color
-        font-weight: bold
-        font-size: rem-calc(22)
+        font-weight: 500
+        font-size: rem-calc(20)
 
   .founders-support
     background: asset-url("pages/founders/support/support_bg.jpg")
