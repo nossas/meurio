@@ -96,5 +96,13 @@ $(function(){
     });
   });
 
+  // Pages#founders
   $(document).on('click', "a[href='#founders-subscription']", smoothScroll);
+
+  $("#founders-orbit").on("after-slide-change.fndtn.orbit", function(event, orbit) {
+    $(".founders-slider").removeClass("founders-slider-0");
+    $(".founders-slider").removeClass("founders-slider-1");
+    $(".founders-slider").removeClass("founders-slider-2");
+    $(".founders-slider").addClass("founders-slider-" + orbit.slide_number);
+  });
 })

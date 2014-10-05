@@ -36,34 +36,57 @@ body.pages.founders
           &.active
             background: $primary-color
 
+  .founders-about, .founders-program, .founders-steps, .founders-network, .founders-moderators, .founders-subscription, .founders-support, .founders-slider
+    text-align: center
+    padding: rem-calc(40) 0
+
+  .founders-about, .founders-steps, .founders-moderators, .founders-subscription
+    background: asset-url("pages/founders/pattern_bg.jpg")
+
   .founders-slider
     background: asset-url("pages/founders/slider_bg_1.jpg")
+    &.founders-slider-0
+      background: asset-url("pages/founders/slider_bg_1.jpg")
+    &.founders-slider-1
+      background: asset-url("pages/founders/slider_bg_2.jpg")
+    &.founders-slider-2
+      background: asset-url("pages/founders/slider_bg_3.jpg")
+    // Preloading bg images
+    &:after
+      display: none
+      content: asset-url("pages/founders/slider_bg_1.jpg") asset-url("pages/founders/slider_bg_2.jpg") asset-url("pages/founders/slider_bg_3.jpg")
     background-size: cover
-    padding: rem-calc(20) 0 rem-calc(20) 0
-    text-align: center
+    +transition(.5s)
+    ul.locales
+      text-align: right
+      li
+        font-size: .8em
+        display: inline
+        margin-left: 1em
+        &.active
+          a
+            color: $primary-color
+            text-decoration: underline
+        a
+          color: white
     .nossas-cidades, .founders-subscribe
       +grid-column(12)
       p
         color: white
         font-size: rem-calc(20)
     .nossas-cidades
-      margin: rem-calc(40) 0
-    .slide-1, .slide-3
-      .slide-content
-        padding-top: rem-calc(50)
+      margin-bottom: rem-calc(40)
     .slide-content
       +grid-column(12)
       color: white
       font-size: rem-calc(40)
       font-weight: bold
       margin-bottom: rem-calc(30)
-
-  .founders-about, .founders-program, .founders-steps, .founders-network, .founders-moderators, .founders-subscription, .founders-support
-    text-align: center
-    padding: rem-calc(40) 0
-
-  .founders-about, .founders-steps, .founders-moderators, .founders-subscription
-    background: asset-url("pages/founders/pattern_bg.jpg")
+    .orbit-slides-container
+      li
+        min-height: 100%
+      .row, .slide-content
+        height: 100%
 
   .founders-about
     .about-content
@@ -88,19 +111,6 @@ body.pages.founders
         font-size: rem-calc(18)
       h4, p
         line-height: normal
-
-  ul.locales
-    text-align: right
-    li
-      font-size: .8em
-      display: inline
-      margin-left: 1em
-      &.active
-        a
-          color: $primary-color
-          text-decoration: underline
-      a
-        color: white
 
   .founders-steps
     .founders-step
