@@ -11,13 +11,19 @@
   ul#founders-orbit data={orbit: true, options: "slide_number:false; resume_on_mouseout:true; navigation_arrows: false;"}
     li.slide-1
       .row
-        .slide-content= t('.slider.slide1')
+        .slide-content
+          .vertical-align-container
+            .vertical-align-content= t('.slider.slide1')
     li.slide-2
       .row
-        .slide-content= t('.slider.slide2')
+        .slide-content
+          .vertical-align-container
+            .vertical-align-content= t('.slider.slide2')
     li.slide-3
       .row
-        .slide-content= t('.slider.slide3')
+        .slide-content
+          .vertical-align-container
+            .vertical-align-content= t('.slider.slide3')
   .row
     .founders-subscribe
       p= t('.slider.subscribe')
