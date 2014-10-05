@@ -198,18 +198,18 @@
       #share.reveal-modal.small data={reveal: true}
         p= t('pages.founders.support.item1.reveal_content')
         p
-          = link_to t('pages.founders.support.item1.facebook'), "https://www.facebook.com/sharer/sharer.php?u=#{URI.encode(request.url)}", class: [:button, :large, 'facebook-share-button']
-          = link_to t('pages.founders.support.item1.twitter'), "https://twitter.com/share?text=#{URI.encode('Seja um fundador da Rede Nossas Cidades! Inscreva-se: bit.ly/minhascidades')}", class: [:button, :large, 'twitter-share-button']
+          = link_to t('pages.founders.support.item1.facebook'), "https://www.facebook.com/sharer/sharer.php?u=#{URI.encode(request.url)}", class: [:button, :large, 'facebook-share-button', 'icon-facebook2']
+          = link_to t('pages.founders.support.item1.twitter'), "https://twitter.com/share?text=#{URI.encode('Seja um fundador da Rede Nossas Cidades! Inscreva-se: bit.ly/minhascidades')}", class: [:button, :large, 'twitter-share-button', 'icon-twitter2']
         a.close-reveal-modal &#215;
 
     .support-item
       = image_tag "pages/founders/support/support_icon2.png"
       p= t('pages.founders.support.item2.content')
-      = link_to t('pages.founders.support.item2.link'), "#", class: [:button, :radius, :large, :secondary]
+      = link_to t('pages.founders.support.item2.link'), "https://docs.google.com/forms/d/12YaW20C5fq5m1nozaZhOZYrnPb4ZvzJFXtqfWGyxyoM/viewform", class: [:button, :radius, :large, :secondary]
     .support-item
       = image_tag "pages/founders/support/support_icon3.png"
       p= t('pages.founders.support.item3.content')
-      = link_to t('pages.founders.support.item3.link'), "#", class: [:button, :radius, :large, :secondary]
+      = link_to t('pages.founders.support.item3.link'), "https://docs.google.com/forms/d/1_DbNtQu10oBozsoRL3VpUsC1GNVMu5C_CcZ_V36oT8Y/viewform", class: [:button, :radius, :large, :secondary]
 
 .founders-subscription
   .row
