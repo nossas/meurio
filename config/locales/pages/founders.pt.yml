@@ -1,6 +1,7 @@
 pt:
   pages:
     founders:
+      logo: "nossas_cidades.png"
       slider:
         title: "Topo"
         slide1: "Estamos criando uma rede de cidades mobilizadas."

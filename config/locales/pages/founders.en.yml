@@ -1,6 +1,7 @@
 en:
   pages:
     founders:
+      logo: "our_cities.png"
       slider:
         title: "Top"
         slide1: "We are building a network of mobilized cities."
