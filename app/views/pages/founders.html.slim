@@ -152,8 +152,8 @@
       p
         = image_tag("institucionais/meurio/mr_logo_inst.png")
         = image_tag("institucionais/minhasampa/msp_logo_inst.jpg")
-      p= raw t('.network.content.p1', link: link_to('Rede Meu Rio', Organization.find_by(slug: 'meurio')))
-      p= raw t('.network.content.p2', link: link_to('Rede Minha Sampa', Organization.find_by(slug: 'minhasampa')))
+      p= raw t('.network.content.p1')
+      p= raw t('.network.content.p2')
       p= t('.network.content.p3')
   .row
     .action= link_to(t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary, :large])
