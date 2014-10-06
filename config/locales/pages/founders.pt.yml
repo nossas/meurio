@@ -84,10 +84,12 @@ pt:
           twitter: "Compartilhe no Twitter"
         item2:
           content: "Deixe seu email para ser avisado quando a rede chegar na sua cidade!"
-          link: "Deixar email"
+          link_text: "Deixar email"
+          link: "https://docs.google.com/forms/d/1glYjiqVCQq1DWlIGHpBGWgNvZ6Qlq2kFAMB-CDh3Khw/viewform"
         item3:
           content: "Disponibilize recursos que podem viabilizar a rede na sua cidade"
-          link: "Apoiar a rede"
+          link_text: "Apoiar a rede"
+          link: "https://docs.google.com/forms/d/1_DbNtQu10oBozsoRL3VpUsC1GNVMu5C_CcZ_V36oT8Y/viewform"
       subscription:
         title: "Inscrição"
         link: "Ir para o formulário de inscrição"
