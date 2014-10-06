@@ -5,18 +5,18 @@ en:
       slider:
         title: "Top"
         slide1: "We are building a network of mobilized cities."
-        slide2: "New technologies and methodologies bringing citizens closer to the processes that shape the futures of their cities."
+        slide2: "New technologies and methodologies bringing citizens closer to the processes that shape the future of their cities."
         slide3: "One month of residency in Rio de Janeiro and up to one year of incubation with our qualified team."
-        subscribe: "Become a founder of this network in your city."
+        subscribe: "Found this network in your city."
         subscribe_cta: "I want to apply!"
       about:
         title: "About"
         content:
-          p1: "We believe that the construction of better cities starts with more engaged and connected citizens. This is why we work for a network of thousands of people who pressure on decision-makers, contribute their ideas and share their talents, in order to build cities that are more inclusive, sustainable, creative, collective and that are always becoming better places to live.  With over half of the world’s population living in urban centers, we believe that changing our cities is the best way to change the world."
-          p2: "Our work is to offer full support to people who are mobilizing to improve their cities.  You can participate in this movement by bringing to your city the methodology that the Meu Rio Network (Rede Meu Rio) has developed during the past three years of work in Rio de Janeiro."
-          p3: "Applications for the Our Cities Network founders program are now open for passionate people who would like to dedicate time, energy and talent to starting a local mobilization network in their own cities."
+          p1: "We believe that the construction of better cities starts with more engaged and connected citizens. This is why we work for a network of thousands of people who pressure on decision-makers, contribute their ideas and share their talents in order to build cities that are more inclusive, sustainable, creative, collective and that are always becoming better places to live.  With over half of the world’s population living in urban centers, we believe that changing our cities is the best way to change the world."
+          p2: "Our work is to offer full support to people who are mobilizing to improve their cities.  You can join this movement by bringing to your city the methodology that the Meu Rio Network has developed during the past three years of work in Rio de Janeiro."
+          p3: "Applications are now open for passionate people who would like to dedicate time, energy and talent to starting a local mobilization network in their own cities."
       program:
-        title: "Program"
+        title: "The Program"
         item1:
           title: "Technology for Mobilization"
           content: "Access to our tools and applications for mobilization, as well as to our tech and design teams, server, mailing service and maintenance support."
@@ -25,22 +25,22 @@ en:
           content: "Knowledge of the mobilization methodologies and network management techniques developed during our past three years of work at Meu Rio."
         item3:
           title: "Connections"
-          content: "Participation in the annual Our Cities Summit and direct contact with specialists and donors from around the world to help you start a mobilization network."
+          content: "Participation in the annual Our Cities Summit and direct contact with activists, specialists and donors from around the world to help you start a mobilization network."
         item4:
           title: "Legal Support"
           content: "Assistance from the operations and legal team to structure strong local organizations from the ground up."
         item5:
           title: "Branding"
-          content: "A brand that carries with it the successes and values of the Meu Rio (Rio de Janeiro) and Minha Sampa (São Paulo) mobilization networks."
+          content: "Opportunity to build a brand based on the values of the Meu Rio (Rio de Janeiro) and Minha Sampa (São Paulo) Networks."
         item6:
           title: "Mentorship"
-          content: "Regular support from the Our Cities Team starting with the residency and lasting until you are leading your network on your own."
+          content: "Support of a dedicated team from the first steps of founding your network until you feel ready to walk on your own two feet."
       steps:
         title: "The Course"
         step1:
           name: "Step 1"
           definition: "Application"
-          content: "Applications will always remain open.  When you are ready to take on this challenge, complete your application and send us a video of up to one minute responding to the following question: “Why does your city need a mobilization network?”"
+          content: "Applications will always remain open.  When you are ready to take on this challenge, complete application form and send us a video of up to 3 minute responding to the following question: “Why does your city need a mobilization network?”"
         step2:
           name: "Step 2"
           definition: "Selection phase 1 (written exercise + interview)"
@@ -60,7 +60,7 @@ en:
         step6:
           name: "Step 6"
           definition: "Incubation"
-          content: "Returning to their cities, candidates will found their networks and launch their first mobilizations.  The Our Cities team will accompany the growth and development of each network until it is autonomous and able to sustain itself."
+          content: "Returning to their cities, candidates will launch their networks and their first mobilizations.  The Our Cities team will accompany the growth and development of each network until it is autonomous and able to sustain itself."
         step7:
           name: "Step 7"
           definition: "Founding the network"
@@ -68,17 +68,17 @@ en:
       network:
         title: "The Network"
         content:
-          p1: "Our story begins in Rio de Janeiro in July of 2011 with the <a href='http://www.nossascidades.org/organizations/1'>Meu Rio Network</a>. In just over three years of work, Meu Rio included more than 150,000 people in public policy decisions about transparency, mobility, infrastructure, education and public health.  Today, one in every 20 people living in Rio between the ages 20 and 29 is a member of Meu Rio."
-          p2: "We first replicated our model in July of 2014 in São Paulo.  The <a href='http://www.nossascidades.org/organizations/2'>Minha Sampa Network</a> has more than 10,000 members and has won significant victories in its first months of existence."
-          p3: "After winning the Google’s Brazil Social Impact Challenge, our dream to take this model to other cities around Brazil and the world became a reality. Your city could be next!"
+          p1: "Our story begins in Rio de Janeiro in July of 2011 with the Meu Rio Network. In just over three years of work, Meu Rio helped include more than 150,000 people in public policy decisions about transparency, mobility, infrastructure, education and public health.  Today, one in every 15 people between the ages 20 and 29 living in Rio is a member of Meu Rio."
+          p2: "We first replicated our model in July of 2014 in São Paulo.  The Minha Sampa Network has more than 10,000 members and has won significant victories in its first months of existence."
+          p3: "After winning the Google’s Brazil Social Impact Challenge, our dream of taking this model to other cities around Brazil and the world became a reality. Your city could be next!"
       moderators:
-        title: "Provocateurs"
+        title: "The Provocateurs"
         content: "These are the first confirmed provocateurs for the 2015 residencies. Stay tuned for additional announcements throughout the year!"
       support:
         title: "Support"
         content: "Like the idea, but not interested in becoming a founder?"
         item1:
-          content: "Share the program with your friends!"
+          content: "Share the program with your network of friends and help take this initiative around the world!"
           reveal_content: "Share the program with your network of friends and help take this initiative around the world!"
           facebook: "Share on Facebook"
           twitter: "Share on Twitter"
@@ -92,16 +92,16 @@ en:
           link_text: "Support the Network"
           link: "https://docs.google.com/forms/d/1zhjKIThLCitJbm6SW2hHnaoAZr76X_w0TJ5K6EYxcL8/viewform"
       subscription:
-        title: "Application"
+        title: "The Application"
         paragraph: "The Our Cities Network is accepting applications for its first class of Founders, whose residency will take place from March 15th to April 15th  at the Network headquarters in Rio de Janeiro.  Before submitting your application, please read the program details below:"
-        li1: "<strong>If you would like to participate in the first class of Founders of the Our Cities Network, click on the button below, complete your application and send it to us by 11:59 on November 30, along with a 1 minute long video responding to the following question:</strong> “Why does your city need a mobilization network?” The earlier you submit, the better your chances! <strong>The video should be sent to <a href='mailto:founders@ourcities.org'>founders@ourcities.org</a> with your complete name + “video” in the subject line.</strong>"
+        li1: "If you would like to participate in the first class of Founders of the Our Cities Network, click on the button below, complete your application and send it to us by 11:59 on November 30, along with a video of up to 3 minutes responding to the following question: “Why does your city need a mobilization network?” The earlier you submit, the better your chances! The video should be sent to founders@ourcitieis.org using the same email address that you used in the application form with your complete name + “video” in the subject line."
         li2: "<strong>On December 4th</strong>, standout candidates will receive an exercise on mobilization strategy, <strong>which should be turned in by December 8th.</strong> This will be a good way for the candidates to show their creativity and strategic thinking."
-        li3: "After the written exercise, the team will schedule an interview with each of the best candidates.  The interviews will last no longer than <strong>1.5 hours</strong> and will be conducted <strong>via Google Hangout from December 15-21 according to the availability of the candidate and the team.</strong>"
+        li3: "After the written exercise, the team will schedule a virtual interview with selected candidates.  The interviews will last no longer than 1.5 hours and will be conducted via Google Hangout from December 15-21 according to the availability of the candidate and the team."
         li4: "Pre-selected candidates will be notified on <strong>December 23!</strong>"
-        li5: "From <strong>January 5th to February 28th</strong>, pre-selected candidates will receive support from the Our Cities Team to <strong>write a script, produce a video and launch a crowdfunding campaign to raise R$ 9.000,00.</strong>"
+        li5: "From January 5th to February 28th, pre-selected candidates will receive support from the Our Cities Team to write a script, produce a video and launch a crowdfunding campaign to raise money that will subsidize part of the costs of the founders’ training program."
         li5_1: "The crowdfunding campaign is a way to verify that the potential for a culture of small donations for projects like the Our Cities Network exists in the city, especially since this is one of the main strategies for financial sustainability. Beyond this, it tests the candidate’s capacity to mobilize his or her own network to make the project happen."
-        li5_2: "<strong>The value of R$ 9.000,00 counts for 25% of the total replication costs of R$ 36.250,00</strong>. Included in this value are tickets to Rio and the selected candidates’ lodging during a one-month residency in Rio de Janeiro, the shared services of technology, design, legal support, and the Our Cities Network team, that will accompany entrepreneurs during the incubation period."
-        li6: "Selected candidates that reach their crowdfunding goal will participate in a <strong>residency in Rio de Janeiro from March 15 – April 15</strong>. During this period, they will participate in a complete training with the Meu Rio team and other well-known professionals in mobilization methodologies and technologies to transform their cities."
-        li7: "After the residency, the Our Cities team will accompany entrepreneurs during a period of <strong>six months to one year</strong>, giving all support necessary to structure the network, launch the first mobilizations and raise funds to sustain the local organization."
-        li8: "The entrepreneurs will be recognized as founders once they choose a board for their Network, form a team and launch their first mobilization."
+        li5_2: "The goal of the crowdfunding campaign will be R$9,000.00, which accounts for 25% of the total cost of R$36,250.00 to install the Network in a new city. The Our Cities Network will cover the other 75% of the costs during this first phase of replication.   These R$9,000.00 will pay for the candidates’ transportation and lodging during a one-month residency in Rio de Janeiro, the adaptation of the Network’s applications for the candidates’ city (Ex: Panela de Pressão, Multitude, Compartilhaço, among others) the shared services of technology, design, legal support and the salaries of the Our Cities Network team, that will accompany selected candidates during the incubation period of up to one year."
+        li6: "Candidates that reach their crowdfunding goal will be invited to participate in the residency in Rio de Janeiro from March 15 – April 15.  During this period, they will participate in a complete training with the Meu Rio team and other well-known professionals in mobilization methodologies and technologies to transform their cities."
+        li7: "After the residency, candidates that successfully plan the launch of their network will begin a phase of incubation and accompaniment by the Our Cities team that will last up to 1 year. During this period, candidates will receive support to structure their network, launch their first mobilizations and raise funds to sustain their local organization."
+        li8: "The candidates will be recognized as founders once they select a board for their Network, form a local support team and launch their first mobilization."
         link: "Go to the application form"
