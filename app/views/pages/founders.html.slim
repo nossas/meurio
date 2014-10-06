@@ -27,7 +27,7 @@
       li class=('active' if I18n.locale == :pt) = link_to('Português (BR)', locale: :pt)
       li class=('active' if I18n.locale == :en) = link_to('English (US)', locale: :en)
     .nossas-cidades= image_tag("nossas_cidades.png")
-  ul#founders-orbit data={orbit: true, options: "slide_number:false; resume_on_mouseout:true; navigation_arrows: false;"}
+  ul#founders-orbit data={orbit: true, options: "slide_number:false; resume_on_mouseout:true; navigation_arrows: false; timer_speed: 5000;"}
     li.slide-1
       .row
         .slide-content
@@ -141,7 +141,7 @@
           .step-definition
         .step-content
     .founders-step
-      = image_tag t('.steps.step8')
+      / = image_tag t('.steps.step8')
 
 .founders-network#founders-network
   .row
