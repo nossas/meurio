@@ -74,6 +74,14 @@ en:
       moderators:
         title: "The Provocateurs"
         content: "These are the first confirmed provocateurs for the 2015 residencies. Stay tuned for additional announcements throughout the year!"
+        moderator1:
+          description: "Executive Director, NGO Conectas"
+        moderator2:
+          description: "Education and Mobilization Manager, Arapyaú Institute"
+        moderator3:
+          description: "Former Justice Minister; Regional Director of Latin America, Open Society Foundations"
+        moderator4:
+          description: "Co-Founder, Institute for Technology & Society"
       support:
         title: "Support"
         content: "Like the idea, but not interested in becoming a founder?"
