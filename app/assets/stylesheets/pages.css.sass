@@ -53,6 +53,8 @@ body.pages.founders
 
   .founders-slider
     background: asset-url("pages/founders/slider_bg_1.jpg")
+    background-size: cover
+    +transition(.5s)
     &.founders-slider-0
       background: asset-url("pages/founders/slider_bg_1.jpg")
     &.founders-slider-1
@@ -63,8 +65,6 @@ body.pages.founders
     &:after
       display: none
       content: asset-url("pages/founders/slider_bg_1.jpg") asset-url("pages/founders/slider_bg_2.jpg") asset-url("pages/founders/slider_bg_3.jpg")
-    background-size: cover
-    +transition(.5s)
     ul.locales
       text-align: right
       li
@@ -120,20 +120,19 @@ body.pages.founders
     .founders-step
       +grid-column(3)
       margin-bottom: 20px
+      .step-name
+        background: $primary-color
+        color: white
+        padding: rem-calc(10) 0
+      .vertical-align-container
+        width: 100%
       .step-box
         padding: 10px
         height: 200px
         background: $dark-gray
         color: white
-        +transition(.25s)
-        .step-cover, .step-content
-          position: relative
-          top: 50%
-          transform: translateY(-50%)
-        .step-cover
-          .step-definition
-            font-weight: bold
         .step-content
+          font-size: rem-calc(16)
           display: none
         &:hover
           background: $primary-color
@@ -141,9 +140,6 @@ body.pages.founders
             display: none
           .step-content
             display: block
-      img
-        height: 150px
-        width: 100%
 
   .founders-network
     background: asset-url("pages/founders/network_bg.jpg")

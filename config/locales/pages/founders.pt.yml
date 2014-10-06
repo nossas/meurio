@@ -39,31 +39,31 @@ pt:
         step1:
           name: "Passo 1"
           definition: "Inscrição"
-          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          content: "As inscrições estarão sempre abertas. Quando se sentir pronto para esse desafio, complete a sua inscrição e envie um vídeo de até 1 minuto respondendo a pergunta: “Por que a sua cidade precisa de uma rede de mobilização?”."
         step2:
           name: "Passo 2"
           definition: "Entrevista"
-          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          content: "Os inscritos que se destacarem serão selecionados para passar por um exercício sobre estratégia de mobilização e para realizar uma conversa com membros da equipe da Rede sobre as suas motivações para ser um fundador da Rede na sua cidade."
         step3:
           name: "Passo 3"
           definition: "Financiamento coletivo"
-          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          content: "Os candidatos pré-selecionados realizarão uma campanha de crowdfunding com o apoio da equipe da Rede. Além de cobrir com parte dos custos do programa, o candidato terá que demonstrar sua criatividade e talento para mobilizar a sua rede."
         step4:
           name: "Passo 4"
           definition: "Resultado"
-          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          content: "Muita alegria para anunciar os candidatos classificados! Mas, se você não foi selecionado em alguma fase do processo seletivo, não se preocupe. Te avisaremos quando rolarem novas oportunidades!"
         step5:
           name: "Passo 5"
           definition: "Residência"
-          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          content: "Durante um mês, os candidatos classificados serão hospedados na sede da Rede Nossas Cidades, no Rio, onde receberão formações com a equipe e parceiros, desenvolvendo toda a estrutura necessária para lançar sua rede de mobilização."
         step6:
           name: "Passo 6"
           definition: "Incubação"
-          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          content: "De volta para as suas cidades, os candidatos poderão finalmente fundar a Rede e lançar as suas primeiras mobilizações. A equipe Nossas Cidades acompanhará de perto o crescimento e desenvolvimento até que ela possa ter autonomia e sustentabilidade."
         step7:
           name: "Passo 7"
-          definition: "Para o infinito e além!"
-          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          definition: "Fundação da Rede"
+          content: "Os empreendedores passarão a ser reconhecidos como fundadores após constituírem um conselho criativo da sua Rede na cidade, formarem uma equipe de trabalho e iniciarem a primeira mobilização."
         step8: "Troféu"
       network:
         title: "A Rede"
