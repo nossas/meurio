@@ -218,7 +218,7 @@
     .support-item
       = image_tag "pages/founders/support/support_icon1.png"
       p= t('.support.item1.content')
-      = link_to "Ver como", "#share", class: [:button, :radius, :large, :secondary], data: {"reveal-id" => "share"}
+      = link_to t('.support.item1.link_text'), "#share", class: [:button, :radius, :large, :secondary], data: {"reveal-id" => "share"}
       #share.reveal-modal.small data={reveal: true}
         p= t('.support.item1.reveal_content')
         p

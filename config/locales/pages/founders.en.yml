@@ -82,6 +82,7 @@ en:
           reveal_content: "Share the program with your network of friends and help take this initiative around the world!"
           facebook: "Share on Facebook"
           twitter: "Share on Twitter"
+          link_text: "See how"
         item2:
           content: "Leave your email so that we can let you know when the Network heads to your city!"
           link_text: "Leave your email"
@@ -103,3 +104,4 @@ en:
         li6: "Selected candidates that reach their crowdfunding goal will participate in a <strong>residency in Rio de Janeiro from March 15 – April 15</strong>. During this period, they will participate in a complete training with the Meu Rio team and other well-known professionals in mobilization methodologies and technologies to transform their cities."
         li7: "After the residency, the Our Cities team will accompany entrepreneurs during a period of <strong>six months to one year</strong>, giving all support necessary to structure the network, launch the first mobilizations and raise funds to sustain the local organization."
         li8: "The entrepreneurs will be recognized as founders once they choose a board for their Network, form a team and launch their first mobilization."
+        link: "Go to the application form"

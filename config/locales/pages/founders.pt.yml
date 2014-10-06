@@ -83,6 +83,7 @@ pt:
           reveal_content: "Compartilhe o programa com a sua rede de amigos e ajude a levar esta iniciativa para os quatro cantos do Brasil!"
           facebook: "Compartilhe no Facebook"
           twitter: "Compartilhe no Twitter"
+          link_text: "Ver como"
         item2:
           content: "Deixe seu email para ser avisado quando a rede chegar na sua cidade!"
           link_text: "Deixar email"
