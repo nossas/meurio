@@ -1,6 +1,6 @@
 Feature: view all territorial mobilizations
 
-  @javascript
+  @javascript @ssi
   Scenario: when there is at least one territorial mobilization
     Given there is a territorial mobilization
     When I go to "the homepage"
