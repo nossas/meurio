@@ -1,6 +1,11 @@
 pt:
   pages:
     founders:
+      facebook_share:
+        title: "Rede Nossas Cidades busca fundadores pelo Brasil!"
+        lead: "Inscrições para residência e incubação até 30/11."
+      twitter_share:
+        tweet: "Seja um fundador da Rede Nossas Cidades! Inscreva-se: bit.ly/minhascidades"
       logo: "nossas_cidades.png"
       slider:
         title: "Topo"
