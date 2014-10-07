@@ -83,6 +83,14 @@ pt:
           description: "Ex-ministro da justiça, diretor regional América Latina da Open Society Foundations"
         moderator4:
           description: "Co-fundador do Instituto Tecnologia e Sociedade do Rio"
+        moderator8:
+          description: "Diretora Programática Fundación Avina"
+        moderator7:
+          description: "ex-Ministro de Assuntos Estratégicos, Professor de Direito na FGV"
+        moderator6:
+          description: "Professor de Urbanismo e Literatura em Princeton"
+        moderator5:
+          description: "Colunista do jornal Extra"
       support:
         title: "Apoie"
         content: "Curtiu, mas não tem interesse em ser um fundador?"

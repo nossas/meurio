@@ -82,6 +82,14 @@ en:
           description: "Former Justice Minister; Regional Director of Latin America, Open Society Foundations"
         moderator4:
           description: "Co-Founder, Institute for Technology & Society"
+        moderator5:
+          description: "Columnist, Extra Newspaper"
+        moderator6:
+          description: "Urbanism and Literature Profesor, Princeton University"
+        moderator7:
+          description: "Former Minister of Strategic Affairs; Law Professor, FGV"
+        moderator8:
+          description: "Programmatic Director, Avina Foundation"
       support:
         title: "Support"
         content: "Like the idea, but not interested in becoming a founder?"
