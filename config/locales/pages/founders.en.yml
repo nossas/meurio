@@ -19,7 +19,7 @@ en:
         content:
           p1: "We believe that the construction of better cities starts with more engaged and connected citizens. This is why we work for a network of thousands of people who pressure on decision-makers, contribute their ideas and share their talents in order to build cities that are more inclusive, sustainable, creative, collective and that are always becoming better places to live.  With over half of the world’s population living in urban centers, we believe that changing our cities is the best way to change the world."
           p2: "Our work is to offer full support to people who are mobilizing to improve their cities.  You can join this movement by bringing to your city the methodology that the Meu Rio Network has developed during the past three years of work in Rio de Janeiro."
-          p3: "Applications are now open for passionate people who would like to dedicate time, energy and talent to starting a local mobilization network in their own cities."
+          p3: "Applications are now open for passionate people who want to dedicate time, energy and talent to starting a local mobilization network in their own cities."
       program:
         title: "The Program"
         item1:
@@ -30,7 +30,7 @@ en:
           content: "Knowledge of the mobilization methodologies and network management techniques developed during our past three years of work at Meu Rio."
         item3:
           title: "Connections"
-          content: "Participation in the annual Our Cities Summit and direct contact with activists, specialists and donors from around the world to help you start a mobilization network."
+          content: "Participation in the annual Our Cities Summit and direct contact with activists, specialists and donors from around the world to help you start a mobilization network in your city."
         item4:
           title: "Legal Support"
           content: "Assistance from the operations and legal team to structure strong local organizations from the ground up."
@@ -68,7 +68,7 @@ en:
           content: "Returning to their cities, candidates will launch their networks and their first mobilizations.  The Our Cities team will accompany the growth and development of each network until it is autonomous and able to sustain itself."
         step7:
           name: "Step 7"
-          definition: "Founding the network"
+          definition: "Found your network"
           content: "The entrepreneurs will be recognized as founders once they choose a board for their Network, form a team and launch their first mobilization."
       network:
         title: "The Network"
@@ -77,7 +77,7 @@ en:
           p2: "We first replicated our model in July of 2014 in São Paulo. The <a href='http://www.nossascidades.org/organizations/2'>Minha Sampa Network</a> has more than 10,000 members and has won significant victories in its first months of existence."
           p3: "After winning the Google Brazil Social Impact Challenge, our dream of taking this model to other cities around Brazil and the world became a reality. Your city could be next!"
       moderators:
-        title: "The Provocateurs"
+        title: "Provocateurs"
         content: "These are the first confirmed provocateurs for the 2015 residencies. Stay tuned for additional announcements throughout the year!"
         moderator1:
           description: "Executive Director, NGO Conectas"
@@ -96,16 +96,16 @@ en:
         moderator8:
           description: "Programmatic Director, Avina Foundation"
         moderator9:
-          description: "President of Centro de Liderança Pública"
+          description: "Centro de Liderança Pública, President"
       support:
         title: "Support"
-        content: "Like the idea, but not interested in becoming a founder?"
+        content: "Like the idea, but not interested in becoming a founder right now?"
         item1:
           content: "Share the program with your network of friends and help take this initiative around the world!"
           reveal_content: "Share the program with your network of friends and help take this initiative around the world!"
           facebook: "Share on Facebook"
           twitter: "Share on Twitter"
-          link_text: "See how"
+          link_text: "Share with friends"
         item2:
           content: "Leave your email so that we can let you know when the Network heads to your city!"
           link_text: "Leave your email"
@@ -119,8 +119,8 @@ en:
         paragraph1: "The Our Cities Network is accepting applications for its first class of Founders, whose residency will take place from March 15th to April 15th  at the Network headquarters in Rio de Janeiro.  Before submitting your application, please read the program details below:"
         paragraph2: "We will select founders for the Our Cities Network twice more in 2015, with residencies planned for August and December."
         paragraph3: "More info: <a href='contact@ourcities.org'>contact@ourcities.org</a>"
-        li1: "If you would like to participate in the first class of Founders of the Our Cities Network, click on the button below, complete your application and send it to us by 11:59 on November 30, along with a video of up to 3 minutes responding to the following question: “Why does your city need a mobilization network?” The earlier you submit, the better your chances! The video should be sent to founders@ourcitieis.org using the same email address that you used in the application form with your complete name + “video” in the subject line."
-        li2: "<strong>On December 4th</strong>, standout candidates will receive an exercise on mobilization strategy, <strong>which should be turned in by December 8th.</strong> This will be a good way for the candidates to show their creativity and strategic thinking."
+        li1: "If you would like to participate in the first class of Founders of the Our Cities Network, click on the button below, complete your application and send it to us by 11:59 on November 30, along with a video of up to 3 minutes responding to the following question: “Why does your city need a mobilization network?” The earlier you submit, the better your chances! The video should be sent to founders@ourcities.org using the same email address that you used in the application form with your full name + “video” in the subject line."
+        li2: "<strong>On December 4th</strong>, standout candidates will receive a written exercise on mobilization strategy, <strong>which should be turned in by December 8th.</strong> This will be a good way for the candidates to show their creativity and strategic thinking."
         li3: "After the written exercise, the team will schedule a virtual interview with selected candidates.  The interviews will last no longer than 1.5 hours and will be conducted via Google Hangout from December 15-21 according to the availability of the candidate and the team."
         li4: "Pre-selected candidates will be notified on <strong>December 23!</strong>"
         li5: "From January 5th to February 28th, pre-selected candidates will receive support from the Our Cities Team to write a script, produce a video and launch a crowdfunding campaign to raise money that will subsidize part of the costs of the founders’ training program."
