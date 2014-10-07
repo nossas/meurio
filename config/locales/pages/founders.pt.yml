@@ -107,7 +107,8 @@ pt:
           link: "https://docs.google.com/forms/d/1_DbNtQu10oBozsoRL3VpUsC1GNVMu5C_CcZ_V36oT8Y/viewform"
       subscription:
         title: "Inscrição"
-        link: "Ir para o formulário de inscrição"
+        link_text: "Ir para o formulário de inscrição"
+        link: "https://docs.google.com/a/minhascidades.org.br/forms/d/1qNV6i84kPbRmP1C5eACTR-h_y8K-4WypDr0rKVV0Buk/viewform"
         paragraph1: "A Rede Nossas Cidades abriu inscrições para empreendedores que gostariam de fazer parte da primeira fase de replicação da Rede. Os candidatos classificados participarão de uma residência que acontecerá entre 15 de março e 15 de abril, na sede da Rede, no Rio de Janeiro. Antes de se inscrever, leia os detalhes abaixo:"
         paragraph2: "Ao longo do ano de 2015 serão abertas inscrições para mais duas seleções do programa de fundadores da Rede Nossas Cidades. Essas outras residências deverão acontecer em agosto e dezembro, respectivamente."
         paragraph3: "Para mais informações escreva para <a href='mailto:contato@nossascidades.org'>contato@nossascidades.org</a>"

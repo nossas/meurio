@@ -40,6 +40,10 @@
       = link_to image_tag('institucionais/meurio/mr_logo_inst.png', alt: 'Meu Rio'), Organization.find_by(slug: 'meurio')
     .city
       = link_to image_tag('institucionais/minhasampa/msp_logo_inst.jpg', alt: 'Minha Sampa'), Organization.find_by(slug: 'minhasampa')
+  .row
+    .call-to-action
+      h2 Seja um fundador da Rede Nossas Cidades na sua cidade
+      = link_to 'Quero ser um fundador', founders_path, class: [:button, :radius, :large]
 
 .slide-divisor
   h2 Uma Rede de mobilizações
