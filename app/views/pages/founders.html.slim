@@ -1,6 +1,6 @@
-= content_for(:title) { "Rede Nossas Cidades busca fundadores pelo Brasil!" }
-= content_for(:fb_title) { "Rede Nossas Cidades busca fundadores pelo Brasil!" }
-= content_for(:description) { "Inscrições para residência e incubação até 30/11." }
+= content_for(:title) { t('.facebook_share.title') }
+= content_for(:fb_title) { t('.facebook_share.title') }
+= content_for(:description) { t('.facebook_share.lead') }
 
 .fixed
   .contain-to-grid.founders-top-bar
@@ -250,7 +250,7 @@
         p= t('.support.item1.reveal_content')
         p
           = link_to t('.support.item1.facebook'), "https://www.facebook.com/sharer/sharer.php?u=#{URI.encode(request.url)}", class: [:button, :large, 'facebook-share-button', 'icon-facebook2']
-          = link_to t('.support.item1.twitter'), "https://twitter.com/share?text=#{URI.encode('Seja um fundador da Rede Nossas Cidades! Inscreva-se: bit.ly/minhascidades')}", class: [:button, :large, 'twitter-share-button', 'icon-twitter2']
+          = link_to t('.support.item1.twitter'), "https://twitter.com/share?text=#{URI.encode(t('.twitter_share.tweet'))}", class: [:button, :large, 'twitter-share-button', 'icon-twitter2']
         a.close-reveal-modal &#215;
 
     .support-item
