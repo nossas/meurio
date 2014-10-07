@@ -5,7 +5,7 @@ pt:
         title: "Rede Nossas Cidades busca fundadores pelo Brasil!"
         lead: "Inscrições para residência e incubação até 30/11."
       twitter_share:
-        tweet: "Seja um fundador da Rede Nossas Cidades! Inscreva-se: bit.ly/minhascidades"
+        tweet: "Seja um fundador da Rede Nossas Cidades! Inscreva-se: "
       logo: "nossas_cidades.png"
       slider:
         title: "Topo"
@@ -27,7 +27,7 @@ pt:
           content: "Acesso às nossas ferramentas e aplicativos de mobilização, assim como à equipe de tecnologia e design da Rede, servidor, mailing e manutenção."
         item2:
           title: "Metodologia"
-          content: "Conhecimento das metodologias de mobilização e gestão da rede desenvolvidas e aprovadas nos últimos 3 anos de trabalho."
+          content: "Conhecimento das metodologias de mobilização e gestão da rede desenvolvidas, testadas e aprovadas nos últimos 3 anos de trabalho."
         item3:
           title: "Conexões"
           content: "Participação do encontro anual da Rede Nossas Cidades e contato direto com financiadores, especialistas e mobilizadores que vão ajudar a tirar a sua rede de mobilização do papel."
@@ -36,7 +36,7 @@ pt:
           content: "Apoio da equipe de operações e questões legais na montagem de uma organização robusta e bem estruturada."
         item5:
           title: "Marca"
-          content: "Oportunidade de construir uma marca forte a partir de valores e cases já reconhecidos através das vitórias das mobilizações da Rede Meu Rio e Minha Sampa."
+          content: "Oportunidade de construir uma marca forte a partir de valores e cases já reconhecidos através das vitórias das mobilizações das Redes Meu Rio e Minha Sampa."
         item6:
           title: "Mentoria"
           content: "Suporte no desenvolvimento das suas ações através do acompanhamento periódico da Equipe da Rede até que você se sinta pronto para caminhar com as próprias pernas."
@@ -45,11 +45,11 @@ pt:
         step1:
           name: "Passo 1"
           definition: "Inscrição"
-          content: "As inscrições estarão sempre abertas. Quando se sentir pronto para esse desafio, complete a sua inscrição e envie um vídeo de até 3 minutos respondendo a pergunta: “Por que a sua cidade precisa de uma rede de mobilização?”."
+          content: "As inscrições estarão sempre abertas. Quando se sentir pronto para esse desafio, complete a sua inscrição e envie um vídeo de até três minutos respondendo a pergunta: “Por que a sua cidade precisa de uma rede de mobilização?”."
         step2:
           name: "Passo 2"
           definition: "Entrevista"
-          content: "Os inscritos que se destacarem serão selecionados para passar por um exercício sobre estratégia de mobilização e para realizar uma conversa com membros da equipe da Rede sobre as suas motivações para ser um fundador da Rede na sua cidade."
+          content: "Os inscritos que se destacarem serão selecionados para passar por um exercício sobre estratégia de mobilização e serão convidados para uma entrevista virtual com a equipe da Rede sobre as suas motivações para se tornar um fundador da Rede."
         step3:
           name: "Passo 3"
           definition: "Financiamento coletivo"
