@@ -98,6 +98,10 @@ pt:
           description: "Diretora Programática da Fundación Avina"
         moderator9:
           description: "Diretor Presidente do Centro de Liderança Pública"
+        moderator10:
+          description: "Coordenadora de Mobilização da Rede Nossa São Paulo e do Programa Cidades Sustentáveis"
+        moderator11:
+          description: "Gerente de Especialistas de Produto para América Latina, Google"
       support:
         title: "Apoie"
         content: "Curtiu, mas não tem interesse em ser um fundador?"
