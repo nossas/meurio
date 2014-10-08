@@ -58,6 +58,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    appsignal (0.10.6)
+      rack
+      thread_safe
     arel (4.0.0)
     builder (3.1.4)
     cancan (1.6.10)
@@ -308,6 +311,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  appsignal
   auto_html!
   cancan
   carrierwave
