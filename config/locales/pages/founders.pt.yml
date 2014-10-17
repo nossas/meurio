@@ -80,28 +80,38 @@ pt:
       moderators:
         title: "Provocadores"
         content: "Esses são os primeiros provocadores confirmados para as residências de incubação da rede em 2015, outros nomes de peso se somarão a esse time ao longo do ano."
-        moderator1:
-          description: "Diretora executiva da ONG Conectas"
-        moderator2:
-          description: "Gerente de educação e mobilização do Instituto Arapyaú"
-        moderator3:
-          description: "Ex-ministro da justiça, diretor regional América Latina da Open Society Foundations"
-        moderator4:
-          description: "Diretor do Instituto Tecnologia e Sociedade do Rio"
-        moderator5:
+        ana_paula_lisboa:
+          description: "Coordenadora, Agência de Redes para a Juventude"
+        berenice_seara:
           description: "Colunista do jornal Extra"
-        moderator6:
+        bruno_carvalho:
           description: "Professor de Urbanismo e Literatura em Princeton"
-        moderator7:
+        bruno_torturra:
+          description: "Fundador, Estúdio Fluxo"
+        daniel_vargas:
           description: "ex-Ministro de Assuntos Estratégicos, Professor de Direito na FGV"
-        moderator8:
+        florencia_estrade:
+          description: "Sócia-fundadora e diretora, Cria Global"
+        glaucia_barros:
           description: "Diretora Programática da Fundación Avina"
-        moderator9:
+        lucia_nader:
+          description: "Diretora executiva da ONG Conectas"
+        luiz_felipe_davila:
           description: "Diretor Presidente do Centro de Liderança Pública"
-        moderator10:
-          description: "Coordenadora de Mobilização da Rede Nossa São Paulo e do Programa Cidades Sustentáveis"
-        moderator11:
+        mafoane_odara:
+          description: "Gerente de educação e mobilização do Instituto Arapyaú"
+        patricia_oakim:
           description: "Gerente de Especialistas de Produto para América Latina, Google"
+        paulo_rogerio_nunes:
+          description: "co-fundador, Instituto Mídia Étnica e portal de notícias Correio Nagô"
+        pedro_abramovay:
+          description: "Ex-ministro da justiça, diretor regional América Latina da Open Society Foundations"
+        pia_mancini:
+          description: "co-fundadora, Democracy OS e Partido de la Red"
+        ronaldo_lemos:
+          description: "Diretor do Instituto Tecnologia e Sociedade do Rio"
+        zuleica_goulart:
+          description: "Coordenadora de Mobilização da Rede Nossa São Paulo e do Programa Cidades Sustentáveis"
       support:
         title: "Apoie"
         content: "Curtiu, mas não tem interesse em ser um fundador?"
