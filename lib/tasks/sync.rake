@@ -134,6 +134,7 @@ namespace :sync do
             )
           end
         rescue Exception => e
+          Appsignal.add_exception e
           Rails.logger.info "Could not update Mobilization ##{mobilization.id}"
           Rails.logger.info e.message
         end
@@ -158,6 +159,7 @@ namespace :sync do
               )
             end
           rescue Exception => e
+            Appsignal.add_exception e
             Rails.logger.info "Could not create post #{post.inspect}"
             Rails.logger.info e.message
           end
@@ -199,9 +201,9 @@ namespace :sync do
           if post["comments"].present?  then fp.comment_count = post["comments"]["summary"]["total_count"] end
           fp.save!
         rescue Exception => e
+          Appsignal.add_exception e
           message = "Could not update FacebookPost ##{fp.id} | #{e.message}"
           Rails.logger.warn message
-          puts message
         end
       end
     end

@@ -58,6 +58,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    appsignal (0.10.6)
+      rack
+      thread_safe
     arel (4.0.0)
     builder (3.1.4)
     cancan (1.6.10)
@@ -177,7 +180,6 @@ GEM
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
-    newrelic_rpm (3.5.6.55)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     pg (0.16.0)
@@ -308,6 +310,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  appsignal
   auto_html!
   cancan
   carrierwave
@@ -333,7 +336,6 @@ DEPENDENCIES
   machinist (>= 2.0.0.beta2)
   meurio_ui
   mini_magick
-  newrelic_rpm
   pg (~> 0.16.0)
   rack-cas
   rails (= 4.0.0)

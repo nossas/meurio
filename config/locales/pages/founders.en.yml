@@ -79,24 +79,38 @@ en:
       moderators:
         title: "Provocateurs"
         content: "These are the first confirmed provocateurs for the 2015 residencies. Stay tuned for additional announcements throughout the year!"
-        moderator1:
-          description: "Executive Director, NGO Conectas"
-        moderator2:
-          description: "Education and Mobilization Manager, Arapyaú Institute"
-        moderator3:
-          description: "Former Justice Minister; Regional Director of Latin America, Open Society Foundations"
-        moderator4:
-          description: "Co-Founder, Institute for Technology & Society"
-        moderator5:
+        ana_paula_lisboa:
+          description: "Coordinator, Agência de Redes para a Juventude"
+        berenice_seara:
           description: "Columnist, Extra Newspaper"
-        moderator6:
+        bruno_carvalho:
           description: "Urbanism and Literature Profesor, Princeton University"
-        moderator7:
+        bruno_torturra:
+          description: "Founder, Estúdio Fluxo"
+        daniel_vargas:
           description: "Former Minister of Strategic Affairs; Law Professor, FGV"
-        moderator8:
+        florencia_estrade:
+          description: "Founding Parntner and Director, Cria Global"
+        glaucia_barros:
           description: "Programmatic Director, Avina Foundation"
-        moderator9:
-          description: "Centro de Liderança Pública, President"
+        lucia_nader:
+          description: "Executive Director, NGO Conectas"
+        luiz_felipe_davila:
+          description: "President, Centro de Liderança Pública"
+        mafoane_odara:
+          description: "Education and Mobilization Manager, Arapyaú Institute"
+        patricia_oakim:
+          description: "Technical Product Specialists, Latin America Manager, Google"
+        paulo_rogerio_nunes:
+          description: "co-founder, Instituto Mídia Étnica e news portal Correio Nagô"
+        pedro_abramovay:
+          description: "Former Justice Minister; Regional Director of Latin America, Open Society Foundations"
+        pia_mancini:
+          description: "co-founder, Democracy OS and Partido de la Red"
+        ronaldo_lemos:
+          description: "Co-Founder, Institute for Technology & Society"
+        zuleica_goulart:
+          description: "Mobilization Coordinator, Nossa São Paulo Network - Sustainable Cities Program"
       support:
         title: "Support"
         content: "Like the idea, but not interested in becoming a founder right now?"
