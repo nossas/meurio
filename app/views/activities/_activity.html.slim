@@ -1,8 +1,8 @@
-.activity class=[activity.relname]
+.activity class=[activity.activable_type]
   - if activity.user
     = link_to image_tag(activity.user.avatar_url), user_path(activity.user)
     .activity_content
       span.user= link_to activity.user.name, user_path(activity.user)
-      span.text  #{t("activity.#{activity.relname}")}
-      span.mobilization  #{activity.title}
+      span.text  #{t("activity.#{activity.activable_type}")}
+      span.mobilization  #{link_to activity.title, activity.activable.external_url}
       span.created_at  #{distance_of_time_in_words_to_now activity.created_at} atrás

@@ -323,3 +323,15 @@ end
 Then(/^I should not see this mobilization in the mobilizations list$/) do
   page.should_not have_css("#mobilizations-list .mobilization a[href='/mobilizations/#{@mobilization.id}']")
 end
+
+Given(/^there is a Compartilhaço campaign created by this user$/) do
+  @compartilhaco_campaign = CompartilhacoCampaign.make! user: @user
+end
+
+Given(/^there is a Compartilhaço Facebook profile spreader for this user$/) do
+  @compartilhaco_facebook_profile_spreader = CompartilhacoFacebookProfileSpreader.make! user: @user
+end
+
+Given(/^there is a Compartilhaço Twitter profile spreader for this user$/) do
+  @compartilhaco_twitter_profile_spreader = CompartilhacoTwitterProfileSpreader.make! user: @user
+end

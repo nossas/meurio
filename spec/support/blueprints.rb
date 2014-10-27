@@ -168,13 +168,15 @@ Organization.blueprint do
 end
 
 CompartilhacoCampaign.blueprint do
-  # Attributes here
+  user { User.make! }
 end
 
 CompartilhacoFacebookProfileSpreader.blueprint do
-  # Attributes here
+  user { User.make! }
+  compartilhaco_campaign { CompartilhacoCampaign.make! }
 end
 
 CompartilhacoTwitterProfileSpreader.blueprint do
-  # Attributes here
+  user { User.make! }
+  compartilhaco_campaign { CompartilhacoCampaign.make! }
 end
