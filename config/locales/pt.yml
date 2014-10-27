@@ -294,15 +294,15 @@ pt:
   facebook_posts: "no Facebook"
   tweets: "no Twitter"
   activity:
-    pokes: "pressionou no tema"
-    campaigns: "criou uma campanha no tema"
-    problems: "criou um problema no tema"
-    ideas: "criou uma ideia no tema"
-    task_subscriptions: "aceitou realizar uma tarefa no tema"
-    accepted_deliveries: "realizou uma tarefa no tema"
-    compartilhaco_campaigns: "criou um compartilhaço no tema"
-    compartilhaco_facebook_profile_spreaders: "emprestou seu Facebook para o tema"
-    compartilhaco_twitter_profile_spreaders: "emprestou seu Twitter para o tema"
+    pokes: "pressionou na campanha"
+    campaigns: "criou a campanha"
+    problems: "criou o problema"
+    ideas: "criou a ideia"
+    task_subscriptions: "aceitou realizar a tarefa"
+    accepted_deliveries: "realizou a tarefa"
+    compartilhaco_campaigns: "criou o compartilhaço"
+    compartilhaco_facebook_profile_spreaders: "emprestou seu Facebook para o compartilhaço"
+    compartilhaco_twitter_profile_spreaders: "emprestou seu Twitter para o compartilhaço"
   mode:
     local: Presencial
     remote: À distância
