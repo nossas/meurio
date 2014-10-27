@@ -18,4 +18,8 @@ class TaskSubscription < ActiveRecord::Base
   def accepted?
     self.deliveries.where("accepted_at IS NOT NULL").any?
   end
+
+  def external_url
+    "#{ENV['MULTITUDE_HOST']}/tasks/#{self.task.id}"
+  end
 end

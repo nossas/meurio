@@ -6,4 +6,8 @@ class Campaign < ActiveRecord::Base
   has_many :pokes
 
   before_save { self.description_html.gsub!('&quot;', '"') if self.description_html }
+
+  def external_url
+    "#{ENV['PDP_HOST']}/campaigns/#{self.uid}"
+  end
 end
