@@ -24,7 +24,7 @@
             span.user_location
               span.user_district.icon-location= "#{@user.address_district}, "
               span.user_city= @user.city
-          = link_to(@user.website, "http://" + @user.website, class: ["icon-link"], target: :blank) if @user.website.present?
+          = link_to(@user.website, @user.website, class: ["icon-link"], target: :blank) if @user.website.present?
 
     .row
       - if @user.categories
