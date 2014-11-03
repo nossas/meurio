@@ -20,6 +20,11 @@ pt:
           p1: "Nós acreditamos que a construção de cidades melhores começa com cidadãos mais engajados e conectados. É por isso que trabalhamos para uma rede de milhares de pessoas que pressionam tomadores de decisão, colaboram com ideias e compartilham seus talentos para tornar suas cidades mais inclusivas, sustentáveis, criativas, compartilhadas e gostosas de se viver. Com mais da metade da população mundial vivendo em centros urbanos, mudar nossas cidades é a melhor maneira de mudar o mundo."
           p2: "Nosso trabalho é dar suporte - do início ao fim - às mobilizações criadas pelas pessoas, e você pode fazer parte disso levando para sua cidade a metodologia desenvolvida desde 2011 pela Rede Meu Rio, no Rio de Janeiro."
           p3: "As inscrições para o programa de fundadores da Rede Nossas Cidades estão abertas para pessoas apaixonadas, que irão dedicar coração, tempo, energia e talento para iniciar uma rede de mobilização na sua cidade."
+      invite:
+        title: "Convite"
+        content:
+          p1: "Uma ideia que merece ser espalhada!"
+          p2: "Assista a palestra da co-fundadora das Redes Meu Rio e Nossas Cidades, Alessandra Orofino, no TED Global 2014 sobre o propósito de nos mobilizarmos em nossas cidades. Um convite pro Brasil e pro Mundo para construirmos a revolução da participação!"
       program:
         title: "Programa"
         item1:

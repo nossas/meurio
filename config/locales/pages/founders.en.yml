@@ -20,6 +20,11 @@ en:
           p1: "We believe that the construction of better cities starts with more engaged and connected citizens. This is why we work for a network of thousands of people who pressure on decision-makers, contribute their ideas and share their talents in order to build cities that are more inclusive, sustainable, creative, collective and that are always becoming better places to live.  With over half of the world’s population living in urban centers, we believe that changing our cities is the best way to change the world."
           p2: "Our work is to offer full support to people who are mobilizing to improve their cities.  You can join this movement by bringing to your city the methodology that the Meu Rio Network has developed during the past three years of work in Rio de Janeiro."
           p3: "Applications are now open for passionate people who want to dedicate time, energy and talent to starting a local mobilization network in their own cities."
+      invite:
+        title: "Invitation"
+        content:
+          p1: "An idea worth spreading!"
+          p2: "Check out the talk from My Rio and Our Cities's network co-founder Alessandra Orofino at TED Global 2014 about the purpose of mobilizing at the city level. Its an invitation for Brazil and the world to build a participation revolution!"
       program:
         title: "The Program"
         item1:

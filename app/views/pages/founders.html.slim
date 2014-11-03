@@ -14,6 +14,7 @@
         ul.right
           li= link_to t('.slider.title'), "#founders-slider"
           li= link_to t('.about.title'), "#founders-about"
+          li= link_to t('.invite.title'), "#founders-invite"
           li= link_to t('.program.title'), "#founders-program"
           li= link_to t('.steps.title'), "#founders-steps"
           li= link_to t('.network.title'), "#founders-network"
@@ -57,6 +58,15 @@
       p= t('.about.content.p1')
       p= t('.about.content.p2')
       p= t('.about.content.p3')
+
+.founders-invite#founders-invite
+  .row
+    .title
+      h2= t('.invite.title')
+    p
+      strong= t('.invite.content.p1')
+    p= t('.invite.content.p2')
+    <iframe src="https://embed-ssl.ted.com/talks/alessandra_orofino_it_s_our_city_let_s_fix_it.html" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 .founders-program#founders-program
   .row
