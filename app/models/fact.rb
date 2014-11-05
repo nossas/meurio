@@ -15,6 +15,8 @@ class Fact < ActiveRecord::Base
       self.app = :petitions
     elsif relname == 'compartilhaco_campaigns'
       self.app = :compartilhaco
+    elsif relname == 'panela_campaigns'
+      self.app = :pdp
     end
   end
 end
