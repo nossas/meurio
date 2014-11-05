@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105180400) do
+ActiveRecord::Schema.define(version: 20141105184949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,18 +32,6 @@ ActiveRecord::Schema.define(version: 20141105180400) do
     t.index ["badge_id"], :name => "fk__achievements_badge_id", :order => {"badge_id" => :asc}
     t.index ["badge_id", "user_id"], :name => "index_achievements_on_badge_id_and_user_id", :unique => true, :order => {"badge_id" => :asc, "user_id" => :asc}
     t.foreign_key ["badge_id"], "badges", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_achievements_badge_id"
-  end
-
-  create_table "campaigns", force: true do |t|
-    t.string   "name"
-    t.string   "link"
-    t.text     "description_html"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "uid"
-    t.string   "hashtag"
-    t.integer  "user_id"
-    t.string   "user_email"
   end
 
   create_table "compartilhaco_campaigns", force: true do |t|
@@ -113,17 +101,6 @@ ActiveRecord::Schema.define(version: 20141105180400) do
     t.integer  "user_id"
   end
 
-  create_table "pokes", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "campaign_id"
-    t.string   "uid"
-    t.integer  "user_id"
-    t.string   "user_email"
-    t.index ["campaign_id"], :name => "fk__pokes_campaign_id", :order => {"campaign_id" => :asc}
-    t.foreign_key ["campaign_id"], "campaigns", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_pokes_campaign_id"
-  end
-
   create_table "task_subscriptions", force: true do |t|
     t.integer  "user_id"
     t.integer  "task_id"
@@ -142,7 +119,7 @@ ActiveRecord::Schema.define(version: 20141105180400) do
     t.integer  "organization_id"
   end
 
-  create_view "activities", " SELECT campaigns.name AS title,\n    campaigns.id AS activable_id,\n    campaigns.user_id,\n    campaigns.created_at,\n    campaigns.hashtag,\n    'Campaign'::text AS activable_type\n   FROM campaigns\nUNION ALL\n SELECT pokes_campaigns.name AS title,\n    pokes.id AS activable_id,\n    pokes.user_id,\n    pokes.created_at,\n    pokes_campaigns.hashtag,\n    'Poke'::text AS activable_type\n   FROM (pokes\n     JOIN campaigns pokes_campaigns ON ((pokes_campaigns.id = pokes.campaign_id)))\nUNION ALL\n SELECT problems.name AS title,\n    problems.id AS activable_id,\n    problems.user_id,\n    problems.created_at,\n    problems.hashtag,\n    'Problem'::text AS activable_type\n   FROM problems\nUNION ALL\n SELECT ideas_problems.name AS title,\n    ideas.id AS activable_id,\n    ideas.user_id,\n    ideas.created_at,\n    ideas_problems.hashtag,\n    'Idea'::text AS activable_type\n   FROM (ideas\n     JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id)))\nUNION ALL\n SELECT tasks.title,\n    task_subscriptions.id AS activable_id,\n    task_subscriptions.user_id,\n    task_subscriptions.created_at,\n    tasks.hashtag,\n    'TaskSubscription'::text AS activable_type\n   FROM (task_subscriptions\n     JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\nUNION ALL\n SELECT tasks.title,\n    deliveries.id AS activable_id,\n    task_subscriptions.user_id,\n    deliveries.accepted_at AS created_at,\n    tasks.hashtag,\n    'Delivery'::text AS activable_type\n   FROM ((deliveries\n     JOIN task_subscriptions ON ((task_subscriptions.id = deliveries.task_subscription_id)))\n     JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\n  WHERE (deliveries.accepted_at IS NOT NULL)\nUNION ALL\n SELECT compartilhaco_campaigns.title,\n    compartilhaco_campaigns.id AS activable_id,\n    compartilhaco_campaigns.user_id,\n    compartilhaco_campaigns.created_at,\n    compartilhaco_campaigns.hashtag,\n    'CompartilhacoCampaign'::text AS activable_type\n   FROM compartilhaco_campaigns\nUNION ALL\n SELECT cc.title,\n    cfps.id AS activable_id,\n    cfps.user_id,\n    cfps.created_at,\n    cc.hashtag,\n    'CompartilhacoFacebookProfileSpreader'::text AS activable_type\n   FROM (compartilhaco_facebook_profile_spreaders cfps\n     JOIN compartilhaco_campaigns cc ON ((cc.id = cfps.campaign_id)))\nUNION ALL\n SELECT cc.title,\n    ctps.id AS activable_id,\n    ctps.user_id,\n    ctps.created_at,\n    cc.hashtag,\n    'CompartilhacoTwitterProfileSpreader'::text AS activable_type\n   FROM (compartilhaco_twitter_profile_spreaders ctps\n     JOIN compartilhaco_campaigns cc ON ((cc.id = ctps.campaign_id)))\nUNION ALL\n SELECT panela_campaigns.name AS title,\n    panela_campaigns.id AS activable_id,\n    panela_campaigns.user_id,\n    panela_campaigns.created_at,\n    panela_campaigns.hashtag,\n    'PanelaCampaign'::text AS activable_type\n   FROM panela_campaigns\nUNION ALL\n SELECT panela_poke_campaigns.name AS title,\n    panela_pokes.id AS activable_id,\n    panela_pokes.user_id,\n    panela_pokes.created_at,\n    panela_poke_campaigns.hashtag,\n    'PanelaPoke'::text AS activable_type\n   FROM (panela_pokes\n     JOIN panela_campaigns panela_poke_campaigns ON ((panela_poke_campaigns.id = panela_pokes.campaign_id)))", :force => true
+  create_view "activities", " SELECT problems.name AS title,\n    problems.id AS activable_id,\n    problems.user_id,\n    problems.created_at,\n    problems.hashtag,\n    'Problem'::text AS activable_type\n   FROM problems\nUNION ALL\n SELECT ideas_problems.name AS title,\n    ideas.id AS activable_id,\n    ideas.user_id,\n    ideas.created_at,\n    ideas_problems.hashtag,\n    'Idea'::text AS activable_type\n   FROM (ideas\n     JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id)))\nUNION ALL\n SELECT tasks.title,\n    task_subscriptions.id AS activable_id,\n    task_subscriptions.user_id,\n    task_subscriptions.created_at,\n    tasks.hashtag,\n    'TaskSubscription'::text AS activable_type\n   FROM (task_subscriptions\n     JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\nUNION ALL\n SELECT tasks.title,\n    deliveries.id AS activable_id,\n    task_subscriptions.user_id,\n    deliveries.accepted_at AS created_at,\n    tasks.hashtag,\n    'Delivery'::text AS activable_type\n   FROM ((deliveries\n     JOIN task_subscriptions ON ((task_subscriptions.id = deliveries.task_subscription_id)))\n     JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\n  WHERE (deliveries.accepted_at IS NOT NULL)\nUNION ALL\n SELECT compartilhaco_campaigns.title,\n    compartilhaco_campaigns.id AS activable_id,\n    compartilhaco_campaigns.user_id,\n    compartilhaco_campaigns.created_at,\n    compartilhaco_campaigns.hashtag,\n    'CompartilhacoCampaign'::text AS activable_type\n   FROM compartilhaco_campaigns\nUNION ALL\n SELECT cc.title,\n    cfps.id AS activable_id,\n    cfps.user_id,\n    cfps.created_at,\n    cc.hashtag,\n    'CompartilhacoFacebookProfileSpreader'::text AS activable_type\n   FROM (compartilhaco_facebook_profile_spreaders cfps\n     JOIN compartilhaco_campaigns cc ON ((cc.id = cfps.campaign_id)))\nUNION ALL\n SELECT cc.title,\n    ctps.id AS activable_id,\n    ctps.user_id,\n    ctps.created_at,\n    cc.hashtag,\n    'CompartilhacoTwitterProfileSpreader'::text AS activable_type\n   FROM (compartilhaco_twitter_profile_spreaders ctps\n     JOIN compartilhaco_campaigns cc ON ((cc.id = ctps.campaign_id)))\nUNION ALL\n SELECT panela_campaigns.name AS title,\n    panela_campaigns.id AS activable_id,\n    panela_campaigns.user_id,\n    panela_campaigns.created_at,\n    panela_campaigns.hashtag,\n    'PanelaCampaign'::text AS activable_type\n   FROM panela_campaigns\nUNION ALL\n SELECT panela_poke_campaigns.name AS title,\n    panela_pokes.id AS activable_id,\n    panela_pokes.user_id,\n    panela_pokes.created_at,\n    panela_poke_campaigns.hashtag,\n    'PanelaPoke'::text AS activable_type\n   FROM (panela_pokes\n     JOIN panela_campaigns panela_poke_campaigns ON ((panela_poke_campaigns.id = panela_pokes.campaign_id)))", :force => true
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -169,6 +146,18 @@ ActiveRecord::Schema.define(version: 20141105180400) do
     t.index ["badge_id", "task_type_id"], :name => "index_badges_task_types_on_badge_id_and_task_type_id", :unique => true, :order => {"badge_id" => :asc, "task_type_id" => :asc}
     t.foreign_key ["badge_id"], "badges", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_badges_task_types_badge_id"
     t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_badges_task_types_task_type_id"
+  end
+
+  create_table "campaigns", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.text     "description_html"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "uid"
+    t.string   "hashtag"
+    t.integer  "user_id"
+    t.string   "user_email"
   end
 
   create_table "clippings", force: true do |t|
@@ -250,7 +239,7 @@ ActiveRecord::Schema.define(version: 20141105180400) do
     t.integer  "signatures_count"
   end
 
-  create_view "facts", " SELECT e.id,\n    e.created_at,\n    e.name,\n    e.description_html,\n    e.link,\n    e.hashtag,\n    'petitions'::text AS relname\n   FROM petitions e\nUNION ALL\n SELECT c.id,\n    c.created_at,\n    c.name,\n    c.description_html,\n    c.link,\n    c.hashtag,\n    'campaigns'::text AS relname\n   FROM campaigns c\nUNION ALL\n SELECT p.id,\n    p.created_at,\n    p.name,\n    p.description AS description_html,\n    p.link,\n    p.hashtag,\n    'problems'::text AS relname\n   FROM problems p\nUNION ALL\n SELECT e.id,\n    e.created_at,\n    e.name,\n    e.description AS description_html,\n    e.link,\n    e.hashtag,\n    'events'::text AS relname\n   FROM events e\nUNION ALL\n SELECT cc.id,\n    cc.created_at,\n    cc.title AS name,\n    cc.description AS description_html,\n    ''::character varying AS link,\n    cc.hashtag,\n    'compartilhaco_campaigns'::text AS relname\n   FROM compartilhaco_campaigns cc\nUNION ALL\n SELECT panela_campaigns.id,\n    panela_campaigns.created_at,\n    panela_campaigns.name,\n    panela_campaigns.description AS description_html,\n    ''::character varying AS link,\n    panela_campaigns.hashtag,\n    'panela_campaigns'::text AS relname\n   FROM panela_campaigns", :force => true
+  create_view "facts", " SELECT e.id,\n    e.created_at,\n    e.name,\n    e.description_html,\n    e.link,\n    e.hashtag,\n    'petitions'::text AS relname\n   FROM petitions e\nUNION ALL\n SELECT p.id,\n    p.created_at,\n    p.name,\n    p.description AS description_html,\n    p.link,\n    p.hashtag,\n    'problems'::text AS relname\n   FROM problems p\nUNION ALL\n SELECT e.id,\n    e.created_at,\n    e.name,\n    e.description AS description_html,\n    e.link,\n    e.hashtag,\n    'events'::text AS relname\n   FROM events e\nUNION ALL\n SELECT cc.id,\n    cc.created_at,\n    cc.title AS name,\n    cc.description AS description_html,\n    ''::character varying AS link,\n    cc.hashtag,\n    'compartilhaco_campaigns'::text AS relname\n   FROM compartilhaco_campaigns cc\nUNION ALL\n SELECT panela_campaigns.id,\n    panela_campaigns.created_at,\n    panela_campaigns.name,\n    panela_campaigns.description AS description_html,\n    ''::character varying AS link,\n    panela_campaigns.hashtag,\n    'panela_campaigns'::text AS relname\n   FROM panela_campaigns", :force => true
   create_table "images", force: true do |t|
     t.string   "file"
     t.string   "hashtag"
@@ -281,6 +270,17 @@ ActiveRecord::Schema.define(version: 20141105180400) do
     t.string   "avatar"
     t.string   "name"
     t.string   "slug"
+  end
+
+  create_table "pokes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "campaign_id"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.string   "user_email"
+    t.index ["campaign_id"], :name => "fk__pokes_campaign_id", :order => {"campaign_id" => :asc}
+    t.foreign_key ["campaign_id"], "campaigns", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_pokes_campaign_id"
   end
 
   create_table "rewards", force: true do |t|
