@@ -5,9 +5,7 @@ class Fact < ActiveRecord::Base
   after_initialize :define_app
 
   def define_app
-    if relname == 'campaigns'
-      self.app = :pdp
-    elsif relname == 'problems'
+    if relname == 'problems'
       self.app = :imagine
     elsif relname == 'events'
       self.app = :eventos
