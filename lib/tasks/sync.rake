@@ -1,44 +1,6 @@
 require "httparty"
 
 namespace :sync do
-  namespace :pdp do
-    task :campaigns => :environment do
-      campaigns = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns.json", query: {token: ENV["PDP_API_TOKEN"]}).body)
-      campaigns.each do |campaign|
-        mobilization = Mobilization.find_by_hashtag(campaign["hashtag"])
-        if mobilization.present?
-          Campaign.create(
-            name:             campaign["name"],
-            link:             "#{ENV["PDP_HOST"]}/campaigns/#{campaign["id"]}",
-            description_html: campaign["description_html"],
-            uid:              campaign["id"],
-            hashtag:          mobilization.hashtag,
-            user:             User.find_by_email(campaign["user_email"]),
-            user_email:       campaign["user_email"]
-          )
-        end
-      end
-    end
-
-    task :pokes, [:from, :until] => :environment do |t, args|
-      date_until = args[:until]
-
-      Campaign.all.each do |campaign|
-        date_from = args[:from] || (campaign.pokes.last.created_at.strftime('%Y-%m-%d-%H-%M-%S') if campaign.pokes.any?)
-        pokes = JSON.parse(HTTParty.get("#{ENV["PDP_HOST"]}/campaigns/#{campaign.uid}/pokes.json?from=#{date_from}&until=#{date_until}", query: {token: ENV["PDP_API_TOKEN"]}).body)
-        Rails.logger.info "Found #{pokes.count} pokes in campaign #{campaign.uid} from #{date_from} until #{date_until}"
-        pokes.each do |poke|
-          Poke.create(
-            uid:        poke["id"], 
-            campaign:   campaign, 
-            user:       User.find_by_email(poke["user"]["email"]), 
-            user_email: poke["user"]["email"]
-          )
-        end
-      end
-    end
-  end
-
   namespace :imagine do
     task :problems => :environment do
       problems = JSON.parse(HTTParty.get("#{ENV["IMAGINE_HOST"]}/problems.json?token=#{ENV["IMAGINE_API_TOKEN"]}").body)
@@ -56,7 +18,7 @@ namespace :sync do
           )
 
           problem = Problem.find_by(uid: problem_hash['id'].to_s)
-          
+
           problem_hash['ideas'].each do |idea|
             Idea.create(
               name:             idea["title"],
@@ -104,8 +66,8 @@ namespace :sync do
         if mobilization.present?
           if image["name"].match(/#NaMídia/)
             Clipping.create(
-              remote_image_url: image["source"], 
-              hashtag:          mobilization.hashtag, 
+              remote_image_url: image["source"],
+              hashtag:          mobilization.hashtag,
               uid:              image["id"],
               published_at:     Time.parse(image["created_time"]),
               link:             image["link"],
@@ -173,9 +135,9 @@ namespace :sync do
         mobilization = Mobilization.where("hashtag IN (?)", event["description"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
         if mobilization.present?
           Event.create(
-            hashtag:     mobilization.hashtag, 
-            name:        event["name"], 
-            description: event["description"], 
+            hashtag:     mobilization.hashtag,
+            name:        event["name"],
+            description: event["description"],
             link:        "http://facebook.com/events/#{event['id']}",
             uid:         event["id"]
           )
