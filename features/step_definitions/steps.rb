@@ -17,7 +17,7 @@ Given(/^there is a mobilization$/) do
 end
 
 Given(/^this mobilization have a campaign$/) do
-  @campaign = Campaign.make!(hashtag: @mobilization.hashtag)
+  @campaign = PanelaCampaign.make!(hashtag: @mobilization.hashtag)
 end
 
 Given(/^this mobilization have a problem$/) do
@@ -25,15 +25,15 @@ Given(/^this mobilization have a problem$/) do
 end
 
 Given(/^this campaign have many pokes$/) do
-  rand(10..100).times { Poke.make! campaign: @campaign }
+  rand(10..100).times { PanelaPoke.make! campaign_id: @campaign.id }
 end
 
 Given(/^this campaign have (\d+) pokes$/) do |count|
-  count.to_i.times { Poke.make! campaign: @campaign }
+  count.to_i.times { PanelaPoke.make! campaign_id: @campaign.id }
 end
 
 Given(/^there is campaign$/) do
-  @campaign = Campaign.make!
+  @campaign = PanelaCampaign.make!
 end
 
 Given(/^this problem have many ideas$/) do
@@ -93,7 +93,7 @@ Given(/^this petition have some signatures$/) do
 end
 
 Given(/^there is a poke$/) do
-  @poke = Poke.make!
+  @poke = PanelaPoke.make!
 end
 
 Given(/^there is a problem$/) do
@@ -117,11 +117,11 @@ Given(/^there is a mobilization of mine$/) do
 end
 
 Given(/^there is a poke made by this user$/) do
-  @poke = Poke.make! user: @user
+  @poke = PanelaPoke.make! user: @user
 end
 
 Given(/^there is a campaign created by this user$/) do
-  @campaign = Campaign.make! user: @user
+  @campaign = PanelaCampaign.make! user: @user
 end
 
 Given(/^there is an idea created by this user$/) do

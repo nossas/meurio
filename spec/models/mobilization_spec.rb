@@ -7,7 +7,6 @@ describe Mobilization do
   it { should validate_presence_of :description }
   it { should validate_presence_of :image }
   it { should validate_presence_of :user_id }
-  it { should have_many(:campaigns) }
   it { should have_many(:problems) }
   it { should have_many(:petitions) }
   it { should belong_to(:user) }

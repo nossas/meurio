@@ -11,15 +11,6 @@ Mobilization.blueprint do
   user          { User.make! }
 end
 
-Campaign.blueprint do
-  name              { Faker::Lorem.sentence }
-  description_html  { Faker::Lorem.paragraph }
-  link              { Faker::Internet.url }
-  uid               { sn }
-  hashtag           { Mobilization.make!.hashtag }
-  user              { User.make! }
-end
-
 Problem.blueprint do
   name          { Faker::Lorem.sentence }
   description   { Faker::Lorem.paragraph }
@@ -36,12 +27,6 @@ Idea.blueprint do
   uid           { sn }
   user          { User.make! }
   problem       { Problem.make! }
-end
-
-Poke.blueprint do
-  uid       { sn }
-  campaign  { Campaign.make! }
-  user      { User.make! }
 end
 
 Tweet.blueprint do
@@ -182,9 +167,13 @@ CompartilhacoTwitterProfileSpreader.blueprint do
 end
 
 PanelaCampaign.blueprint do
-  # Attributes here
+  name        { Faker::Lorem.sentence }
+  description { Faker::Lorem.paragraph }
+  hashtag     { Mobilization.make!.hashtag }
+  user        { User.make! }
 end
 
 PanelaPoke.blueprint do
-  # Attributes here
+  panela_campaign { PanelaCampaign.make! }
+  user { User.make! }
 end

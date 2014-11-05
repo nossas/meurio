@@ -104,10 +104,10 @@
           span.counter= number_with_delimiter Squeeze.count
           span.counter_label= t("squeezes", count: Squeeze.count)
           span.where enviados aos deputados
-      - if @mobilization.pokes.any?
+      - if @mobilization.panela_pokes.any?
         .pokes_counter.icon-comments
-          span.counter= number_with_delimiter @mobilization.pokes.count
-          span.counter_label= t("pokers", count: @mobilization.pokes.count)
+          span.counter= number_with_delimiter @mobilization.panela_pokes.count
+          span.counter_label= t("pokers", count: @mobilization.panela_pokes.count)
           span.where no Panela de Pressão
       - if @mobilization.ideas.any?
         .ideas_counter.icon-bubbles

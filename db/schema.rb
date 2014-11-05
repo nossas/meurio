@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105184949) do
+ActiveRecord::Schema.define(version: 20141105190920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,18 +148,6 @@ ActiveRecord::Schema.define(version: 20141105184949) do
     t.foreign_key ["task_type_id"], "task_types", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_badges_task_types_task_type_id"
   end
 
-  create_table "campaigns", force: true do |t|
-    t.string   "name"
-    t.string   "link"
-    t.text     "description_html"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "uid"
-    t.string   "hashtag"
-    t.integer  "user_id"
-    t.string   "user_email"
-  end
-
   create_table "clippings", force: true do |t|
     t.datetime "published_at"
     t.text     "body"
@@ -270,17 +258,6 @@ ActiveRecord::Schema.define(version: 20141105184949) do
     t.string   "avatar"
     t.string   "name"
     t.string   "slug"
-  end
-
-  create_table "pokes", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "campaign_id"
-    t.string   "uid"
-    t.integer  "user_id"
-    t.string   "user_email"
-    t.index ["campaign_id"], :name => "fk__pokes_campaign_id", :order => {"campaign_id" => :asc}
-    t.foreign_key ["campaign_id"], "campaigns", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_pokes_campaign_id"
   end
 
   create_table "rewards", force: true do |t|

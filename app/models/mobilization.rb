@@ -1,8 +1,8 @@
 class Mobilization < ActiveRecord::Base
   validates :user_id, presence: true
-  has_many :campaigns, primary_key: :hashtag, foreign_key: :hashtag
+  has_many :panela_campaigns, primary_key: :hashtag, foreign_key: :hashtag
   has_many :problems, primary_key: :hashtag, foreign_key: :hashtag
-  has_many :pokes, through: :campaigns
+  has_many :panela_pokes, through: :panela_campaigns
   has_many :ideas, through: :problems
   has_many :images, primary_key: :hashtag, foreign_key: :hashtag
   has_many :facts, primary_key: :hashtag, foreign_key: :hashtag

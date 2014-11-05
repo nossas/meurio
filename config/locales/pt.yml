@@ -254,7 +254,6 @@ pt:
         mode: Modo de realização
 
   fact:
-    campaigns: "Pressione agora"
     problems: "Dê uma ideia"
     events: "Participe do evento"
     petitions: "Assine embaixo"
@@ -295,8 +294,6 @@ pt:
   facebook_posts: "no Facebook"
   tweets: "no Twitter"
   activity:
-    Poke: "pressionou na campanha"
-    Campaign: "criou a campanha"
     Problem: "criou o problema"
     Idea: "criou a ideia"
     TaskSubscription: "aceitou realizar a tarefa"
