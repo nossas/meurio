@@ -304,6 +304,7 @@ pt:
     CompartilhacoFacebookProfileSpreader: "emprestou seu Facebook para o compartilhaço"
     CompartilhacoTwitterProfileSpreader: "emprestou seu Twitter para o compartilhaço"
     PanelaCampaign: "criou a campanha"
+    PanelaPoke: "pressionou na campanha"
   mode:
     local: Presencial
     remote: À distância
