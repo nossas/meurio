@@ -180,3 +180,7 @@ CompartilhacoTwitterProfileSpreader.blueprint do
   user { User.make! }
   compartilhaco_campaign { CompartilhacoCampaign.make! }
 end
+
+PanelaCampaign.blueprint do
+  # Attributes here
+end
