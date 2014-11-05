@@ -25,11 +25,11 @@ Given(/^this mobilization have a problem$/) do
 end
 
 Given(/^this campaign have many pokes$/) do
-  rand(10..100).times { PanelaPoke.make! campaign_id: @campaign.id }
+  rand(10..100).times { PanelaPoke.make! campaign: @campaign }
 end
 
 Given(/^this campaign have (\d+) pokes$/) do |count|
-  count.to_i.times { PanelaPoke.make! campaign_id: @campaign.id }
+  count.to_i.times { PanelaPoke.make! campaign: @campaign }
 end
 
 Given(/^there is campaign$/) do
