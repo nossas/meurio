@@ -184,3 +184,7 @@ end
 PanelaCampaign.blueprint do
   # Attributes here
 end
+
+PanelaPoke.blueprint do
+  # Attributes here
+end

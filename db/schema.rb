@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105125245) do
+ActiveRecord::Schema.define(version: 20141105130240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -269,34 +269,14 @@ ActiveRecord::Schema.define(version: 20141105125245) do
     t.string   "slug"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "avatar"
-    t.string   "skills",           default: [],    array: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "profession"
-    t.string   "facebook"
-    t.string   "twitter"
-    t.string   "city"
-    t.string   "state"
-    t.text     "bio"
-    t.boolean  "admin"
-    t.boolean  "funder"
-    t.string   "address_district"
-    t.string   "website"
-    t.boolean  "sponsor",          default: false
-  end
-
   create_table "panela_campaigns", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.string   "hashtag"
-    t.index ["user_id"], :name => "fk__panela_campaigns_user_id", :order => {"user_id" => :asc}
-    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_panela_campaigns_user_id"
+  end
+
+  create_table "panela_pokes", force: true do |t|
   end
 
   create_table "rewards", force: true do |t|
@@ -325,6 +305,27 @@ ActiveRecord::Schema.define(version: 20141105125245) do
 
   create_table "squeezes", force: true do |t|
     t.string "email"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "avatar"
+    t.string   "skills",           default: [],    array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "profession"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "city"
+    t.string   "state"
+    t.text     "bio"
+    t.boolean  "admin"
+    t.boolean  "funder"
+    t.string   "address_district"
+    t.string   "website"
+    t.boolean  "sponsor",          default: false
   end
 
   create_table "successful_transactions", force: true do |t|
