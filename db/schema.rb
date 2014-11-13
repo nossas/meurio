@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113124913) do
+ActiveRecord::Schema.define(version: 20141113125312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -236,6 +236,7 @@ ActiveRecord::Schema.define(version: 20141113124913) do
     t.string   "uid"
     t.integer  "share_count"
     t.integer  "like_count"
+    t.integer  "organization_id"
   end
 
   create_table "mobilizations", force: true do |t|
