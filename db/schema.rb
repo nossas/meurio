@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105190920) do
+ActiveRecord::Schema.define(version: 20141113124913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -258,6 +258,7 @@ ActiveRecord::Schema.define(version: 20141105190920) do
     t.string   "avatar"
     t.string   "name"
     t.string   "slug"
+    t.string   "facebook_page_uid"
   end
 
   create_table "rewards", force: true do |t|
