@@ -74,7 +74,7 @@ namespace :sync do
               body:             image["name"]
             )
           else
-            Image.create remote_file_url: image["source"], hashtag: mobilization.hashtag, uid: image["id"]
+            Image.create remote_file_url: image["source"], hashtag: mobilization.hashtag, uid: image["id"], organization_id: 1
           end
         end
       end
