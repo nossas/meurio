@@ -37,12 +37,26 @@ body.pages.founders
         display: none
       .orbit-bullets
         li
-          background: white
           padding: 7px
           margin: 0 10px
           cursor: pointer
-          &.active
-            background: $primary-color
+
+  .founders-slider
+    ol.orbit-bullets
+      li
+        background: white
+        &.active
+          background: $primary-color
+
+  .founders-moderators
+    ul.orbit-slides-container
+      li
+        height: 300px
+    ol.orbit-bullets
+      li
+        background: darken($primary-color, 10%)
+        &.active
+          background: lighten($primary-color, 20%)
 
   .founders-about, .founders-program, .founders-steps, .founders-network, .founders-moderators, .founders-subscription, .founders-support, .founders-slider, .founders-invite
     text-align: center
@@ -170,6 +184,7 @@ body.pages.founders
         margin: 0 auto
         margin-bottom: 10px
         .moderator-description
+          width: 100%
           position: absolute
           height: 100%
           top: 0

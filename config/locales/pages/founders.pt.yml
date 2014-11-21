@@ -95,8 +95,12 @@ pt:
           description: "Fundador, Estúdio Fluxo"
         daniel_vargas:
           description: "Ex-Ministro de Assuntos Estratégicos, Professor de Direito na FGV"
+        edgard_gouveia_junior:
+          description: "Game Designer, Jogo Oasis & Play The Call"
         erika_johansson:
           description: "Tecnologias de Impacto Social, Google"
+        fabio_malini:
+          description: "Pesquisador de Estudos de Redes no LABIC/UFES"
         felipe_alves:
           description: "Coordenador de Educação da Artemisia"
         florencia_estrade:
@@ -105,6 +109,10 @@ pt:
           description: "Co-fundador da ShootTheShit.cc e do Múrmura.cc"
         glaucia_barros:
           description: "Diretora Programática da Fundación Avina"
+        guilherme_lichand:
+          description: "Sócio-fundador da MGov Brasil, Doutorando na Harvard University"
+        guilherme_lito:
+          description: "Empreendedor carioca"
         jose_marcelo_zacchi:
           description: "Diretor Executivo, Casa Fluminense"
         lee_sean_huang:
@@ -117,6 +125,8 @@ pt:
           description: "Gerente de educação e mobilização do Instituto Arapyaú"
         marcelo_de_camargo_furtado:
           description: "Diretor Executivo, Instituto Arapyaú, ex-Diretor Executivo, Greenpeace Brasil"
+        marcos_barao:
+          description: "Coordenador de Parcerias e Oportunidades de Impacto na Aliança Empreendedora"
         mariana_ribeiro:
           description: "Co-Fundadora do Imagina na Copa"
         patricia_oakim:
@@ -125,9 +135,15 @@ pt:
           description: "co-fundador, Instituto Mídia Étnica e portal de notícias Correio Nagô"
         pedro_abramovay:
           description: "Ex-ministro da justiça, diretor regional América Latina da Open Society Foundations"
+        philip_yang:
+          description: "Fundador, URBEM"
         pia_mancini:
-          description: "co-fundadora, Democracy OS e Partido de la Red"
+          description: "Co-fundadora, Democracy OS e Partido de la Red"
+        renato_guimaraes:
+          description: "Jornalista, Co-Fundador e Diretor de Negócios e Estratégia da Together"
         ronaldo_lemos:
+          description: "Diretor do Instituto Tecnologia e Sociedade do Rio"
+        sergio_branco:
           description: "Diretor do Instituto Tecnologia e Sociedade do Rio"
         teo_benjamim:
           description: "Coordenador de Projetos na Benfeitoria"
