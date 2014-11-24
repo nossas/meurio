@@ -9,7 +9,7 @@
       .avatar= image_tag @user.avatar_url, class: :user
       .user_info
         h2.user_name= @user.name
-        = link_to "Editar perfil", "http://accounts.#{ENV['MEURIO_DOMAIN']}/edit_profile", class: :edit_user if can? :edit, @user
+        = link_to "Editar perfil", "http://accounts.#{ENV['MEURIO_DOMAIN']}/users/#{@user.id}/edit", class: :edit_user if can? :edit, @user
         .user_profession= @user.profession
         .user_details
           - if @user.facebook.present?
