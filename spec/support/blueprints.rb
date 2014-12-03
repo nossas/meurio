@@ -177,3 +177,7 @@ PanelaPoke.blueprint do
   panela_campaign { PanelaCampaign.make! }
   user { User.make! }
 end
+
+RecentActivity.blueprint do
+  # Attributes here
+end

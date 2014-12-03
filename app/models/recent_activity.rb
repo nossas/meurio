@@ -1,0 +1,2 @@
+class RecentActivity < Activity
+end
