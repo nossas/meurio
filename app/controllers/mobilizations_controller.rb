@@ -12,6 +12,8 @@ class MobilizationsController < InheritedResources::Base
         per(6)
 
       render mobilizations
+    else
+      @activities = Activity.where("created_at > ?", 1.week.ago).order(created_at: :desc).limit(5)
     end
   end
 
