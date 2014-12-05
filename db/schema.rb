@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203173303) do
+ActiveRecord::Schema.define(version: 20141205182547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,10 +55,47 @@ ActiveRecord::Schema.define(version: 20141203173303) do
     t.integer  "campaign_id"
   end
 
+  create_table "tasks", force: true do |t|
+    t.integer  "task_type_id"
+    t.integer  "points",          null: false
+    t.string   "skills",                       array: true
+    t.string   "title"
+    t.string   "hashtag"
+    t.integer  "max_deliveries"
+    t.datetime "deadline"
+    t.integer  "organization_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "avatar"
+    t.string   "skills",           default: [],    array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "profession"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "city"
+    t.string   "state"
+    t.text     "bio"
+    t.boolean  "admin"
+    t.boolean  "funder"
+    t.string   "address_district"
+    t.string   "website"
+    t.boolean  "sponsor",          default: false
+  end
+
   create_table "deliveries", force: true do |t|
-    t.integer  "task_subscription_id"
     t.datetime "accepted_at"
     t.datetime "rejected_at"
+    t.integer  "user_id"
+    t.integer  "task_id"
+    t.index ["task_id"], :name => "fk__deliveries_task_id", :order => {"task_id" => :asc}
+    t.index ["user_id"], :name => "fk__deliveries_user_id", :order => {"user_id" => :asc}
+    t.foreign_key ["task_id"], "tasks", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_deliveries_task_id"
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_deliveries_user_id"
   end
 
   create_table "problems", force: true do |t|
@@ -108,18 +145,7 @@ ActiveRecord::Schema.define(version: 20141203173303) do
     t.datetime "updated_at"
   end
 
-  create_table "tasks", force: true do |t|
-    t.integer  "task_type_id"
-    t.integer  "points",          null: false
-    t.string   "skills",                       array: true
-    t.string   "title"
-    t.string   "hashtag"
-    t.integer  "max_deliveries"
-    t.datetime "deadline"
-    t.integer  "organization_id"
-  end
-
-  create_view "activities", "        (        (        (        (        (        (        (         SELECT problems.name AS title,\n                                                                    problems.id AS activable_id,\n                                                                    problems.user_id,\n                                                                    problems.created_at,\n                                                                    problems.hashtag,\n                                                                    'Problem'::text AS activable_type\n                                                                   FROM problems\n                                                        UNION ALL\n                                                                 SELECT ideas_problems.name AS title,\n                                                                    ideas.id AS activable_id,\n                                                                    ideas.user_id,\n                                                                    ideas.created_at,\n                                                                    ideas_problems.hashtag,\n                                                                    'Idea'::text AS activable_type\n                                                                   FROM (ideas\n                                                              JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id))))\n                                                UNION ALL\n                                                         SELECT tasks.title,\n                                                            task_subscriptions.id AS activable_id,\n                                                            task_subscriptions.user_id,\n                                                            task_subscriptions.created_at,\n                                                            tasks.hashtag,\n                                                            'TaskSubscription'::text AS activable_type\n                                                           FROM (task_subscriptions\n                                                      JOIN tasks ON ((tasks.id = task_subscriptions.task_id))))\n                                        UNION ALL\n                                                 SELECT tasks.title,\n                                                    deliveries.id AS activable_id,\n                                                    task_subscriptions.user_id,\n                                                    deliveries.accepted_at AS created_at,\n                                                    tasks.hashtag,\n                                                    'Delivery'::text AS activable_type\n                                                   FROM ((deliveries\n                                              JOIN task_subscriptions ON ((task_subscriptions.id = deliveries.task_subscription_id)))\n                                         JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\n                                        WHERE (deliveries.accepted_at IS NOT NULL))\n                                UNION ALL\n                                         SELECT compartilhaco_campaigns.title,\n                                            compartilhaco_campaigns.id AS activable_id,\n                                            compartilhaco_campaigns.user_id,\n                                            compartilhaco_campaigns.created_at,\n                                            compartilhaco_campaigns.hashtag,\n                                            'CompartilhacoCampaign'::text AS activable_type\n                                           FROM compartilhaco_campaigns)\n                        UNION ALL\n                                 SELECT cc.title,\n                                    cfps.id AS activable_id,\n                                    cfps.user_id,\n                                    cfps.created_at,\n                                    cc.hashtag,\n                                    'CompartilhacoFacebookProfileSpreader'::text AS activable_type\n                                   FROM (compartilhaco_facebook_profile_spreaders cfps\n                              JOIN compartilhaco_campaigns cc ON ((cc.id = cfps.campaign_id))))\n                UNION ALL\n                         SELECT cc.title,\n                            ctps.id AS activable_id,\n                            ctps.user_id,\n                            ctps.created_at,\n                            cc.hashtag,\n                            'CompartilhacoTwitterProfileSpreader'::text AS activable_type\n                           FROM (compartilhaco_twitter_profile_spreaders ctps\n                      JOIN compartilhaco_campaigns cc ON ((cc.id = ctps.campaign_id))))\n        UNION ALL\n                 SELECT panela_campaigns.name AS title,\n                    panela_campaigns.id AS activable_id,\n                    panela_campaigns.user_id,\n                    panela_campaigns.created_at,\n                    panela_campaigns.hashtag,\n                    'PanelaCampaign'::text AS activable_type\n                   FROM panela_campaigns)\nUNION ALL\n         SELECT panela_poke_campaigns.name AS title,\n            panela_pokes.id AS activable_id,\n            panela_pokes.user_id,\n            panela_pokes.created_at,\n            panela_poke_campaigns.hashtag,\n            'PanelaPoke'::text AS activable_type\n           FROM (panela_pokes\n      JOIN panela_campaigns panela_poke_campaigns ON ((panela_poke_campaigns.id = panela_pokes.campaign_id)))\n  ORDER BY 4 DESC", :force => true
+  create_view "activities", " SELECT problems.name AS title,\n    problems.id AS activable_id,\n    problems.user_id,\n    problems.created_at,\n    problems.hashtag,\n    'Problem'::text AS activable_type\n   FROM problems\nUNION ALL\n SELECT ideas_problems.name AS title,\n    ideas.id AS activable_id,\n    ideas.user_id,\n    ideas.created_at,\n    ideas_problems.hashtag,\n    'Idea'::text AS activable_type\n   FROM (ideas\n     JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id)))\nUNION ALL\n SELECT tasks.title,\n    task_subscriptions.id AS activable_id,\n    task_subscriptions.user_id,\n    task_subscriptions.created_at,\n    tasks.hashtag,\n    'TaskSubscription'::text AS activable_type\n   FROM (task_subscriptions\n     JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\nUNION ALL\n SELECT tasks.title,\n    deliveries.id AS activable_id,\n    deliveries.user_id,\n    deliveries.accepted_at AS created_at,\n    tasks.hashtag,\n    'Delivery'::text AS activable_type\n   FROM (deliveries\n     JOIN tasks ON ((tasks.id = deliveries.task_id)))\n  WHERE (deliveries.accepted_at IS NOT NULL)\nUNION ALL\n SELECT compartilhaco_campaigns.title,\n    compartilhaco_campaigns.id AS activable_id,\n    compartilhaco_campaigns.user_id,\n    compartilhaco_campaigns.created_at,\n    compartilhaco_campaigns.hashtag,\n    'CompartilhacoCampaign'::text AS activable_type\n   FROM compartilhaco_campaigns\nUNION ALL\n SELECT cc.title,\n    cfps.id AS activable_id,\n    cfps.user_id,\n    cfps.created_at,\n    cc.hashtag,\n    'CompartilhacoFacebookProfileSpreader'::text AS activable_type\n   FROM (compartilhaco_facebook_profile_spreaders cfps\n     JOIN compartilhaco_campaigns cc ON ((cc.id = cfps.campaign_id)))\nUNION ALL\n SELECT cc.title,\n    ctps.id AS activable_id,\n    ctps.user_id,\n    ctps.created_at,\n    cc.hashtag,\n    'CompartilhacoTwitterProfileSpreader'::text AS activable_type\n   FROM (compartilhaco_twitter_profile_spreaders ctps\n     JOIN compartilhaco_campaigns cc ON ((cc.id = ctps.campaign_id)))\nUNION ALL\n SELECT panela_campaigns.name AS title,\n    panela_campaigns.id AS activable_id,\n    panela_campaigns.user_id,\n    panela_campaigns.created_at,\n    panela_campaigns.hashtag,\n    'PanelaCampaign'::text AS activable_type\n   FROM panela_campaigns\nUNION ALL\n SELECT panela_poke_campaigns.name AS title,\n    panela_pokes.id AS activable_id,\n    panela_pokes.user_id,\n    panela_pokes.created_at,\n    panela_poke_campaigns.hashtag,\n    'PanelaPoke'::text AS activable_type\n   FROM (panela_pokes\n     JOIN panela_campaigns panela_poke_campaigns ON ((panela_poke_campaigns.id = panela_pokes.campaign_id)))\n  ORDER BY 4 DESC", :force => true
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -189,7 +215,7 @@ ActiveRecord::Schema.define(version: 20141203173303) do
     t.integer  "comment_count"
   end
 
-  create_view "comments", "         SELECT t.id,\n            t.created_at,\n            t.text,\n            t.hashtag,\n            t.username,\n            t.published_at,\n            t.text_html,\n            t.user_uid,\n            t.retweet_count AS share_count,\n            t.favorite_count AS like_count,\n            t.comment_count,\n            'tweets'::text AS relname\n           FROM tweets t\nUNION ALL\n         SELECT fp.id,\n            fp.created_at,\n            fp.text,\n            fp.hashtag,\n            fp.username,\n            fp.published_at,\n            fp.text_html,\n            fp.user_uid,\n            fp.share_count,\n            fp.like_count,\n            fp.comment_count,\n            'facebook_posts'::text AS relname\n           FROM facebook_posts fp", :force => true
+  create_view "comments", " SELECT t.id,\n    t.created_at,\n    t.text,\n    t.hashtag,\n    t.username,\n    t.published_at,\n    t.text_html,\n    t.user_uid,\n    t.retweet_count AS share_count,\n    t.favorite_count AS like_count,\n    t.comment_count,\n    'tweets'::text AS relname\n   FROM tweets t\nUNION ALL\n SELECT fp.id,\n    fp.created_at,\n    fp.text,\n    fp.hashtag,\n    fp.username,\n    fp.published_at,\n    fp.text_html,\n    fp.user_uid,\n    fp.share_count,\n    fp.like_count,\n    fp.comment_count,\n    'facebook_posts'::text AS relname\n   FROM facebook_posts fp", :force => true
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -227,7 +253,7 @@ ActiveRecord::Schema.define(version: 20141203173303) do
     t.integer  "signatures_count"
   end
 
-  create_view "facts", "        (        (        (         SELECT e.id,\n                                    e.created_at,\n                                    e.name,\n                                    e.description_html,\n                                    e.link,\n                                    e.hashtag,\n                                    'petitions'::text AS relname\n                                   FROM petitions e\n                        UNION ALL\n                                 SELECT p.id,\n                                    p.created_at,\n                                    p.name,\n                                    p.description AS description_html,\n                                    p.link,\n                                    p.hashtag,\n                                    'problems'::text AS relname\n                                   FROM problems p)\n                UNION ALL\n                         SELECT e.id,\n                            e.created_at,\n                            e.name,\n                            e.description AS description_html,\n                            e.link,\n                            e.hashtag,\n                            'events'::text AS relname\n                           FROM events e)\n        UNION ALL\n                 SELECT cc.id,\n                    cc.created_at,\n                    cc.title AS name,\n                    cc.description AS description_html,\n                    ''::character varying AS link,\n                    cc.hashtag,\n                    'compartilhaco_campaigns'::text AS relname\n                   FROM compartilhaco_campaigns cc)\nUNION ALL\n         SELECT panela_campaigns.id,\n            panela_campaigns.created_at,\n            panela_campaigns.name,\n            panela_campaigns.description AS description_html,\n            ''::character varying AS link,\n            panela_campaigns.hashtag,\n            'panela_campaigns'::text AS relname\n           FROM panela_campaigns", :force => true
+  create_view "facts", " SELECT e.id,\n    e.created_at,\n    e.name,\n    e.description_html,\n    e.link,\n    e.hashtag,\n    'petitions'::text AS relname\n   FROM petitions e\nUNION ALL\n SELECT p.id,\n    p.created_at,\n    p.name,\n    p.description AS description_html,\n    p.link,\n    p.hashtag,\n    'problems'::text AS relname\n   FROM problems p\nUNION ALL\n SELECT e.id,\n    e.created_at,\n    e.name,\n    e.description AS description_html,\n    e.link,\n    e.hashtag,\n    'events'::text AS relname\n   FROM events e\nUNION ALL\n SELECT cc.id,\n    cc.created_at,\n    cc.title AS name,\n    cc.description AS description_html,\n    ''::character varying AS link,\n    cc.hashtag,\n    'compartilhaco_campaigns'::text AS relname\n   FROM compartilhaco_campaigns cc\nUNION ALL\n SELECT panela_campaigns.id,\n    panela_campaigns.created_at,\n    panela_campaigns.name,\n    panela_campaigns.description AS description_html,\n    ''::character varying AS link,\n    panela_campaigns.hashtag,\n    'panela_campaigns'::text AS relname\n   FROM panela_campaigns", :force => true
   create_table "images", force: true do |t|
     t.string   "file"
     t.string   "hashtag"
@@ -262,7 +288,6 @@ ActiveRecord::Schema.define(version: 20141203173303) do
     t.string   "facebook_page_uid"
   end
 
-  create_view "recent_activities", "        (        (        (        (        (        (        (        ( SELECT problems.name AS title,\n                                                                    problems.id AS activable_id,\n                                                                    problems.user_id,\n                                                                    problems.created_at,\n                                                                    problems.hashtag,\n                                                                    'Problem'::text AS activable_type\n                                                                   FROM problems\n                                                                  ORDER BY problems.created_at DESC\n                                                                 LIMIT 10)\n                                                        UNION ALL\n                                                                ( SELECT ideas_problems.name AS title,\n                                                                    ideas.id AS activable_id,\n                                                                    ideas.user_id,\n                                                                    ideas.created_at,\n                                                                    ideas_problems.hashtag,\n                                                                    'Idea'::text AS activable_type\n                                                                   FROM (ideas\n                                                              JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id)))\n                                                             ORDER BY ideas.created_at DESC\n                                                            LIMIT 10))\n                                                UNION ALL\n                                                        ( SELECT tasks.title,\n                                                            task_subscriptions.id AS activable_id,\n                                                            task_subscriptions.user_id,\n                                                            task_subscriptions.created_at,\n                                                            tasks.hashtag,\n                                                            'TaskSubscription'::text AS activable_type\n                                                           FROM (task_subscriptions\n                                                      JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\n                                                     ORDER BY task_subscriptions.created_at DESC\n                                                    LIMIT 10))\n                                        UNION ALL\n                                                ( SELECT tasks.title,\n                                                    deliveries.id AS activable_id,\n                                                    task_subscriptions.user_id,\n                                                    deliveries.accepted_at AS created_at,\n                                                    tasks.hashtag,\n                                                    'Delivery'::text AS activable_type\n                                                   FROM ((deliveries\n                                              JOIN task_subscriptions ON ((task_subscriptions.id = deliveries.task_subscription_id)))\n                                         JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\n                                        WHERE (deliveries.accepted_at IS NOT NULL)\n                                        ORDER BY deliveries.accepted_at DESC\n                                       LIMIT 10))\n                                UNION ALL\n                                        ( SELECT compartilhaco_campaigns.title,\n                                            compartilhaco_campaigns.id AS activable_id,\n                                            compartilhaco_campaigns.user_id,\n                                            compartilhaco_campaigns.created_at,\n                                            compartilhaco_campaigns.hashtag,\n                                            'CompartilhacoCampaign'::text AS activable_type\n                                           FROM compartilhaco_campaigns\n                                          ORDER BY compartilhaco_campaigns.created_at DESC\n                                         LIMIT 10))\n                        UNION ALL\n                                ( SELECT cc.title,\n                                    cfps.id AS activable_id,\n                                    cfps.user_id,\n                                    cfps.created_at,\n                                    cc.hashtag,\n                                    'CompartilhacoFacebookProfileSpreader'::text AS activable_type\n                                   FROM (compartilhaco_facebook_profile_spreaders cfps\n                              JOIN compartilhaco_campaigns cc ON ((cc.id = cfps.campaign_id)))\n                             ORDER BY cfps.created_at DESC\n                            LIMIT 10))\n                UNION ALL\n                        ( SELECT cc.title,\n                            ctps.id AS activable_id,\n                            ctps.user_id,\n                            ctps.created_at,\n                            cc.hashtag,\n                            'CompartilhacoTwitterProfileSpreader'::text AS activable_type\n                           FROM (compartilhaco_twitter_profile_spreaders ctps\n                      JOIN compartilhaco_campaigns cc ON ((cc.id = ctps.campaign_id)))\n                     ORDER BY ctps.created_at DESC\n                    LIMIT 10))\n        UNION ALL\n                ( SELECT panela_campaigns.name AS title,\n                    panela_campaigns.id AS activable_id,\n                    panela_campaigns.user_id,\n                    panela_campaigns.created_at,\n                    panela_campaigns.hashtag,\n                    'PanelaCampaign'::text AS activable_type\n                   FROM panela_campaigns\n                  ORDER BY panela_campaigns.created_at DESC\n                 LIMIT 10))\nUNION ALL\n        ( SELECT panela_poke_campaigns.name AS title,\n            panela_pokes.id AS activable_id,\n            panela_pokes.user_id,\n            panela_pokes.created_at,\n            panela_poke_campaigns.hashtag,\n            'PanelaPoke'::text AS activable_type\n           FROM (panela_pokes\n      JOIN panela_campaigns panela_poke_campaigns ON ((panela_poke_campaigns.id = panela_pokes.campaign_id)))\n     ORDER BY panela_pokes.created_at DESC\n    LIMIT 10)\n  ORDER BY 4 DESC", :force => true
   create_table "rewards", force: true do |t|
     t.integer  "user_id",      null: false
     t.integer  "task_type_id", null: false
@@ -289,27 +314,6 @@ ActiveRecord::Schema.define(version: 20141203173303) do
 
   create_table "squeezes", force: true do |t|
     t.string "email"
-  end
-
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "avatar"
-    t.string   "skills",           default: [],    array: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "profession"
-    t.string   "facebook"
-    t.string   "twitter"
-    t.string   "city"
-    t.string   "state"
-    t.text     "bio"
-    t.boolean  "admin"
-    t.boolean  "funder"
-    t.string   "address_district"
-    t.string   "website"
-    t.boolean  "sponsor",          default: false
   end
 
   create_table "successful_transactions", force: true do |t|
