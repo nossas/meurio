@@ -1,10 +1,9 @@
 class TaskSubscription < ActiveRecord::Base
   belongs_to :user
   belongs_to :task
-  has_many :deliveries
 
   def pending?
-    self.deliveries.empty? && !self.task.expired?
+    Delivery.where(user_id: self.user_id, task_id: self.task_id).empty? && !self.task.expired?
   end
 
   def awaiting_validation?

@@ -4,7 +4,7 @@ class Task < ActiveRecord::Base
   belongs_to :organization
   has_one :category, through: :task_type
   has_many :task_subscriptions
-  has_many :deliveries, through: :task_subscriptions
+  has_many :deliveries
 
   def self.matching skills
     Task.
@@ -15,17 +15,15 @@ class Task < ActiveRecord::Base
 
   def self.finished user_id
     Task.
-      joins(:task_subscriptions).
       joins(:deliveries).
-      where("task_subscriptions.user_id = ? AND deliveries.task_subscription_id = task_subscriptions.id AND deliveries.accepted_at IS NOT NULL", user_id).
+      where("deliveries.user_id = ? AND deliveries.accepted_at IS NOT NULL", user_id).
       order(:deadline)
   end
 
   def self.subscribed user_id
     Task.
       joins(:task_subscriptions).
-      joins("LEFT JOIN deliveries ON deliveries.task_subscription_id = task_subscriptions.id AND deliveries.accepted_at IS NOT NULL").
-      where("task_subscriptions.user_id = ? AND deliveries.id IS NULL", user_id).
+      where("task_subscriptions.user_id = ?", user_id).
       order(:deadline)
   end
 

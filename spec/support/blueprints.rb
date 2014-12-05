@@ -110,7 +110,8 @@ TaskSubscription.blueprint do
 end
 
 Delivery.blueprint do
-  # Attributes here
+  user { User.make! }
+  task { Task.make! }
 end
 
 Category.blueprint do

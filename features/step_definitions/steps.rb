@@ -261,7 +261,7 @@ Given(/^there is a task for this category$/) do
 end
 
 Given(/^this user delivered this task$/) do
-  @delivery = Delivery.make! task_subscription: TaskSubscription.make!(user: @user, task: @task)
+  @delivery = Delivery.make! user: @user, task: @task
 end
 
 Given(/^this delivery is accepted$/) do
@@ -280,7 +280,7 @@ Given(/^this user subscribed for a task$/) do
 end
 
 Given(/^this user finished this task$/) do
-  Delivery.make! task_subscription: @task_subscription, accepted_at: Time.current
+  Delivery.make! user: @user, accepted_at: Time.current
 end
 
 Given(/^there is a badge$/) do
