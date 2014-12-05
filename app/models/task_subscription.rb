@@ -7,15 +7,26 @@ class TaskSubscription < ActiveRecord::Base
   end
 
   def awaiting_validation?
-    self.deliveries.where("accepted_at IS NULL AND rejected_at IS NULL").any?
+    Delivery.
+      where(user_id: self.user_id).
+      where(task_id: self.task_id).
+      where("accepted_at IS NULL AND rejected_at IS NULL").
+      any?
   end
 
   def late?
-    self.task.expired? && self.deliveries.where("accepted_at IS NOT NULL").empty?
+    deliveries = Delivery.
+      where(user_id: self.user_id).
+      where(task_id: self.task_id)
+
+    self.task.expired? && deliveries.where("accepted_at IS NOT NULL").empty?
   end
 
   def accepted?
-    self.deliveries.where("accepted_at IS NOT NULL").any?
+    Delivery.
+      where(user_id: self.user_id).
+      where(task_id: self.task_id).
+      where("accepted_at IS NOT NULL").any?
   end
 
   def external_url
