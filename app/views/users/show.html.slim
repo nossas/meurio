@@ -40,14 +40,18 @@
       - if @user.bio
         .user_bio
           strong Quem sou eu:
-          .content= @user.bio
+          .content
+            - if @user.bio.present?
+              = @user.bio
+            - elsif can? :edit, @user
+              | Ainda não preencheu seu perfil? #{link_to "Clique aqui", "http://accounts.#{ENV['MEURIO_DOMAIN']}/users/#{@user.id}/edit"} e conte um pouco mais sobre você.
 
     .row
       .subscribed_tasks
         .subscribed_tasks_title
-          h3 Tarefas aceitas
+          h3 Tarefas que aceitei participar
         - if @subscribed_tasks.empty?
-          .empty Ainda não aceitou nenhuma tarefa
+          .empty Ainda não aceitei participar de nenhuma tarefa.
         - else
           = render @subscribed_tasks
 
@@ -56,7 +60,7 @@
         .matching_tasks_title
           h3 Tarefas perfeitas para mim
         - if @matching_tasks.empty?
-          .empty Não existem tarefas para este usuário
+          .empty No momento, não há nenhuma tarefa perfeita para mim.
         - else
           = render @matching_tasks
 
@@ -65,7 +69,7 @@
         .finished_tasks_title
           h3 Tarefas concluídas
         - if @finished_tasks.empty?
-          .empty Ainda não concluíu nenhuma tarefa
+          .empty Ainda não conclui nenhuma tarefa.
         - else
           = render @finished_tasks
 
