@@ -17,7 +17,7 @@ class Task < ActiveRecord::Base
     Task.
       joins(:deliveries).
       where("deliveries.user_id = ? AND deliveries.accepted_at IS NOT NULL", user_id).
-      order(:deadline)
+      order(:deadline).uniq
   end
 
   def self.subscribed user_id
