@@ -30,7 +30,7 @@ function loadUsers(){
   $(".users .loader").show();
   $.get("/users?page=" + usersPage, function(data) {
     $("#users").append(data);
-    if($("#users").data("count") <= $("#users .member").length)
+    if($(data).length == 0)
       $("a#load_more_users_button").remove();
     $("a#load_more_users_button").show();
     $(".users .loader").hide();
@@ -43,7 +43,7 @@ function loadFunders(){
   $(".funders .loader").show();
   $.get("/funders?page=" + fundersPage, function(data) {
     $("#funders").append(data);
-    if($("#funders").data("count") <= $("#funders .member").length)
+    if($(data).length == 0)
       $("a#load_more_funders_button").remove();
     $("a#load_more_funders_button").show();
     $(".funders .loader").hide();
