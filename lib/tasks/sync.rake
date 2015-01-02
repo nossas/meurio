@@ -61,25 +61,7 @@ namespace :sync do
   namespace :facebook do
     task :images_and_clippings => :environment do
       Organization.all.each do |organization|
-        images = Koala::Facebook::API.new.get_connections(organization.facebook_page_uid, "photos", type: "uploaded", fields: "name,source,created_time,link").select{|image| image["name"].present?}
-        images.each do |image|
-          mobilization = Mobilization.where("hashtag IN (?)", image["name"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
-          if mobilization.present?
-            if image["name"].match(/#NaMídia/)
-              Clipping.create(
-                remote_image_url: image["source"],
-                hashtag:          mobilization.hashtag,
-                uid:              image["id"],
-                published_at:     Time.parse(image["created_time"]),
-                link:             image["link"],
-                body:             image["name"],
-                organization_id:  organization.id
-              )
-            else
-              Image.create remote_file_url: image["source"], hashtag: mobilization.hashtag, uid: image["id"], organization_id: organization.id
-            end
-          end
-        end
+        organization.fetch_images_and_clippings_from_facebook
       end
     end
 
