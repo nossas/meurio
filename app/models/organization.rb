@@ -9,7 +9,7 @@ class Organization < ActiveRecord::Base
 
   def fetch_images_and_clippings_from_facebook
   	begin
-  		Rails.logger.info "Fetching #{organization.name}'s images and clippings from Facebook..."
+  		Rails.logger.info "Fetching #{self.name}'s images and clippings from Facebook..."
 
   		images = Koala::Facebook::API.new.get_connections(self.facebook_page_uid, "photos", type: "uploaded", fields: "name,source,created_time,link").select{|image| image["name"].present?}
 	    
@@ -41,7 +41,7 @@ class Organization < ActiveRecord::Base
 	    Rails.logger.info "...Done!"
 	  rescue Exception => e
 	  	Appsignal.add_exception e
-      Rails.logger.info "Could not fetch #{organization.name}'s images and clippings from Facebook"
+      Rails.logger.info "Could not fetch #{self.name}'s images and clippings from Facebook"
       Rails.logger.info e.message
 	  end  
   end
