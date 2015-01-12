@@ -85,13 +85,13 @@ namespace :sync do
             )
           end
 
-          Rails.logger.info "...Done!"
         rescue Exception => e
           Appsignal.add_exception e
           Rails.logger.info "Could not update Mobilization #{mobilization.id}"
           Rails.logger.info e.message
         end
       end
+      Rails.logger.info "...Done!"
     end
 
     task :posts_by_organization, [:limit] => :environment do |t, args|
