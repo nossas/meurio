@@ -103,4 +103,34 @@ class Organization < ActiveRecord::Base
     end
     Rails.logger.info "...Done!"
   end
+
+  def fetch_events_from_facebook
+  	Rails.logger.info "Fetching #{self.name}'s events from Facebook..."
+
+  	begin
+	  	events = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections(self.facebook_page_uid, "events", fields: "id,description,name").select{|event| event["description"].present?}
+	  	Rails.logger.info "Events found: #{events.count}"
+	    
+	    events.each do |event|
+	      mobilization = Mobilization.where("hashtag IN (?)", event["description"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
+	      
+	      if mobilization.present?
+	        Event.create(
+	          hashtag:         mobilization.hashtag,
+	          name:            event["name"],
+	          description:     event["description"],
+	          link:            "http://facebook.com/events/#{event['id']}",
+	          uid:             event["id"],
+	          organization_id: self.id
+	        )
+	      end
+	    end
+
+	    Rails.logger.info "...Done!"
+    rescue Exception => e
+      Appsignal.add_exception e
+      Rails.logger.info "Could not fetch and create #{self.name}'s events"
+      Rails.logger.warn e.message
+    end    
+  end
 end

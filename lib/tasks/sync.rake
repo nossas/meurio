@@ -107,18 +107,8 @@ namespace :sync do
     end
 
     task :events => :environment do
-      events = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "events", fields: "id,description,name").select{|event| event["description"].present?}
-      events.each do |event|
-        mobilization = Mobilization.where("hashtag IN (?)", event["description"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
-        if mobilization.present?
-          Event.create(
-            hashtag:     mobilization.hashtag,
-            name:        event["name"],
-            description: event["description"],
-            link:        "http://facebook.com/events/#{event['id']}",
-            uid:         event["id"]
-          )
-        end
+      Organization.all.each do |organization|
+        organization.fetch_events_from_facebook
       end
     end
 
