@@ -100,6 +100,12 @@ namespace :sync do
       end
     end
 
+    task :likes_shares_and_comments => :environment do
+      Organization.all.each do |organization|
+        organization.fetch_likes_shares_and_comments_from_facebook
+      end
+    end
+
     task :events => :environment do
       events = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "events", fields: "id,description,name").select{|event| event["description"].present?}
       events.each do |event|
@@ -121,23 +127,6 @@ namespace :sync do
       Event.all.each do |event|
         attending_count = graph.fql_query("SELECT attending_count FROM event WHERE eid = #{event.uid}").first["attending_count"]
         event.update_attributes attending_count: attending_count
-      end
-    end
-
-    task :likes_shares_and_comments => :environment do
-      graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
-      FacebookPost.where("created_at >= ? AND username = 'Meu Rio'", Time.current - 1.day).all.each do |fp|
-        begin
-          post = graph.get_object(fp.uid, fields: "shares,likes.limit(1).summary(1),comments.limit(1).summary(1)")
-          if post["shares"].present?    then fp.share_count = post["shares"]["count"] end
-          if post["likes"].present?     then fp.like_count = post["likes"]["summary"]["total_count"] end
-          if post["comments"].present?  then fp.comment_count = post["comments"]["summary"]["total_count"] end
-          fp.save!
-        rescue Exception => e
-          Appsignal.add_exception e
-          message = "Could not update FacebookPost ##{fp.id} | #{e.message}"
-          Rails.logger.warn message
-        end
       end
     end
   end

@@ -78,4 +78,29 @@ class Organization < ActiveRecord::Base
       Rails.logger.info e.message
     end
   end
+
+  def fetch_likes_shares_and_comments_from_facebook
+  	graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
+  	Rails.logger.info "Fetching #{organization.name}'s likes, shares and comments from Facebook..."
+
+    posts = FacebookPost.where("created_at >= ? AND username = ?", Time.current - 1.day, organization.name)
+    Rails.logger.info "Posts found: #{posts.count}"
+
+    posts.each do |fp|
+      begin
+        post = graph.get_object(fp.uid, fields: "shares,likes.limit(1).summary(1),comments.limit(1).summary(1)")
+    
+        if post["shares"].present?    then fp.share_count = post["shares"]["count"] end
+        if post["likes"].present?     then fp.like_count = post["likes"]["summary"]["total_count"] end
+        if post["comments"].present?  then fp.comment_count = post["comments"]["summary"]["total_count"] end
+    
+        fp.save!
+      rescue Exception => e
+        Appsignal.add_exception e
+        Rails.logger.info "Could not update FacebookPost ##{fp.id}"
+        Rails.logger.warn e.message
+      end
+    end
+    Rails.logger.info "...Done!"
+  end
 end
