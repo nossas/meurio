@@ -47,13 +47,16 @@ class Organization < ActiveRecord::Base
   end
 
   def fetch_posts_from_facebook limit = 25
-  	posts = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections(self.facebook_page_uid, "posts", fields: "from,message,created_time,id", limit: limit)
-        
-    posts.each do |post|
-      Mobilization.all.each do |mobilization|
-        next if post["message"].nil?
+  	Rails.logger.info "Fetching #{self.name}'s posts from Facebook..."
+  	
+    begin
+	  	posts = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections(self.facebook_page_uid, "posts", fields: "from,message,created_time,id", limit: limit)
+	  	Rails.logger.info "Posts found: #{posts.count}"
+	        
+	    posts.each do |post|
+	      Mobilization.all.each do |mobilization|
+	        next if post["message"].nil?
     
-        begin
           if post["message"].index(mobilization.hashtag).present?
             FacebookPost.create(
               hashtag:      	 mobilization.hashtag,
@@ -65,12 +68,14 @@ class Organization < ActiveRecord::Base
               organization_id: self.id
             )
           end
-        rescue Exception => e
-          Appsignal.add_exception e
-          Rails.logger.info "Could not create post #{post.inspect}"
-          Rails.logger.info e.message
-        end
-      end
+	      end
+	    end
+
+	    Rails.logger.info "...Done!"
+    rescue Exception => e
+      Appsignal.add_exception e
+      Rails.logger.info "Could not fetch and create #{self.name}'s posts"
+      Rails.logger.info e.message
     end
   end
 end
