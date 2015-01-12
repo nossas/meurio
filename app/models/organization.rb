@@ -81,9 +81,9 @@ class Organization < ActiveRecord::Base
 
   def fetch_likes_shares_and_comments_from_facebook
   	graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
-  	Rails.logger.info "Fetching #{organization.name}'s likes, shares and comments from Facebook..."
+  	Rails.logger.info "Fetching #{self.name}'s likes, shares and comments from Facebook..."
 
-    posts = FacebookPost.where("created_at >= ? AND username = ?", Time.current - 1.day, organization.name)
+    posts = FacebookPost.where("created_at >= ? AND username = ?", Time.current - 1.day, self.name)
     Rails.logger.info "Posts found: #{posts.count}"
 
     posts.each do |fp|
