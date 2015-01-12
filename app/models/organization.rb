@@ -45,4 +45,32 @@ class Organization < ActiveRecord::Base
       Rails.logger.info e.message
 	  end  
   end
+
+  def fetch_posts_from_facebook limit = 25
+  	posts = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections(self.facebook_page_uid, "posts", fields: "from,message,created_time,id", limit: limit)
+        
+    posts.each do |post|
+      Mobilization.all.each do |mobilization|
+        next if post["message"].nil?
+    
+        begin
+          if post["message"].index(mobilization.hashtag).present?
+            FacebookPost.create(
+              hashtag:      	 mobilization.hashtag,
+              username:     	 post["from"]["name"],
+              text:         	 post["message"],
+              published_at: 	 post["created_time"],
+              user_uid:     	 post["from"]["id"],
+              uid:          	 post["id"],
+              organization_id: self.id
+            )
+          end
+        rescue Exception => e
+          Appsignal.add_exception e
+          Rails.logger.info "Could not create post #{post.inspect}"
+          Rails.logger.info e.message
+        end
+      end
+    end
+  end
 end
