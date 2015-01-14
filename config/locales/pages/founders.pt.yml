@@ -87,6 +87,8 @@ pt:
         content: "Esses são os primeiros provocadores confirmados para as residências de incubação da rede em 2015, outros nomes de peso se somarão a esse time ao longo do ano."
         ana_paula_lisboa:
           description: "Coordenadora, Agência de Redes para a Juventude"
+        barbara_szaniecki:
+          description: "Pesquisadora na Escola Superior de Design / UERJ"
         berenice_seara:
           description: "Colunista do jornal Extra"
         bruno_carvalho:
@@ -141,6 +143,8 @@ pt:
           description: "Co-fundadora, Democracy OS e Partido de la Red"
         renato_guimaraes:
           description: "Jornalista, Co-Fundador e Diretor de Negócios e Estratégia da Together"
+        rodrigo_maia:
+          description: "Co-fundador do Catarse"
         ronaldo_lemos:
           description: "Diretor do Instituto Tecnologia e Sociedade do Rio"
         sergio_branco:
