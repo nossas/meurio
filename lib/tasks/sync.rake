@@ -66,12 +66,14 @@ namespace :sync do
     end
 
     task :posts_by_hashtag => :environment do
+      Rails.logger.info "Fetching posts by hashtag from Facebook..."
       graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
+      
       Mobilization.all.each do |mobilization|
-        Rails.logger.info "Mobilization #{mobilization.id}"
         begin
           posts = graph.search(mobilization.hashtag, fields: "from,message,created_time,id")
-          Rails.logger.info "Posts count: #{posts.count}"
+          Rails.logger.info "Posts found for mobilization #{mobilization.id}: #{posts.count}"
+
           posts.each do |post|
             FacebookPost.create(
               hashtag:      mobilization.hashtag,
@@ -82,53 +84,31 @@ namespace :sync do
               uid:          post["id"]
             )
           end
+
         rescue Exception => e
           Appsignal.add_exception e
-          Rails.logger.info "Could not update Mobilization ##{mobilization.id}"
+          Rails.logger.info "Could not update Mobilization #{mobilization.id}"
           Rails.logger.info e.message
         end
       end
+      Rails.logger.info "...Done!"
     end
 
-    task :posts_by_meurio, [:limit] => :environment do |t, args|
-      limit = args[:limit] || 25
-      posts = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "posts", fields: "from,message,created_time,id", limit: limit)
-      posts.each do |post|
-        Mobilization.all.each do |mobilization|
-          next if post["message"].nil?
-          begin
-            if post["message"].index(mobilization.hashtag).present?
-              FacebookPost.create(
-                hashtag:      mobilization.hashtag,
-                username:     post["from"]["name"],
-                text:         post["message"],
-                published_at: post["created_time"],
-                user_uid:     post["from"]["id"],
-                uid:          post["id"]
-              )
-            end
-          rescue Exception => e
-            Appsignal.add_exception e
-            Rails.logger.info "Could not create post #{post.inspect}"
-            Rails.logger.info e.message
-          end
-        end
+    task :posts_by_organization, [:limit] => :environment do |t, args|
+      Organization.all.each do |organization|
+        organization.fetch_posts_from_facebook args[:limit]        
+      end
+    end
+
+    task :likes_shares_and_comments => :environment do
+      Organization.all.each do |organization|
+        organization.fetch_likes_shares_and_comments_from_facebook
       end
     end
 
     task :events => :environment do
-      events = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"]).get_connections("241897672509479", "events", fields: "id,description,name").select{|event| event["description"].present?}
-      events.each do |event|
-        mobilization = Mobilization.where("hashtag IN (?)", event["description"].scan(/#[\S]+/).map{|h| h.delete("#")}).first
-        if mobilization.present?
-          Event.create(
-            hashtag:     mobilization.hashtag,
-            name:        event["name"],
-            description: event["description"],
-            link:        "http://facebook.com/events/#{event['id']}",
-            uid:         event["id"]
-          )
-        end
+      Organization.all.each do |organization|
+        organization.fetch_events_from_facebook
       end
     end
 
@@ -137,23 +117,6 @@ namespace :sync do
       Event.all.each do |event|
         attending_count = graph.fql_query("SELECT attending_count FROM event WHERE eid = #{event.uid}").first["attending_count"]
         event.update_attributes attending_count: attending_count
-      end
-    end
-
-    task :likes_shares_and_comments => :environment do
-      graph = Koala::Facebook::API.new(ENV["FB_APP_TOKEN"])
-      FacebookPost.where("created_at >= ? AND username = 'Meu Rio'", Time.current - 1.day).all.each do |fp|
-        begin
-          post = graph.get_object(fp.uid, fields: "shares,likes.limit(1).summary(1),comments.limit(1).summary(1)")
-          if post["shares"].present?    then fp.share_count = post["shares"]["count"] end
-          if post["likes"].present?     then fp.like_count = post["likes"]["summary"]["total_count"] end
-          if post["comments"].present?  then fp.comment_count = post["comments"]["summary"]["total_count"] end
-          fp.save!
-        rescue Exception => e
-          Appsignal.add_exception e
-          message = "Could not update FacebookPost ##{fp.id} | #{e.message}"
-          Rails.logger.warn message
-        end
       end
     end
   end
