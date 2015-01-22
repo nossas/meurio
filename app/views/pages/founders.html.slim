@@ -49,6 +49,35 @@
       p= t('.slider.subscribe')
       = link_to(t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary, :large])
 
+.founders-support#founders-support
+  .row
+    .title
+      h2= t('.support.title')
+  .row
+    .text
+      p= t('.support.content')
+  .row
+    / We may need to rollback to this commented content in the future
+    / .support-item
+    /   = image_tag "pages/founders/support/support_icon1.png"
+    /   p= t('.support.item1.content')
+    /   = link_to t('.support.item1.link_text'), "#share", class: [:button, :radius, :large, :secondary], data: {"reveal-id" => "share"}
+    /   #share.reveal-modal.small data={reveal: true}
+    /     p= t('.support.item1.reveal_content')
+    /     p
+    /       = link_to t('.support.item1.facebook'), "https://www.facebook.com/sharer/sharer.php?u=#{URI.encode(request.url)}", class: [:button, :large, 'facebook-share-button', 'icon-facebook2']
+    /       = link_to t('.support.item1.twitter'), "https://twitter.com/share?text=#{URI.encode(t('.twitter_share.tweet'))}", class: [:button, :large, 'twitter-share-button', 'icon-twitter2']
+    /     a.close-reveal-modal &#215;
+    /
+    / .support-item
+    /   = image_tag "pages/founders/support/support_icon2.png"
+    /   p= t('.support.item2.content')
+    /   = link_to t('.support.item2.link_text'), t('.support.item2.link'), target: :blank, class: [:button, :radius, :large, :secondary]
+    / .support-item
+    /   = image_tag "pages/founders/support/support_icon3.png"
+    /   p= t('.support.item3.content')
+    /   = link_to t('.support.item3.link_text'), t('.support.item3.link'), target: :blank, class: [:button, :radius, :large, :secondary]
+
 .founders-about#founders-about
   .row
     .title
@@ -456,34 +485,6 @@
               .vertical-align-container
                 .vertical-align-content= t('.moderators.zuleica_goulart.description')
           .moderator-name Zuleica Goulart
-
-.founders-support#founders-support
-  .row
-    .title
-      h2= t('.support.title')
-  .row
-    .text
-      p= t('.support.content')
-  .row
-    .support-item
-      = image_tag "pages/founders/support/support_icon1.png"
-      p= t('.support.item1.content')
-      = link_to t('.support.item1.link_text'), "#share", class: [:button, :radius, :large, :secondary], data: {"reveal-id" => "share"}
-      #share.reveal-modal.small data={reveal: true}
-        p= t('.support.item1.reveal_content')
-        p
-          = link_to t('.support.item1.facebook'), "https://www.facebook.com/sharer/sharer.php?u=#{URI.encode(request.url)}", class: [:button, :large, 'facebook-share-button', 'icon-facebook2']
-          = link_to t('.support.item1.twitter'), "https://twitter.com/share?text=#{URI.encode(t('.twitter_share.tweet'))}", class: [:button, :large, 'twitter-share-button', 'icon-twitter2']
-        a.close-reveal-modal &#215;
-
-    .support-item
-      = image_tag "pages/founders/support/support_icon2.png"
-      p= t('.support.item2.content')
-      = link_to t('.support.item2.link_text'), t('.support.item2.link'), target: :blank, class: [:button, :radius, :large, :secondary]
-    .support-item
-      = image_tag "pages/founders/support/support_icon3.png"
-      p= t('.support.item3.content')
-      = link_to t('.support.item3.link_text'), t('.support.item3.link'), target: :blank, class: [:button, :radius, :large, :secondary]
 
 .founders-subscription#founders-subscription
   .row
