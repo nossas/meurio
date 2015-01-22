@@ -13,7 +13,7 @@ en:
         slide2: "New technologies and methodologies bringing citizens closer to the processes that shape the future of their cities."
         slide3: "One month of residency in Rio de Janeiro and up to one year of incubation with our qualified team."
         subscribe: "Found this network in your city."
-        subscribe_cta: "I want to apply!"
+        subscribe_cta: "Enrollment"
       about:
         title: "About"
         content:
@@ -157,7 +157,7 @@ en:
         zuleica_goulart:
           description: "Mobilization Coordinator, Nossa São Paulo Network - Sustainable Cities Program"
       support:
-        title: "Support"
+        title: "Support!"
         content: "Like the idea, but not interested in becoming a founder right now?"
         item1:
           content: "Share the program with your network of friends and help take this initiative around the world!"

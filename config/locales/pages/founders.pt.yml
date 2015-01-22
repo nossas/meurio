@@ -13,7 +13,7 @@ pt:
         slide2: "Novas tecnologias e linguagens para aproximar os cidadãos das tomadas de decisão sobre o futuro de suas cidades."
         slide3: "Um mês de residência e até um ano de incubação."
         subscribe: "Seja um fundador dessa rede na sua cidade."
-        subscribe_cta: "Quero me inscrever!"
+        subscribe_cta: "Inscrição"
       about:
         title: "Sobre"
         content:
@@ -158,7 +158,7 @@ pt:
         zuleica_goulart:
           description: "Coordenadora de Mobilização da Rede Nossa São Paulo e do Programa Cidades Sustentáveis"
       support:
-        title: "Apoie"
+        title: "Apoie!"
         content: "Ajude-nos a construir uma rede de cidades mobilizadas. Juntos podemos fazer com que as cidades abaixo se aproximem dos sonhos e desejos de seus cidadãos."
         item1:
           content: "Compartilhe o programa com seus amigos!"
