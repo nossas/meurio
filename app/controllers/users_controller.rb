@@ -6,7 +6,7 @@ class UsersController < InheritedResources::Base
     @matching_tasks = Task.matching(@user.skills)
     @subscribed_tasks = Task.subscribed(@user.id)
     @finished_tasks = Task.finished(@user.id)
-    @succeed_poked_panela_campaigns = @user.panela_campaigns.successful
+    @succeed_poked_panela_campaigns = @user.panela_campaigns.successful.limit(3)
 
     @subscribed_tasks = @subscribed_tasks - @finished_tasks
   end
