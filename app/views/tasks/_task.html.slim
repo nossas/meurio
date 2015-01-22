@@ -1,18 +1,19 @@
 .task class=task.task_type.category.slug
-  .task-wrapper
-    span class="label radius" = task.category.name
-    .title_and_mobilization
-      .title= link_to truncate(task.title, length: 60), "#{ENV['MULTITUDE_HOST']}/tasks/#{task.id}", title: task.title
-      .mobilization = task.mobilization.try(:short_title)
-    .city.icon-location
-        span= task.organization.city
-  - if @user.nil? || @user.task_subscriptions.find_by(task_id: task.id).nil?
-    .task-status Disponível
-  - elsif @user.task_subscriptions.find_by(task_id: task.id).pending?
-    .task-status class="pending" Faltam #{distance_of_time_in_words_to_now task.deadline}
-  - elsif @user.task_subscriptions.find_by(task_id: task.id).awaiting_validation?
-    .task-status class="awaiting_validation" Aguardando validação
-  - elsif @user.task_subscriptions.find_by(task_id: task.id).late?
-    .task-status class="late" Atrasado
-  - elsif @user.task_subscriptions.find_by(task_id: task.id).accepted?
-    .task-status class="accepted" Concluído
+  .box
+    .box-content
+      span class="label radius" = task.category.name
+      .title_and_mobilization
+        .title= link_to truncate(task.title, length: 60), "#{ENV['MULTITUDE_HOST']}/tasks/#{task.id}", title: task.title
+        .mobilization = task.mobilization.try(:short_title)
+      .city.icon-location
+          span= task.organization.city
+    - if @user.nil? || @user.task_subscriptions.find_by(task_id: task.id).nil?
+      .task-status Disponível
+    - elsif @user.task_subscriptions.find_by(task_id: task.id).pending?
+      .task-status class="pending" Faltam #{distance_of_time_in_words_to_now task.deadline}
+    - elsif @user.task_subscriptions.find_by(task_id: task.id).awaiting_validation?
+      .task-status class="awaiting_validation" Aguardando validação
+    - elsif @user.task_subscriptions.find_by(task_id: task.id).late?
+      .task-status class="late" Atrasado
+    - elsif @user.task_subscriptions.find_by(task_id: task.id).accepted?
+      .task-status class="accepted" Concluído

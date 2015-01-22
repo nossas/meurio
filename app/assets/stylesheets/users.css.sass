@@ -142,9 +142,17 @@ body.users.show
   .subscribed_tasks, .matching_tasks, .finished_tasks
     overflow: hidden
     margin-bottom: 2em
-  .matching_tasks, .subscribed_tasks, .finished_tasks
-    .empty, .matching_tasks_title, .subscribed_tasks_title, .finished_tasks_title
-      +grid-column(12)
+  .empty, .matching_tasks_title, .subscribed_tasks_title, .finished_tasks_title, .succeed-panela-campaigns-title
+    +grid-column(12)
+  .panela-campaign
+    +grid-column(4)
+    .name
+      margin-bottom: 1em
+      height: 28px
+    .paragraph
+      height: 14px
+    .name, .paragraph
+      overflow: hidden
   .badges
     margin-bottom: 2em
     .badge

@@ -1,0 +1,6 @@
+.panela-campaign
+  .box
+    = link_to image_tag(panela_campaign.image_url), panela_campaign.external_url
+    .box-content
+      .name= link_to truncate(panela_campaign.name, length: 60), panela_campaign.external_url, title: panela_campaign.name
+      .paragraph por #{link_to truncate(panela_campaign.user.name, length: 20), panela_campaign.user, title: panela_campaign.user.name}

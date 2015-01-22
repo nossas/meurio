@@ -73,6 +73,13 @@
         - else
           = render @finished_tasks
 
+    - if @succeed_poked_panela_campaigns.any?
+      .row
+        .succeed-panela-campaigns
+          .succeed-panela-campaigns-title
+            h3 Campanhas vitoriosas que participei
+          = render @succeed_poked_panela_campaigns
+
   .user_right
     h3 Medalhas
     .badges
