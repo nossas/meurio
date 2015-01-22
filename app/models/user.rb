@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :badges, through: :achievements
   has_many :successful_transactions
   has_many :panela_pokes
-  has_many :panela_campaigns, through: :panela_pokes
+  has_many :panela_campaigns, -> { uniq }, through: :panela_pokes
   scope :admins, -> { where(admin: true) }
   scope :funders, -> { joins(:successful_transactions).uniq }
   scope :sponsors, -> { where(sponsor: true) }
