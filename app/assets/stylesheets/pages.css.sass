@@ -48,6 +48,10 @@ body.pages.founders
         &.active
           background: $primary-color
 
+  .video
+    +grid-column(12)
+    margin-bottom: 2em
+
   .founders-moderators
     ul.orbit-slides-container
       li
@@ -79,18 +83,20 @@ body.pages.founders
     &:after
       display: none
       content: asset-url("pages/founders/slider_bg_1.jpg") asset-url("pages/founders/slider_bg_2.jpg") asset-url("pages/founders/slider_bg_3.jpg")
-    ul.locales
-      text-align: right
-      li
-        font-size: .8em
-        display: inline
-        margin-left: 1em
-        &.active
+    .locales
+      +grid-column(12)
+      ul
+        text-align: right
+        li
+          font-size: .8em
+          display: inline
+          margin-left: 1em
+          &.active
+            a
+              color: $primary-color
+              text-decoration: underline
           a
-            color: $primary-color
-            text-decoration: underline
-        a
-          color: white
+            color: white
     .nossas-cidades, .founders-subscribe
       +grid-column(12)
       p
@@ -204,8 +210,9 @@ body.pages.founders
         height: 40px
 
   .founders-support
-    background: asset-url("pages/founders/support/support_bg.jpg")
-    background-size: cover
+    // background: asset-url("pages/founders/support/support_bg.jpg")
+    // background-size: cover
+    background: asset-url("pages/founders/ted_bg.jpg")
     .text
       margin-bottom: 60px
     p
