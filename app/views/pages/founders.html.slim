@@ -23,13 +23,13 @@
           li= link_to t('.slider.subscribe_cta'), "#founders-subscription"
 
 .founders-slider#founders-slider
-  .row
-    .locales
-      ul
-        li class=('active' if I18n.locale == :pt) = link_to('Português (BR)', locale: :pt)
-        li class=('active' if I18n.locale == :en) = link_to('English (US)', locale: :en)
-    .video
-      <iframe width="100%" height="475" src="//www.youtube.com/embed/-_wz_68tuhQ?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+  / .row
+  /   .locales
+  /     ul
+  /       li class=('active' if I18n.locale == :pt) = link_to('Português (BR)', locale: :pt)
+  /       li class=('active' if I18n.locale == :en) = link_to('English (US)', locale: :en)
+  / .video
+  <iframe width="100%" height="600" src="https://www.youtube.com/embed/NuMg8KDzyLE?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
     / .nossas-cidades= image_tag(t('.logo'))
   / ul#founders-orbit data={orbit: true, options: "slide_number:false; resume_on_mouseout:true; navigation_arrows: false; timer_speed: 5000;"}
   /   li.slide-1
@@ -47,10 +47,10 @@
   /       .slide-content
   /         .vertical-align-container
   /           .vertical-align-content= t('.slider.slide3')
-  .row
-    .founders-subscribe
-      p= t('.slider.subscribe')
-      = link_to(t('.support.title'), "#founders-support", class: [:button, :radius, :secondary, :large])
+  / .row
+  /   .founders-subscribe.text-center
+  /     p= t('.slider.subscribe')
+  /     = link_to(t('.support.title'), "#founders-support", class: [:button, :radius, :secondary, :large])
 
 .founders-support#founders-support
   .row
@@ -61,21 +61,19 @@
       p= t('.support.content')
   .row
     .catarse-project
-      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/7804/embed" width="100%"></iframe>
+      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/9812/embed" width="100%"></iframe>
     .catarse-project
-      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/7804/embed" width="100%"></iframe>
+      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/9793/embed" width="100%"></iframe>
     .catarse-project
-      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/7804/embed" width="100%"></iframe>
+      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/9823/embed" width="100%"></iframe>
     .catarse-project
-      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/7804/embed" width="100%"></iframe>
+      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/9813/embed" width="100%"></iframe>
     .catarse-project
-      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/7804/embed" width="100%"></iframe>
+      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/9814/embed" width="100%"></iframe>
     .catarse-project
-      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/7804/embed" width="100%"></iframe>
+      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/9815/embed" width="100%"></iframe>
     .catarse-project
-      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/7804/embed" width="100%"></iframe>
-    .catarse-project
-      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/7804/embed" width="100%"></iframe>
+      <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/9809/embed" width="100%"></iframe>
     / We may need to rollback to this commented content in the future
     / .support-item
     /   = image_tag "pages/founders/support/support_icon1.png"
