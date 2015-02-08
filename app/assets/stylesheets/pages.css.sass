@@ -66,9 +66,6 @@ body.pages.founders
     text-align: center
     padding: 80px 0
 
-  .founders-about, .founders-steps, .founders-moderators, .founders-subscription
-    background: asset-url("pages/founders/pattern_bg.jpg")
-
   .founders-slider
     background-image: asset-url("pages/founders/slider_bg_1.jpg")
     background-size: cover
@@ -213,9 +210,6 @@ body.pages.founders
         height: 40px
 
   .founders-support
-    // background: asset-url("pages/founders/support/support_bg.jpg")
-    // background-size: cover
-    background: asset-url("pages/founders/ted_bg.jpg")
     .text
       margin-bottom: 60px
     p
@@ -242,19 +236,11 @@ body.pages.founders
         margin: 0
 
   .founders-subscription
-    .text
-      text-align: left
-      color: black
-      p
-        color: black
-      ul
-        li
-          list-style: disc
-          margin-bottom: 20px
-          font-size: 20px
-
-  .founders-invite
-    background: asset-url("pages/founders/ted_bg.jpg")
+    ul
+      li
+        list-style: disc
+        margin-bottom: 20px
+        font-size: 20px
 
   .catarse-project
     +grid-column(3)
@@ -262,3 +248,16 @@ body.pages.founders
     iframe
       background: white
       overflow: hidden
+
+  .dark
+    background: asset-url("pages/founders/ted_bg.jpg")
+    color: white
+    p
+      color: white
+
+  .light
+    background: asset-url("pages/founders/pattern_bg.jpg")
+
+  .catarse-logo
+    padding: 0 30px
+    padding-top: 150px

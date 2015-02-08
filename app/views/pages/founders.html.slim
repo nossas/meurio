@@ -29,7 +29,7 @@
   /       li class=('active' if I18n.locale == :pt) = link_to('Português (BR)', locale: :pt)
   /       li class=('active' if I18n.locale == :en) = link_to('English (US)', locale: :en)
   / .video
-  <iframe width="100%" height="600" src="https://www.youtube.com/embed/NuMg8KDzyLE?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+  = raw t('.video_embed')
     / .nossas-cidades= image_tag(t('.logo'))
   / ul#founders-orbit data={orbit: true, options: "slide_number:false; resume_on_mouseout:true; navigation_arrows: false; timer_speed: 5000;"}
   /   li.slide-1
@@ -52,7 +52,7 @@
   /     p= t('.slider.subscribe')
   /     = link_to(t('.support.title'), "#founders-support", class: [:button, :radius, :secondary, :large])
 
-.founders-support#founders-support
+.founders-support.dark#founders-support
   .row
     .title
       h2= t('.support.title')
@@ -74,6 +74,9 @@
       <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/9815/embed" width="100%"></iframe>
     .catarse-project
       <iframe frameborder="0" scrolling="no" height="400px" src="http://catarse.me/pt/projects/9809/embed" width="100%"></iframe>
+    .catarse-project.text-center.catarse-logo
+      = image_tag "catarse.png"
+
     / We may need to rollback to this commented content in the future
     / .support-item
     /   = image_tag "pages/founders/support/support_icon1.png"
@@ -106,14 +109,14 @@
       p= raw t('.about.content.p3')
       p= raw t('.about.content.p4')
 
-.founders-invite#founders-invite
-  .row
-    .title
-      h2= t('.invite.title')
-    p
-      strong= t('.invite.content.p1')
-    p= t('.invite.content.p2')
-    <iframe src="https://embed-ssl.ted.com/talks/lang/pt-br/alessandra_orofino_it_s_our_city_let_s_fix_it.html" width="854" height="480" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+/ .founders-invite.dark#founders-invite
+/   .row
+/     .title
+/       h2= t('.invite.title')
+/     p
+/       strong= t('.invite.content.p1')
+/     p= t('.invite.content.p2')
+/     <iframe src="https://embed-ssl.ted.com/talks/lang/pt-br/alessandra_orofino_it_s_our_city_let_s_fix_it.html" width="854" height="480" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 .founders-program#founders-program
   .row
@@ -145,7 +148,7 @@
       h4= t('.program.item6.title')
       p= t('.program.item6.content')
 
-.founders-steps#founders-steps
+.founders-steps.light#founders-steps
   .row
     .title
       h2= t('.steps.title')
@@ -225,7 +228,7 @@
   .row
     .action= link_to(t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary, :large])
 
-.founders-moderators#founders-moderators
+.founders-moderators.light#founders-moderators
   .row
     .title
       h2= t('.moderators.title')
@@ -504,11 +507,11 @@
                 .vertical-align-content= t('.moderators.zuleica_goulart.description')
           .moderator-name Zuleica Goulart
 
-.founders-subscription#founders-subscription
+.founders-subscription.dark#founders-subscription
   .row
     .title
       h2= t('.subscription.title')
-    .text
+    .text.text-left
       p= t('.subscription.paragraph1')
       ul
         li= raw t('.subscription.li1')
