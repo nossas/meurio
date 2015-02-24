@@ -168,10 +168,10 @@ CompartilhacoTwitterProfileSpreader.blueprint do
 end
 
 PanelaCampaign.blueprint do
-  name        { Faker::Lorem.sentence }
-  description { Faker::Lorem.paragraph }
-  hashtag     { Mobilization.make!.hashtag }
-  user        { User.make! }
+  name             { Faker::Lorem.sentence }
+  description_html { Faker::Lorem.paragraph }
+  hashtag          { Mobilization.make!.hashtag }
+  user             { User.make! }
 end
 
 PanelaPoke.blueprint do

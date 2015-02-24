@@ -17,4 +17,14 @@ class Fact < ActiveRecord::Base
       self.app = :pdp
     end
   end
+
+  def external_link
+    if relname == 'panela_campaigns'
+      PanelaCampaign.find(self.id).try(:external_url)
+    elsif relname == 'compartilhaco_campaigns'
+      CompartilhacoCampaign.find(self.id).try(:external_url)
+    else
+      self.link
+    end
+  end
 end
