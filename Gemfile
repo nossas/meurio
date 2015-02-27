@@ -9,7 +9,7 @@ gem 'rails', '4.0.0'
 gem 'pg', '~> 0.16.0'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -63,7 +63,7 @@ end
 
 gem 'slim-rails'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
-gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
+gem 'compass-rails'
 gem 'foundation-rails'
 gem 'coveralls', require: false
 gem 'httparty'
@@ -77,7 +77,7 @@ gem 'fog'
 gem 'auto_html', github: 'josiasds/auto_html'
 gem 'truncate_html'
 gem 'client_side_validations', github: 'bcardarella/client_side_validations', branch: '4-0-beta'
-gem 'meurio_ui'
+gem 'meurio_ui', github: 'meurio/meurio_ui', branch: 'new-header'
 gem 'delayed_job_active_record'
 gem 'cancan'
 gem 'thin'
