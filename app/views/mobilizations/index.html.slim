@@ -18,10 +18,10 @@
         h2 Ainda não faz parte da rede?
         = link_to 'Entrar na Rede', "http://accounts.#{ENV['MEURIO_DOMAIN']}/validate_email", class: [:button, :radius, :large, :secondary]
 
-.slide-divisor
+.slide-divisor#network
   h2 Como funciona a Rede?
 
-.network#network
+.network
   .row
     .how-it-works
       p A Rede Nossas Cidades é feita por pessoas que acreditam que cidades melhores começam com cidadãos mais ativos, conectados e engajados. Aqui, qualquer pessoa pode começar uma mobilização, disponibilizar tempo e talento para dar aquela força pra mobilização iniciada por outros, colaborar com uma comunidade de centenas de milhares de membros para desenvolver soluções urbanas, se cadastrar para vigiar espaços públicos, fazer uma doação para manter nosso trabalho de pé, e muito mais.
@@ -31,10 +31,10 @@
       h2 Atividade recente dos membros na Rede
       = render @activities
 
-.slide-divisor
+.slide-divisor#cities
   h2 Uma Rede de cidades
 
-.cities#cities
+.cities
   .row
     .city
       = link_to image_tag('institucionais/meurio/mr_logo_inst.png', alt: 'Meu Rio'), Organization.find_by(slug: 'meurio')
@@ -45,10 +45,10 @@
       h2 Seja um fundador da Rede Nossas Cidades na sua cidade
       = link_to 'Quero ser um fundador', founders_path, class: [:button, :radius, :large]
 
-.slide-divisor
+.slide-divisor#mobilizations
   h2 Uma Rede de mobilizações
 
-.mobilizations#mobilizations
+.mobilizations
   .row
     .mobilizations-title
       h3 Esses são os principais temas das mobilizações iniciadas ou apoiadas por membros da Rede. Clique em cada um para saber mais!
@@ -58,10 +58,10 @@
       a.button.radius#load_more_mobilizations_button href="#" + Veja mais
       .loader Carregando...
 
-.slide-divisor
+.slide-divisor#territorial-mobilizations
   h2 Uma Rede de vizinhanças
 
-.territorial-mobilizations#territorial-mobilizations
+.territorial-mobilizations
   .row
     .territorial-mobilizations-title
       h3
@@ -70,10 +70,10 @@
         | Clique em cada uma para saber mais!
   .row#territorial-mobilizations-list
 
-.slide-divisor
+.slide-divisor#vision
   h2 Visão de cidade
 
-.vision#vision
+.vision
   .row
     .vision-title
       h3 A Rede Nossas Cidades é feita de milhares de cidadãos com diferentes opiniões sobre os mais variados temas. Essa diversidade não os impede de trabalharem juntos por cidades mais...
@@ -95,10 +95,10 @@
           strong Gostosas de se viver
           | Cidades que trabalham ativamente para garantir qualidade de vida e espaço de sonho para todos aqueles que fazem a cidade: nós!
 
-.slide-divisor
+.slide-divisor#principles
   h2 Princípios da ação em Rede
 
-.principles#principles
+.principles
   .row
     .principles-title
       h3 Tão importante quanto os objetivos a serem alcançados em uma mobilização é a forma como ela é realizada.
@@ -143,10 +143,10 @@
           h3 Diálogo
           p As mobilizações buscam diálogo com os representantes eleitos e indicados, e com toda a sociedade.
 
-.slide-divisor
+.slide-divisor#funding
   h2 O financiamento da Rede
 
-.funding#funding
+.funding
   .row
     .funding-title
       h3 A independência da Rede Nossas Cidades é fundamental para a efetividade das mobilizações. Por isso, a equipe multidisciplinar de profissionais que mantem a Rede funcionando não pode ser financiada por dinheiro proveniente de governos, de partidos, de empresas públicas e de concessionárias de serviços públicos.
@@ -157,10 +157,10 @@
           p A Rede Meu Rio, que representa a Nossas Cidades no Rio de Janeiro, está com uma campanha de arrecadação no ar! Mostre que você acredita nesse modelo, seja celebrado por nossos parceiros na cidade maravilhosa. Contribua!
         .donation= link_to 'Quero contribuir', 'http://facaacontecer.meurio.org.br/', class: [:button, :radius, :large], target: :blank
 
-.slide-divisor
+.slide-divisor#net
   h2 Quem trabalha em Rede
 
-.net#net
+.net
   .row
     .net-title
       h3 Somos centenas de milhares de cidadãos envolvidos nas mobilizações da Rede. Compartilhamos dinheiro, muitas horas de trabalho, inúmeros talentos e entusiasmo de sobra!
