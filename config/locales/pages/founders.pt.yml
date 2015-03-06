@@ -89,6 +89,8 @@ pt:
         content: "Esses são os primeiros provocadores confirmados para as residências de incubação da rede em 2015, outros nomes de peso se somarão a esse time ao longo do ano."
         ana_paula_lisboa:
           description: "Coordenadora, Agência de Redes para a Juventude"
+        andre_kano:
+          description: "Consultor em comunicação estratégica, Ex-diretor do Meu Rio"
         barbara_szaniecki:
           description: "Pesquisadora na Escola Superior de Design / UERJ"
         berenice_seara:
@@ -131,8 +133,12 @@ pt:
           description: "Diretor Executivo, Instituto Arapyaú, ex-Diretor Executivo, Greenpeace Brasil"
         marcos_barao:
           description: "Coordenador de Parcerias e Oportunidades de Impacto na Aliança Empreendedora"
+        marcos_salles:
+          description: "Facilitação & Colaboração, Carioteca e Goma"
         mariana_ribeiro:
           description: "Co-Fundadora do Imagina na Copa"
+        marina_nicolaiewsky:
+          description: "Facilitação & Colaboração, Carioteca e Goma"
         patricia_oakim:
           description: "Gerente de Especialistas de Produto para América Latina, Google"
         paulo_rogerio_nunes:
@@ -155,6 +161,8 @@ pt:
           description: "Coordenador de Projetos na Benfeitoria"
         tomas_de_lara:
           description: "Consultor de Negócios Conscientes"
+        ursulla_araujo:
+          description: "Facilitação & Colaboração, Carioteca e Goma"
         vini_de_paula:
           description: "Co-fundador da GOMA e da Carioteca"
         zuleica_goulart:
