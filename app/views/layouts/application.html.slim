@@ -35,14 +35,14 @@ html
       li= link_to "Tipos de Tarefa", task_types_path if can? :manage, TaskType
 
     - content_for :application_menu do
-      = link_to "A Rede", root_path + "#network"
-      = link_to "Cidades", root_path + "#cities"
-      = link_to "Temas", root_path + "#mobilizations"
+      li= link_to "A Rede", root_path + "#network"
+      li= link_to "Cidades", root_path + "#cities"
+      li= link_to "Temas", root_path + "#mobilizations"
       / = link_to "Nós", root_path + "#territorial-mobilizations"
-      = link_to "Visão de Cidade", root_path + "#vision"
-      = link_to "Princípios", root_path + "#principles"
-      = link_to "Financiamento", root_path + "#funding"
-      = link_to "Cidadãos em Rede", root_path + "#net"
+      li= link_to "Visão de Cidade", root_path + "#vision"
+      li= link_to "Princípios", root_path + "#principles"
+      li= link_to "Financiamento", root_path + "#funding"
+      li= link_to "Cidadãos em Rede", root_path + "#net"
     = meurio_header_for :minhascidades
 
     .page-wrap= yield

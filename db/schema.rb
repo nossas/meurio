@@ -55,11 +55,47 @@ ActiveRecord::Schema.define(version: 20150224180151) do
     t.integer  "campaign_id"
   end
 
+  create_table "tasks", force: true do |t|
+    t.integer  "task_type_id"
+    t.integer  "points",          null: false
+    t.string   "skills",                       array: true
+    t.string   "title"
+    t.string   "hashtag"
+    t.integer  "max_deliveries"
+    t.datetime "deadline"
+    t.integer  "organization_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "avatar"
+    t.string   "skills",           default: [],    array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "profession"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "city"
+    t.string   "state"
+    t.text     "bio"
+    t.boolean  "admin"
+    t.boolean  "funder"
+    t.string   "address_district"
+    t.string   "website"
+    t.boolean  "sponsor",          default: false
+  end
+
   create_table "deliveries", force: true do |t|
     t.datetime "accepted_at"
     t.datetime "rejected_at"
     t.integer  "user_id"
     t.integer  "task_id"
+    t.index ["task_id"], :name => "fk__deliveries_task_id", :order => {"task_id" => :asc}
+    t.index ["user_id"], :name => "fk__deliveries_user_id", :order => {"user_id" => :asc}
+    t.foreign_key ["task_id"], "tasks", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_deliveries_task_id"
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_deliveries_user_id"
   end
 
   create_table "problems", force: true do |t|
@@ -97,7 +133,7 @@ ActiveRecord::Schema.define(version: 20150224180151) do
     t.boolean  "succeed"
     t.string   "image"
     t.datetime "finished_at"
-    t.string   "description_html"
+    t.text     "description_html"
   end
 
   create_table "panela_pokes", force: true do |t|
@@ -111,17 +147,6 @@ ActiveRecord::Schema.define(version: 20150224180151) do
     t.integer  "task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "tasks", force: true do |t|
-    t.integer  "task_type_id"
-    t.integer  "points",          null: false
-    t.string   "skills",                       array: true
-    t.string   "title"
-    t.string   "hashtag"
-    t.integer  "max_deliveries"
-    t.datetime "deadline"
-    t.integer  "organization_id"
   end
 
   create_view "activities", " SELECT problems.name AS title,\n    problems.id AS activable_id,\n    problems.user_id,\n    problems.created_at,\n    problems.hashtag,\n    'Problem'::text AS activable_type\n   FROM problems\nUNION ALL\n SELECT ideas_problems.name AS title,\n    ideas.id AS activable_id,\n    ideas.user_id,\n    ideas.created_at,\n    ideas_problems.hashtag,\n    'Idea'::text AS activable_type\n   FROM (ideas\n     JOIN problems ideas_problems ON ((ideas_problems.id = ideas.problem_id)))\nUNION ALL\n SELECT tasks.title,\n    task_subscriptions.id AS activable_id,\n    task_subscriptions.user_id,\n    task_subscriptions.created_at,\n    tasks.hashtag,\n    'TaskSubscription'::text AS activable_type\n   FROM (task_subscriptions\n     JOIN tasks ON ((tasks.id = task_subscriptions.task_id)))\nUNION ALL\n SELECT tasks.title,\n    deliveries.id AS activable_id,\n    deliveries.user_id,\n    deliveries.accepted_at AS created_at,\n    tasks.hashtag,\n    'Delivery'::text AS activable_type\n   FROM (deliveries\n     JOIN tasks ON ((tasks.id = deliveries.task_id)))\n  WHERE (deliveries.accepted_at IS NOT NULL)\nUNION ALL\n SELECT compartilhaco_campaigns.title,\n    compartilhaco_campaigns.id AS activable_id,\n    compartilhaco_campaigns.user_id,\n    compartilhaco_campaigns.created_at,\n    compartilhaco_campaigns.hashtag,\n    'CompartilhacoCampaign'::text AS activable_type\n   FROM compartilhaco_campaigns\nUNION ALL\n SELECT cc.title,\n    cfps.id AS activable_id,\n    cfps.user_id,\n    cfps.created_at,\n    cc.hashtag,\n    'CompartilhacoFacebookProfileSpreader'::text AS activable_type\n   FROM (compartilhaco_facebook_profile_spreaders cfps\n     JOIN compartilhaco_campaigns cc ON ((cc.id = cfps.campaign_id)))\nUNION ALL\n SELECT cc.title,\n    ctps.id AS activable_id,\n    ctps.user_id,\n    ctps.created_at,\n    cc.hashtag,\n    'CompartilhacoTwitterProfileSpreader'::text AS activable_type\n   FROM (compartilhaco_twitter_profile_spreaders ctps\n     JOIN compartilhaco_campaigns cc ON ((cc.id = ctps.campaign_id)))\nUNION ALL\n SELECT panela_campaigns.name AS title,\n    panela_campaigns.id AS activable_id,\n    panela_campaigns.user_id,\n    panela_campaigns.created_at,\n    panela_campaigns.hashtag,\n    'PanelaCampaign'::text AS activable_type\n   FROM panela_campaigns\nUNION ALL\n SELECT panela_poke_campaigns.name AS title,\n    panela_pokes.id AS activable_id,\n    panela_pokes.user_id,\n    panela_pokes.created_at,\n    panela_poke_campaigns.hashtag,\n    'PanelaPoke'::text AS activable_type\n   FROM (panela_pokes\n     JOIN panela_campaigns panela_poke_campaigns ON ((panela_poke_campaigns.id = panela_pokes.campaign_id)))\n  ORDER BY 4 DESC", :force => true
@@ -296,27 +321,6 @@ ActiveRecord::Schema.define(version: 20150224180151) do
 
   create_table "squeezes", force: true do |t|
     t.string "email"
-  end
-
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "avatar"
-    t.string   "skills",           default: [],    array: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "profession"
-    t.string   "facebook"
-    t.string   "twitter"
-    t.string   "city"
-    t.string   "state"
-    t.text     "bio"
-    t.boolean  "admin"
-    t.boolean  "funder"
-    t.string   "address_district"
-    t.string   "website"
-    t.boolean  "sponsor",          default: false
   end
 
   create_table "successful_transactions", force: true do |t|
