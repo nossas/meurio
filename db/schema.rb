@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224180151) do
+ActiveRecord::Schema.define(version: 20150413175149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -283,6 +283,15 @@ ActiveRecord::Schema.define(version: 20150224180151) do
     t.integer  "user_id"
     t.string   "thumbnail"
     t.boolean  "territorial", default: false
+  end
+
+  create_table "multitude_rewards", force: true do |t|
+    t.integer "task_id"
+    t.integer "user_id"
+    t.index ["task_id"], :name => "fk__multitude_rewards_task_id", :order => {"task_id" => :asc}
+    t.index ["user_id"], :name => "fk__multitude_rewards_user_id", :order => {"user_id" => :asc}
+    t.foreign_key ["task_id"], "tasks", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_multitude_rewards_task_id"
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_multitude_rewards_user_id"
   end
 
   create_table "organizations", force: true do |t|

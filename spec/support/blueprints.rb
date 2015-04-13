@@ -178,3 +178,6 @@ PanelaPoke.blueprint do
   panela_campaign { PanelaCampaign.make! }
   user { User.make! }
 end
+
+MultitudeReward.blueprint do
+end
