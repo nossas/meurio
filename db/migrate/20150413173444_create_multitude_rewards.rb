@@ -4,7 +4,7 @@ class CreateMultitudeRewards < ActiveRecord::Migration
       execute <<-SQL
         CREATE FOREIGN TABLE multitude_rewards(id integer)
         SERVER multitude
-        OPTIONS (table_name 'multitude_rewards');
+        OPTIONS (table_name 'rewards');
       SQL
     else
       create_table :multitude_rewards
