@@ -3,9 +3,9 @@ class UsersController < InheritedResources::Base
 
   def show
     @activities = resource.activities.order("created_at DESC").limit(5)
-    @matching_tasks = Task.matching(@user.skills)
-    @subscribed_tasks = Task.subscribed(@user.id)
-    @finished_tasks = Task.finished(@user.id)
+    @matching_tasks = @user.matching_tasks
+    @subscribed_tasks = @user.subscribed_tasks
+    @finished_tasks = @user.finished_tasks
     @succeed_poked_panela_campaigns = @user.panela_campaigns.successful.order(finished_at: :desc).limit(6)
 
     @subscribed_tasks = @subscribed_tasks - @finished_tasks

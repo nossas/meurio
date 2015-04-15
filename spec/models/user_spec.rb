@@ -149,4 +149,30 @@ describe User do
       its(:funders){ should have(1).user }
     end
   end
+
+  describe "#finished_tasks" do
+    let(:user) { User.make! }
+
+    context "when the user have no delivery nor reward" do
+      it "should be empty" do
+        expect(user.finished_tasks).to be_empty
+      end
+    end
+
+    context "when the user have an accepted delivery" do
+      before { Delivery.make! user: user, accepted_at: Time.now }
+
+      it "should have one task" do
+        expect(user.finished_tasks).to have(1).task
+      end
+    end
+
+    context "when the user have a reward" do
+      before { MultitudeReward.make! user: user }
+
+      it "should have one task" do
+        expect(user.finished_tasks).to have(1).task
+      end
+    end
+  end
 end

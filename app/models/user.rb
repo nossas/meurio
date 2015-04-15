@@ -59,4 +59,26 @@ class User < ActiveRecord::Base
   def self.funders_or_sponsors
     User.where("id IN (?)", User.funders.pluck(:id) + User.sponsors.pluck(:id))
   end
+
+  def finished_tasks
+    Task.
+      joins("LEFT OUTER JOIN deliveries ON tasks.id = deliveries.task_id").
+      joins("LEFT OUTER JOIN multitude_rewards ON tasks.id = multitude_rewards.task_id").
+      where("(deliveries.user_id = ? AND deliveries.accepted_at IS NOT NULL) OR multitude_rewards.user_id = ?", id, id).
+      order(:deadline).uniq
+  end
+
+  def matching_tasks
+    Task.
+      joins("LEFT JOIN task_subscriptions ON task_subscriptions.task_id = tasks.id").
+      where("skills && ARRAY[?]::character varying[] AND task_subscriptions.id IS NULL", skills).
+      order(:deadline)
+  end
+
+  def subscribed_tasks
+    Task.
+      joins(:task_subscriptions).
+      where("task_subscriptions.user_id = ?", id).
+      order(:deadline)
+  end
 end

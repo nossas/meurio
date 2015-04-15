@@ -180,4 +180,6 @@ PanelaPoke.blueprint do
 end
 
 MultitudeReward.blueprint do
+  user { User.make! }
+  task { Task.make! }
 end
