@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413175149) do
+ActiveRecord::Schema.define(version: 20150427130413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,16 @@ ActiveRecord::Schema.define(version: 20150413175149) do
     t.foreign_key ["problem_id"], "problems", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_ideas_problem_id"
   end
 
+  create_table "organizations", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "city"
+    t.string   "avatar"
+    t.string   "name"
+    t.string   "slug"
+    t.string   "facebook_page_uid"
+  end
+
   create_table "panela_campaigns", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -134,6 +144,9 @@ ActiveRecord::Schema.define(version: 20150413175149) do
     t.string   "image"
     t.datetime "finished_at"
     t.text     "description_html"
+    t.integer  "organization_id"
+    t.index ["organization_id"], :name => "fk__panela_campaigns_organization_id", :order => {"organization_id" => :asc}
+    t.foreign_key ["organization_id"], "organizations", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_panela_campaigns_organization_id"
   end
 
   create_table "panela_pokes", force: true do |t|
@@ -292,16 +305,6 @@ ActiveRecord::Schema.define(version: 20150413175149) do
     t.index ["user_id"], :name => "fk__multitude_rewards_user_id", :order => {"user_id" => :asc}
     t.foreign_key ["task_id"], "tasks", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_multitude_rewards_task_id"
     t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_multitude_rewards_user_id"
-  end
-
-  create_table "organizations", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "city"
-    t.string   "avatar"
-    t.string   "name"
-    t.string   "slug"
-    t.string   "facebook_page_uid"
   end
 
   create_table "rewards", force: true do |t|
