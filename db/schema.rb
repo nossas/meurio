@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427130413) do
+ActiveRecord::Schema.define(version: 20150427131125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150427130413) do
     t.string   "title"
     t.text     "short_description"
     t.text     "description"
+    t.integer  "organization_id"
   end
 
   create_table "compartilhaco_facebook_profile_spreaders", force: true do |t|
