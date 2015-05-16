@@ -14,106 +14,14 @@
       section.top-bar-section
         ul.right
           li= link_to t('.slider.title'), "#founders-slider"
-          li= link_to t('.support.title'), "#founders-support", class: [:button, :radius, :secondary]
-          li= link_to t('.about.title'), "#founders-about"
           li= link_to t('.program.title'), "#founders-program"
           li= link_to t('.steps.title'), "#founders-steps"
           li= link_to t('.network.title'), "#founders-network"
           li= link_to t('.moderators.title'), "#founders-moderators"
-          li= link_to t('.slider.subscribe_cta'), "#founders-subscription"
+          li= link_to t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary]
 
 .founders-slider#founders-slider
-  / .row
-  /   .locales
-  /     ul
-  /       li class=('active' if I18n.locale == :pt) = link_to('Português (BR)', locale: :pt)
-  /       li class=('active' if I18n.locale == :en) = link_to('English (US)', locale: :en)
-  / .video
   = raw t('.video_embed')
-    / .nossas-cidades= image_tag(t('.logo'))
-  / ul#founders-orbit data={orbit: true, options: "slide_number:false; resume_on_mouseout:true; navigation_arrows: false; timer_speed: 5000;"}
-  /   li.slide-1
-  /     .row
-  /       .slide-content
-  /         .vertical-align-container
-  /           .vertical-align-content= t('.slider.slide1')
-  /   li.slide-2
-  /     .row
-  /       .slide-content
-  /         .vertical-align-container
-  /           .vertical-align-content= t('.slider.slide2')
-  /   li.slide-3
-  /     .row
-  /       .slide-content
-  /         .vertical-align-container
-  /           .vertical-align-content= t('.slider.slide3')
-  / .row
-  /   .founders-subscribe.text-center
-  /     p= t('.slider.subscribe')
-  /     = link_to(t('.support.title'), "#founders-support", class: [:button, :radius, :secondary, :large])
-
-.founders-support.dark#founders-support
-  .row
-    .title
-      h2= t('.support.title')
-  .row
-    .text
-      p= t('.support.content')
-  .row
-    / .catarse-project
-    /   <iframe frameborder="0" scrolling="no" height="314px" src="http://beta.catarse.me/pt/projects/9812/embed" width="100%"></iframe>
-    / .catarse-project
-    /   <iframe frameborder="0" scrolling="no" height="314px" src="http://beta.catarse.me/pt/projects/9793/embed" width="100%"></iframe>
-    / .catarse-project
-    /   <iframe frameborder="0" scrolling="no" height="314px" src="http://beta.catarse.me/pt/projects/9823/embed" width="100%"></iframe>
-    / .catarse-project
-    /   <iframe frameborder="0" scrolling="no" height="314px" src="http://beta.catarse.me/pt/projects/9813/embed" width="100%"></iframe>
-    / .catarse-project
-    /   <iframe frameborder="0" scrolling="no" height="314px" src="http://beta.catarse.me/pt/projects/9814/embed" width="100%"></iframe>
-    / .catarse-project
-    /   <iframe frameborder="0" scrolling="no" height="314px" src="http://beta.catarse.me/pt/projects/9815/embed" width="100%"></iframe>
-    / .catarse-project
-    /   <iframe frameborder="0" scrolling="no" height="314px" src="http://beta.catarse.me/pt/projects/9809/embed" width="100%"></iframe>
-    / .catarse-project.text-center.catarse-logo
-    /   = image_tag "catarse.png"
-
-    .catarse-project
-      <iframe frameborder="0" scrolling="no" height="310px" src="http://beta.catarse.me/pt/projects/9812/embed" width="100%"></iframe>
-    .catarse-project
-      <iframe frameborder="0" scrolling="no" height="310px" src="http://beta.catarse.me/pt/projects/9793/embed" width="100%"></iframe>
-    .catarse-project
-      <iframe frameborder="0" scrolling="no" height="310px" src="http://beta.catarse.me/pt/projects/9823/embed" width="100%"></iframe>
-    .catarse-project
-      <iframe frameborder="0" scrolling="no" height="310px" src="http://beta.catarse.me/pt/projects/9813/embed" width="100%"></iframe>
-    .catarse-project
-      <iframe frameborder="0" scrolling="no" height="310px" src="http://beta.catarse.me/pt/projects/9814/embed" width="100%"></iframe>
-    .catarse-project
-      <iframe frameborder="0" scrolling="no" height="310px" src="http://beta.catarse.me/pt/projects/9815/embed" width="100%"></iframe>
-    .catarse-project
-      <iframe frameborder="0" scrolling="no" height="310px" src="http://beta.catarse.me/pt/projects/9809/embed" width="100%"></iframe>
-    .catarse-project.text-center.catarse-logo
-      = image_tag "catarse.png"
-
-    / We may need to rollback to this commented content in the future
-    / .support-item
-    /   = image_tag "pages/founders/support/support_icon1.png"
-    /   p= t('.support.item1.content')
-    /   = link_to t('.support.item1.link_text'), "#share", class: [:button, :radius, :large, :secondary], data: {"reveal-id" => "share"}
-    /   #share.reveal-modal.small data={reveal: true}
-    /     p= t('.support.item1.reveal_content')
-    /     p
-    /       = link_to t('.support.item1.facebook'), "https://www.facebook.com/sharer/sharer.php?u=#{URI.encode(request.url)}", class: [:button, :large, 'facebook-share-button', 'icon-facebook2']
-    /       = link_to t('.support.item1.twitter'), "https://twitter.com/share?text=#{URI.encode(t('.twitter_share.tweet'))}", class: [:button, :large, 'twitter-share-button', 'icon-twitter2']
-    /     a.close-reveal-modal &#215;
-    /
-    / .support-item
-    /   = image_tag "pages/founders/support/support_icon2.png"
-    /   p= t('.support.item2.content')
-    /   = link_to t('.support.item2.link_text'), t('.support.item2.link'), target: :blank, class: [:button, :radius, :large, :secondary]
-    / .support-item
-    /   = image_tag "pages/founders/support/support_icon3.png"
-    /   p= t('.support.item3.content')
-    /   = link_to t('.support.item3.link_text'), t('.support.item3.link'), target: :blank, class: [:button, :radius, :large, :secondary]
 
 .founders-about.light#founders-about
   .row
@@ -125,15 +33,6 @@
       p= raw t('.about.content.p2')
       p= raw t('.about.content.p3')
       p= raw t('.about.content.p4')
-
-/ .founders-invite.dark#founders-invite
-/   .row
-/     .title
-/       h2= t('.invite.title')
-/     p
-/       strong= t('.invite.content.p1')
-/     p= t('.invite.content.p2')
-/     <iframe src="https://embed-ssl.ted.com/talks/lang/pt-br/alessandra_orofino_it_s_our_city_let_s_fix_it.html" width="854" height="480" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 .founders-program#founders-program
   .row
@@ -563,17 +462,21 @@
       ul
         li= raw t('.subscription.li1')
         li= raw t('.subscription.li2')
-        li= raw t('.subscription.li3_1')
-        li= raw t('.subscription.li3_2')
-        li= raw t('.subscription.li3_3')
+        li= raw t('.subscription.li3')
+        li= raw t('.subscription.li4')
         li= raw t('.subscription.li5')
+        li= raw t('.subscription.li6')
+        li= raw t('.subscription.li7')
         ul
-          li= raw t('.subscription.li5_1')
-          li= raw t('.subscription.li5_1_1')
-          li= raw t('.subscription.li5_2')
+          li= raw t('.subscription.li7_1')
+          li= raw t('.subscription.li7_2')
+          li= raw t('.subscription.li7_3')
         li= raw t('.subscription.li6')
         li= raw t('.subscription.li7')
         li= raw t('.subscription.li8')
+        li= raw t('.subscription.li9')
+        li= raw t('.subscription.li10')
+        li= raw t('.subscription.li11')
       p= t('.subscription.paragraph2')
       p= raw t('.subscription.paragraph3')
 

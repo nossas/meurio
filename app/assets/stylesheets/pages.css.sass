@@ -57,7 +57,7 @@ body.pages.founders
         &.active
           background: lighten($primary-color, 20%)
 
-  .founders-about, .founders-program, .founders-steps, .founders-network, .founders-moderators, .founders-subscription, .founders-support, .founders-invite
+  .founders-about, .founders-program, .founders-steps, .founders-network, .founders-moderators, .founders-subscription
     text-align: center
     padding: 80px 0
 
@@ -90,7 +90,7 @@ body.pages.founders
               text-decoration: underline
           a
             color: white
-    .nossas-cidades, .founders-subscribe
+    .nossas-cidades
       +grid-column(12)
       p
         color: white
@@ -204,16 +204,6 @@ body.pages.founders
         font-size: 20px
         height: 40px
 
-  .founders-support
-    .text
-      margin-bottom: 60px
-    p
-      color: white
-    .support-item
-      +grid-column(4)
-      p
-        height: 110px
-
   .reveal-modal
     text-align: center
     .facebook-share-button
@@ -236,13 +226,6 @@ body.pages.founders
         list-style: disc
         margin-bottom: 20px
         font-size: 20px
-
-  .catarse-project
-    +grid-column(4)
-    margin-bottom: 2em
-    iframe
-      background: white
-      overflow: hidden
 
   .dark
     background: asset-url("pages/founders/ted_bg.jpg")

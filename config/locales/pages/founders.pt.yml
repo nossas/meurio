@@ -18,10 +18,10 @@ pt:
       about:
         title: "Sobre"
         content:
-          p1: "<strong>Nós acreditamos que a construção de cidades melhores começa com cidadãos mais engajados e conectados.</strong> É por isso que trabalhamos para uma rede de milhares de pessoas que pressionam tomadores de decisão, colaboram com ideias e compartilham seus talentos para tornar suas cidades mais inclusivas, sustentáveis, criativas, compartilhadas e gostosas de se viver."
+          p1: "<strong>Nós acreditamos que a construção de cidades melhores começa com cidadãos mais engajados e conectados.</strong> É por isso que trabalhamos para uma rede de milhares de pessoas que pressionam tomadores de decisão, colaboram com ideias e compartilham seus talentos para tornar suas cidades mais inclusivas e sustentáveis."
           p2: "Nosso trabalho é dar suporte - do início ao fim - às mobilizações criadas pelas pessoas. <strong>Você pode fazer parte disso levando para sua cidade a metodologia desenvolvida desde 2011 pela Rede Meu Rio, no Rio de Janeiro.</strong>"
           p3: "As inscrições para a segunda turma do programa de fundadores da Rede Nossas Cidades estão abertas para pessoas apaixonadas, que irão dedicar coração, tempo, energia e talento para iniciar uma rede de mobilização na sua cidade."
-          p4: "<strong>Os selecionados irão passar por um mês de residência de formação na sede da Rede no Rio de Janeiro e terão acompanhamento da Equipe pelo período de incubação de até um ano.</strong>"
+          p4: "<strong>Os selecionados irão passar por seis semanas de residência de formação na sede da Rede no Rio de Janeiro e terão acompanhamento da Equipe pelo período de incubação de até um ano.</strong>"
       invite:
         title: "Convite"
         content:
@@ -31,19 +31,19 @@ pt:
         title: "Programa"
         item1:
           title: "Tecnologia de ponta"
-          content: "Acesso às nossas ferramentas e aplicativos de mobilização, assim como à equipe de tecnologia e design da Rede, servidor, mailing e manutenção."
+          content: "Acesso às nossas ferramentas de mobilização (Panela de Pressão, Multitude, Legislando, Compartilhaço e Faça Acontecer), assim como ao servidor de envio de emails em massa e outras tecnologias criadas para toda a rede."
         item2:
           title: "Metodologia"
-          content: "Conhecimento das metodologias de mobilização e gestão da rede desenvolvidas, testadas e aprovadas nos últimos 3 anos de trabalho."
+          content: "Conhecimento das metodologias de mobilização e gestão da rede desenvolvidas, testadas e aprovadas nos últimos quatro anos de trabalho."
         item3:
           title: "Conexões"
-          content: "Participação do encontro anual da Rede Nossas Cidades e contato direto com financiadores, especialistas e mobilizadores que vão ajudar a tirar a sua rede de mobilização do papel."
+          content: "Contato direto com financiadores, especialistas e mobilizadores que vão ajudar a tirar a sua rede de mobilização do papel."
         item4:
           title: "Suporte legal"
-          content: "Apoio da equipe de operações e questões legais na montagem de uma organização robusta e bem estruturada."
+          content: "Orientação da Equipe para enfrentar questões contábeis e legais na montagem de uma organização robusta e bem estruturada."
         item5:
           title: "Marca"
-          content: "Oportunidade de construir uma marca forte a partir de valores e cases já reconhecidos através das vitórias das mobilizações das Redes Meu Rio e Minha Sampa."
+          content: "Oportunidade de construir uma marca forte a partir de valores e cases já reconhecidos através das vitórias das mobilizações das Redes Meu Rio, Minha Sampa e das 7 novas redes de mobilização."
         item6:
           title: "Mentoria"
           content: "Suporte no desenvolvimento das suas ações através do acompanhamento periódico da Equipe da Rede até que você se sinta pronto para caminhar com as próprias pernas."
@@ -60,7 +60,7 @@ pt:
         step3:
           name: "Passo 3"
           definition: "Financiamento coletivo"
-          content: "Os candidatos pré-selecionados realizarão uma campanha de crowdfunding com o apoio da equipe da Rede. Além de cobrir parte dos custos do programa, a campanha demonstrará a criatividade e talento do candidato para mobilizar a sua rede."
+          content: "Os candidatos pré-selecionados realizarão uma campanha de crowdfunding. Além de cobrir parte dos custos do programa, a campanha demonstrará a criatividade e talento do candidato para mobilizar a sua rede e ajudará a construir a sua primeira comunidade de apoio."
         step4:
           name: "Passo 4"
           definition: "Resultado"
@@ -68,7 +68,7 @@ pt:
         step5:
           name: "Passo 5"
           definition: "Residência"
-          content: "Durante um mês, os candidatos classificados serão hospedados na sede da Rede Nossas Cidades, no Rio, onde receberão formações com a equipe e parceiros, desenvolvendo toda a estrutura necessária para lançar sua rede de mobilização."
+          content: "Durante 6 semanas, os candidatos classificados serão hospedados no Rio, onde receberão formações com a equipe e provocadores, desenvolvendo toda a estrutura necessária para lançar sua rede de mobilização.  *A residência da segunda turma de fundadores será conduzida em inglês para integrar fundadores do mundo todo."
         step6:
           name: "Passo 6"
           definition: "Incubação"
@@ -81,9 +81,9 @@ pt:
       network:
         title: "A Rede"
         content:
-          p1: "Nossa história começa no Rio de Janeiro, em julho de 2011, com a <a href='http://www.nossascidades.org/organizations/1'>Rede Meu Rio</a>. Lá, o movimento conseguiu em pouco mais de três anos engajar mais de 150 mil pessoas em decisões e formulações de políticas públicas sobre transparência, mobilidade, infraestrutura, educação e saúde. Hoje, um em cada 15 jovens cariocas entre 20 e 29 anos é membro do Meu Rio."
+          p1: "Nossa história começa no Rio de Janeiro, em julho de 2011, com a <a href='http://www.nossascidades.org/organizations/1'>Rede Meu Rio</a>. Lá, o movimento conseguiu em pouco mais de três anos engajar mais de 170 mil pessoas em decisões e formulações de políticas públicas sobre transparência, mobilidade, infraestrutura, educação e saúde. Hoje, um em cada 15 jovens cariocas entre 20 e 29 anos é membro do Meu Rio."
           p2: "Em julho de 2014, em São Paulo, lançamos nossa primeira experiência de replicação desse modelo. A <a href='http://www.nossascidades.org/organizations/2'>Rede Minha Sampa</a> já possui mais de 10 mil membros e algumas vitórias em poucos meses."
-          p3: "Depois de ganhar o Desafio de Impacto Social da Google Brasil, o sonho de levar este modelo para outras lugares do país virou realidade, e a sua cidade pode ser a próxima!"
+          p3: "Depois de ganhar o Desafio de Impacto Social da Google Brasil, o sonho de levar este modelo para outras lugares do país virou realidade. . Em abril de 2015 treinamos a 1º turma de 15 fundadores. Em breve Minha Blumenau, Minha Campinas, Minha Curitiba, Minha Garopaba, Minha Ouro Preto, Minha Porto Alegre e Meu Recife estarão lançando as suas primeiras mobilizações. A sua cidade pode ser a próxima."
       moderators:
         title: "Provocadores"
         content: "Esses são os primeiros provocadores confirmados para as residências de incubação da rede em 2015, outros nomes de peso se somarão a esse time ao longo do ano."
@@ -187,19 +187,21 @@ pt:
       subscription:
         title: "Inscrição"
         link_text: "Ir para o formulário de inscrição"
-        link: "https://docs.google.com/a/minhascidades.org.br/forms/d/1qNV6i84kPbRmP1C5eACTR-h_y8K-4WypDr0rKVV0Buk/viewform"
-        paragraph1: "A Rede Nossas Cidades está com inscrições abertas para empreendedores que gostariam de fazer parte da segunda turma de Fundadores da Rede. Os candidatos classificados participarão de uma residência que acontecerá entre setembro e outubro de 2015, na sede da Rede, no Rio de Janeiro. Antes de se inscrever, leia os detalhes abaixo:"
+        link: "https://docs.google.com/forms/d/1nfHZoXuEdX5Qi_4qEGpo8c3ypGWNEfGeGE093FTC1lc/viewform"
+        paragraph1: "A Rede Nossas Cidades está com inscrições abertas para empreendedores que gostariam de fazer parte da segunda turma de Fundadores da Rede. Os candidatos classificados participarão de uma residência que acontecerá entre os dias 28 de setembro e 13 de novembro de 2015, na sede da Rede, no Rio de Janeiro. Antes de se inscrever, leia os detalhes abaixo:"
         paragraph2: "Ao longo do ano de 2015 serão abertas inscrições para mais uma seleção do programa de fundadores da Rede Nossas Cidades."
         paragraph3: "Para mais informações escreva para <a href='mailto:contato@nossascidades.org'>contato@nossascidades.org</a>"
-        li1: "<strong>Se você deseja ser um dos primeiros a tentar levar o modelo da Rede Nossas Cidade para além do Rio e de São Paulo, preencha o formulário clicando no botão abaixo e envie, até às 23:59h do dia 31 de maio, um vídeo de 1 a 3 minutos respondendo a pergunta:</strong> “Por que a sua cidade precisa de uma rede de mobilização?”. Quanto antes você se inscrever, maior serão as suas chances, pois teremos mais tempo para analisar a sua candidatura com calma. <strong>O link do vídeo (Youtube ou Vimeo) deverá ser enviado para o email <a href='mailto:fundadores@nossascidades.org'>fundadores@nossascidades.org</a> usando o endereço de email que você vai se inscrever no formulário e com o seu nome completo + “Vídeo” no assunto.</strong>"
-        li2: "<strong>Em junho</strong>, os candidatos que se destacarem nas inscrições receberão um exercício sobre estratégia de mobilização. Será uma boa forma dos candidatos mostrarem a sua criatividade e o seu pensamento estratégico."
-        li3_1: "Após a fase de exercícios, será agendada uma entrevista virtual com os candidatos selecionados. Elas terão uma duração máxima de <strong>1h30</strong> e serão realizadas <strong>via Google Hangout entre final de junho e julho em função da disponibilidade do candidato e da equipe.</strong>"
-        li3_2: "As inscrições são individuais, mas como a nossa experiência mostra que uma equipe bem afinada e plural é determinante para o sucesso da Rede, realizaremos uma etapa específica para as cidades que tenham mais de um candidato selecionado."
-        li3_3: "Os candidatos pré-selecionados serão anunciados em julho."
-        li5: "Entre julho e agosto, os candidatos pré-selecionados receberão o apoio da Equipe Nossas Cidades para <strong>escrever um roteiro, produzir um vídeo e lançar uma campanha de crowdfunding para captar recursos necessários para cobrir parte dos custos do programa de formação de fundadores.</strong>"
-        li5_1: "O crowdfunding é uma forma de verificar se existe na cidade uma cultura potencial de microdoações para projetos como a Rede Nossas Cidades, já que essa é uma das principais vias de financiamento no modelo de sustentabilidade da Rede. Além disso, testa a capacidade do candidato de mobilizar a sua rede para fazer o projeto acontecer."
-        li5_1_1: "A campanha de crowdfunding terá uma duração que pode variar entre 30 e 40 dias e deverá acontecer entre agosto e setembro."
-        li5_2: "<strong>A meta do crowdfunding será um valor entre R$ 4.500,00 e 9.000,00 por fundador, em função do porte da cidade e dos custos relativos à vinda do candidato ao Rio de Janeiro.</strong> Estes valores correspondem a uma parcela dos custos totais que estão sendo cobertos pela Rede Nossas Cidades nesta primeira etapa de replicação do modelo."
-        li6: "Os candidatos que atingirem a meta de arrecadação do crowdfunding estarão classificados para participar da <strong>residência, no Rio de Janeiro, entre setembro e outubro de 2015</strong>. Neste período, eles passarão por um treinamento completo com a equipe da Rede Meu Rio e outros profissionais de renome, sobre metodologias e tecnologias de mobilização para transformar sua cidade, além de vivências locais."
-        li7: "Após a residência, os candidatos que conseguirem dar início ao lançamento da sua rede serão acompanhados pela equipe Nossas Cidades durante um período de <strong>até 1 ano de incubação</strong>. Neste período, eles receberão nosso apoio na estruturação da rede, lançamento das primeiras mobilizações e arrecadação de recursos para sustentabilidade."
-        li8: "Os incubados passarão a ser reconhecidos como fundadores após constituírem um conselho criativo da sua Rede na cidade, formarem uma equipe de trabalho e iniciarem a primeira mobilização usando as ferramentas da Rede."
+        li1: "Para participar da segunda turma de Fundadores, o candidato deve ter noções avançadas em inglês, já que o treinamento será realizado nessa língua para integrar candidatos vindos de todos os países do mundo. Se você não se sente confortável em participar da residência em inglês, você ainda pode se inscrever para participar de processos seletivos no futuro. Basta deixar isso claro no seu formulário de inscrição."
+        li2: "Se você deseja levar o modelo da Rede Nossas Cidade para a sua cidade, preencha o formulário clicando no botão abaixo e envie, até às 23:59h do dia 31 de maio, o seu CV e um vídeo (em inglês) de 1 a 3 minutos respondendo a pergunta: “Por que a sua cidade precisa de uma rede de mobilização?”. Não se preocupe com a qualidade da produção. Quanto antes você se inscrever, maior serão as suas chances, pois teremos mais tempo para analisar a sua candidatura com calma. O link do vídeo (Youtube ou Vimeo) e o CV deverão ser enviados para o email <a href='mailto:inscricao@nossascidades.org'>inscricao@nossascidades.org</a> usando o endereço de email que você usou para se inscrever no formulário."
+        li3: "Em junho, os candidatos que se destacarem nas inscrições receberão um exercício sobre estratégia de mobilização. Será uma boa forma dos candidatos mostrarem a sua criatividade e o seu pensamento estratégico."
+        li4: "Após a fase de exercícios, será agendada uma entrevista virtual com os candidatos selecionados. Elas terão uma duração máxima de 1h30 e serão realizadas via Google Hangout entre final de junho e julho em função da disponibilidade do candidato e da equipe."
+        li5: "Os candidatos pré-selecionados serão anunciados em julho."
+        li6: "As inscrições são individuais, mas como a nossa experiência mostra que uma equipe bem afinada e plural é determinante para o sucesso da Rede, abriremos a possibilidade para que o candidato pré-selecionado comece a construir a sua equipe e recomende até três candidatos para participar da residência com ele. Estes candidatos recomendados deverão preencher o formulário e os que se destacarem passarão por uma entrevista. Caberá a equipe da Rede Nossas Cidades a decisão final sobre a vinda destes candidatos."
+        li7: "Em agosto, todos os candidatos selecionados receberão o apoio da Equipe Nossas Cidades para escrever um roteiro, produzir um vídeo e lançar uma campanha de crowdfunding para captar recursos necessários para cobrir parte dos custos do programa de formação de fundadores."
+        li7_1: "O crowdfunding é uma forma de verificar se existe na cidade uma cultura potencial de microdoações para projetos como a Rede Nossas Cidades, já que essa é uma das principais vias de financiamento no modelo de sustentabilidade da Rede. Além disso, testa a capacidade do candidato de mobilizar a sua rede para fazer o projeto acontecer."
+        li7_2: "A campanha de crowdfunding terá uma duração que pode variar entre 30 e 40 dias e deverá acontecer entre agosto e setembro."
+        li7_3: "A meta do crowdfunding será um valor entre R$ 4.500,00 e 9.000,00 por fundador, em função do porte da cidade e dos custos relativos à vinda do candidato ao Rio de Janeiro. Estes valores correspondem a uma parcela dos custos totais que estão sendo cobertos pela Rede Nossas Cidades nesta etapa de replicação do modelo."
+        li8: "Os candidatos que atingirem a meta de arrecadação do crowdfunding estarão classificados para participar da residência, no Rio de Janeiro, entre 28 setembro e 13 de novembro de 2015. Neste período, eles passarão por um treinamento completo com a equipe da Rede Nossas Cidades e outros profissionais de renome, sobre metodologias e tecnologias de mobilização para transformar sua cidade, além de vivências locais."
+        li9: "Após a residência, os candidatos que conseguirem dar início ao lançamento da sua rede serão acompanhados pela equipe Nossas Cidades durante um período de até 1 ano de incubação. Neste período, eles receberão nosso apoio na estruturação da rede, lançamento das primeiras mobilizações e arrecadação de recursos para sustentabilidade financeira."
+        li10: "Os incubados passarão a ser reconhecidos como fundadores após constituírem um conselho criativo da sua Rede na cidade, formarem uma equipe de trabalho e iniciarem a primeira mobilização usando as ferramentas da Rede."
+        li11: "Para garantir a sustentabilidade e a continuidade das ferramentas da Rede e do Programa de Fundadores da Rede Nossas Cidades, cada rede de mobilização deverá contribuir com 15% da sua arrecadação."
