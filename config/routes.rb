@@ -1,6 +1,6 @@
 Meurio::Application.routes.draw do
   
-  scope "(:locale)", locale: /pt|en/ do
+  scope "(:locale)", locale: /pt|en|es/ do
     root 'mobilizations#index'
     get 'organizations/show'
 

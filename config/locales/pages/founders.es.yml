@@ -1,0 +1,206 @@
+es:
+  pages:
+    founders:
+      video_embed: '<iframe width="100%" height="600" src="https://embed-ssl.ted.com/talks/lang/en/alessandra_orofino_it_s_our_city_let_s_fix_it.html" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>'
+      facebook_share:
+        title: "Red Nuestras Ciudades"
+        lead: "Applications for the residency and incubation open until 05/31!"
+      twitter_share:
+        tweet: "Become a founder of the Our Cities Network! Apply now: "
+      logo: "nossas_cidades.png"
+      slider:
+        title: "Inicio"
+        slide1: "We are building a network of mobilized cities."
+        slide2: "New technologies and methodologies bringing citizens closer to the processes that shape the future of their cities."
+        slide3: "One month of residency in Rio de Janeiro and up to one year of incubation with our qualified team."
+        subscribe: "Found this network in your city."
+        subscribe_cta: "Postular"
+      about:
+        title: "Acerca de la Red"
+        content:
+          p1: "Creemos que la construcción de mejores ciudades comienza con ciudadanos más comprometidos y conectados. Es por esto que trabajamos en la consolidación de una red de miles de personas que presionen a quienes toman decisiones, colaborando con sus ideas y compartiendo sus talentos, para hacer que sus ciudades sean más incluyentes y sostenibles."
+          p2: "Nuestro trabajo es apoyar - de principio a fin-  las movilizaciones creadas por las personas. Tú puedes ser parte de esto llevando a tu ciudad las herramientas y metodologías desarrolladas desde el 2011 por la Red Meu Rio, en Rio de Janeiro."
+          p3: "Las inscripciones para la segunda ronda del Programa de Fundadores de la Red Nuestras Ciudades están abiertas para personas apasionadas, que quieran dedicar su corazón, tiempo, energía y talento para iniciar una red de movilización en su ciudad."
+          p4: "Los candidatos seleccionados participarán en una residencia de 6 semanas en la sede de la Red, en Rio de Janeiro, y contarán con el apoyo y acompañamiento del Equipo por un periodo de incubación de hasta un año."
+      invite:
+        title: "Invitation"
+        content:
+          p1: "An idea worth spreading!"
+          p2: "Check out the talk from My Rio and Our Cities's network co-founder Alessandra Orofino at TED Global 2014 about the purpose of mobilizing at the city level. Its an invitation for Brazil and the world to build a participation revolution!"
+      program:
+        title: "Programa"
+        item1:
+          title: "Tecnología de Punta"
+          content: "Acceso a nuestras herramientas de movilización (Legislando, Olla de Presión, Multitud, Hagalo suceder, Compartiendo/Compartazo), así como al servidor de envio de e-mails y otras tecnologías creadas para toda la Red."
+        item2:
+          title: "Metodología"
+          content: "Conocimiento de metodologías de movilización y técnicas de gestión de redes desarrolladas y aprobadas en los últimos 4 años de trabajo en Meu Rio."
+        item3:
+          title: "Conexiones"
+          content: "Contacto directo con financiadores, especialistas y movilizadores que van a ayudar a sacar tu Red del papel."
+        item4:
+          title: "Soporte Legal"
+          content: "Orientación de nuestro equipo de operaciones y asuntos legales en el montaje de una organización robusta y bien estructurada."
+        item5:
+          title: "Marca"
+          content: "Oportunidad de construir una marca fuerte, basada en nuestras experiencias de movilizaciones exitosas en las redes de Meu Rio y Minha Sampa, así como de las siete nuevas redes de movilización fundadas en el 2015."
+        item6:
+          title: "Mentoría"
+          content: "Soporte en el desarrollo de movilizaciones a través del acompañamiento periódico del Equipo de la Red hasta que los candidatos se sientan listos para dar sus propios pasos."
+      steps:
+        title: "Residencia"
+        step1:
+          name: "Paso 1"
+          definition: "Inscripción"
+          content: "Las inscripciones estarán siempre abiertas. Cuando te sientas preparado para ese desafío, completa tu inscripción y envia un video de hasta 3 minutos respondiendo la pregunta. “¿Por qué tu ciudad necesita de una red de movilización?”"
+        step2:
+          name: "Paso 2"
+          definition: "Ejercicios y Entrevista"
+          content: "Los candidatos que se destaquen serán seleccionados para hacer un ejercicio sobre estrategias de movilización y serán invitados a una entrevista virtual con el equipo de la Red sobre sus motivaciones para convertirse en un fundador en su ciudad."
+        step3:
+          name: "Paso 3"
+          definition: "Financiamento Colectivo"
+          content: "Los candidatos pre-seleccionados realizarán una campaña de crowdfunding con el apoyo de la Red. Además de cubrir los costos del programa, la campaña demostrará la creatividad y el talento del candidato para movilizar su Red y construir su primera comunidad de apoyo."
+        step4:
+          name: "Paso 4"
+          definition: "Resultado"
+          content: "Con mucha alegría se anunciarán los candidatos seleccionados! Si tu no fuiste seleccionado en alguna fase del proceso selectivo, no te preocupes: te avisaremos cuando aparezcan nuevas oportunidades."
+        step5:
+          name: "Paso 5"
+          definition: "Residencia"
+          content: "Durante 6 semanas, los candidatos clasificados serán hospedados en la sede de la Red Nuestras Ciudades, en Rio de Janeiro, donde recibirán una capacitación por parte del equipo y de provocadores, desarrollando toda la estructura necesaria para lanzar su red de movilización."
+        step6:
+          name: "Paso 6"
+          definition: "Incubación"
+          content: "De vuelta en sus ciudades, los candidatos podrán finalmente fundar la Red y lanzar sus primeras movilizaciones. El equipo de Nuestras Ciudades acompañará de cerca su crecimiento y desarrollo hasta que la Red pueda tener autonomía y sostenibilidad."
+        step7:
+          name: "Paso 7"
+          definition: "Fundación"
+          content: "Los emprendedores serán reconocidos como fundadores una vez que hayan constituido un consejo creativo para su Red, formado un equipo de trabajo e iniciado la primera movilización en su ciudad."
+      network:
+        title: "La Red"
+        content:
+          p1: "Nuestra historia comienza en Rio de Janeiro, en julio del 2011, con la <a href='http://www.nossascidades.org/organizations/1'>Red Meu Rio</a>. En menos de tres años de trabajo, Meu Rio ha logrado incluir a más de 170 mil personas en decisiones y formulaciones de políticas públicas en temas de transparencia, movilidad, infraestructura, educación y salud. Hoy, uno de cada 15 jóvenes cariocas entre los 20 y 29 años es miembro de Meu Rio."
+          p2: "En julio del 2014, en Sao Paulo, lanzamos nuestra primera experiencia de replicación de este modelo. La <a href='http://www.nossascidades.org/organizations/2'>Red Minha Sampa</a> ya cuenta con más de 10 mil miembros y con victorias significativas en pocos meses."
+          p3: "Tras ganar el Desafío de Impacto Social de Google Brasil, el sueño de llevar este modelo a otros lugares del país y del mundo se volvió realidad. En abril del 2015, entrenamos una primera ronda de 15 fundadores en Brasil. Pronto, Minha Bluemenau, Minha Campinas, Minha Curitiba, Minha Garopaba, Minha Ouro Preto, Minha Porto Alegre and Meu Recife lanzarán sus primeras movilizaciones. Tu ciudad puede ser la próxima!"
+      moderators:
+        title: "Provocadores"
+        content: "Estos son los primeros promotores confirmados para las residencias de incubación de la Red en el 2015, otros nombres de peso de sumarán a este equipo a lo largo del año."
+        ana_paula_lisboa:
+          description: "Coordinadora Agencia de Redes para la Juventud"
+        andre_kano:
+          description: "Consultor en Comunicación Estrategica, ex- director de Meu Rio"
+        berenice_seara:
+          description: "Columnista del Diario Extra"
+        barbara_szaniecki:
+          description: "Investigadora en la Escuela Superior de Diseño"
+        bruno_carvalho:
+          description: "Profesor de Urbanismo e Literatura en Princeton"
+        bruno_torturra:
+          description: "Fundador del Estudio Fluxo"
+        daniel_vargas:
+          description: "Ex- Ministro de Asuntos Estratégicos, Profesor de Derecho en la FGV"
+        edgard_gouveia_junior:
+          description: "Game designer, Juego Oasis & Play the Call"
+        erika_johansson:
+          description: "Tecnologías de Impacto Social Google"
+        fabio_malini:
+          description: "Investigador de Estudio de Redes LABIC"
+        felipe_alves:
+          description: "Coordinador de Educación de Artemisia"
+        florencia_estrade:
+          description: "Socia Fundadora de Cria Global"
+        gabriel_gomes:
+          description: "Co-fundador de ShootTheShit.cc y Murmura.cc"
+        glaucia_barros:
+          description: "Directora de Programa de Fundación Avina"
+        guilherme_lichand:
+          description: "Socio Fundador de MGov Brasil, doctorando en Harvard "
+        guilherme_lito:
+          description: "Emprendedor carioca"
+        jose_marcelo_zacchi:
+          description: "Director Ejecutivo de Casa Fluminense"
+        lee_sean_huang:
+          description: "Profesor de Diseño para Inovación Social en School of Visual Arts, Co-fundador de Foossa"
+        lucia_nader:
+          description: "Ex-directora Ejecutiva de ONG Conectas "
+        luiz_felipe_davila:
+          description: "Director Presidnete del Centro de Liderazgo Público"
+        mafoane_odara:
+          description: "Gerente de Educación y Mobilización del Instituto Arapyaú"
+        marcelo_de_camargo_furtado:
+          description: "Director Ejecutivo de Arapyrau, Ex Director Ejecutivo de Greenpeace Brasil"
+        marcos_barao:
+          description: "Coordinador de Aliados y Oportunidades de Impacto en la Alianza Emprendedora."
+        marcos_salles:
+          description: "Facilitación y Coordinación, Carioteca y Goma"
+        mariana_ribeiro:
+          description: "Co-Fundadora de Imagina na Copa"
+        marina_nicolaiewsky:
+          description: "Facilitación y Colaboración Carioteca y Goma"
+        patricia_oakim:
+          description: "Gerente de Especialistas de Productos para Latinoamérica, Google"
+        paulo_rogerio_nunes:
+          description: "Co-Fundador, Instituto Midia Etnica y Portal de noticias Correo Nagô."
+        pedro_abramovay:
+          description: "Ex-ministro de justicia, director regional de Latinoamerica de Open Society Foundations."
+        philip_yang:
+          description: "Fundador de URBEM"
+        pia_mancini:
+          description: "Co-fundadora Democracy OS e Partido de la Red"
+        renato_guimaraes:
+          description: "Periodista, Co-fundador y director de Negocios y Estrategia de Together"
+        rodrigo_maia:
+          description: "Co-Fundador de Catarse"
+        ronaldo_lemos:
+          description: "Director del Instituto Tecnología y Sociedad de Rio de Janeiro."
+        sergio_branco:
+          description: "Director del Instituto Tecnología y Sociedad de Rio de Janeiro."
+        teo_benjamim:
+          description: "Coordinador de Proyectos de la Benfeitoria"
+        tomas_de_lara:
+          description: "Consultor de Negocios Conscientes"
+        ursulla_araujo:
+          description: "Facilitación y Coolaboración, Carioteca y Goma"
+        vini_de_paula:
+          description: "Co-fundador de Carioteca y Goma"
+        zuleica_goulart:
+          description: "Coordinadora de Movilización de la Red Nossa São Paulo y del Programa “Cidades Sustentáveis”"
+      support:
+        title: "Support!"
+        content: "Help us build a network of mobilized cities. Together we can get the cities below closer to the dreams and desires of its citizens."
+        item1:
+          content: "Share the program with your network of friends and help take this initiative around the world!"
+          reveal_content: "Share the program with your network of friends and help take this initiative around the world!"
+          facebook: "Share on Facebook"
+          twitter: "Share on Twitter"
+          link_text: "Share with friends"
+        item2:
+          content: "Leave your email so that we can let you know when the Network heads to your city!"
+          link_text: "Leave your email"
+          link: "https://docs.google.com/forms/d/12YaW20C5fq5m1nozaZhOZYrnPb4ZvzJFXtqfWGyxyoM/viewform"
+        item3:
+          content: "Donate resources to support the Network in your city!"
+          link_text: "Support the Network"
+          link: "https://docs.google.com/forms/d/1zhjKIThLCitJbm6SW2hHnaoAZr76X_w0TJ5K6EYxcL8/viewform"
+      subscription:
+        title: "Inscripción"
+        paragraph1: "Las inscripciones a La Red Nuestras Ciudades están abierta para emprendedores a quienes les gustaría ser parte del segundo grupo de Fundadores de la Red. Los candidatos seleccionados participarán en una residencia que se llevará a cabo entre los días 28 de septiembre y 13 de noviembre del 2015, en la sede de la Red, en Rio de Janeiro. Antes de inscribirte, lee los puntos a continuación:"
+        paragraph2: ""
+        paragraph3: "Para más información escribe a <a href='contato@nossascidades.org'>contato@nossascidades.org</a>."
+        li1: "Para participar del segundo grupo de Fundadores, los candidatos deben tener un manejo avanzado del inglés. El entrenamiento se dará en este idioma con el objetivo de integrar a los candidatos provenientes de diferentes países del mundo. Si no te sientes cómodo para participar en una residencia en inglés, podrás inscribirte en procesos selectivos futuros. Sólo debes dejar esto claro en tu formulario de inscripción."
+        li2: "Si deseas llevar el modelo de la Red Nuestras Ciudades para tu ciudad, completa el formulario haciendo click en el botón abajo. Envía hasta las 11:59pm del día 31 de mayo tu CV y un video (en inglés) de 1 a 3 minutos respondiendo a esta pregunta: “Por qué tu ciudad necesita de una red de movilización?”. No te preocupes con la calidad de la producción. Cuanto antes te inscribas, mayores serán tus oportunidades, pues tendremos más tiempo para analizar tu candidatura con calma. El link del video (YouTube o Vimeo) y tu CV deberán ser enviados al e-mail <a href='mailto:inscricao@nossascidades.org'>inscricao@nossascidades.org</a> usando el e-mail que usaste para inscribir el formulario."
+        li3: "En junio, los candidatos que se destaquen en las inscripciones recibirán un ejercicio de estrategia de movilización. Esto será una buena oportunidad para que los candidatos demuestren su creatividad y su pensamiento estratégico."
+        li4: "Después de este ejercicio, se programará una entrevista virtual con los candidatos seleccionados. La entrevistas tendrán una duración máxima de 1h30min y serán realizadas via Google Hangout, a finales de junio e inicios de julio, en función de la disponibilidad tanto del candidato como del equipo."
+        li5: "Los candidatos pre-seleccionados serán anunciados en julio."
+        li7: "Las inscripciones serán individuales, pero por experiencia sabemos que un equipo bien conformado y plural es determinante para el éxito de la Red. Por esta razón, damos la posibilidad de que el candidato pre-seleccionado comience a construir su equipo y recomiende hasta tres candidatos para participar en la residencia con él. Estos candidatos recomendados deberán completar el formulario y los que se destaquen pasarán por una entrevista. La decisión final sobre la participación de estos candidatos en la residencia será tomada por el equipo de Nuestras Ciudades."
+        li8: "En agosto, todos los candidatos seleccionados recibirán el apoyo del Equipo de Nuestras Ciudades para escribir un guión, producir un video y lanzar una campaña de crowdfunding para recaudar los recursos necesarios para cubrir una parte de los costos del programa de formación de fundadores."
+        li8_1: "El crowdfunding es una forma de verificar si existe en la ciudad el potencial de una cultura de microdonaciones para proyectos como la Red Nuestras Ciudades, ya que esta es una de las principales vías de financiamiento del modelo de sostenibilidad de la Red. Además de esto, pone a prueba la capacidad de movilización del candidato para lograr que el proyecto sea realidad."
+        li8_2: "La campaña de crowdfunding tendrá una duración que puede variar entre 30 y 40 días, y deberá suceder entre los meses de agosto y septiembre."
+        li8_3: "La meta del crowdfunding será de un valor aproximado entre U$ 3,000 y U$ 12,000 por fundador, dependiendo del tamaño de la ciudad y de los costos relativos al viaje del candidato a Rio de Janeiro. Estos valores corresponden a una cuota de los costos totales que están siendo cubiertos por la Red Nuestras Ciudades en esta etapa de la replicación del modelo."
+        li9: "Los candidatos que logren la meta de recaudación del crowdfunding podrán participar en la residencia en Rio de Janeiro, entre septiembre 28 y noviembre 13 del 2015. En este período, pasarán por un entrenamiento completo con el equipo de la Red Nuestras Ciudades y otros profesionales de renombre, sobre las metodologías y tecnologías de movilización para transformar su ciudad."
+        li10: "Tras la residencia, los candidatos podrán dar inicio al lanzamiento de su red y serán acompañados por el equipo Nuestras Ciudades durante un periodo de hasta 1 año de incubación. En este tiempo, recibirán nuestro apoyo en la estructuración de la Red, el lanzamiento de las primeras movilizaciones y la recaudación de recursos para asegurar su sostenibilidad financiera."
+        li11: "Serán reconocidos como fundadores una vez que constituyan un consejo creativo de su Red, que formen un equipo de trabajo y que inicien la primera movilización en su ciudad usando las herramientas de la Red."
+        li12: "Para garantizar la sostenibilidad y la continuidad de las herramientas de la Red y del Programa de Fundadores de la Red Nuestras Ciudades, cada red de movilización deberá contribuir con el 15% de su recaudo de fondos."
+        link_text: "Postular"
+        link: "https://docs.google.com/forms/d/1f9PS5ppdXhNdgvKn0LmyMYpWz93ay4Kousih3fJZZfA/viewform"
