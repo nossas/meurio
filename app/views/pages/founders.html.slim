@@ -1,7 +1,7 @@
 = content_for(:title) { t('.facebook_share.title') }
 = content_for(:fb_title) { t('.facebook_share.title') }
 = content_for(:description) { t('.facebook_share.lead') }
-= content_for(:image) { image_url('our_cities_en.png') }
+= content_for(:image) { image_url("our_cities_#{I18n.locale}.png") }
 
 .fixed
   .contain-to-grid.founders-top-bar
