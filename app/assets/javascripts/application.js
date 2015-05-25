@@ -21,6 +21,7 @@
 //= require users
 //= require mobilizations
 //= require meurio_ui
+//= require pages
 
 $.facebox.settings.closeImage = 'http://i.imgur.com/k9awT9O.png'
 $.facebox.settings.loadingImage = 'http://i.imgur.com/bFbQqWu.gif'
@@ -99,7 +100,7 @@ $(function(){
   // Pages#founders
   $(document).on('click', "a[href='#founders-subscription']", smoothScroll);
   $(document).on('click', ".founders-top-bar a", smoothScroll);
-  $("li[data-orbit-slide='0']").trigger("click")
+  $("li[data-orbit-slide='0']").trigger("click");
 
   $("#founders-orbit").on("after-slide-change.fndtn.orbit", function(event, orbit) {
     $(".founders-slider").removeClass("founders-slider-0");
