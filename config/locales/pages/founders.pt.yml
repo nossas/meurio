@@ -8,6 +8,12 @@ pt:
       twitter_share:
         tweet: "Seja um fundador da Rede Nossas Cidades! Inscreva-se: "
       logo: "our_cities_pt.png"
+      application_extended:
+        title: "Olá candidat@, respira que ainda dá tempo!"
+        content:
+          p1: "As inscrições para a 2ª turma de fundadores da Rede Nossas Cidades foi prorrogada e agora vão até o dia <strong>10/06/15</strong>."
+          p2: "Ah, é importante lembrar que os candidatos - inclusive brasileiros - precisam ter nível avançado no idioma inglês, pois o período de Residência no Rio de Janeiro irá reunir cidades de diferentes cantos do mundo. Então, esteja preparado para participar e contribuir em atividades e conteúdos que serão apresentados no idioma de Shakespeare, ok?!"
+          p3: "Esperamos com muita alegria pela sua inscrição! ;)"
       slider:
         title: "Topo"
         slide1: "Estamos criando uma rede de cidades mobilizadas."
