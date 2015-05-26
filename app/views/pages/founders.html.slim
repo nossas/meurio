@@ -480,3 +480,12 @@
   .row
     .action
       p= link_to t('.subscription.link_text'), t('.subscription.link'), target: :blank, class: [:button, :radius, :large, :secondary]
+
+#application-extended.reveal-modal data={ reveal: true }
+  a.close-reveal-modal &#215;
+  .title
+    h3= t('.application_extended.title')
+  .text
+    p= raw t('.application_extended.content.p1')
+    p= raw t('.application_extended.content.p2')
+    p= raw t('.application_extended.content.p3')

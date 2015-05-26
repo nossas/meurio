@@ -8,6 +8,12 @@ en:
       twitter_share:
         tweet: "Become a founder of the Our Cities Network! Apply now: "
       logo: "our_cities_en.png"
+      application_extended:
+        title: "Hey there candidate, don’t worry cause you still have time to apply!"
+        content:
+          p1: "The applications for the second class of founders for Our Cities Network has been extended. You can now apply up to <strong>June 10th 2015</strong>."
+          p2: "Remember it is important that candidates are confortable in english as the second residency in Rio de Janeiro will host cities from different parts of the world. So make sure you are confident in participating and contribuiting to the activities in the language of Shakespeare, deal?"
+          p3: "We are excited to see your application ;)"
       slider:
         title: "Top"
         slide1: "We are building a network of mobilized cities."
