@@ -9,11 +9,11 @@ en:
         tweet: "Become a founder of the Our Cities Network! Apply now: "
       logo: "our_cities_en.png"
       application_extended:
-        title: "Hey there candidate, don’t worry cause you still have time to apply!"
+        title: "Hey there, if you are interested in applying to be a founder of the Our Cities Network there is still time!"
         content:
-          p1: "The applications for the second class of founders for Our Cities Network has been extended. You can now apply up to <strong>June 10th 2015</strong>."
-          p2: "Remember it is important that candidates are confortable in english as the second residency in Rio de Janeiro will host cities from different parts of the world. So make sure you are confident in participating and contribuiting to the activities in the language of Shakespeare, deal?"
-          p3: "We are excited to see your application ;)"
+          p1: "The application deadline for the second class of founders has been extended to <strong>June 10th.</strong>"
+          p2: "Remember, it is important that candidates are comfortable conversing and writing in English, as the second residency will include people from cities around the world.  [tiraria essa parte sobre Shakespeare, é repetitivo e a frase não é tão comum na minha expêriencia. Se quiserem que fique, vai assim: Make sure you feel confident participating and contributing to residency activities in Shakespeare's language, deal?"
+          p3: "​We are excited to ​see your application :)"
       slider:
         title: "Top"
         slide1: "We are building a network of mobilized cities."
