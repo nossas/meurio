@@ -15,10 +15,10 @@
         ul.right
           li= link_to t('.slider.title'), "#founders-slider"
           li= link_to t('.program.title'), "#founders-program"
-          li= link_to t('.steps.title'), "#founders-steps"
-          li= link_to t('.network.title'), "#founders-network"
+          / li= link_to t('.steps.title'), "#founders-steps"
           li= link_to t('.moderators.title'), "#founders-moderators"
-          li= link_to t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary]
+          / li= link_to t('.network.title'), "#founders-network"
+          li= link_to t('.slider.subscribe_cta'), "#founders-network", class: [:button, :radius, :secondary]
 
 .founders-slider#founders-slider
   = raw t('.video_embed')
@@ -63,86 +63,70 @@
       h4= t('.program.item6.title')
       p= t('.program.item6.content')
 
-.founders-steps.light#founders-steps
-  .row
-    .title
-      h2= t('.steps.title')
-  .row
-    .founders-step
-      .step-name= t('.steps.step1.name')
-      .step-box
-        .vertical-align-container
-          .vertical-align-content
-            .step-cover
-              .step-definition= t('.steps.step1.definition')
-            .step-content= t('.steps.step1.content')
-    .founders-step
-      .step-name= t('.steps.step2.name')
-      .step-box
-        .vertical-align-container
-          .vertical-align-content
-            .step-cover
-              .step-definition= t('.steps.step2.definition')
-            .step-content= t('.steps.step2.content')
-    .founders-step
-      .step-name= t('.steps.step3.name')
-      .step-box
-        .vertical-align-container
-          .vertical-align-content
-            .step-cover
-              .step-definition= t('.steps.step3.definition')
-            .step-content= t('.steps.step3.content')
-    .founders-step
-      .step-name= t('.steps.step4.name')
-      .step-box
-        .vertical-align-container
-          .vertical-align-content
-            .step-cover
-              .step-definition= t('.steps.step4.definition')
-            .step-content= t('.steps.step4.content')
-  .row
-    .founders-step
-      .step-name= t('.steps.step5.name')
-      .step-box
-        .vertical-align-container
-          .vertical-align-content
-            .step-cover
-              .step-definition= t('.steps.step5.definition')
-            .step-content= t('.steps.step5.content')
-    .founders-step
-      .step-name= t('.steps.step6.name')
-      .step-box
-        .vertical-align-container
-          .vertical-align-content
-            .step-cover
-              .step-definition= t('.steps.step6.definition')
-            .step-content= t('.steps.step6.content')
-    .founders-step
-      .step-name= t('.steps.step7.name')
-      .step-box
-        .vertical-align-container
-          .vertical-align-content
-            .step-cover
-              .step-definition= t('.steps.step7.definition')
-            .step-content= t('.steps.step7.content')
-    .founders-step
-      = image_tag "pages/founders/rocket.png"
-
-.founders-network#founders-network
-  .row
-    .title
-      h2= t('.network.title')
-  .row
-    .text
-      p
-        = image_tag("institucionais/meurio/mr_logo_inst.png")
-        = image_tag("institucionais/minhasampa/msp_logo_inst.jpg")
-      p= raw t('.network.content.p1')
-      p= raw t('.network.content.p2')
-      p= t('.network.content.p3')
-      p= raw t('.network.content.p4')
-  .row
-    .action= link_to(t('.slider.subscribe_cta'), "#founders-subscription", class: [:button, :radius, :secondary, :large])
+/ .founders-steps.light#founders-steps
+/   .row
+/     .title
+/       h2= t('.steps.title')
+/   .row
+/     .founders-step
+/       .step-name= t('.steps.step1.name')
+/       .step-box
+/         .vertical-align-container
+/           .vertical-align-content
+/             .step-cover
+/               .step-definition= t('.steps.step1.definition')
+/             .step-content= t('.steps.step1.content')
+/     .founders-step
+/       .step-name= t('.steps.step2.name')
+/       .step-box
+/         .vertical-align-container
+/           .vertical-align-content
+/             .step-cover
+/               .step-definition= t('.steps.step2.definition')
+/             .step-content= t('.steps.step2.content')
+/     .founders-step
+/       .step-name= t('.steps.step3.name')
+/       .step-box
+/         .vertical-align-container
+/           .vertical-align-content
+/             .step-cover
+/               .step-definition= t('.steps.step3.definition')
+/             .step-content= t('.steps.step3.content')
+/     .founders-step
+/       .step-name= t('.steps.step4.name')
+/       .step-box
+/         .vertical-align-container
+/           .vertical-align-content
+/             .step-cover
+/               .step-definition= t('.steps.step4.definition')
+/             .step-content= t('.steps.step4.content')
+/   .row
+/     .founders-step
+/       .step-name= t('.steps.step5.name')
+/       .step-box
+/         .vertical-align-container
+/           .vertical-align-content
+/             .step-cover
+/               .step-definition= t('.steps.step5.definition')
+/             .step-content= t('.steps.step5.content')
+/     .founders-step
+/       .step-name= t('.steps.step6.name')
+/       .step-box
+/         .vertical-align-container
+/           .vertical-align-content
+/             .step-cover
+/               .step-definition= t('.steps.step6.definition')
+/             .step-content= t('.steps.step6.content')
+/     .founders-step
+/       .step-name= t('.steps.step7.name')
+/       .step-box
+/         .vertical-align-container
+/           .vertical-align-content
+/             .step-cover
+/               .step-definition= t('.steps.step7.definition')
+/             .step-content= t('.steps.step7.content')
+/     .founders-step
+/       = image_tag "pages/founders/rocket.png"
 
 .founders-moderators.light#founders-moderators
   .row
@@ -453,29 +437,41 @@
                 .vertical-align-content= t('.moderators.zuleica_goulart.description')
           .moderator-name Zuleica Goulart
 
-.founders-subscription.dark#founders-subscription
+.founders-network#founders-network
   .row
     .title
-      h2= t('.subscription.title')
-    .text.text-left
-      p= t('.subscription.paragraph1')
-      ul
-        li= raw t('.subscription.li1')
-        li= raw t('.subscription.li2')
-        li= raw t('.subscription.li3')
-        li= raw t('.subscription.li4')
-        li= raw t('.subscription.li5')
-        li= raw t('.subscription.li7')
-        li= raw t('.subscription.li8')
-        ul
-          li= raw t('.subscription.li8_1')
-          li= raw t('.subscription.li8_2')
-          li= raw t('.subscription.li8_3')
-        li= raw t('.subscription.li9')
-        li= raw t('.subscription.li10')
-        li= raw t('.subscription.li11')
-        li= raw t('.subscription.li12')
-
+      h2= t('.network.title')
   .row
-    .action
-      p= link_to t('.subscription.link_text'), t('.subscription.link'), target: :blank, class: [:button, :radius, :large, :secondary]
+    .text
+      p
+        = image_tag("institucionais/meurio/mr_logo_inst.png")
+        = image_tag("institucionais/minhasampa/msp_logo_inst.jpg")
+      p= raw t('.network.content.p1')
+      p= raw t('.network.content.p2')
+      p= t('.network.content.p3')
+      p= raw t('.network.content.p4')
+  .row
+    .action= link_to t('.subscription.link_text'), t('.subscription.link'), target: :blank, class: [:button, :radius, :large, :secondary]
+
+/ .founders-subscription.dark#founders-subscription
+/   .row
+/     .title
+/       h2= t('.subscription.title')
+/     .text.text-left
+/       p= t('.subscription.paragraph1')
+/       ul
+/         li= raw t('.subscription.li1')
+/         li= raw t('.subscription.li2')
+/         li= raw t('.subscription.li3')
+/         li= raw t('.subscription.li4')
+/         li= raw t('.subscription.li5')
+/         li= raw t('.subscription.li7')
+/         li= raw t('.subscription.li8')
+/         ul
+/           li= raw t('.subscription.li8_1')
+/           li= raw t('.subscription.li8_2')
+/           li= raw t('.subscription.li8_3')
+/         li= raw t('.subscription.li9')
+/         li= raw t('.subscription.li10')
+/         li= raw t('.subscription.li11')
+/         li= raw t('.subscription.li12')
