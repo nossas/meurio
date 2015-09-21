@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150427140742) do
     t.boolean  "succeed"
     t.string   "image"
     t.datetime "finished_at"
-    t.string   "description_html"
+    t.text     "description_html"
     t.integer  "organization_id"
   end
 
